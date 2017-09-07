@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marquee - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+	<script>require(["ux/marquee/old/marquee"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ux/marquee/old/marquee.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ux/marquee/old/marquee" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ux/marquee/old/marquee.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <article class="demo">
+<aside class="demo">
+<h3 id="循环列表的滚动">
+<a href="#循环列表的滚动" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>循环列表的滚动</h3>
+<div id="a" class="ct">
+<ul>
+<li class="doc">
+<div class="demo-box">aa</div>
+</li>
+<li class="doc">
+<div class="demo-boui-large demo-green">bb</div>
+</li>
+<li class="doc">
+<div class="demo-boui-small demo-blue">cc</div>
+</li>
+<li class="doc">
+<div class="demo-box demo-red">dd</div>
+</li>
+<li class="doc">
+<div class="demo-box demo-orange">ee</div>
+</li>
+<li class="doc">
+<div class="demo-box">ff</div>
+</li>
+</ul>
+</div>
+<script class="demo">
+var a = new Marquee('#a').start();
+</script></aside>
+<script>
+Demo.writeExamples({ 'start': 'a.start()', 'stop': 'a.stop()', 'prev': 'a.prev()', 'next': 'a.next()' });
+</script>
+<aside class="demo">
+<h3 id="不循环列表的滚动">
+<a href="#不循环列表的滚动" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>不循环列表的滚动</h3>
+<div id="b" class="ct">
+<ul>
+<li class="doc">
+<div class="demo-box">aa</div>
+</li>
+<li class="doc">
+<div class="demo-boui-large demo-green">bb</div>
+</li>
+<li class="doc">
+<div class="demo-boui-small demo-blue">cc</div>
+</li>
+<li class="doc">
+<div class="demo-box demo-red">dd</div>
+</li>
+<li class="doc">
+<div class="demo-box demo-orange">ee</div>
+</li>
+<li class="doc">
+<div class="demo-box">ff</div>
+</li>
+</ul>
+</div>
+<script class="demo">
+var b = new Marquee('#b', null, false).start();
+</script></aside>
+<aside class="demo">
+<h3 id="平滑滚动">
+<a href="#平滑滚动" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>平滑滚动</h3>
+<div id="b1" class="ct">
+<ul>
+<li class="doc">
+<div class="demo-box">aa</div>
+</li>
+<li class="doc">
+<div class="demo-boui-large demo-green">bb</div>
+</li>
+<li class="doc">
+<div class="demo-boui-small demo-blue">cc</div>
+</li>
+<li class="doc">
+<div class="demo-box demo-red">dd</div>
+</li>
+<li class="doc">
+<div class="demo-box demo-orange">ee</div>
+</li>
+<li class="doc">
+<div class="demo-box">ff</div>
+</li>
+</ul>
+</div>
+<script class="demo">
+var b1 = new Marquee('#b1', null);
+b1.duration = 10;
+b1.delay = 0;
+b1.start(1);
+</script></aside>
+<aside class="demo">
+<h3 id="右">
+<a href="#右" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>右</h3>
+<div id="c" class="ct">
+<ul>
+<li class="doc">
+<div class="demo-box">aa</div>
+</li>
+<li class="doc">
+<div class="demo-boui-large demo-green">bb</div>
+</li>
+<li class="doc">
+<div class="demo-boui-small demo-blue">cc</div>
+</li>
+<li class="doc">
+<div class="demo-box demo-red">dd</div>
+</li>
+<li class="doc">
+<div class="demo-box demo-orange">ee</div>
+</li>
+<li class="doc">
+<div class="demo-box">ff</div>
+</li>
+</ul>
+</div>
+<script class="demo">
+var c = new Marquee('#c', 'right').start();
+</script></aside>
+<aside class="demo">
+<h3 id="上">
+<a href="#上" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>上</h3>
+<div id="d" class="ct2">
+<ul>
+<li class="doc">
+<div class="demo-box">aa</div>
+</li>
+<li class="doc">
+<div class="demo-boui-large demo-green">bb</div>
+</li>
+<li class="doc">
+<div class="demo-boui-small demo-blue">cc</div>
+</li>
+<li class="doc">
+<div class="demo-box demo-red">dd</div>
+</li>
+<li class="doc">
+<div class="demo-box demo-orange">ee</div>
+</li>
+<li class="doc">
+<div class="demo-box">ff</div>
+</li>
+</ul>
+</div>
+<script class="demo">
+var d = new Marquee('#d', 'top').start();
+</script></aside>
+<aside class="demo">
+<h3 id="下">
+<a href="#下" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>下</h3>
+<div id="e" class="ct2">
+<ul>
+<li class="doc">
+<div class="demo-box">aa</div>
+</li>
+<li class="doc">
+<div class="demo-boui-large demo-green">bb</div>
+</li>
+<li class="doc">
+<div class="demo-boui-small demo-blue">cc</div>
+</li>
+<li class="doc">
+<div class="demo-box demo-red">dd</div>
+</li>
+<li class="doc">
+<div class="demo-box demo-orange">ee</div>
+</li>
+<li class="doc">
+<div class="demo-box">ff</div>
+</li>
+</ul>
+</div>
+<script class="demo">
+var e = new Marquee('#e', 'bottom').start();
+</script></aside>
+</article><dl id="doc_toc">
+	<dd><a href="#循环列表的滚动">循环列表的滚动</a></dd>
+	<dd><a href="#不循环列表的滚动">不循环列表的滚动</a></dd>
+	<dd><a href="#平滑滚动">平滑滚动</a></dd>
+	<dd><a href="#右">右</a></dd>
+	<dd><a href="#上">上</a></dd>
+	<dd><a href="#下">下</a></dd>
+	<dt><a href="#api">API</a></dt>
+</dl>
+
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><div class="doc doc-scrollable"><table class="doc-api"><tr>
+                                <th class="doc-api-property">变量</th>
+                                <th class="doc-api-type">类型</th>
+                                <th class="doc-api-summary">描述</th>
+                                
+                            </tr><tr id="api/Marquee">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/marquee/old/marquee.ts#L11-387" target="_blank" title="源码：ux/marquee/old/marquee.ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>Marquee</code>
+                                <span class="doc-api-more">: <code>any</code> = <code>Base.extend({
+
+	/**
+	 * 每次滚动的效果时间。
+	 */
+	duration: -1,
+
+	/**
+	 * 自动滚动的延时时间。
+	 */
+	delay: 3000,
+
+	/**
+	 * 移动的方向。
+	 * @config
+	 */
+	direction: 'left',
+
+	/**
+	 * 每次移动的张数。
+	 * @config
+	 */
+	delta: 1,
+
+	/**
+	 * 是否循环播放。
+	 * @config
+	 */
+	loop: true,
+
+	/**
+	 * 是否保证平滑滚动。
+	 * @config
+	 */
+	flow: true,
+
+	/**
+     * 当前正在显示的索引。
+     */
+	currentIndex: 0,
+
+	/**
+	 * 是否循环。
+	 * @property {Boolean} loop
+	 */
+
+	_getWidthBefore: function (ctrl, xy) {
+		return ctrl &amp;&amp; (ctrl = Dom.prev(ctrl)) ? Dom.calc(ctrl, xy) + this._getWidthBefore(ctrl, xy) : 0;
+	},
+
+	_getScrollByIndex: function (value) {
+		return this._getWidthBefore(Dom.child(this.elem, value), this._horizonal ? 'marginLeft+marginRight+width' : 'marginTop+marginBottom+height');
+	},
+
+	_getTotalSize: function () {
+		var size = 0;
+		var xy = this._horizonal ? &quot;marginLeft+marginRight+width&quot; : &quot;marginTop+marginBottom+height&quot;;
+		Dom.children(this.elem).each(function (child) {
+			size += Dom.calc(child, xy);
+		});
+		return size;
+	},
+
+	/**
+	 * 内部实现移动到指定位置的效果。
+	 */
+	_animateToWithoutLoop: function (index, lt) {
+
+		var me = this,
+			oldIndex = me._fixIndex(me.currentIndex),
+			obj;
+
+		if (me.beforeChange(index, oldIndex) !== false) {
+
+			// 暂停自动播放，防止出现抢资源问题。
+			me.pause();
+
+			// 记录当前正在转向的目标索引。
+			me.currentIndex = index;
+
+			// 计算滚动坐标。
+
+			obj = {};
+			obj[me._horizonal ? 'marginLeft' : 'marginTop'] = -me._getScrollByIndex(index);
+			Dom.animate(me.elem, {
+				params: obj,
+				duration: me.duration,
+				complete: function () {
+
+					// 滚动完成后触发事件。
+					me.afterChange(index, oldIndex);
+
+					// 如果本来正在自动播放中，这里恢复自动播放。
+					if (me.step)
+						me.resume();
+				},
+				link: 'abort'
+			});
+		}
+
+	},
+
+	/**
+	 * 内部实现移动到指定位置的效果。
+	 * @param {Number} index 滚动的目标索引。
+	 * @param {Boolean} lt 回滚还是继续滚。
+	 */
+	_animateToWithLoop: function (index, lt) {
+
+		var me = this,
+			oldIndex = me._fixIndex(me.currentIndex);
+
+		if (me.beforeChange(index, oldIndex) !== false) {
+
+			// 暂停自动播放，防止出现抢资源问题。
+			me.pause();
+
+			Dom.animate(me.elem, {
+				params: {},
+				duration: me.duration,
+				complete: function () {
+
+					// 效果结束。
+					me._animatingTargetIndex = null;
+
+					// 滚动完成后触发事件。
+					me.afterChange(index, oldIndex);
+
+					// 如果本来正在自动播放中，这里恢复自动播放。
+					if (me.step)
+						me.resume();
+				},
+				start: function (options) {
+
+					// 实际所滚动的区域。
+					var actualIndex = index + me.length,
+							prop = me._horizonal ? 'marginLeft' : 'marginTop',
+							from = Dom.styleNumber(me.elem, prop),
+							to = -me._getScrollByIndex(actualIndex);
+
+					// 如果保证是平滑滚动，则修正错误的位置。
+					if (me.flow) {
+
+						// 如果是往上、左方向滚。
+						if (lt) {
+
+							// 确保 from &gt; to
+							if (from &gt; to) {
+								from -= me._size;
+							}
+
+						} else {
+
+							// 确保 from &lt; to
+							if (from &lt; to) {
+								from += me._size;
+							}
+						}
+
+					}
+
+					options.params[prop] = from + '-' + to;
+
+					// 记录当前正在转向的目标索引。
+					me.currentIndex = index;
+				},
+				link: 'stop'
+			});
+		}
+		return this;
+
+	},
+
+	_fixIndex: function (index) {
+		return index = index &gt;= 0 ? index % this.length : index + this.length;
+	},
+
+	beforeChange: function (newIndex, oldIndex) {
+		return !this.disabled &amp;&amp; this.trigger('changing', {
+			from: oldIndex,
+			to: newIndex
+		});
+	},
+
+	afterChange: function (newIndex, oldIndex) {
+		this.trigger('changed', {
+			from: oldIndex,
+			to: newIndex
+		});
+	},
+
+	/**
+	 * 更新节点状态。
+	 */
+	update: function () {
+		var children = Dom.children(this.elem),
+			size,
+			xy = this._horizonal ? 'Width' : 'Height';
+
+		if (!this.cloned) {
+
+			// 设置大小。
+			this.length = children.length;
+
+			// 如果不需要滚动，自动设为 disabled 属性。
+			this.disabled = Dom['get' + xy](Dom.parent(this.elem)) &gt;= size;
+			//  this.disabled = Dom.getScrollSize(this.elem)[this._horizonal ? 'x' : 'y'] &gt; size;
+
+			if (!this.disabled &amp;&amp; this.loop) {
+				children.each(function (elem) {
+					Dom.append(this.elem, Dom.clone(elem));
+				}, this);
+				children.each(function (elem) {
+					Dom.append(this.elem, Dom.clone(elem));
+				}, this);
+				this.cloned = true;
+			}
+		}
+
+		size = this._getTotalSize();
+		this._size = this.cloned ? size / 3 : size;
+
+		Dom['set' + xy](this.elem, size);
+		this.set(this.currentIndex);
+	},
+
+	pause: function () {
+		if (this.timer) {
+			clearTimeout(this.timer);
+			this.timer = 0;
+		}
+
+	},
+
+	resume: function () {
+		if (!this.timer) {
+			this.timer = setTimeout(this.step, this.delay);
+		}
+	},
+
+	constructor: function (elem, direction, loop, deferUpdate) {
+		elem = Dom.find(elem);
+		this.elem = Dom.find('ul', elem) || elem;
+		Dom.setStyle(Dom.parent(this.elem), 'overflow', 'hidden');
+
+		if (loop === false) {
+			this.loop = false;
+		}
+
+		this.setDirection(direction || this.direction);
+
+		this.update();
+
+		// Chrome 无法直接获取图片大小。
+		if (deferUpdate !== false &amp;&amp; !Dom.isLoaded) {
+			Dom.load(this.update.bind(this));
+		}
+	},
+
+	/**
+	 * 暂停滚动
+	 * @method pause
+	 */
+	stop: function () {
+		clearInterval(this.timer);
+		this.timer = 0;
+		this.step = null;
+		return this;
+	},
+
+	setDirection: function (direction) {
+		this.direction = direction;
+		this._lt = /^[rb]/.test(direction);
+		this._horizonal = /^[lr]/.test(direction);
+	},
+
+	/**
+	 * (重新)开始滚动
+	 * @method start
+	 */
+	start: function (delta) {
+		var me = this.stop();
+		delta = delta || me.delta;
+		if (delta &lt; 0) {
+			me._lt = !me._lt;
+			delta = -delta;
+		}
+
+		if (me._lt) {
+			delta = -delta;
+		}
+
+		// 如果不延时。
+		if (me.delay === 0) {
+
+			me.moving = function () {
+
+				var value = me._current - delta;
+
+				if (value &lt;= me._min) {
+					value += me._unit;
+				} else if (value &gt;= me._max) {
+					value -= me._unit;
+				}
+
+				me._current = value;
+
+				me.elem.style[me._prop] = value + 'px';
+
+				me.timer = setTimeout(me.moving, me.duration);
+
+			};
+
+			me.step = function () {
+
+				me._prop = me._horizonal ? 'marginLeft' : 'marginTop';
+				me._current = Dom.styleNumber(me.elem, me._prop);
+				me._unit = me._getScrollByIndex(me.length + 1);
+
+				if (me.loop) {
+					me._min = -me._unit * 2;
+					me._max = -me._unit;
+				} else {
+					me._min = -me._unit;
+					me._max = 0;
+				}
+				me.moving();
+			};
+
+		} else {
+
+			// 设置单步的执行函数。
+			me.step = function () {
+				var index = me.currentIndex + delta;
+				index = me._fixIndex(index);
+				me[me.loop ? '_animateToWithLoop' : '_animateToWithoutLoop'](index, me._lt);
+				me.timer = setTimeout(me.step, me.delay);
+			};
+
+		}
+
+		// 正式开始。
+		me.resume();
+
+		return me;
+	},
+
+	set: function (index) {
+		var newIndex = index = this._fixIndex(index);
+		if (this.loop) {
+			index += this.length;
+		}
+		Dom.setStyle(this.elem, this._horizonal ? 'marginLeft' : 'marginTop', -this._getScrollByIndex(index));
+		this.afterChange(index, this.currentIndex);
+		this.currentIndex = newIndex;
+		return this;
+	},
+
+	moveTo: function (index, lt) {
+		index = this._fixIndex(index);
+		this[this.loop ? '_animateToWithLoop' : '_animateToWithoutLoop'](index, lt === undefined ? index &lt; this.currentIndex : lt);
+		return this;
+	},
+
+	moveBy: function (index) {
+		return this.moveTo(this.currentIndex + index % this.length, index &lt; 0);
+	},
+
+	prev: function () {
+		return this.moveTo(this.currentIndex - 1, true);
+	},
+
+	next: function () {
+		return this.moveTo(this.currentIndex + 1, false);
+	}
+
+})</code></span>
+                                <div class="doc doc-api-detail">
+                                    
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>any</code>
+                            </td>
+                            <td class="doc">
+                                
+                            </td>
+                            
+                        </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ux/marquee/old/marquee.html","imports":["ux/marquee/old/marquee"]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

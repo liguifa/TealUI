@@ -1,0 +1,63 @@
+@charset "UTF-8";
+.x-menu {
+  display: inline-block;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.2rem;
+  background-color: #fff;
+}
+
+.x-menu ul {
+  max-height: 40rem;
+  min-width: 7rem;
+  max-width: 20rem;
+  overflow: auto;
+  margin: 0;
+  padding: 0.2rem 0;
+  list-style: none;
+}
+
+.x-menu a {
+  display: block;
+  padding: 0.375rem 1rem;
+  color: #666;
+  cursor: default;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.x-menu a:hover, .x-menu-active > a {
+  background-color: #fafafa;
+  text-decoration: none;
+}
+
+.x-menu-divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+  margin: 0.2rem;
+}
+
+.x-menu-arrow > a {
+  padding-right: 1.75rem;
+  position: relative;
+}
+
+.x-menu-arrow > a:after {
+  content: '⮞';
+  font-family: 'x-icon';
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  margin-top: -0.65rem;
+  color: #878787;
+}
+
+.x-menu-disabled > a {
+  pointer-events: none;
+  color: #999 !important;
+  background-color: transparent !important;
+}
+
+/*# sourceMappingURL=menu.css.map */

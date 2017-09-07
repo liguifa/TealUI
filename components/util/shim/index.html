@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
+    <meta name="version" content="0.0.1">
+    <title>兼容补丁 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/doc/doc.css">
+    <script src="../../../components/require.js"></script>
+	<script>require(["util/shim"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                <li><a href="javascript:Doc.toggleUnitTest()" accesskey="t"><i class="doc-icon">☕</i>单元测试</a></li>
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/shim/shim.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/shim" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/shim/shim.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="兼容补丁">
+<a href="#兼容补丁" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>兼容补丁<div class="doc-menubutton">
+                        <small>util/shim</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import \&quot;util/shim\&quot;;\n&quot;)">复制 <code>import "util/shim"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/shim\&quot;], function (shim_1) {\n\n\n});\n&quot;)">复制 <code>require("util/shim")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/shim\&quot;&quot;)">复制 <code>"util/shim"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">让调用了 ECMAScript 5+ 新增接口的程序在低版本浏览器也能正常运行。</p>
+<dl id="doc_toc">
+	<dt><a href="#ecmascript-3">ECMAScript 3</a></dt>
+	<dt><a href="#ecmascript-5">ECMAScript 5</a></dt>
+	<dt><a href="#ecmascript-6">ECMAScript 6</a></dt>
+	<dt><a href="#ecmascript-7">ECMAScript 7</a></dt>
+	<dt><a href="#atob-btoa">atob &amp; btoa</a></dt>
+	<dt><a href="#建议">建议</a></dt>
+</dl>
+<h2 id="ecmascript-3">
+<a href="#ecmascript-3" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>ECMAScript 3</h2>
+<p class="doc">所有浏览器（包括 IE6）都支持 ECMAScript 3 所有接口。</p>
+<blockquote class="doc doc-blockquote">
+<h5>另参考</h5>
+<ul>
+<li class="doc"><a href="http://www-archive.mozilla.org/js/language/E262-3.pdf" target="_blank" class="doc-external">ECMAScript 3 规范</a></li>
+</ul>
+</blockquote>
+<h2 id="ecmascript-5">
+<a href="#ecmascript-5" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>ECMAScript 5</h2>
+<p class="doc">除了 IE6-8 和 2015 年之前发布的桌面浏览器，其它现代浏览器都支持 ECMAScript 5。
+如果只开发移动端应用或不考虑 IE6-8 兼容性，则可以直接使用 ECMAScript 5 所有接口。</p>
+<p class="doc">通过 <code>import &quot;util/shim/es5-shim&quot;</code> 可安全使用以下 ECMAScript 5 新增接口：</p>
+<ul>
+<li class="doc"><code>Object.create</code>*</li>
+<li class="doc"><code>Object.defineProperty</code>*</li>
+<li class="doc"><code>Object.defineProperties</code>*</li>
+<li class="doc"><code>Object.getPrototypeOf</code>*</li>
+<li class="doc"><code>Object.keys</code></li>
+<li class="doc"><code>Object.seal</code>*</li>
+<li class="doc"><code>Object.freeze</code>*</li>
+<li class="doc"><code>Object.preventExtensions</code>*</li>
+<li class="doc"><code>Object.isSealed</code>*</li>
+<li class="doc"><code>Object.isFrozen</code>*</li>
+<li class="doc"><code>Object.isExtensible</code>*</li>
+<li class="doc"><code>Object.getOwnPropertyDescriptor</code>*</li>
+<li class="doc"><code>Object.getOwnPropertyNames</code>*</li>
+<li class="doc"><code>Array.isArray</code></li>
+<li class="doc"><code>Array.prototype.indexOf</code></li>
+<li class="doc"><code>Array.prototype.lastIndexOf</code></li>
+<li class="doc"><code>Array.prototype.every</code></li>
+<li class="doc"><code>Array.prototype.some</code></li>
+<li class="doc"><code>Array.prototype.forEach</code></li>
+<li class="doc"><code>Array.prototype.filter</code></li>
+<li class="doc"><code>Array.prototype.map</code></li>
+<li class="doc"><code>Array.prototype.reduce</code></li>
+<li class="doc"><code>Array.prototype.reduceRight</code></li>
+<li class="doc"><code>Date.now</code></li>
+<li class="doc"><code>Date.prototype.toISOString</code></li>
+<li class="doc"><code>Function.prototype.bind</code>*</li>
+<li class="doc"><code>JSON.stringify</code>*</li>
+<li class="doc"><code>JSON.parse</code>*</li>
+</ul>
+<p class="doc">*: 补丁仅模拟了该接口部分功能。</p>
+<blockquote class="doc doc-blockquote doc-blockquote-error">
+<h5>IE6-8 无法模拟 <code>Object.defineProperty</code></h5>
+<p class="doc"><code>Object.defineProperty</code> 依赖了 JavaScript 引擎本身实现，无法在 IE6-8 完全模拟。
+如果项目中用到此接口，则无法兼容 IE6-8。</p>
+</blockquote>
+<blockquote class="doc doc-blockquote doc-blockquote-warning">
+<h5>补丁仅提供常用功能</h5>
+<p class="doc">完整版本参考：<a href="https://github.com/es-shims/es5-shim" target="_blank" class="doc-external">es5-shim</a>。</p>
+</blockquote>
+<blockquote class="doc doc-blockquote">
+<h5>另参考</h5>
+<ul>
+<li class="doc"><a href="http://www.ecma-international.org/ecma-262/5.1/" target="_blank" class="doc-external">ECMAScript 5 规范</a></li>
+<li class="doc"><a href="http://lzw.me/pages/ecmascript/" target="_blank" class="doc-external">ECMAScript 5 规范（中文）</a></li>
+</ul>
+</blockquote>
+<h2 id="ecmascript-6">
+<a href="#ecmascript-6" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>ECMAScript 6</h2>
+<p class="doc">在 2016 年之后发布的浏览器都支持 ECMAScript 6。</p>
+<p class="doc">通过 <code>import &quot;util/shim/es6-shim&quot;</code> 可安全使用以下 ECMAScript 6 新增接口：</p>
+<ul>
+<li class="doc"><code>Promise</code></li>
+<li class="doc"><code>Object.assign</code></li>
+<li class="doc"><code>Object.is</code></li>
+<li class="doc"><code>Object.setPrototypeOf</code></li>
+<li class="doc"><code>String.prototype.startsWith</code></li>
+<li class="doc"><code>String.prototype.endsWith</code></li>
+<li class="doc"><code>String.prototype.repeat</code></li>
+<li class="doc"><code>Array.from</code></li>
+<li class="doc"><code>Array.prototype.find</code></li>
+<li class="doc"><code>Array.prototype.findIndex</code></li>
+<li class="doc"><code>Array.prototype.fill</code></li>
+<li class="doc"><code>Number.isInteger</code></li>
+</ul>
+<blockquote class="doc doc-blockquote doc-blockquote-warning">
+<h5>补丁仅提供常用功能</h5>
+<p class="doc">完整版本参考：<a href="https://github.com/es-shims/es6-shim" target="_blank" class="doc-external">es6-shim</a>。</p>
+</blockquote>
+<blockquote class="doc doc-blockquote">
+<h5>另参考</h5>
+<ul>
+<li class="doc"><a href="http://www.ecma-international.org/ecma-262/6.0/" target="_blank" class="doc-external">ECMAScript 6 规范</a></li>
+<li class="doc"><a href="https://www.promisejs.org/" target="_blank" class="doc-external">Promises</a></li>
+</ul>
+</blockquote>
+<h2 id="ecmascript-7">
+<a href="#ecmascript-7" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>ECMAScript 7</h2>
+<p class="doc">通过 <code>import &quot;util/shim/es7-shim&quot;</code> 可安全使用以下 ECMAScript 7 新增接口：</p>
+<ul>
+<li class="doc"><code>Object.values</code></li>
+<li class="doc"><code>Object.entries</code></li>
+<li class="doc"><code>Array.prototype.includes</code></li>
+<li class="doc"><code>String.prototype.padStart</code></li>
+<li class="doc"><code>String.prototype.padEnd</code></li>
+<li class="doc"><code>String.prototype.trimLeft</code></li>
+<li class="doc"><code>String.prototype.trimRight</code></li>
+</ul>
+<blockquote class="doc doc-blockquote doc-blockquote-warning">
+<h5>补丁仅提供常用功能</h5>
+<p class="doc">完整版本参考：<a href="https://github.com/es-shims/es7-shim" target="_blank" class="doc-external">es7-shim</a>。</p>
+</blockquote>
+<blockquote class="doc doc-blockquote">
+<h5>另参考</h5>
+<ul>
+<li class="doc"><a href="http://www.ecma-international.org/ecma-262/7.0/" target="_blank" class="doc-external">ECMAScript 7 规范</a></li>
+</ul>
+</blockquote>
+<h2 id="atob-btoa">
+<a href="#atob-btoa" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><code>atob</code> &amp; <code>btoa</code></h2>
+<p class="doc">IE 6-9 和 Opera 10.1 未内置 <code>atob</code> &amp; <code>btoa</code>。</p>
+<p class="doc">通过 <code>import &quot;util/shim/atob-shim&quot;</code> 可安全使用以下接口：</p>
+<ul>
+<li class="doc"><code>atob</code></li>
+<li class="doc"><code>btoa</code></li>
+</ul>
+<blockquote class="doc doc-blockquote doc-blockquote-error">
+<h5>不支持中文</h5>
+<p class="doc">如需支持中文，使用<a href="../../../components/util/base64/" title="util/base64">Base64 编码</a>。</p>
+</blockquote>
+<h2 id="建议">
+<a href="#建议" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>建议</h2>
+<p class="doc">ECMAScript 5 新增接口在项目中的使用频率较高。
+移动端和主流浏览器及 IE9+ 都可直接使用。
+如果需要兼容 IE6-8 及其它低版本浏览器则引入 <code>util/shim/es5-shim</code> 组件，
+以此确保所有 ECMAScript 5 新增接口都没有兼容性问题。</p>
+<p class="doc">ECMAScript 6+ 中仅部分功能比较常用。
+可使用精简后的 <code>util/shim</code> 组件代替 <code>util/shim/es6-shim</code> 来减少体积。</p>
+<p class="doc">通过 <code>import &quot;util/shim&quot;</code> 可安全使用以下 ECMAScript 6+ 新增接口：</p>
+<ul>
+<li class="doc"><code>Promise</code></li>
+<li class="doc"><code>Object.assign</code>（仅支持双参数）</li>
+</ul>
+<blockquote class="doc doc-blockquote">
+<h5>另参考</h5>
+<ul>
+<li class="doc">[[../docs/spec/compatibility]]</li>
+<li class="doc"><a href="http://kangax.github.io/compat-table/" target="_blank" class="doc-external">ECMAScript 兼容性报告</a></li>
+<li class="doc"><a href="https://github.com/zloirock/core-js" target="_blank" class="doc-external">core.js - Standard Library</a></li>
+</ul>
+</blockquote>
+
+                        
+                        <nav id="doc_pager">
+                            <a href="../../../components/ux/xml/" title="解析 XML" id="doc_pager_prev"><i class="doc-icon">⮜</i> 解析 XML</a>
+                            <a href="../../../components/util/object/" title="对象扩展" id="doc_pager_next">对象扩展 <i class="doc-icon">⮞</i></a>
+                        </nav>
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../..","dir":"components","active":"util/shim/","test":"util/shim/shim-test.ts","imports":["util/shim"]})
+    </script>
+    <script src="../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

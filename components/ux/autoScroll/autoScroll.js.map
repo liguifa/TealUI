@@ -1,0 +1,1 @@
+{"version":3,"file":"autoScroll.js","sourceRoot":"../../..","sources":["components/ux/autoScroll/autoScroll.ts"],"sourcesContent":["/**\r\n * 自动滚屏。\r\n */\r\nexport default function autoScroll() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,6BAEC"}

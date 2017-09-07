@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
+    <meta name="version" content="0.0.1">
+    <title>分隔按钮 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/doc/doc.css">
+    <script src="../../../components/require.js"></script>
+	<script>require(["typo/reset","ui/splitButton"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ui/splitButton/splitButton.tsx" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ui/splitButton" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ui/splitButton/splitButton.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="分隔按钮">
+<a href="#分隔按钮" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>分隔按钮<div class="doc-menubutton">
+                        <small>ui/splitButton</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import \&quot;ui/splitButton\&quot;;\n&quot;)">复制 <code>import "ui/splitButton"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/splitButton\&quot;], function (splitButton_1) {\n\n\n});\n&quot;)">复制 <code>require("ui/splitButton")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/splitButton\&quot;&quot;)">复制 <code>"ui/splitButton"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">两个按钮组合成一个分割按钮。</p>
+<link rel="stylesheet" href="reset.scss" />
+<link rel="stylesheet" href="button.scss" />
+<link rel="stylesheet" href="buttonGroup.scss" />
+<link rel="stylesheet" href="icon.scss" />
+<link rel="stylesheet" href="../../control/popup/menu.scss" />
+<link rel="stylesheet" href="../../control/core/popover.scss" />
+<link rel="stylesheet" href="../../control/form/splitButton.scss" />
+<dl id="doc_toc">
+	<dt><a href="#基本用法">基本用法</a></dt>
+	<dt><a href="#javascript-方式">JavaScript 方式</a></dt>
+	<dd><a href="#自动生成菜单">自动生成菜单</a></dd>
+	<dd><a href="#html-方式生成菜单">HTML 方式生成菜单</a></dd>
+	<dt><a href="#html-方式">HTML 方式</a></dt>
+	<dt><a href="#api">API</a></dt>
+</dl>
+<h2 id="基本用法">
+<a href="#基本用法" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>基本用法</h2>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;span class=&quot;x-splitbutton x-buttongroup&quot; x-role=&quot;splitButton&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;x-button&quot;&gt;菜单&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;x-button&quot;&gt;&lt;span class=&quot;x-icon&quot;&gt;&amp;#9662;&lt;/span&gt;&lt;/button&gt;
+&lt;/span&gt;
+&lt;menu class=&quot;x-menu x-dropdownmenu&quot; x-role=&quot;menu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;###&quot;&gt;菜单 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;###&quot;&gt;菜单 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;x-menu-divider&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;
+        &lt;menu class=&quot;x-menu&quot; x-role=&quot;menu&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;###&quot;&gt;菜单 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;###&quot;&gt;菜单 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;x-menu-divider&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;###&quot;&gt;菜单 3&lt;/a&gt;&lt;/li&gt;
+        &lt;/menu&gt;
+        &lt;a href=&quot;###&quot;&gt;菜单 3&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/menu&gt;</code></pre><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;span class=&quot;x-splitbutton x-buttongroup x-radius&quot; x-role=&quot;splitButton&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;x-button x-button-bordered x-button-small&quot;&gt;菜单&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;x-button x-button-bordered x-button-small&quot;&gt;&lt;span class=&quot;x-icon&quot;&gt;&amp;#9662;&lt;/span&gt;&lt;/button&gt;
+&lt;/span&gt;
+&lt;menu class=&quot;x-menu x-dropdown&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;###&quot;&gt;菜单 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;###&quot;&gt;菜单 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;hr /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;###&quot;&gt;菜单 3&lt;/a&gt;&lt;/li&gt;
+&lt;/menu&gt;</code></pre><h2 id="javascript-方式">
+<a href="#javascript-方式" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>JavaScript 方式</h2>
+<h3 id="自动生成菜单">
+<a href="#自动生成菜单" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>自动生成菜单</h3>
+<p class="doc"><strong>必须手动引入 Controls.Menu.Menu 组件，才能自动生成菜单。</strong></p>
+<pre><code>                按钮button
+
+                    var d1 = new SplitButton('#d1');
+                    var item = d1.add('这是通过 add 添加的');
+                    Dom.on(item.elem, 'click', function(){alert(&quot;菜单项点击了&quot;)});
+</code></pre>
+<h3 id="html-方式生成菜单">
+<a href="#html-方式生成菜单" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>HTML 方式生成菜单</h3>
+<p class="doc">按钮后面的 <code>x-dropdown</code> 会被自动认为是当前按钮的子菜单。</p>
+<pre><code>                按钮button
+
+                预定义的第1个菜单
+
+                    [预定义的第2个菜单](javascript:;)
+
+                    _预定义的第3个菜单_
+
+                    var d2 = new SplitButton('#d2');
+
+--&gt;
+</code></pre>
+<h2 id="html-方式">
+<a href="#html-方式" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>HTML 方式</h2>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;span class=&quot;x-splitbutton x-buttongroup&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;x-button&quot;&gt;按钮button&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;x-button&quot;&gt;&lt;span class=&quot;x-menubutton-arrow&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+        &lt;/span&gt;</code></pre><pre><code>--&gt;
+</code></pre>
+<h2 id="api">
+<a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2>
+<p class="doc">分别参考 <a href="../Menu/Menu.html">Menu</a> 和 <a href="Button.html">Button</a> 的 API 。</p>
+<pre><code>--&gt;
+</code></pre>
+
+                        
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../..","dir":"components","active":"ui/splitButton/","imports":["typo/reset","ui/splitButton"]})
+    </script>
+    <script src="../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

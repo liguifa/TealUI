@@ -1,0 +1,35 @@
+.x-slider {
+  display: inline-block;
+  width: 100%;
+  height: 10px;
+  position: relative;
+  border: solid 1px #e0e0e0;
+}
+
+.x-slider-body {
+  position: absolute;
+  height: 100%;
+  background-color: #ededed;
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
+}
+
+.x-slider-handle {
+  position: absolute;
+  margin-left: -7px;
+  top: -3px;
+  border: solid 1px #e0e0e0;
+  border-radius: 0.15rem;
+  background-color: #e1e1e1;
+  width: 14px;
+  height: 14px;
+  cursor: w-resize;
+}
+
+.x-slider-handle:hover {
+  border-color: #bababa;
+  background-color: #c7c7c7;
+}
+
+/*# sourceMappingURL=slider.css.map */

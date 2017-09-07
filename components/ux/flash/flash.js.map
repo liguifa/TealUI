@@ -1,0 +1,1 @@
+{"version":3,"file":"flash.js","sourceRoot":"../../..","sources":["components/ux/flash/flash.ts"],"sourcesContent":["/**\r\n * Flash。\r\n */\r\nexport default function flash() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,wBAEC"}

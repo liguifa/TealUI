@@ -1,0 +1,1 @@
+{"version":3,"file":"gray.js","sourceRoot":"../../..","sources":["components/ux/gray/gray.ts"],"sourcesContent":["/**\r\n * 网站变灰。\r\n */\r\nexport default function gray() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,uBAEC"}

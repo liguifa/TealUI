@@ -1,0 +1,13 @@
+.x-toast {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  max-width: 25rem;
+}
+
+.x-toast.x-tooltip {
+  max-width: 15rem;
+  padding: 0.5rem 1.25rem;
+}
+
+/*# sourceMappingURL=toast.css.map */

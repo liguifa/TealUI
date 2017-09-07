@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
+    <meta name="version" content="0.0.1">
+    <title>数据表 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/doc/doc.css">
+    <script src="../../../components/require.js"></script>
+	<script>require(["util/dataTable"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                <li><a href="javascript:Doc.toggleUnitTest()" accesskey="t"><i class="doc-icon">☕</i>单元测试</a></li>
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/dataTable/dataTable.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/dataTable" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/dataTable/dataTable.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="数据表">
+<a href="#数据表" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>数据表<div class="doc-menubutton">
+                        <small>util/dataTable</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import \&quot;util/dataTable\&quot;;\n&quot;)">复制 <code>import "util/dataTable"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/dataTable\&quot;], function (dataTable_1) {\n\n\n});\n&quot;)">复制 <code>require("util/dataTable")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/dataTable\&quot;&quot;)">复制 <code>"util/dataTable"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">数据表</p>
+<dl id="doc_toc">
+	<dt><a href="#数据表-2">数据表</a></dt>
+	<dt><a href="#api">API</a></dt>
+</dl>
+<h2 id="数据表-2">
+<a href="#数据表-2" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>数据表</h2>
+<pre>        // 创建包含两列的表格。
+        var dt = new DataTable({
+            id: { type: 'number'  },
+            name: { type: 'string'  }
+        });
+        // 为表格添加两行数据。
+        dt.add({ id: 1, name: "a" });
+        dt.add({ id: 3, name: "b" });
+
+        // 为表格基于某列排序。
+        dt.sort("name");
+
+        // 获取指定行的内容。
+        alert(dt[0].id);
+    </pre>
+
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><div class="doc doc-scrollable"><table class="doc-api"><tr>
+                                <th class="doc-api-property">变量</th>
+                                <th class="doc-api-type">类型</th>
+                                <th class="doc-api-summary">描述</th>
+                                
+                            </tr><tr id="api/DataTable">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/dataTable/dataTable.ts#L13-213" target="_blank" title="源码：util/dataTable/dataTable.ts，第 13 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>DataTable</code>
+                                <span class="doc-api-more">: <code>any</code> = <code>Base.extend.call(Array, {
+
+    trigger: Base.prototype.trigger,
+    on: Base.prototype.on,
+    off: Base.prototype.off,
+    toString: function () {
+        return JSON.stringify(this.slice(0));
+    },
+
+    /**
+     * 当添加行时回调。
+     * @param {Number} index 要添加的行号位置。
+     * @param {Object} row 要添加的行。
+     * @return {Boolean} 如果返回 @true，则允许添加指定的行，否则不允许。
+     * @protected
+     * @inner
+     */
+    onAddRow: function(index, row){
+        return this.trigger('add', {index: index, row: row}) &amp;&amp; this.onChange();
+    },
+
+    /**
+     * 当删除行时回调。
+     * @param {Number} index 要删除的行号。
+     * @param {Number} length 要删除的行数。
+     * @return {Boolean} 如果返回 @true，则允许删除指定的行，否则不允许。
+     * @protected
+     * @inner
+     */
+    onRemoveRow: function(index, length){
+        return this.trigger('remove', {index: index, length: length}) &amp;&amp; this.onChange();
+    },
+
+    /**
+     * 当数据发生改变时回调。
+     * @protected
+     * @inner
+     */
+    onChange: function(){
+        return this.trigger('change');
+    },
+
+    /**
+     * 初始化 DataSet 类。
+     * @param {Object} [columns] 当前表格的列信息。具体格式如：
+     * 
+     *      {
+     *          a: { // 列名。表格内列应该唯一。
+     *              type: 'number', // 列类型，可填写 JavaScript typeof 返回的所有内置类型。
+     *              sorter: function(){} // 当前列的排序方案
+     *          } // , ...
+     *      }
+     * 
+     * @param {Array} [data] 要处理的原始数据。具体数值应该是和列一一对应的 JSON 对象数组。
+     * @constructor
+     * @example 
+     * new DataTable({
+     *     a: { // 列名。表格内列应该唯一。
+     *         type: 'number', // 列类型，可填写 JavaScript typeof 返回的所有内置类型。
+     *         sorter: function(){} // 当前列的排序方案
+     *     } // , ...
+     * }, [{
+     *      a: 1
+     * }, {
+     *      a: 2
+     * }]);
+     */
+    constructor: function (columns, data) {
+        this.columns = columns || {};
+        data &amp;&amp; this.set(data);
+        /*@cc_on if(!-&quot;\v1&quot;){
+         var result = [];
+         for(var p in this){
+            result[p] = this[p];
+         }
+         return result; 
+        } @*/
+    },
+
+    /**
+     * 设置当前数据集的所有数据或指定行数据。
+     * @param {Number} [index=0] 要更新的行号。
+     * @param {Object} row 要更新的新行。
+     * @return this
+     * @example 
+     * new DataTable().set(2, {});
+     * 
+     * new DataTable().set([{}]);
+     */
+    set: function (index, row) {
+        if(index != null &amp;&amp; index.constructor === Number &amp;&amp; this.onRemoveRow(index, 1) &amp;&amp; this.onAddRow(index, row)) {
+            this[index] = row;
+            if(index + 1 &gt; this.length) {
+                this.length = index + 1;
+            }
+        } else {
+            this.clear().add.apply(this, index);
+        }
+        return this;
+    },
+
+    /**
+     * 在当前数据表添加一行。
+     * @param {Number} [index=0] 要添加的行号。
+     * @param {Object} row 要添加的行。
+     * @param {Object} ... 要添加的行。
+     * @return {Number} 返回最新的长度。
+     * @example new DataTable().add([1, 2, 3])
+     */
+    add: function (index, row) {
+
+        // 判断是否包含位置标记。
+        var firstRowArgIndex = 0;
+        if (typeof index === &quot;number&quot;) {
+            firstRowArgIndex = 1;
+        }
+        for(; firstRowArgIndex &lt; arguments.length; firstRowArgIndex++)
+            if(this.onAddRow(firstRowArgIndex ? index : this.length, arguments[firstRowArgIndex]))
+                firstRowArgIndex ? this.splice(index++, 0, arguments[firstRowArgIndex]) : this.push(arguments[firstRowArgIndex]);
+
+        return this.length;
+    },
+
+    /**
+     * 删除一行数据。
+     * @param {mixed} row 要删除的行号或行本身。
+     * @param {Number} [length=1] 要删除的行数。
+     * @return {Array} 返回本次被删除的行组成的数组。如果未删除则返回空数组。
+     * @example new DataTable().remove(1)
+     */
+    remove: function (row, length) {
+        length = length == undefined ? 1 : length;
+        // 将行内容转为行号。
+        if (typeof row !== &quot;number&quot;) {
+            row = this.indexOf(row);
+        }
+        return this.onRemoveRow(row, length) ? this.splice(row, length) : [];
+    },
+
+    /**
+     * 清空当前表格的所有行。
+     * @return this
+     * @example new DataTable().clear()
+     */
+    clear: function(){
+        if(this.onRemoveRow(0, this.length)) {
+            this.length = 0;
+        }
+        return this;
+    },
+
+    /**
+     * 获取指定列或全部列的所有值。
+     * @param {mixed} [column] 要获取的列名或列号。如果不设置列，则获取全部列的值。
+     * @return {Array} 返回指定列或全部列的值。
+     * @example new DataTable().values(&quot;columnName&quot;)
+     */
+    values: function (column) {
+
+        // 未指定列名获取所有数据。
+        if(column == undefined) {
+            return this.slice(0);
+        }
+
+        // 选出指定列的值。
+        column = this.columns[column];
+        var result = [];
+        for(var i = 0; i &lt; this.length; i++) {
+            result.push(this[i][column.name]);
+        }
+        return result;
+    },
+
+    /**
+     * 对当前表进行排序。
+     * @param  {mixed} column 排序的列或排序方法。
+     * @return this
+     * @example
+     * ##### 按列名排序
+     * new DataTable().sort('columnName')
+     * ##### 按自定义排序
+     * new DataTable().sort(function(x, y){ return x.id &gt; y.id })
+     */
+    sort: function(column){
+
+        // 根据列排序。
+        if(column != null &amp;&amp; column.constructor !== Function) {
+            var col = this.columns[column];
+            column = col &amp;&amp; (col.sorter ? function(x, y){
+                return col.sorter(x[col.name], y[col.name]);
+            } : function(x, y){
+                return x[col.name] - y[col.name];
+            });
+        }
+        
+        Array.prototype.sort.call(this, column);
+        this.set(this.slice(0));
+        return this;
+    }
+
+})</code></span>
+                                <div class="doc doc-api-detail">
+                                    <p class="doc">表示一个表格数据集。</p>
+
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>any</code>
+                            </td>
+                            <td class="doc">
+                                <p class="doc">表示一个表格数据集。</p>
+
+                            </td>
+                            
+                        </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../..","dir":"components","active":"util/dataTable/","test":"util/dataTable/dataTable-test.ts","imports":["util/dataTable"]})
+    </script>
+    <script src="../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

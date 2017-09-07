@@ -1,0 +1,1 @@
+{"version":3,"file":"iframe.js","sourceRoot":"../../..","sources":["components/ux/iframe/iframe.ts"],"sourcesContent":["/**\r\n * IFrame 处理。\r\n */\r\nexport default function iframe() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,yBAEC"}

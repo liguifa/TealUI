@@ -1,0 +1,1 @@
+{"version":3,"file":"messager-test.js","sourceRoot":"../../..","sources":["components/ux/messager/messager-test.ts"],"sourcesContent":["import * as assert from \"assert\";\r\nimport * as messager from \"./messager\";\r\n\r\nexport function messagerTest() {\r\n\r\n}\r\n"],"mappings":";;IAGA;IAEA,CAAC;IAFD,oCAEC"}

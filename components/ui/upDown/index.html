@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
+    <meta name="version" content="0.0.1">
+    <title>上下按钮文本框 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/doc/doc.css">
+    <script src="../../../components/require.js"></script>
+	<script>require(["typo/reset","ui/upDown"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ui/upDown/upDown.tsx" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ui/upDown" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ui/upDown/upDown.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="上下按钮文本框">
+<a href="#上下按钮文本框" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>上下按钮文本框<div class="doc-menubutton">
+                        <small>ui/upDown</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import { UpDown } from \&quot;ui/upDown\&quot;;\n&quot;)">复制 <code>import "ui/upDown"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/upDown\&quot;], function (upDown_1) {\n\tvar UpDown = upDown_1.UpDown;\n\n\n});\n&quot;)">复制 <code>require("ui/upDown")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/upDown\&quot;&quot;)">复制 <code>"ui/upDown"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">提供上下按钮的文本框。</p>
+<link rel="stylesheet" href="reset.scss" />
+<link rel="stylesheet" href="icon.scss" />
+<link rel="stylesheet" href="../form/button.scss" />
+<link rel="stylesheet" href="../input/textBox.scss" />
+<link rel="stylesheet" href="../input/inputGroup.scss" />
+<link rel="stylesheet" href="../input/upDown.scss" />
+<dl id="doc_toc">
+	<dt><a href="#基本用法">基本用法</a></dt>
+	<dt><a href="#纯-html-实现">纯 HTML 实现</a></dt>
+	<dt><a href="#基本用法-2">基本用法</a></dt>
+	<dt><a href="#api">API</a></dt>
+	<dd><a href="#api/UpDown">UpDown 类</a></dd>
+</dl>
+<h2 id="基本用法">
+<a href="#基本用法" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>基本用法</h2>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;span class=&quot;x-updown x-inputgroup&quot; x-role=&quot;upDown&quot;&gt;
+    &lt;span&gt;&lt;button class=&quot;x-button x-updown-up&quot;&gt;&lt;span class=&quot;x-icon&quot;&gt;&amp;#9473;&lt;/span&gt;&lt;/button&gt;&lt;/span&gt;
+    &lt;input type=&quot;text&quot; class=&quot;x-textbox&quot; value=&quot;0&quot;&gt;
+    &lt;span&gt;&lt;button class=&quot;x-button x-updown-down&quot;&gt;&lt;span class=&quot;x-icon&quot;&gt;&amp;#10010;&lt;/span&gt;&lt;/button&gt;&lt;/span&gt;
+&lt;/span&gt;</code></pre><h2 id="纯-html-实现">
+<a href="#纯-html-实现" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>纯 HTML 实现</h2>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;span class=&quot;x-updown x-inputgroup&quot;&gt;
+    &lt;span&gt;&lt;button class=&quot;x-button x-updown-up&quot; onclick=&quot;this.parentNode.nextElementSibling.value--&quot;&gt;&lt;span class=&quot;x-icon&quot;&gt;&amp;#9473;&lt;/span&gt;&lt;/button&gt;&lt;/span&gt;
+    &lt;input type=&quot;text&quot; class=&quot;x-textbox&quot; value=&quot;0&quot;&gt;
+    &lt;span&gt;&lt;button class=&quot;x-button x-updown-down&quot; onclick=&quot;this.parentNode.previousElementSibling.value++&quot;&gt;&lt;span class=&quot;x-icon&quot;&gt;&amp;#10010;&lt;/span&gt;&lt;/button&gt;&lt;/span&gt;
+&lt;/span&gt;</code></pre><pre><code>本组件只提供底层的上下切换效果。具体的输入框参考 [数字输入框(numericUpDown)](numericUpDown.html) 组件。
+</code></pre>
+<h2 id="基本用法-2">
+<a href="#基本用法-2" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>基本用法</h2>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;UpDown /&gt;</code></pre><h1 id="上下按钮文本框传统风格">
+<a href="#上下按钮文本框传统风格" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>上下按钮文本框(传统风格)<div class="doc-menubutton">
+                        <small>ui/upDown</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import { UpDown } from \&quot;ui/upDown\&quot;;\n&quot;)">复制 <code>import "ui/upDown"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/upDown\&quot;], function (upDown_1) {\n\tvar UpDown = upDown_1.UpDown;\n\n\n});\n&quot;)">复制 <code>require("ui/upDown")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/upDown\&quot;&quot;)">复制 <code>"ui/upDown"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">提供上下按钮的文本框。按钮显示在文本框右边。</p>
+<link rel="stylesheet" href="reset.scss" />
+<link rel="stylesheet" href="icon.scss" />
+<link rel="stylesheet" href="../form/button.scss" />
+<link rel="stylesheet" href="../input/textBox.scss" />
+<link rel="stylesheet" href="../input/picker.scss" />
+<link rel="stylesheet" href="../input/upDown-traditional.scss" />
+```htm
+<span class="x-picker x-updown" x-role="upDown">
+    <input type="text" class="x-textbox">
+    <button class="x-button x-updown-up"><i class="x-icon">&#9652;</i></button>
+    <button class="x-button x-updown-down"><i class="x-icon">&#9662;</i></button>
+</span>
+```
+<pre><code>传统风格的文本框按钮显示在文本框右边，不适合触屏操作。建议改用 [上下按钮文本框(upDown)](upDown.html) 组件。
+</code></pre>
+
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/UpDown"><a href="#api/UpDown" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ui/upDown/upDown.tsx#L4-17" target="_blank" title="源码：ui/upDown/upDown.tsx，第 4 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>UpDown 类</h3><p class="doc">表示一个调节器。</p>
+<div class="doc doc-scrollable"><table class="doc-api"><tr>
+                            <th class="doc-api-method">方法</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/UpDown/render">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/upDown/upDown.tsx#L9-15" target="_blank" title="源码：ui/upDown/upDown.tsx，第 9 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>render<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>any</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">(保护的)当被子类重写时负责渲染当前控件。</p>
+
+                
+                
+                
+                <h4>返回值</h4>
+                <p>类型：<code>any</code></p>
+                <p class="doc">返回一个虚拟节点。</p>
+
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">(保护的)当被子类重写时负责渲染当前控件。</p>
+
+                                </td>
+                                
+                            </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../..","dir":"components","active":"ui/upDown/","imports":["typo/reset","ui/upDown"]})
+    </script>
+    <script src="../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

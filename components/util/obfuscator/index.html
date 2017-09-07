@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
+    <meta name="version" content="0.0.1">
+    <title>代码混淆 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/doc/doc.css">
+    <script src="../../../components/require.js"></script>
+	<script>require(["util/obfuscator"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                <li><a href="javascript:Doc.toggleDemoCodes()" accesskey="c"><i class="doc-icon">⅏</i>折叠源码</a></li>
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/obfuscator/obfuscator.js" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/obfuscator" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/obfuscator/obfuscator.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="代码混淆">
+<a href="#代码混淆" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>代码混淆<div class="doc-menubutton">
+                        <small>util/obfuscator</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import { obfuscate, deobfuscate } from \&quot;util/obfuscator\&quot;;\n&quot;)">复制 <code>import "util/obfuscator"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/obfuscator\&quot;], function (obfuscator_1) {\n\tvar obfuscate = obfuscator_1.obfuscate;\n\tvar deobfuscate = obfuscator_1.deobfuscate;\n\n\n});\n&quot;)">复制 <code>require("util/obfuscator")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/obfuscator\&quot;&quot;)">复制 <code>"util/obfuscator"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">JavaScript 代码混淆。</p>
+<div class="doc-demo doc-demo-collapsed">
+                    <div class="doc-demo-body doc" aria-label="示例" id="doc_demo_1">
+<textarea id="input" placeholder="输入 JavaScript 代码"></textarea>
+<button onclick="input.value = obfuscate(input.value)">混淆</button>
+<button onclick="input.value = deobfuscate(input.value)">反混淆</button>
+
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-html"><span class="doc-code-tag">&lt;<span class="doc-code-name">textarea</span> <span class="doc-code-attr">id</span>=<span class="doc-code-string">"input"</span> <span class="doc-code-attr">placeholder</span>=<span class="doc-code-string">"输入 JavaScript 代码"</span>&gt;</span><span class="doc-code-tag">&lt;/<span class="doc-code-name">textarea</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">button</span> <span class="doc-code-attr">onclick</span>=<span class="doc-code-string">"input.value = obfuscate(input.value)"</span>&gt;</span>混淆<span class="doc-code-tag">&lt;/<span class="doc-code-name">button</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">button</span> <span class="doc-code-attr">onclick</span>=<span class="doc-code-string">"input.value = deobfuscate(input.value)"</span>&gt;</span>反混淆<span class="doc-code-tag">&lt;/<span class="doc-code-name">button</span>&gt;</span></code></pre>
+<a href="javascript://查看源码" aria-label="查看源码" aria-checked="true" class="doc-demo-toggle" onclick="Doc.toggleDemoCode(this.parentNode)"><i class="doc-icon">⏷</i></a>
+                </div>
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><div class="doc doc-scrollable"><table class="doc-api"><tr>
+                                <th class="doc-api-property">变量</th>
+                                <th class="doc-api-type">类型</th>
+                                <th class="doc-api-summary">描述</th>
+                                
+                            </tr><tr id="api/obfuscate">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/obfuscator/obfuscator.js#L17-408" target="_blank" title="源码：util/obfuscator/obfuscator.js，第 17 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>obfuscate</code>
+                                <span class="doc-api-more">: <code>(_7: any, _0: any, _2: any, _8: any) =&gt; any</code> = <code>(function () {
+
+    function ICommon(that) {
+        if (that != null) {
+            that.inherit = Common.prototype.inherit;
+            that.specialize = Common.prototype.specialize
+        }
+        return that
+    };
+
+    ICommon.specialize = function (p, c) {
+        if (!p)
+            p = {};
+        if (!c)
+            c = p.constructor;
+        if (c == {}.constructor)
+            c = new Function(&quot;this.inherit()&quot;);
+        c.valueOf = new Function(&quot;return this&quot;);
+        c.valueOf.prototype = new this.valueOf;
+        c.valueOf.prototype.specialize(p);
+        c.prototype = new c.valueOf;
+        c.valueOf.prototype.constructor = c.prototype.constructor = c;
+        c.ancestor = this;
+        c.specialize = arguments.callee;
+        c.ancestorOf = this.ancestorOf;
+        return c
+    };
+    ICommon.valueOf = new Function(&quot;return this&quot;);
+    ICommon.valueOf.prototype = {
+        constructor: ICommon,
+        inherit: function () {
+            return arguments.callee.caller.ancestor.apply(this, arguments)
+        },
+        specialize: function (that) {
+            if (this == this.constructor.prototype &amp;&amp; this.constructor.specialize) {
+                return this.constructor.valueOf.prototype.specialize(that)
+            }
+            for (var i in that) {
+                switch (i) {
+                    case &quot;constructor&quot;:
+                    case &quot;toString&quot;:
+                    case &quot;valueOf&quot;:
+                        continue
+                }
+                if (typeof that[i] == &quot;function&quot; &amp;&amp; that[i] != this[i]) {
+                    that[i].ancestor = this[i]
+                }
+                this[i] = that[i]
+            }
+            if (that.toString != this.toString &amp;&amp; that.toString != {}.toString) {
+                that.toString.ancestor = this.toString;
+                this.toString = that.toString
+            }
+            return this
+        }
+    };
+    function Common() {
+    };
+
+    this.Common = ICommon.specialize({
+        constructor: Common,
+        toString: function () {
+            return &quot;[common &quot; + (this.constructor.className || &quot;Object&quot;) + &quot;]&quot;
+        },
+        instanceOf: function (klass) {
+            return this.constructor == klass || klass.ancestorOf(this.constructor)
+        }
+    });
+    Common.className = &quot;Common&quot;;
+    Common.ancestor = null;
+    Common.ancestorOf = function (klass) {
+        while (klass &amp;&amp; klass.ancestor != this)
+            klass = klass.ancestor;
+        return Boolean(klass)
+    };
+    Common.valueOf.ancestor = ICommon;
+    function ParseMaster() {
+        var E = 0, R = 1, L = 2;
+        var G = /\(/g, S = /\$\d/, I = /^\$\d+$/, T = /(['&quot;])\1\+(.*)\+\1\1$/, ES = /\\./g, Q = /'/, DE = /\x01[^\x01]*\x01/g;
+        var self = this;
+        this.add = function (e, r) {
+            if (!r)
+                r = &quot;&quot;;
+            var l = (_14(String(e)).match(G) || &quot;&quot;).length + 1;
+            if (S.test(r)) {
+                if (I.test(r)) {
+                    r = parseInt(r.slice(1)) - 1
+                } else {
+                    var i = l;
+                    var q = Q.test(_14(r)) ? '&quot;' : &quot;'&quot;;
+                    while (i)
+                        r = r.split(&quot;$&quot; + i--).join(q + &quot;+a[o+&quot; + i + &quot;]+&quot; + q);
+                    r = new Function(&quot;a,o&quot;, &quot;return&quot; + q + r.replace(T, &quot;$1&quot;) + q)
+                }
+            }
+            _33(e || &quot;/^$/&quot;, r, l)
+        };
+        this.exec = function (s) {
+            _3.length = 0;
+            return _30(_5(s, this.escapeChar).replace(new RegExp(_1, this.ignoreCase ? &quot;gi&quot; : &quot;g&quot;), _31), this.escapeChar).replace(DE, &quot;&quot;)
+        };
+        this.reset = function () {
+            _1.length = 0
+        };
+        var _3 = [];
+        var _1 = [];
+        var _32 = function () {
+            return &quot;(&quot; + String(this[E]).slice(1, -1) + &quot;)&quot;
+        };
+        _1.toString = function () {
+            return this.join(&quot;|&quot;)
+        };
+        function _33() {
+            arguments.toString = _32;
+            _1[_1.length] = arguments
+        }
+
+        function _31() {
+            if (!arguments[0])
+                return &quot;&quot;;
+            var i = 1, j = 0, p;
+            while (p = _1[j++]) {
+                if (arguments[i]) {
+                    var r = p[R];
+                    switch (typeof r) {
+                        case &quot;function&quot;:
+                            return r(arguments, i);
+                        case &quot;number&quot;:
+                            return arguments[r + i]
+                    }
+                    var d = (arguments[i].indexOf(self.escapeChar) == -1) ? &quot;&quot; : &quot;\x01&quot; + arguments[i] + &quot;\x01&quot;;
+                    return d + r
+                } else
+                    i += p[L]
+            }
+        };
+
+        function _5(s, e) {
+            return e ? s.replace(new RegExp(&quot;\\&quot; + e + &quot;(.)&quot;, &quot;g&quot;), function (m, c) {
+                _3[_3.length] = c;
+                return e
+            }) : s
+        };
+
+        function _30(s, e) {
+            var i = 0;
+            return e ? s.replace(new RegExp(&quot;\\&quot; + e, &quot;g&quot;), function () {
+                return e + (_3[i++] || &quot;&quot;)
+            }) : s
+        };
+
+        function _14(s) {
+            return s.replace(ES, &quot;&quot;)
+        }
+
+    };
+
+    ParseMaster.prototype = {
+        constructor: ParseMaster,
+        ignoreCase: false,
+        escapeChar: &quot;&quot;
+    };
+
+    function pack(_7, _0, _2, _8) {
+
+        var I = &quot;$1&quot;;
+        _7 += &quot;\n&quot;;
+        _0 = Math.min(parseInt(_0), 95);
+        function _15(s) {
+            var i, p;
+            for (i = 0; (p = _6[i]); i++) {
+                s = p(s)
+            }
+            return s
+        };
+
+        var _25 = function (p, a, c, k, e, d) {
+            while (c--)
+                if (k[c])
+                    p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c]);
+            return p
+        };
+        var _26 = function () {
+            if (!''.replace(/^/, String)) {
+                while (c--)
+                    d[e(c)] = k[c] || e(c);
+                k = [
+                    function (e) {
+                        return d[e]
+                    }];
+
+                e = function () {
+                    return '\\w+'
+                };
+                c = 1
+            }
+        };
+        var _6 = [];
+        function _4(p) {
+            _6[_6.length] = p
+        };
+
+        function _18(s) {
+            var p = new ParseMaster;
+            p.escapeChar = &quot;\\&quot;;
+            p.add(/'[^'\n\r]*'/, I);
+            p.add(/&quot;[^&quot;\n\r]*&quot;/, I);
+            p.add(/\/\/[^\n\r]*[\n\r]/, &quot; &quot;);
+            p.add(/\/\*[^*]*\*+([^\/][^*]*\*+)*\//, &quot; &quot;);
+            p.add(/\s+(\/[^\/\n\r\*][^\/\n\r]*\/g?i?)/, &quot;$2&quot;);
+            p.add(/[^\w\x24\/'&quot;*)\?:]\/[^\/\n\r\*][^\/\n\r]*\/g?i?/, I);
+            if (_8)
+                p.add(/;;;[^\n\r]+[\n\r]/);
+            p.add(/\(;;\)/, I);
+            p.add(/;+\s*([};])/, &quot;$2&quot;);
+            s = p.exec(s);
+            p.add(/(\b|\x24)\s+(\b|\x24)/, &quot;$2 $3&quot;);
+            p.add(/([+\-])\s+([+\-])/, &quot;$2 $3&quot;);
+            p.add(/\s+/, &quot;&quot;);
+            return p.exec(s)
+        };
+
+        function _17(s) {
+            var p = new ParseMaster;
+            p.add(/((\x24+)([a-zA-Z_]+))(\d*)/, function (m, o) {
+                var l = m[o + 2].length;
+                var s = l - Math.max(l - m[o + 3].length, 0);
+                return m[o + 1].substr(s, l) + m[o + 4]
+            });
+            var r = /\b_[A-Za-z\d]\w*/;
+            var k = _13(s, _9(r), _21);
+            var e = k.e;
+            p.add(r, function (m, o) {
+                return e[m[o]]
+            });
+            return p.exec(s)
+        };
+
+        function _16(s) {
+            if (_0 &gt; 62)
+                s = _20(s);
+            var p = new ParseMaster;
+            var e = _12(_0);
+            var r = (_0 &gt; 62) ? /\w\w+/ : /\w+/;
+            k = _13(s, _9(r), e);
+            var e = k.e;
+            p.add(r, function (m, o) {
+                return e[m[o]]
+            });
+            return s &amp;&amp; _27(p.exec(s), k)
+        };
+
+        function _13(s, r, e) {
+            var a = s.match(r);
+            var so = [];
+            var en = {};
+            var pr = {};
+            if (a) {
+                var u = [];
+                var p = {};
+                var v = {};
+                var c = {};
+                var i = a.length, j = 0, w;
+                do {
+                    w = &quot;$&quot; + a[--i];
+                    if (!c[w]) {
+                        c[w] = 0;
+                        u[j] = w;
+                        p[&quot;$&quot; + (v[j] = e(j))] = j++
+                    }
+                    c[w]++
+                } while (i);
+                i = u.length;
+                do {
+                    w = u[--i];
+                    if (p[w] != null) {
+                        so[p[w]] = w.slice(1);
+                        pr[p[w]] = true;
+                        c[w] = 0
+                    }
+                } while (i);
+                u.sort(function (m1, m2) {
+                    return c[m2] - c[m1]
+                });
+                j = 0;
+                do {
+                    if (so[i] == null)
+                        so[i] = u[j++].slice(1);
+                    en[so[i]] = v[i]
+                } while (++i &lt; u.length)
+            }
+            return {
+                s: so,
+                e: en,
+                p: pr
+            }
+        };
+
+        function _27(p, k) {
+            var E = _10(&quot;e\\(c\\)&quot;, &quot;g&quot;);
+            p = &quot;'&quot; + _5(p) + &quot;'&quot;;
+            var a = Math.min(k.s.length, _0) || 1;
+            var c = k.s.length;
+            for (var i in k.p)
+                k.s[i] = &quot;&quot;;
+            k = &quot;'&quot; + k.s.join(&quot;|&quot;) + &quot;'.split('|')&quot;;
+            var e = _0 &gt; 62 ? _11 : _12(a);
+            e = String(e).replace(/_0/g, &quot;a&quot;).replace(/arguments\.callee/g, &quot;e&quot;);
+            var i = &quot;c&quot; + (a &gt; 10 ? &quot;.toString(a)&quot; : &quot;&quot;);
+            if (_2) {
+                var d = _19(_26);
+                if (_0 &gt; 62)
+                    d = d.replace(/\\\\w/g, &quot;[\\xa1-\\xff]&quot;);
+                else if (a &lt; 36)
+                    d = d.replace(E, i);
+                if (!c)
+                    d = d.replace(_10(&quot;(c)\\s*=\\s*1&quot;), &quot;$1=0&quot;)
+            }
+            var u = String(_25);
+            if (_2) {
+                u = u.replace(/\{/, &quot;{&quot; + d + &quot;;&quot;)
+            }
+            u = u.replace(/&quot;/g, &quot;'&quot;);
+            if (_0 &gt; 62) {
+                u = u.replace(/'\\\\b'\s*\+|\+\s*'\\\\b'/g, &quot;&quot;)
+            }
+            if (a &gt; 36 || _0 &gt; 62 || _2) {
+                u = u.replace(/\{/, &quot;{e=&quot; + e + &quot;;&quot;)
+            } else {
+                u = u.replace(E, i)
+            }
+            u = pack(u, 0, false, true);
+            var p = [p, a, c, k];
+            if (_2) {
+                p = p.concat(0, &quot;{}&quot;)
+            }
+            return &quot;eval(&quot; + u + &quot;(&quot; + p + &quot;))\n&quot;
+        };
+
+        function _12(a) {
+            return a &gt; 10 ? a &gt; 36 ? a &gt; 62 ? _11 : _22 : _23 : _24
+        };
+
+        var _24 = function (c) {
+            return c
+        };
+        var _23 = function (c) {
+            return c.toString(36)
+        };
+        var _22 = function (c) {
+            return (c &lt; _0 ? '' : arguments.callee(parseInt(c / _0))) + ((c = c % _0) &gt; 35 ? String.fromCharCode(c + 29) : c.toString(36))
+        };
+        var _11 = function (c) {
+            return (c &lt; _0 ? '' : arguments.callee(c / _0)) + String.fromCharCode(c % _0 + 161)
+        };
+        var _21 = function (c) {
+            return &quot;_&quot; + c
+        };
+        function _5(s) {
+            return s.replace(/([\\'])/g, &quot;\\$1&quot;)
+        };
+
+        function _20(s) {
+            return s.replace(/[\xa1-\xff]/g, function (m) {
+                return &quot;\\x&quot; + m.charCodeAt(0).toString(16)
+            })
+        };
+
+        function _10(s, f) {
+            return new RegExp(s.replace(/\$/g, &quot;\\$&quot;), f)
+        };
+
+        function _19(f) {
+            with (String(f))
+            return slice(indexOf(&quot;{&quot;) + 1, lastIndexOf(&quot;}&quot;))
+        };
+
+        function _9(r) {
+            return new RegExp(String(r).slice(1, -1), &quot;g&quot;)
+        };
+
+        _4(_18);
+        if (_8)
+            _4(_17);
+        if (_0)
+            _4(_16);
+        return _15(_7)
+    };
+
+    return pack;
+
+})()</code></span>
+                                <div class="doc doc-api-detail">
+                                    <p class="doc">(常量)混淆指定的 JavaScript 代码。</p>
+<h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx">obfuscate(<span class="doc-code-string">"var a =1"</span>)</code></pre>
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>function</code>
+                            </td>
+                            <td class="doc">
+                                <p class="doc">(常量)混淆指定的 JavaScript 代码。</p>
+
+                            </td>
+                            
+                        </tr></table><table class="doc-api"><tr>
+                            <th class="doc-api-method">函数</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/deobfuscate">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/obfuscator/obfuscator.js#L410-421" target="_blank" title="源码：util/obfuscator/obfuscator.js，第 410 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>deobfuscate<i class="doc-tip doc-api-ellipsis">(obfuscatedCode)</i><span class="doc-tip doc-api-more">(obfuscatedCode:<code>string</code>):<code>string</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">取消混淆指定的 JavaScript 代码。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>obfuscatedCode<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>string</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">已混淆的代码。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>string</code></p>
+                <p class="doc">返回取消混淆的代码。</p>
+
+                <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx">deobfuscate(<span class="doc-code-string">"var a =1"</span>)</code></pre>
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">取消混淆指定的 JavaScript 代码。</p>
+
+                                </td>
+                                
+                            </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../..","dir":"components","active":"util/obfuscator/","imports":["util/obfuscator"]})
+    </script>
+    <script src="../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

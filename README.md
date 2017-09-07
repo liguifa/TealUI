@@ -1,32 +1,34 @@
-# TealUI 3.0 全新升级 ！
+# TealUI
+打造小而全、精而美的开源组件库。
 
-TealUI 是一个完整的前端开源代码库。
+TealUI = CSS 设计 + UI 组件 + JS 函数库 + 交互规范 + 前端架构 + 开发工具
 
-TealUI = CSS 库 + UI 控件库 + JS 工具库 + 前端构建思路 + ...
+## 特性
+- 300+ 个组件：通用前端解决方案，同时支持多个平台！
+- 无需设计：快速搭建漂亮界面
+- 高可定制：轻松打造团队内部组件库
+- 更懂国情：专为中文优化
 
-* 无需设计：快速搭建漂亮页面；同时支持电脑和手机！
-* 200+ 个组件：复制即可使用，快速上手。
-* 更懂国情：适合中文排版，提供城市组件，为国内需求定制。
-* 轻量、高性能：完全开源和免费。
+## 开始
+- [首页](http://tealui.com)
+- [组件(demo)](http://tealui.com/components/)
+- [文档](http://tealui.com/docs/)
 
-#### 加入我们
+## 开发
+```bash
+git clone https://github.com/teal/TealUI --branch dev
+cd TealUI
+npm install
+npm start
+```
 
-TealUI 目前正在紧张开发中，尚未对外发布。如果您支持本库，可先加入 QQ 群：177503954 。
+## 协议
+TealUI 完全开源免费，可用于商业项目。
+但不得基于本库开发新的 UI 框架再对外发布或销售。
 
-#### 开源协议
-
-TealUI 完全免费和开源，可用于商业项目。但不得基于本库开发新的 UI 库再发布或销售。
-
-#### 如何开始
-
-[访问项目主页](http://teal.github.io/TealUI)
-
-[下载整个项目](https://github.com/Teal/TealUI/zipball/master)
-
-#### Git
-
-[关注项目](https://github.com/Teal/TealUI/watch)
-
-[提交 BUG 或反馈](https://github.com/Teal/TealUI/issues)
-
-Git Fork [https://github.com/Teal/TealUI](https://github.com/Teal/TealUI/fork_select)
+## 贡献
+欢迎任何形式的[贡献](http://tealui.com/docs/about/contribute.html)：
+- [关注项目](https://github.com/Teal/TealUI/subscription)
+- [在 Gitter 参与讨论](https://gitter.im/Teal/TealUI)
+- [提交 BUG & 需求](https://github.com/Teal/TealUI/issues)
+- [提交你的代码(PR)](https://github.com/Teal/TealUI/pulls)

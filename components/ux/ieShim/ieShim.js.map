@@ -1,0 +1,1 @@
+{"version":3,"file":"ieShim.js","sourceRoot":"../../..","sources":["components/ux/ieShim/ieShim.ts"],"sourcesContent":["/**\r\n * IE 兼容补丁。\r\n */\r\nexport default function ieShim() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,yBAEC"}

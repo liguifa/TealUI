@@ -1,0 +1,1 @@
+{"version":3,"file":"animate.js","sourceRoot":"../../..","sources":["components/ux/animate/animate.ts"],"sourcesContent":["/**\r\n * 动画。\r\n */\r\nexport default function animate() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,0BAEC"}

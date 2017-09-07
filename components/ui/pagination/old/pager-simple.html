@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld">
+    <title>页码 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+	<script>require(["ui/pagination/old/pager-simple"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ui/pagination/old/pager-simple.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ui/pagination/old/pager-simple" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                
+                            </menu>
+                        </aside>
+                        <h1 id="页码">
+<a href="#页码" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>页码<div class="doc-menubutton">
+                        <small>ui/pagination/old/pager-simple</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import generatePager, { locale, initPager } from \&quot;ui/pagination/old/pager-simple\&quot;;\n&quot;)">复制 <code>import "ui/pagination/old/pager-simple"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/pagination/old/pager-simple\&quot;], function (pager-simple_1) {\n\tvar generatePager = pager-simple_1.default;\n\tvar locale = pager-simple_1.locale;\n\tvar initPager = pager-simple_1.initPager;\n\n\n});\n&quot;)">复制 <code>require("ui/pagination/old/pager-simple")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/pagination/old/pager-simple\&quot;&quot;)">复制 <code>"ui/pagination/old/pager-simple"</code></a></li>
+                        </menu>
+                    </div></h1>
+
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><div class="doc doc-scrollable"><table class="doc-api"><tr>
+                                <th class="doc-api-property">变量</th>
+                                <th class="doc-api-type">类型</th>
+                                <th class="doc-api-summary">描述</th>
+                                
+                            </tr><tr id="api/locale">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/pagination/old/pager-simple.ts#L10-20" target="_blank" title="源码：ui/pagination/old/pager-simple.ts，第 10 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>locale</code>
+                                <span class="doc-api-more">: <code>{ item: string; itemDisabled: string; prev: string; next: string; prevDisabled: string; nextDisabled: string; ellipsis: string; }</code> = <code>{
+    item: '&lt;a href=&quot;{href}&quot; title=&quot;转到：第 {page} 页&quot;&gt;{page}&lt;/a&gt;',
+    itemDisabled: '&lt;a class=&quot;x-pager-actived&quot;&gt;{page}&lt;/a&gt;',
+    // prev: '&lt;a href=&quot;{href}&quot;{class} title=&quot;上一页：第{page}页&quot;&gt;&lt;span class=&quot;x-icon&quot;&gt;«&lt;/span&gt;&lt;/a&gt;',
+    // next: '&lt;a href=&quot;{href}&quot;{class} title=&quot;下一页：第{page}页&quot;&gt;&lt;span class=&quot;x-icon&quot;&gt;»&lt;/span&gt;&lt;/a&gt;'
+    prev: '&lt;a href=&quot;{href}&quot; class=&quot;x-pager-prev&quot; title=&quot;上一页：第 {page} 页&quot;&gt;&lt;span class=&quot;x-icon&quot;&gt;☪&lt;/span&gt;上一页&lt;/a&gt;',
+    next: '&lt;a href=&quot;{href}&quot; class=&quot;x-pager-next&quot; title=&quot;下一页：第 {page} 页&quot;&gt;下一页 &lt;span class=&quot;x-icon&quot;&gt;↠&lt;/span&gt;&lt;/a&gt;',
+    prevDisabled: '',
+    nextDisabled: '',
+    ellipsis: ' ... '
+}</code></span>
+                                <div class="doc doc-api-detail">
+                                    <p class="doc">(常量)存储本地化文案配置。</p>
+
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>object</code>
+                            </td>
+                            <td class="doc">
+                                <p class="doc">(常量)存储本地化文案配置。</p>
+
+                            </td>
+                            
+                        </tr></table><table class="doc-api"><tr>
+                            <th class="doc-api-method">函数</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/generatePager">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/pagination/old/pager-simple.ts#L22-83" target="_blank" title="源码：ui/pagination/old/pager-simple.ts，第 22 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>generatePager<i class="doc-tip doc-api-ellipsis">(pageCount, ...)</i><span class="doc-tip doc-api-more">(pageCount:<code>number</code>, currentPage?:<code>number</code>, href?:<code>string</code>, maxWidth?:<code>number</code>, minWidth?:<code>number</code>):<code>string</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">生成一段页码 HTML。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>pageCount<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>number</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">总页数。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>currentPage</code>
+                                </td>
+                                <td>
+                                    <code>number</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">当前页数。页码从 1 开始。</p>
+
+                                </td>
+                                <td>
+                                    <code>+(/[?&amp;]page=(\d+)/.exec(location.href) || 0)[1] || 1</code>
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>href</code>
+                                </td>
+                                <td>
+                                    <code>string</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">生成的链接地址。其中 {page} 表示当前的页码。</p>
+
+                                </td>
+                                <td>
+                                    <code>/([?&amp;]page)=(\d+)/.test(location.search) ? location.search.replace(/([?&amp;]page)=(\d+)/, '$1={page}') : (location.search ? location.search + '&amp;' : '?') + 'page={page}'</code>
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>maxWidth</code>
+                                </td>
+                                <td>
+                                    <code>number</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">最多显示的页数(不含上一页和下一页)。建议设置为奇数。</p>
+
+                                </td>
+                                <td>
+                                    <code>9</code>
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>minWidth</code>
+                                </td>
+                                <td>
+                                    <code>number</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">首尾保留的页数。</p>
+
+                                </td>
+                                <td>
+                                    <code>2</code>
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>string</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">生成一段页码 HTML。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/initPager">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/pagination/old/pager-simple.ts#L85-106" target="_blank" title="源码：ui/pagination/old/pager-simple.ts，第 85 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>initPager<i class="doc-tip doc-api-ellipsis">(elem, ...)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, callback?:<code>function</code>, pageCount?:<code>number</code>, currentPage?:<code>number</code>, maxWidth?:<code>number</code>, minWidth?:<code>number</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">生成包含指定分页信息的分页器 HTML。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>elem<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>HTMLElement</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">渲染的父节点。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>callback</code>
+                                </td>
+                                <td>
+                                    <code>((page?: number | undefined) =&gt; boolean | void) | undefined</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">点击分页后的回调函数或生成的链接个数。其中 {page} 表示当前的页码。{pageSize} 表示每页的项数。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>pageCount</code>
+                                </td>
+                                <td>
+                                    <code>number | undefined</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">总页数。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>currentPage</code>
+                                </td>
+                                <td>
+                                    <code>number</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">当前页数。页码从 1 开始。</p>
+
+                                </td>
+                                <td>
+                                    <code>1</code>
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>maxWidth</code>
+                                </td>
+                                <td>
+                                    <code>number | undefined</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">最多显示的页数(不含上一页和下一页)。建议设置为奇数。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>minWidth</code>
+                                </td>
+                                <td>
+                                    <code>number | undefined</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">首尾保留的页数。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">生成包含指定分页信息的分页器 HTML。</p>
+
+                                </td>
+                                
+                            </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ui/pagination/","imports":["ui/pagination/old/pager-simple"]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"file":"borderLayout.js","sourceRoot":"../../..","sources":["components/ux/borderLayout/borderLayout.ts"],"sourcesContent":["/**\r\n * 边框布局。\r\n */\r\nexport default function borderLayout() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,+BAEC"}

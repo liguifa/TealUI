@@ -1,0 +1,1 @@
+{"version":3,"file":"highlight.js","sourceRoot":"../../..","sources":["components/ux/highlight/highlight.ts"],"sourcesContent":["/**\r\n * 高亮。\r\n */\r\nexport default function highlight() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,4BAEC"}

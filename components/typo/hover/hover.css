@@ -1,0 +1,10 @@
+.x-hover-show {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.x-hover:hover .x-hover-show {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=hover.css.map */

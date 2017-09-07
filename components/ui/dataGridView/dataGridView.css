@@ -1,0 +1,32 @@
+@charset "UTF-8";
+.x-datagridview thead, .x-datagridview tfoot {
+  background-color: #f5f5f5;
+}
+
+.x-datagridview-sort thead {
+  cursor: pointer;
+}
+
+.x-datagridview-sort thead th::after {
+  content: "⬍";
+  color: #999;
+  font-family: "x-icon";
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.x-datagridview-sort thead th:hover::after {
+  opacity: 1;
+}
+
+.x-datagridview-asc::after {
+  content: "⏷" !important;
+  opacity: 1 !important;
+}
+
+.x-datagridview-desc::after {
+  content: "⏶" !important;
+  opacity: 1 !important;
+}
+
+/*# sourceMappingURL=dataGridView.css.map */

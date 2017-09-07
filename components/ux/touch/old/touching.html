@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>touching - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                
+                                
+                                
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/edit/master/components/ux/touch/old/touching.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <div id="elem" class="doc-box"><a>#elem</a></div>
+<dl id="doc_toc">
+	<dt><a href="#滑动-small源码-utilitydomswipejssmall">滑动 &lt;small&gt;(源码: utility/dom/swipe.js)&lt;/small&gt;</a></dt>
+	<dt><a href="#转动-small源码-utilitydomtouchrotatejssmall">转动 &lt;small&gt;(源码: utility/dom/touchRotate.js)&lt;/small&gt;</a></dt>
+</dl>
+<h2 id="滑动-small源码-utilitydomswipejssmall">
+<a href="#滑动-small源码-utilitydomswipejssmall" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>滑动 <small>(源码: <a href="../../utility/dom/swipe.js">utility/dom/swipe.js</a>)</small></h2>
+<p class="doc">| API | 描述 | 示例 |
+| <code>_dom_.swippable</code> | 旋转指定对象 |</p>
+<pre>var elem = document.getElementById('elem');
+                var log = document.getElementById('log');
+                elem.swippable({
+                    onSwipeStart: function () {
+                        log.innerHTML = '开始滑动';
+                    }, 
+                    onSwipeMove: function () {
+                        if (this.state === 1) {
+                            log.innerHTML = '正在水平滑动：' + this.endX;
+                        } else {
+                            log.innerHTML = '正在垂直滑动：' + this.endY;
+                        }
+                    },
+                    onTap: function() {
+                        log.innerHTML = '按下';
+                    },
+                    onLongTap: function () {
+                        log.innerHTML = '长按';
+                    },
+                    onShortTap: function () {
+                        log.innerHTML = '短按';
+                    },
+                    onSwipeEnd: function () {
+                        log.innerHTML = '滑动结束';
+                    }
+        });</pre>
+<p class="doc">|</p>
+<h2 id="转动-small源码-utilitydomtouchrotatejssmall">
+<a href="#转动-small源码-utilitydomtouchrotatejssmall" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>转动 <small>(源码: <a href="../../utility/dom/touchRotate.js">utility/dom/touchRotate.js</a>)</small></h2>
+<p class="doc">| API | 描述 | 示例 |
+| <code>_dom_.scrollTo</code> | 旋转指定对象 |</p>
+<pre>$("#elem").touchRotate({
+
+                touchMove: function(radius){
+
+                }
+
+            });</pre>
+<p class="doc">|</p>
+
+                        
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ux/touch/old/touching.html","imports":[]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

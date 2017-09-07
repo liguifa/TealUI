@@ -1,0 +1,91 @@
+.x-tab-bottom, .x-tab-left, .x-tab-right {
+  border-bottom: 0;
+}
+
+.x-tabbody {
+  border-width: 1px 1px 0;
+}
+
+.x-tab + .x-tabbody {
+  border-width: 0 1px 1px;
+}
+
+.x-tab-bottom {
+  border-top: 1px solid #e0e0e0;
+}
+
+.x-tab-bottom a {
+  margin: -1px 0 0 -1px;
+}
+
+.x-tab-bottom li:first-child a {
+  margin-left: 0;
+  border-radius: 0 0 0 0.2rem;
+}
+
+.x-tab-bottom li:last-child a {
+  border-radius: 0 0 0.2rem;
+}
+
+.x-tab-bottom .x-tab-active a {
+  border-color: #fff #e0e0e0 #e0e0e0;
+}
+
+.x-tab-left li, .x-tab-right li {
+  display: block;
+  float: none;
+}
+
+.x-tab-left {
+  float: left;
+  margin-right: 1rem;
+  border-width: 0 1px 0 0;
+}
+
+.x-tab-left a {
+  margin: -1px -1px 0 0;
+}
+
+.x-tab-left li:first-child a {
+  margin-top: 0;
+  border-radius: 0.2rem 0 0;
+}
+
+.x-tab-left li:last-child a {
+  border-radius: 0 0 0 0.2rem;
+}
+
+.x-tab-left .x-tab-active a {
+  border-color: #e0e0e0 #fff #e0e0e0 #e0e0e0;
+}
+
+.x-tab-left + .x-tabbody {
+  border-width: 1px 1px 1px 0;
+}
+
+.x-tab-right {
+  float: right;
+  margin-left: 1rem;
+  border-width: 0 0 0 1px;
+}
+
+.x-tab-right a {
+  margin-left: -1px;
+  margin-bottom: 0;
+  border-width: 1px;
+}
+
+.x-tab-right li:not(:first-child) {
+  border-top-width: 0;
+}
+
+.x-tab-right li:last-child a {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0.2rem;
+}
+
+.x-tab-right .x-tab-actived a {
+  border-color: #e0e0e0 #e0e0e0 #e0e0e0 #fff;
+}
+
+/*# sourceMappingURL=tab-more.css.map */

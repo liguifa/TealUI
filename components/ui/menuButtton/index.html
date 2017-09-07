@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
+    <meta name="version" content="0.0.1">
+    <title>菜单按钮 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/doc/doc.css">
+    <script src="../../../components/require.js"></script>
+	<script>require(["typo/reset","ui/menuButtton"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ui/menuButtton/menuButtton.tsx" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ui/menuButtton" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ui/menuButtton/menuButtton.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="菜单按钮">
+<a href="#菜单按钮" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>菜单按钮<div class="doc-menubutton">
+                        <small>ui/menuButtton</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import { MenuButtton } from \&quot;ui/menuButtton\&quot;;\n&quot;)">复制 <code>import "ui/menuButtton"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/menuButtton\&quot;], function (menuButtton_1) {\n\tvar MenuButtton = menuButtton_1.MenuButtton;\n\n\n});\n&quot;)">复制 <code>require("ui/menuButtton")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/menuButtton\&quot;&quot;)">复制 <code>"ui/menuButtton"</code></a></li>
+                        </menu>
+                    </div></h1>
+<dl id="doc_toc">
+	<dt><a href="#基本用法">基本用法</a></dt>
+	<dt><a href="#javascript-方式">JavaScript 方式</a></dt>
+	<dd><a href="#自动生成菜单">自动生成菜单</a></dd>
+	<dd><a href="#html-方式定制菜单">HTML 方式定制菜单</a></dd>
+	<dt><a href="#api">API</a></dt>
+	<dd><a href="#api/MenuButtton">MenuButtton 类</a></dd>
+</dl>
+<h2 id="基本用法">
+<a href="#基本用法" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>基本用法</h2>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;MenuButtton /&gt;
+```# 菜单按钮
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;reset.scss&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;button.scss&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;icon.scss&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;../../control/popup/menu.scss&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;../../control/core/popover.scss&quot; /&gt;
+可以打开更多菜单功能的按钮。
+
+## 基本用法
+```htm
+菜单 &amp;#9662;
+
+    [菜单 1](###)
+    [菜单 2](###)
+
+            [菜单 1](###)
+            [菜单 2](###)
+
+            [菜单 3](###)
+
+        [菜单 3](###)</code></pre><p class="doc">MenuButton 使用 <a href="../Core/IDropDownOwner.html">IDropDownOwner</a> 创建和管理下拉菜单。其默认的菜单类型是 <a href="../Menu/Menu.html">Menu</a>。另可参考类似的 <a href="../Form/ComboBox.html">ComboBox</a> 组件。</p>
+<h2 id="javascript-方式">
+<a href="#javascript-方式" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>JavaScript 方式</h2>
+<h3 id="自动生成菜单">
+<a href="#自动生成菜单" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>自动生成菜单</h3>
+<p class="doc"><strong>必须手动引入 Controls.Menu.Menu 组件，才能自动生成菜单。</strong></p>
+<pre><code>        菜单Menu_ _
+
+            var d1 = new MenuButton('#d1');
+            var newItem = d1.add('这是通过 add 添加的');
+            Dom.on(newItem.elem, 'click', function(){alert(&quot;菜单项点击了&quot;)});
+</code></pre>
+<h3 id="html-方式定制菜单">
+<a href="#html-方式定制菜单" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>HTML 方式定制菜单</h3>
+<p class="doc">按钮后面的 <code>x-dropdown</code> 会被自动认为是当前按钮的子菜单。</p>
+<pre><code>        菜单Menu_ _
+
+            预定义的第1个菜单
+
+                [预定义的第2个菜单](javascript:;)
+
+                _预定义的第3个菜单_
+
+            var d2 = new MenuButton('#d2');
+
+    相关 API 分别参考 [Menu](../Menu/Menu.html) 和 [Button](Button.html) 。
+
+--&gt;
+</code></pre>
+
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/MenuButtton"><a href="#api/MenuButtton" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ui/menuButtton/menuButtton.tsx#L4-17" target="_blank" title="源码：ui/menuButtton/menuButtton.tsx，第 4 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>MenuButtton 类</h3><p class="doc">表示一个菜单按钮。</p>
+<div class="doc doc-scrollable"><table class="doc-api"><tr>
+                            <th class="doc-api-method">方法</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/MenuButtton/render">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/menuButtton/menuButtton.tsx#L9-15" target="_blank" title="源码：ui/menuButtton/menuButtton.tsx，第 9 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>render<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>any</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">(保护的)当被子类重写时负责渲染当前控件。</p>
+
+                
+                
+                
+                <h4>返回值</h4>
+                <p>类型：<code>any</code></p>
+                <p class="doc">返回一个虚拟节点。</p>
+
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">(保护的)当被子类重写时负责渲染当前控件。</p>
+
+                                </td>
+                                
+                            </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../..","dir":"components","active":"ui/menuButtton/","imports":["typo/reset","ui/menuButtton"]})
+    </script>
+    <script src="../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"file":"iframe-test.js","sourceRoot":"../../..","sources":["components/ux/iframe/iframe-test.ts"],"sourcesContent":["import * as assert from \"assert\";\r\nimport * as iframe from \"./iframe\";\r\n\r\nexport function iframeTest() {\r\n\r\n}\r\n"],"mappings":";;IAGA;IAEA,CAAC;IAFD,gCAEC"}

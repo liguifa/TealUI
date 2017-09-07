@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
+    <meta name="version" content="0.0.1">
+    <title>菜单 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/doc/doc.css">
+    <script src="../../../components/require.js"></script>
+	<script>require(["typo/reset","ui/menu"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ui/menu/menu.tsx" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ui/menu" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ui/menu/menu.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="菜单">
+<a href="#菜单" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>菜单<div class="doc-menubutton">
+                        <small>ui/menu</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import { Menu } from \&quot;ui/menu\&quot;;\n&quot;)">复制 <code>import "ui/menu"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/menu\&quot;], function (menu_1) {\n\tvar Menu = menu_1.Menu;\n\n\n});\n&quot;)">复制 <code>require("ui/menu")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/menu\&quot;&quot;)">复制 <code>"ui/menu"</code></a></li>
+                        </menu>
+                    </div></h1>
+<dl id="doc_toc">
+	<dt><a href="#基本用法">基本用法</a></dt>
+	<dt><a href="#api">API</a></dt>
+	<dd><a href="#api/Menu">Menu 类</a></dd>
+</dl>
+<h2 id="基本用法">
+<a href="#基本用法" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>基本用法</h2>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;Menu /&gt;</code></pre><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>J+ Library</title>
+    <link href="../../controls/core/assets/styles/base.css" rel="stylesheet" type="text/css">
+    <link href="../../controls/display/assets/styles/icon.less" rel="stylesheet/less" type="text/css" />
+    <link href="../../controls/button/assets/styles/menu.less" rel="stylesheet/less" type="text/css" />
+<pre><code>&lt;script src=&quot;../../system/core/assets/scripts/base.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../system/dom/assets/scripts/base.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../controls/core/assets/scripts/base.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../controls/core/assets/scripts/scrollablecontrol.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../controls/core/assets/scripts/listcontrol.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../controls/core/assets/scripts/treecontrol.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../controls/button/assets/scripts/menu.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;../../assets/demo/less.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../assets/demo/demo.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+</code></pre>
+</head>
+<body>
+    <ul id="a" class="x-menu">
+        <li>
+            a-1-text
+        </li>
+        <li>
+           -
+        </li>
+        <li>
+            <a class="x-menuitem" href="javascript:alert(0)">
+                a-2-menuitem
+            </a>
+        </li>
+        <li>
+            <div class="x-menuseperator"> </div>
+        </li>
+        <li>
+            <div>
+                a-3-custom
+            </div>
+        </li>
+        <li>
+            subMenu
+            <ul id="b" class="x-menu">
+                 <li>b-1</li>
+                 <li>b-2</li>
+             </ul>
+        </li>
+    </ul>
+<pre><code>&lt;aside class=&quot;demo&quot;&gt;
+    &lt;script&gt;
+        var a = new Menu(&quot;a&quot;); 
+        a.add('-');
+        a.add('a-4-js').on('click', trace); 
+        a.add(new MenuSeperator);
+        a.add(new MenuItem().setText('a-5-menuitem'));
+        
+        var b = new Menu();
+        b.add('b-1');
+        b.add('-');
+        b.add('b-2');
+        a.item(-1).setSubMenu(b);
+        
+        a.add('a-6-submenu').getSubMenu().add('c-1-js', '-', new MenuItem().setText('c-2-menuitem'));
+
+    &lt;/script&gt;
+&lt;/aside&gt;
+&lt;section class=&quot;demo-test&quot;&gt;
+    &lt;hr style=&quot;margin-top: 300px;&quot;&gt;
+    &lt;ul class=&quot;x-menu&quot;&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;内容 tmp&lt;/li&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;&lt;a class=&quot;x-menuitem x-menuitem-submenu x-menuitem-selected&quot;
+            href=&quot;#&quot;&gt;内容 tmp&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;&lt;a class=&quot;x-menuitem x-menuitem-submenu&quot; href=&quot;#&quot;&gt;内容 tmp&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;
+            &lt;div class=&quot;x-menuseperator&quot;&gt;&lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;&lt;a class=&quot;x-menuitem&quot; href=&quot;#&quot;&gt;内容 tmp&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>J+ Library</title>
+<pre><code>	&lt;link href=&quot;../../controls/core/assets/styles/base.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+	&lt;link href=&quot;../../controls/display/assets/styles/icon.less&quot; rel=&quot;stylesheet/less&quot; type=&quot;text/css&quot; /&gt;
+	&lt;link href=&quot;../../controls/button/assets/styles/menu-alt.less&quot; rel=&quot;stylesheet/less&quot; type=&quot;text/css&quot; /&gt;
+	
+	&lt;script src=&quot;../../system/core/assets/scripts/base.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;../../system/dom/assets/scripts/base.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;../../controls/core/assets/scripts/base.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;../../controls/button/assets/scripts/menu-alt.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+	
+	&lt;script src=&quot;../../assets/demo/less.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;../../assets/demo/demo.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;ul id=&quot;a&quot; class=&quot;x-menu&quot;&gt;
+    &lt;li&gt;
+        a-1-text
+    &lt;/li&gt;
+    &lt;li&gt;
+       -
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class=&quot;x-menuitem&quot; href=&quot;javascript:alert(0)&quot;&gt;
+            a-2-menuitem
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;div class=&quot;x-menuseperator&quot;&gt;&lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;div&gt;
+            a-3-custom
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        subMenu
+        &lt;ul id=&quot;b&quot; class=&quot;x-menu&quot;&gt;
+             &lt;li&gt;b-1&lt;/li&gt;
+             &lt;li&gt;b-2&lt;/li&gt;
+         &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;aside class=&quot;demo&quot;&gt;
+    &lt;script&gt;
+        var a = new Menu(&quot;a&quot;); 
+        a.add('-');
+        a.add('a-4-js').on('click', trace); 
+        a.add(new MenuSeperator);
+        a.add(new MenuItem().setText('a-5-menuitem'));
+        
+        var b = new Menu();
+        b.add('b-1');
+        b.add('-');
+        b.add('b-2');
+        a.item(-1).setSubMenu(b);
+        
+        a.add('a-6-submenu').getSubMenu().add('c-1-js', '-', new MenuItem().setText('c-2-menuitem'));
+
+    &lt;/script&gt;
+&lt;/aside&gt;
+&lt;section class=&quot;demo-test&quot;&gt;
+    &lt;hr style=&quot;margin-top: 300px;&quot;&gt;
+    &lt;ul class=&quot;x-menu&quot;&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;
+                &lt;span class=&quot;x-icon x-icon-checked&quot;&gt;&lt;/span&gt;
+              内容 tmp&lt;/li&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;&lt;a class=&quot;x-menuitem x-menuitem-submenu x-menu-hover&quot;
+            href=&quot;#&quot;&gt;内容 tmp&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;&lt;a class=&quot;x-menuitem x-menuitem-submenu&quot; href=&quot;#&quot;&gt;内容 tmp&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;
+            &lt;div class=&quot;x-menuseperator&quot;&gt;&lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;&lt;a class=&quot;x-menuitem&quot; href=&quot;#&quot;&gt;内容 tmp&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+	
+	&lt;section class=&quot;demo-test&quot;&gt;
+		
+		&lt;hr&gt;
+		
+		
+ 	  &lt;ul class=&quot;x-menu&quot;&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;内容 tmp&lt;/li&gt;
+        &lt;li class=&quot;x-menu-item x-menu-hover&quot;&gt;
+        	&lt;a class=&quot;x-menuitem x-menuitem-submenu&quot; href=&quot;#&quot;&gt;内容  tmp&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;
+        	&lt;a class=&quot;x-menuitem x-menuitem-submenu&quot; href=&quot;#&quot;&gt;
+        		&lt;span class=&quot;x-icon x-icon-checked&quot;&gt;&lt;/span&gt;
+        		内容  tmp
+        	&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;
+        	&lt;div class=&quot;x-menuseperator&quot;&gt;&lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;x-menu-item&quot;&gt;
+        	&lt;a class=&quot;x-menuitem&quot; href=&quot;#&quot;&gt;
+        		&lt;span class=&quot;x-icon x-icon-none&quot;&gt;&lt;/span&gt;
+        		内容  tmp&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+	&lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+</html>
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/Menu"><a href="#api/Menu" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ui/menu/menu.tsx#L4-17" target="_blank" title="源码：ui/menu/menu.tsx，第 4 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Menu 类</h3><p class="doc">表示一个菜单。</p>
+<div class="doc doc-scrollable"><table class="doc-api"><tr>
+                            <th class="doc-api-method">方法</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/Menu/render">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/menu/menu.tsx#L9-15" target="_blank" title="源码：ui/menu/menu.tsx，第 9 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>render<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>any</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">(保护的)当被子类重写时负责渲染当前控件。</p>
+
+                
+                
+                
+                <h4>返回值</h4>
+                <p>类型：<code>any</code></p>
+                <p class="doc">返回一个虚拟节点。</p>
+
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">(保护的)当被子类重写时负责渲染当前控件。</p>
+
+                                </td>
+                                
+                            </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../..","dir":"components","active":"ui/menu/","imports":["typo/reset","ui/menu"]})
+    </script>
+    <script src="../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

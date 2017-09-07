@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类Flash的渐变特效 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+	<script>require(["ux/animate/old/tween"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ux/animate/old/tween.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ux/animate/old/tween" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ux/animate/old/tween.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <article class="demo"><script>
+var tween = new Fx.Tween();
+Demo.writeExamples({ 'Fx.Tween#run(100)': function () { return tween.run({ elem: Dom.get('a'), params: { width: 100 } }); }, 'Fx.Tween#run("100")': function () { return tween.run({ elem: Dom.get('a'), params: { width: "100" } }); }, 'Fx.Tween#run("+=10")': function () { return tween.run({ elem: Dom.get('a'), params: { width: '+=10' } }); }, 'Fx.Tween#run("-=10")': function () { return tween.run({ elem: Dom.get('a'), params: { width: '-=10' } }); }, 'Fx.Tween#run("0-100")': function () { return tween.run({ elem: Dom.get('a'), params: { width: "0-100" } }); } }, { times: 8 });
+</script></article>
+<article class="demo">
+<div id="all">
+<div id="a" class="a">id=a margin=30 padding=8
+<div id="b" class="b" _tag="b">id=b padding=8
+<div id="c" class="c">id=c border=1 margin=4 auto width=300</div>
+</div>
+<div id="d" class="d">id=d border=10 padding=8</div>
+</div>
+</div>
+<script>
+var a = Dom.get('a'), b = Dom.get('b'), c = Dom.get('c'), d = Dom.get('d'), o = Dom.get('o'), abcd = new Dom(Dom.get('all').getElementsByTagName("div"));
+Demo.writeExamples({ 'Animate': '-', 'createAnimate': function () { new Fx.Tween().run({ elem: a, params: { height: 500 } }).run({ elem: a, params: { height: 200 } }).run({ elem: a, params: { height: 100 } }); }, 'animateHeight': 'Dom.animate(d, {height: 500});Dom.animate(d,{height: 100});Dom.animate(d,{height: 30})', 'animateOpacity': 'Dom.animate(a,{opacity: 0});Dom.animate(a,{opacity: 1}); Dom.animate(a,{opacity: 0}); Dom.animate(a,{opacity: 1})', 'animateScrollTop': 'Dom.animate(document, {scrollTop: 400})', 'animateBackgroundColor': 'Dom.animate(a,{"background-color": "#efefef"})', 'Toggle': '-', 'toggle': 'Dom.toggle(a,1000)', 'toggleHeight': 'Dom.toggle(a,{effect:"height", duration:1000})', 'toggleWidth': 'Dom.toggle(a,{effect:"width", duration:1000})', 'toggleAll': 'Dom.toggle(a,{effect:"all", duration:1000})', 'toggleLeft': 'Dom.toggle(a,{effect:"left", duration:1000})', 'toggleTop': 'Dom.toggle(a,{effect:"top", duration:1000})', 'toggleRight': 'Dom.toggle(a,{effect:"right", duration:1000})', 'toggleBottom': 'Dom.toggle(a,{effect:"bottom", duration:1000})', 'hide(1000)': 'Dom.hide(a,1000)', 'hide': 'Dom.hide(a,1);' }, { times: 8 });
+</script></article>
+<article class="demo">
+<blockquote class="doc doc-blockquote">
+<p class="doc">本组件是 Tween 的扩展。它让 Tween 支持处理颜色的渐变值。</p>
+</blockquote>
+<script>
+var tween = new Fx.Tween();
+Demo.writeExamples({ 'Fx.Tween#run(#000000)': function () { return tween.run({ elem: Dom.get('a'), params: { backgroundColor: '#000000' } }); }, 'Fx.Tween#run(rgb(0, 0, 0))': function () { return tween.run({ elem: Dom.get('a'), params: { backgroundColor: 'rgb(0, 0, 0)' } }); }, 'Fx.Tween#run("#000000-#ffffff")': function () { return tween.run({ elem: Dom.get('a'), params: { backgroundColor: '#000000-#ffffff' } }); } }, { times: 8 });
+</script></article>
+<article class="demo">
+<blockquote class="doc doc-blockquote">
+<p class="doc">本组件是 Color 的扩展。它让 Color 支持识别系统内置颜色。</p>
+</blockquote>
+<script>
+var tween = new Fx.Tween();
+Demo.writeExamples({ 'Fx.Tween#run(green-blue)': function () { return tween.run({ elem: Dom.get('a'), params: { backgroundColor: 'green-blue' } }); } }, { times: 8 });
+</script></article>
+<article class="demo">
+<blockquote class="doc doc-blockquote">
+<p class="doc">本组件是 Tween 的扩展。它让 Tween 支持处理颜色的渐变值。</p>
+</blockquote>
+<script>
+var tween = new Fx.Tween();
+Demo.writeExamples({ 'Fx.Tween#run(#000000)': function () { return tween.run({ elem: Dom.get('a'), params: { backgroundColor: '#000000' } }); }, 'Fx.Tween#run(rgb(0, 0, 0))': function () { return tween.run({ elem: Dom.get('a'), params: { backgroundColor: 'rgb(0, 0, 0)' } }); }, 'Fx.Tween#run("#000000-#ffffff")': function () { return tween.run({ elem: Dom.get('a'), params: { backgroundColor: '#000000-#ffffff' } }); } }, { times: 8 });
+</script></article>
+<h1 id="类flash的渐变特效">
+<a href="#类flash的渐变特效" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>类Flash的渐变特效<div class="doc-menubutton">
+                        <small>ux/animate/old/tween</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import \&quot;ux/animate/old/tween\&quot;;\n&quot;)">复制 <code>import "ux/animate/old/tween"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/animate/old/tween\&quot;], function (tween_1) {\n\n\n});\n&quot;)">复制 <code>require("ux/animate/old/tween")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/animate/old/tween\&quot;&quot;)">复制 <code>"ux/animate/old/tween"</code></a></li>
+                        </menu>
+                    </div></h1>
+<pre><code>    #a {
+        background: #DCDCDC;
+        margin: 30px;
+        padding: 8px;
+    }
+
+    #b {
+        background: #EDEDED;
+        padding: 8px;
+    }
+
+    #c {
+        background: #EAF2F5;
+        border: 1px solid #ffffff;
+        margin: 4px auto;
+        width: 300px;
+        text-align: center;
+    }
+
+    #d {
+        background: #EAF2F5;
+        border: 10px solid #BEDCE7;
+        padding: 8px;
+    }
+
+        var tween = new Fx.Tween();
+        Demo.writeExamples({
+            'Fx.Tween#run(100)': function () {
+                return tween.run({
+                    elem: Dom.get('a'),
+                    params: {
+                        width: 100
+                    }
+                });
+            },
+            'Fx.Tween#run(&quot;100&quot;)': function () {
+                return tween.run({
+                    elem: Dom.get('a'),
+                    params: {
+                        width: &quot;100&quot;
+                    }
+                });
+            },
+            'Fx.Tween#run(&quot;+=10&quot;)': function () {
+                return tween.run({
+                    elem: Dom.get('a'),
+                    params: {
+                        width: '+=10'
+                    }
+                });
+            },
+            'Fx.Tween#run(&quot;-=10&quot;)': function () {
+                return tween.run({
+                    elem: Dom.get('a'),
+                    params: {
+                        width: '-=10'
+                    }
+                });
+            },
+            'Fx.Tween#run(&quot;0-100&quot;)': function () {
+                return tween.run({
+                    elem: Dom.get('a'),
+                    params: {
+                        width: &quot;0-100&quot;
+                    }
+                });
+            }
+        }, { times: 8 });
+
+            id=a margin=30 padding=8
+
+                id=b padding=8
+                id=c border=1 margin=4 auto width=300
+
+            id=d border=10 padding=8
+
+        var a = Dom.get('a'), b = Dom.get('b'), c = Dom.get('c'), d = Dom.get('d'), o = Dom.get('o'), abcd = new Dom(Dom.get('all').getElementsByTagName(&quot;div&quot;));
+
+        Demo.writeExamples({
+            'Animate': '-',
+            'createAnimate': function () {
+                new Fx.Tween().run({
+                    elem: a,
+                    params: { height: 500 }
+                }).run({
+                    elem: a,
+                    params: { height: 200 }
+                }).run({
+                    elem: a,
+                    params: { height: 100 }
+                })
+
+            },
+            'animateHeight': 'Dom.animate(d, {height: 500});Dom.animate(d,{height: 100});Dom.animate(d,{height: 30})',
+            'animateOpacity': 'Dom.animate(a,{opacity: 0});Dom.animate(a,{opacity: 1}); Dom.animate(a,{opacity: 0}); Dom.animate(a,{opacity: 1})',
+            'animateScrollTop': 'Dom.animate(document, {scrollTop: 400})',
+            'animateBackgroundColor': 'Dom.animate(a,{&quot;background-color&quot;: &quot;#efefef&quot;})',
+            'Toggle': '-',
+            'toggle': 'Dom.toggle(a,1000)',
+            'toggleHeight': 'Dom.toggle(a,{effect:&quot;height&quot;, duration:1000})',
+            'toggleWidth': 'Dom.toggle(a,{effect:&quot;width&quot;, duration:1000})',
+            'toggleAll': 'Dom.toggle(a,{effect:&quot;all&quot;, duration:1000})',
+            'toggleLeft': 'Dom.toggle(a,{effect:&quot;left&quot;, duration:1000})',
+            'toggleTop': 'Dom.toggle(a,{effect:&quot;top&quot;, duration:1000})',
+            'toggleRight': 'Dom.toggle(a,{effect:&quot;right&quot;, duration:1000})',
+            'toggleBottom': 'Dom.toggle(a,{effect:&quot;bottom&quot;, duration:1000})',
+            'hide(1000)': 'Dom.hide(a,1000)',
+            'hide': 'Dom.hide(a,1);'
+        }, { times: 8 });
+
+    本组件是 Tween 的扩展。它让 Tween 支持处理颜色的渐变值。
+
+        var tween = new Fx.Tween();
+        Demo.writeExamples({
+            'Fx.Tween#run(#000000)': function () {
+                return tween.run({
+                    elem: Dom.get('a'),
+                    params: {
+                        backgroundColor: '#000000'
+                    }
+                });
+            },
+            'Fx.Tween#run(rgb(0, 0, 0))': function () {
+                return tween.run({
+                    elem: Dom.get('a'),
+                    params: {
+                        backgroundColor: 'rgb(0, 0, 0)'
+                    }
+                });
+            },
+            'Fx.Tween#run(&quot;#000000-#ffffff&quot;)': function () {
+                return tween.run({
+                    elem: Dom.get('a'),
+                    params: {
+                        backgroundColor: '#000000-#ffffff'
+                    }
+                });
+            }
+        }, { times: 8 });
+
+    本组件是 Color 的扩展。它让 Color 支持识别系统内置颜色。
+
+        var tween = new Fx.Tween();
+        Demo.writeExamples({
+            'Fx.Tween#run(green-blue)': function () {
+                return tween.run({
+                    elem: Dom.get('a'),
+                    params: {
+                        backgroundColor: 'green-blue'
+                    }
+                });
+            }
+        }, { times: 8 });
+
+    本组件是 Tween 的扩展。它让 Tween 支持处理颜色的渐变值。
+
+        var tween = new Fx.Tween();
+        Demo.writeExamples({
+            'Fx.Tween#run(#000000)': function () {
+                return tween.run({
+                    elem: Dom.get('a'),
+                    params: {
+                        backgroundColor: '#000000'
+                    }
+                });
+            },
+            'Fx.Tween#run(rgb(0, 0, 0))': function () {
+                return tween.run({
+                    elem: Dom.get('a'),
+                    params: {
+                        backgroundColor: 'rgb(0, 0, 0)'
+                    }
+                });
+            },
+            'Fx.Tween#run(&quot;#000000-#ffffff&quot;)': function () {
+                return tween.run({
+                    elem: Dom.get('a'),
+                    params: {
+                        backgroundColor: '#000000-#ffffff'
+                    }
+                });
+            }
+        }, { times: 8 });
+</code></pre>
+
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><div class="doc doc-scrollable"><table class="doc-api"><tr>
+                            <th class="doc-api-method">函数</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/Tween">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/animate/old/tween.ts#L11-19" target="_blank" title="源码：ux/animate/old/tween.ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>Tween<i class="doc-tip doc-api-ellipsis">(dom)</i><span class="doc-tip doc-api-more">(dom:<code>any</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">表示一个补间动画。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>dom<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">执行动画的目标节点。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">表示一个补间动画。</p>
+
+                                </td>
+                                
+                            </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ux/animate/old/tween.html","imports":["ux/animate/old/tween"]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

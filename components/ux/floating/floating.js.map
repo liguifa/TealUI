@@ -1,0 +1,1 @@
+{"version":3,"file":"floating.js","sourceRoot":"../../..","sources":["components/ux/floating/floating.ts"],"sourcesContent":["/**\r\n * 浮动广告。\r\n */\r\nexport default function floating() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,2BAEC"}

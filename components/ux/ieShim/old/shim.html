@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shim - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                
+                                
+                                
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/edit/master/components/ux/ieShim/old/shim.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <dl id="doc_toc">
+	<dt><a href="#外部-html">外部 HTML</a></dt>
+	<dt><a href="#ie6-png-透明">IE6 PNG 透明</a></dt>
+	<dt><a href="#ie6-模拟-fixed">IE6 模拟 Fixed</a></dt>
+</dl>
+<h2 id="外部-html">
+<a href="#外部-html" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>外部 HTML</h2>
+<script x-doc="utility/dom/outerHtml.js">
+Doc.writeApi({ path: "utility/dom/outerHtml.js", apis: [{ memberOf: "Element.prototype", name: "outerHTML", summary: "<p>获取或设置当前元素的外部 HTML。</p>", params: [{ type: "String", name: "value", summary: "<p>要设置的外部 HTML。</p>" }], returns: { type: "String", summary: "<p>返回外部 HTML。</p>" }, example: "<pre>document.body.outerHTML = \"a\";</pre>", memberType: "property", line: 8, col: 1 }] });
+</script>
+<h2 id="ie6-png-透明">
+<a href="#ie6-png-透明" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>IE6 PNG 透明</h2>
+<div class="doc-box doc-box-large">我是背景文字 ![](../../../assets/resources/200x150.png) <script>
+fixPng();
+</script></div>
+<script x-doc="utility/dom/fixPng.js">
+Doc.writeApi({ path: "utility/dom/fixPng.js", apis: [{ name: "fixPng", summary: "<p>让 IE6 支持透明 PNG。</p>", params: [{ type: "Element", name: "image", optional: true, summary: "<p>修复的图片节点。如不指定则修复整个文档的图片。</p>" }], example: "<h5>修复当前页面的所有图片</h5>\n\ \n\ <pre>fixPng()</pre>\n\ \n\ <h5>修复指定图片</h5>\n\ \n\ <pre>fixPng(doument.getElementById(\"id\"))</pre>", line: 5, col: 1 }] });
+</script>
+<h2 id="ie6-模拟-fixed">
+<a href="#ie6-模拟-fixed" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>IE6 模拟 Fixed</h2>
+<p class="doc">为节点添加 <code>.ie6-fixed-*</code>(其中，* 为 <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>) 即可设置四个方向的固定显示。</p>
+<aside class="doc-demo"><style>.mystyle { position: fixed; right: 10px; bottom: 10px; }</style>
+<div class="mystyle ie6-fixed-right ie6-fixed-bottom" style="right:10px;bottom:10px;">fixed on rightbottom</div>
+</aside>
+<script>
+Doc.writeApi({ path: "utility/dom/fixed.css" });
+</script>
+                        
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ux/ieShim/old/shim.html","imports":[]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

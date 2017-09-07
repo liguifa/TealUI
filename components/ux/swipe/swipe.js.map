@@ -1,0 +1,1 @@
+{"version":3,"file":"swipe.js","sourceRoot":"../../..","sources":["components/ux/swipe/swipe.ts"],"sourcesContent":["/**\r\n * 滑动。\r\n */\r\nexport default function swipe() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,wBAEC"}

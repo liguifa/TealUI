@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "x-icon";
+  src: url("fonts/icon.ttf?rc") format("truetype"), url("fonts/icon.woff?rc") format("woff"), url("fonts/icon.svg?rc#icon") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+
+.x-icon {
+  display: inline-block;
+  font-family: "x-icon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+a .x-icon {
+  margin-right: .25rem;
+}
+
+/*# sourceMappingURL=icon.css.map */

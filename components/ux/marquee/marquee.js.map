@@ -1,0 +1,1 @@
+{"version":3,"file":"marquee.js","sourceRoot":"../../..","sources":["components/ux/marquee/marquee.ts"],"sourcesContent":["/**\r\n * 走马灯。\r\n */\r\nexport default function marquee() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,0BAEC"}

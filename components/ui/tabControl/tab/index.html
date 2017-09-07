@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
+    <meta name="version" content="0.0.1">
+    <title>选项卡菜单 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+	<script>require(["typo/reset","typo/util","typo/close","typo/icon","ui/tabControl/tab"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                <li><a href="javascript:Doc.toggleDemoCodes()" accesskey="c"><i class="doc-icon">⅏</i>折叠源码</a></li>
+                                
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ui/tabControl/tab/tab.scss" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ui/tabControl/tab" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ui/tabControl/tab/tab.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="选项卡菜单">
+<a href="#选项卡菜单" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>选项卡菜单<div class="doc-menubutton">
+                        <small>ui/tabControl/tab</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import \&quot;ui/tabControl/tab\&quot;;\n&quot;)">复制 <code>import "ui/tabControl/tab"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/tabControl/tab\&quot;], function (tab_1) {\n\n\n});\n&quot;)">复制 <code>require("ui/tabControl/tab")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/tabControl/tab\&quot;&quot;)">复制 <code>"ui/tabControl/tab"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">选项卡效果。</p>
+<dl id="doc_toc">
+	<dt><a href="#基本用法">基本用法</a></dt>
+	<dt><a href="#占满整行">占满整行</a></dt>
+	<dt><a href="#其它方向">其它方向</a></dt>
+</dl>
+<h2 id="基本用法">
+<a href="#基本用法" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>基本用法</h2>
+<div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_1">
+<div class="x-tabcontrol">
+    <ul class="x-tab">
+        <li class="x-tab-active">
+            <a href="###">选项卡1</a>
+        </li>
+        <li>
+            <a href="###">选项卡2</a>
+        </li>
+        <li>
+            <a href="###">选项卡3<button class="x-close x-icon" title="关闭" aria-label="关闭">✖</button></a>
+        </li>
+        <div class="x-tab-bar"></div>
+    </ul>
+    <section class="x-tabbody">
+        <div>
+            AAAAA
+        </div>
+        <div style="display:none;">
+            BBBBB<br />BBBB
+        </div>
+        <div style="display:none;">
+            CCCCC
+        </div>
+    </section>
+</div>
+
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-html"><span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tabcontrol"</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">ul</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tab"</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">li</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tab-active"</span>&gt;</span>
+            <span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡1<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span>
+        <span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">li</span>&gt;</span>
+            <span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡2<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span>
+        <span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">li</span>&gt;</span>
+            <span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡3<span class="doc-code-tag">&lt;<span class="doc-code-name">button</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-close x-icon"</span> <span class="doc-code-attr">title</span>=<span class="doc-code-string">"关闭"</span> <span class="doc-code-attr">aria-label</span>=<span class="doc-code-string">"关闭"</span>&gt;</span>✖<span class="doc-code-tag">&lt;/<span class="doc-code-name">button</span>&gt;</span><span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span>
+        <span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tab-bar"</span>&gt;</span><span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">ul</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">section</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tabbody"</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span>&gt;</span>
+            AAAAA
+        <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"display:none;"</span>&gt;</span>
+            BBBBB<span class="doc-code-tag">&lt;<span class="doc-code-name">br</span> /&gt;</span>BBBB
+        <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"display:none;"</span>&gt;</span>
+            CCCCC
+        <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">section</span>&gt;</span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span></code></pre>
+                </div><h2 id="占满整行">
+<a href="#占满整行" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>占满整行</h2>
+<p class="doc">添加<a href="../../../../components/typo/util/" title="typo/util">工具样式</a>提供的 <code>.x-block</code> 可占满整行</p>
+<div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_2">
+<ul class="x-tab x-block">
+    <li class="x-tab-active">
+        <a href="###">选项卡1</a>
+    </li>
+    <li>
+        <a href="###">选项卡2</a>
+    </li>
+    <li>
+        <a href="###">选项卡3</a>
+    </li>
+</ul>
+<section class="x-tabbody">
+    <div>
+        AAAAA
+    </div>
+    <div style="display:none;">
+        BBBBB<br />
+    </div>
+    <div style="display:none;">
+        CCCCC
+    </div>
+</section>
+
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-html"><span class="doc-code-tag">&lt;<span class="doc-code-name">ul</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tab x-block"</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">li</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tab-active"</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡1<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">li</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡2<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">li</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡3<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">ul</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">section</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tabbody"</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span>&gt;</span>
+        AAAAA
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"display:none;"</span>&gt;</span>
+        BBBBB<span class="doc-code-tag">&lt;<span class="doc-code-name">br</span> /&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"display:none;"</span>&gt;</span>
+        CCCCC
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">section</span>&gt;</span></code></pre>
+                </div><h2 id="其它方向">
+<a href="#其它方向" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>其它方向</h2>
+<p class="doc">如果需要显示其它方向的选项卡，转到[[typo/tab/tab-more]]。</p>
+
+                        
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ui/tabControl/tab/","imports":["typo/reset","typo/util","typo/close","typo/icon","ui/tabControl/tab"]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

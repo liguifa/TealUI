@@ -1,0 +1,1 @@
+{"version":3,"file":"animateText.js","sourceRoot":"../../..","sources":["components/ux/animateText/animateText.ts"],"sourcesContent":["/**\r\n * 文字特效。\r\n */\r\nexport default function animateText() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,8BAEC"}

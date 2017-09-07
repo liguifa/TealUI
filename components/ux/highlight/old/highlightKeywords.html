@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>highlightKeywords - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+	<script>require(["ux/highlight/old/highlightKeywords"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ux/highlight/old/highlightKeywords.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ux/highlight/old/highlightKeywords" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ux/highlight/old/highlightKeywords.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <article class="demo"><script>
+Demo.writeExamples({ '高亮文本': { 'document.highlightKeyword("文字1", "文字2")': '-', 'document.highlightKeyword({"文字1": "#FF0000", "文字2": "#00FF00")': '-', 'document.highlightKeyword({"文字1": "hightlighted", "文字2": "hightlighted2")': '-' } }); // 添加一个 css 类 } });
+</script>
+<div id="demoPanel">
+<p class="doc">HighlightKey v1.0</p>
+<p class="doc"><a href="http://www.cftea.com/products/HighlightKey/" target="_blank" class="doc-external">http://www.cftea.com/products/HighlightKey/</a></p>
+<p class="doc">嗨，大家好！这里是千一网络给大家带来的问候。</p>
+<p class="doc">本示例演示的是千一网络的产品——HighlightKey，我们将看到关键词高亮的效果。</p>
+<p class="doc">本示例中“千一”、“cftea”会被不同的背景色、前景色高亮，当然您也可以只使用背景色或前景色。</p>
+<p class="doc"><textarea cols="30" rows="3">这里的“千一”和“cftea”会保持原样。</textarea></p>
+<ul>
+<li class="doc">它不会破坏文本框中的内容，也不会破坏属性值（比如 alt、title 中的值）。比如：<a href="http://www.cftea.com" title="千一网络 - 让您的 Web 开发更轻松！" target="_blank" class="doc-external">千一网络</a>。</li>
+<li class="doc">它不会破坏原有的样式、链接。比如：<strong>粗体千一网络</strong>。</li>
+<li class="doc">它不会破坏大小写，虽然查找时是忽略大小写的，但高亮后，仍保持原有大小写。比如：Cftea，C 是大写的。</li>
+</ul>
+</div>
+<script type="text/javascript">
+ < !--; //千一网络 www.cftea.com highlightKey("demoPanel", ["千一", "cftea"], ["#FF0000", "#00FF00"], ["#00FF00", "#0000FF"]); //highlightKey("demoPanel", ["千一", "cftea"], null, ["#00FF00", "#0000FF"]); //highlightKey("demoPanel", ["千一", "cftea"], ["#FF0000", "#00FF00"], null); //-->
+</script></article>
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><div class="doc doc-scrollable"><table class="doc-api"><tr>
+                                <th class="doc-api-property">变量</th>
+                                <th class="doc-api-type">类型</th>
+                                <th class="doc-api-summary">描述</th>
+                                
+                            </tr><tr id="api/EZJ">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/highlight/old/highlightKeywords.ts#L16-20" target="_blank" title="源码：ux/highlight/old/highlightKeywords.ts，第 16 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>EZJ</code>
+                                <span class="doc-api-more">: <code>any</code> = <code>new function (){    this.version = &quot;v1.0&quot;;    this.plugin = new EZJ_Plugin();}</code></span>
+                                <div class="doc doc-api-detail">
+                                    
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>any</code>
+                            </td>
+                            <td class="doc">
+                                
+                            </td>
+                            
+                        </tr></table><table class="doc-api"><tr>
+                            <th class="doc-api-method">函数</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/EZJ_Plugin">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/highlight/old/highlightKeywords.ts#L34-78" target="_blank" title="源码：ux/highlight/old/highlightKeywords.ts，第 34 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>EZJ_Plugin<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        
+                
+                
+                
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                
+                            </tr><tr id="api/$">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/highlight/old/highlightKeywords.ts#L89-113" target="_blank" title="源码：ux/highlight/old/highlightKeywords.ts，第 89 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>$<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>any</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        
+                
+                
+                
+                <h4>返回值</h4>
+                <p>类型：<code>any</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                
+                            </tr><tr id="api/$V">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/highlight/old/highlightKeywords.ts#L121-152" target="_blank" title="源码：ux/highlight/old/highlightKeywords.ts，第 121 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>$V<i class="doc-tip doc-api-ellipsis">(control)</i><span class="doc-tip doc-api-more">(control:<code>any</code>):<code>any</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>control<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>any</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                
+                            </tr><tr id="api/$E">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/highlight/old/highlightKeywords.ts#L159-162" target="_blank" title="源码：ux/highlight/old/highlightKeywords.ts，第 159 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>$E<i class="doc-tip doc-api-ellipsis">(control, enable)</i><span class="doc-tip doc-api-more">(control:<code>any</code>, enable:<code>any</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>control<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>enable<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                
+                            </tr><tr id="api/$D">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/highlight/old/highlightKeywords.ts#L169-179" target="_blank" title="源码：ux/highlight/old/highlightKeywords.ts，第 169 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>$D<i class="doc-tip doc-api-ellipsis">(control, display)</i><span class="doc-tip doc-api-more">(control:<code>any</code>, display:<code>any</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>control<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>display<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                
+                            </tr><tr id="api/$C">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/highlight/old/highlightKeywords.ts#L188-258" target="_blank" title="源码：ux/highlight/old/highlightKeywords.ts，第 188 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>$C<i class="doc-tip doc-api-ellipsis">(control)</i><span class="doc-tip doc-api-more">(control:<code>any</code>):<code>any</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>control<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>any</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                
+                            </tr><tr id="api/highlightKey">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/highlight/old/highlightKeywords.ts#L305-338" target="_blank" title="源码：ux/highlight/old/highlightKeywords.ts，第 305 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>highlightKey<i class="doc-tip doc-api-ellipsis">(target, keys, bgColors, colors)</i><span class="doc-tip doc-api-more">(target:<code>any</code>, keys:<code>any</code>, bgColors:<code>any</code>, colors:<code>any</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>target<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>keys<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>bgColors<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>colors<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                
+                            </tr><tr id="api/highlightKey_replace">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/highlight/old/highlightKeywords.ts#L341-377" target="_blank" title="源码：ux/highlight/old/highlightKeywords.ts，第 341 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>highlightKey_replace<i class="doc-tip doc-api-ellipsis">(textNode, keys, bgColors, colors)</i><span class="doc-tip doc-api-more">(textNode:<code>any</code>, keys:<code>any</code>, bgColors:<code>any</code>, colors:<code>any</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>textNode<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>keys<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>bgColors<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>colors<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                
+                            </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ux/highlight/old/highlightKeywords.html","imports":["ux/highlight/old/highlightKeywords"]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"file":"tableLayout.js","sourceRoot":"../../..","sources":["components/ux/tableLayout/tableLayout.ts"],"sourcesContent":["/**\r\n * 表格布局。\r\n */\r\nexport default function tableLayout() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,8BAEC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"scrollSpy.js","sourceRoot":"../../..","sources":["components/ux/scrollSpy/scrollSpy.ts"],"sourcesContent":["/**\r\n * 滚动固定。\r\n */\r\nexport default function scrollSpy() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,4BAEC"}

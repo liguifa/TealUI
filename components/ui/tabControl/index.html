@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
+    <meta name="version" content="0.0.1">
+    <title>选项卡控件 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/doc/doc.css">
+    <script src="../../../components/require.js"></script>
+	<script>require(["typo/reset","ui/tabControl"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                <li><a href="javascript:Doc.toggleDemoCodes()" accesskey="c"><i class="doc-icon">⅏</i>折叠源码</a></li>
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ui/tabControl/tabControl.tsx" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ui/tabControl" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ui/tabControl/tabControl.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="选项卡控件">
+<a href="#选项卡控件" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>选项卡控件<div class="doc-menubutton">
+                        <small>ui/tabControl</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import { TabControl } from \&quot;ui/tabControl\&quot;;\n&quot;)">复制 <code>import "ui/tabControl"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/tabControl\&quot;], function (tabControl_1) {\n\tvar TabControl = tabControl_1.TabControl;\n\n\n});\n&quot;)">复制 <code>require("ui/tabControl")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/tabControl\&quot;&quot;)">复制 <code>"ui/tabControl"</code></a></li>
+                        </menu>
+                    </div></h1>
+<dl id="doc_toc">
+	<dt><a href="#基本用法">基本用法</a></dt>
+	<dt><a href="#基本用法-2">基本用法</a></dt>
+	<dt><a href="#占满一行">占满一行</a></dt>
+	<dt><a href="#扩展各个方向的选项卡">扩展：各个方向的选项卡</a></dt>
+	<dt><a href="#api">API</a></dt>
+	<dd><a href="#api/TabControl">TabControl 类</a></dd>
+</dl>
+<h2 id="基本用法">
+<a href="#基本用法" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>基本用法</h2>
+<div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_1">
+<script>
+VNode.create(TabControl, null);
+
+</script>
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-tsx">&lt;TabControl /&gt;</code></pre>
+                </div><h1 id="选项卡">
+<a href="#选项卡" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>选项卡<div class="doc-menubutton">
+                        <small>ui/tabControl</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import { TabControl } from \&quot;ui/tabControl\&quot;;\n&quot;)">复制 <code>import "ui/tabControl"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/tabControl\&quot;], function (tabControl_1) {\n\tvar TabControl = tabControl_1.TabControl;\n\n\n});\n&quot;)">复制 <code>require("ui/tabControl")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/tabControl\&quot;&quot;)">复制 <code>"ui/tabControl"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">选项卡效果。</p>
+<link rel="stylesheet" href="reset.scss" />
+<link rel="stylesheet" href="tab.scss" />
+<link rel="stylesheet" href="tab-more.scss" />
+<link rel="stylesheet" href="utility.scss" />
+<h2 id="基本用法-2">
+<a href="#基本用法-2" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>基本用法</h2>
+<div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_2">
+<script>
+VNode.create("ul", { class: "x-tab", "x-role": "tab" },
+    VNode.create("li", { class: "x-tab-active" },
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53611")),
+    VNode.create("li", null,
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53612")),
+    VNode.create("li", null,
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53613")))
+    ,
+        VNode.create("section", { class: "x-tab-body" },
+            VNode.create("div", null, "AAAAA"),
+            VNode.create("div", { style: "display:none;" },
+                "BBBBB",
+                VNode.create("br", null),
+                "BBBB"),
+            VNode.create("div", { style: "display:none;" }, "CCCCC"));
+
+</script>
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-tsx">&lt;ul <span class="doc-code-class"><span class="doc-code-keyword">class</span></span>=<span class="doc-code-string">"x-tab"</span> x-role=<span class="doc-code-string">"tab"</span>&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">li</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tab-active"</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡1<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span></span>
+    &lt;li&gt;
+        <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡2<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span></span>
+    &lt;<span class="doc-code-regexp">/li&gt;
+    &lt;li&gt;
+        &lt;a href="###"&gt;选项卡3&lt;/</span>a&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span></span>
+&lt;<span class="doc-code-regexp">/ul&gt;
+&lt;section class="x-tab-body"&gt;
+    &lt;div&gt;
+        AAAAA
+    &lt;/</span>div&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"display:none;"</span>&gt;</span>
+        BBBBB<span class="doc-code-tag">&lt;<span class="doc-code-name">br</span> /&gt;</span>BBBB
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span></span>
+    &lt;div style=<span class="doc-code-string">"display:none;"</span>&gt;
+        CCCCC
+    &lt;<span class="doc-code-regexp">/div&gt;
+&lt;/</span>section&gt;</code></pre>
+                </div><h2 id="占满一行">
+<a href="#占满一行" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>占满一行</h2>
+<div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_3">
+<script>
+VNode.create("ul", { class: "x-tab x-block", "x-role": "tab" },
+    VNode.create("li", { class: "x-tab-active" },
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53611")),
+    VNode.create("li", null,
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53612")),
+    VNode.create("li", null,
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53613")))
+    ,
+        VNode.create("section", { class: "x-tab-body" },
+            VNode.create("div", null, "AAAAA"),
+            VNode.create("div", { style: "display:none;" },
+                "BBBBB",
+                VNode.create("br", null)),
+            VNode.create("div", { style: "display:none;" }, "CCCCC"));
+
+</script>
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-tsx">&lt;ul <span class="doc-code-class"><span class="doc-code-keyword">class</span></span>=<span class="doc-code-string">"x-tab x-block"</span> x-role=<span class="doc-code-string">"tab"</span>&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">li</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tab-active"</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡1<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span></span>
+    &lt;li&gt;
+        <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡2<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span></span>
+    &lt;<span class="doc-code-regexp">/li&gt;
+    &lt;li&gt;
+        &lt;a href="###"&gt;选项卡3&lt;/</span>a&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span></span>
+&lt;<span class="doc-code-regexp">/ul&gt;
+&lt;section class="x-tab-body"&gt;
+    &lt;div&gt;
+        AAAAA
+    &lt;/</span>div&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"display:none;"</span>&gt;</span>
+        BBBBB<span class="doc-code-tag">&lt;<span class="doc-code-name">br</span> /&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span></span>
+    &lt;div style=<span class="doc-code-string">"display:none;"</span>&gt;
+        CCCCC
+    &lt;<span class="doc-code-regexp">/div&gt;
+&lt;/</span>section&gt;</code></pre>
+                </div><h2 id="扩展各个方向的选项卡">
+<a href="#扩展各个方向的选项卡" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>扩展：各个方向的选项卡</h2>
+<div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_4">
+<script>
+VNode.create("ul", { class: "x-tab x-tab-top" },
+    VNode.create("li", { class: "x-tab-active" },
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53611")),
+    VNode.create("li", null,
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53612")),
+    VNode.create("li", null,
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53613")))
+    ,
+        VNode.create("section", { class: "x-tab-body" },
+            VNode.create("div", null, "AAAAA"),
+            VNode.create("div", { style: "display:none;" },
+                "BBBBB",
+                VNode.create("br", null)),
+            VNode.create("div", { style: "display:none;" }, "CCCCC"));
+
+</script>
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-tsx">&lt;ul <span class="doc-code-class"><span class="doc-code-keyword">class</span></span>=<span class="doc-code-string">"x-tab x-tab-top"</span>&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">li</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tab-active"</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡1<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span></span>
+    &lt;li&gt;
+        <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡2<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span></span>
+    &lt;<span class="doc-code-regexp">/li&gt;
+    &lt;li&gt;
+        &lt;a href="###"&gt;选项卡3&lt;/</span>a&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span></span>
+&lt;<span class="doc-code-regexp">/ul&gt;
+&lt;section class="x-tab-body"&gt;
+    &lt;div&gt;
+        AAAAA
+    &lt;/</span>div&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"display:none;"</span>&gt;</span>
+        BBBBB<span class="doc-code-tag">&lt;<span class="doc-code-name">br</span> /&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span></span>
+    &lt;div style=<span class="doc-code-string">"display:none;"</span>&gt;
+        CCCCC
+    &lt;<span class="doc-code-regexp">/div&gt;
+&lt;/</span>section&gt;</code></pre>
+                </div><div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_5">
+<script>
+VNode.create("ul", { class: "x-tab x-tab-bottom" },
+    VNode.create("li", { class: "x-tab-active" },
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53611")),
+    VNode.create("li", null,
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53612")),
+    VNode.create("li", null,
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53613")));
+
+</script>
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-tsx">&lt;ul <span class="doc-code-class"><span class="doc-code-keyword">class</span></span>=<span class="doc-code-string">"x-tab x-tab-bottom"</span>&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">li</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tab-active"</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡1<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span></span>
+    &lt;li&gt;
+        <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡2<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span></span>
+    &lt;<span class="doc-code-regexp">/li&gt;
+    &lt;li&gt;
+        &lt;a href="###"&gt;选项卡3&lt;/</span>a&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span></span>
+&lt;<span class="doc-code-regexp">/ul&gt;</span></code></pre>
+                </div><div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_6">
+<script>
+VNode.create("ul", { class: "x-tab x-tab-left", style: "height: 300px;" },
+    VNode.create("li", { class: "x-tab-active" },
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53611")),
+    VNode.create("li", null,
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53612")),
+    VNode.create("li", null,
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53613")));
+
+</script>
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-tsx">&lt;ul <span class="doc-code-class"><span class="doc-code-keyword">class</span></span>=<span class="doc-code-string">"x-tab x-tab-left"</span> style=<span class="doc-code-string">"height: 300px;"</span>&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">li</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tab-active"</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡1<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span></span>
+    &lt;li&gt;
+        <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡2<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span></span>
+    &lt;<span class="doc-code-regexp">/li&gt;
+    &lt;li&gt;
+        &lt;a href="###"&gt;选项卡3&lt;/</span>a&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span></span>
+&lt;<span class="doc-code-regexp">/ul&gt;</span></code></pre>
+                </div><div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_7">
+<script>
+VNode.create("ul", { class: "x-tab x-tab-right", style: "height: 300px;" },
+    VNode.create("li", { class: "x-tab-active" },
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53611")),
+    VNode.create("li", null,
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53612")),
+    VNode.create("li", null,
+        VNode.create("a", { href: "###" }, "\u9009\u9879\u53613")))
+    ,
+        VNode.create("section", { class: "x-tab-body" },
+            VNode.create("div", null, "AAAAA"),
+            VNode.create("div", { style: "display:none;" },
+                "BBBBB",
+                VNode.create("br", null)),
+            VNode.create("div", { style: "display:none;" }, "CCCCC"));
+
+</script>
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-tsx">&lt;ul <span class="doc-code-class"><span class="doc-code-keyword">class</span></span>=<span class="doc-code-string">"x-tab x-tab-right"</span> style=<span class="doc-code-string">"height: 300px;"</span>&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">li</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tab-active"</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡1<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span></span>
+    &lt;li&gt;
+        <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"###"</span>&gt;</span>选项卡2<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span></span>
+    &lt;<span class="doc-code-regexp">/li&gt;
+    &lt;li&gt;
+        &lt;a href="###"&gt;选项卡3&lt;/</span>a&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;/<span class="doc-code-name">li</span>&gt;</span></span>
+&lt;<span class="doc-code-regexp">/ul&gt;
+&lt;section class="x-tab-body"&gt;
+    &lt;div&gt;
+        AAAAA
+    &lt;/</span>div&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"display:none;"</span>&gt;</span>
+        BBBBB<span class="doc-code-tag">&lt;<span class="doc-code-name">br</span> /&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span></span>
+    &lt;div style=<span class="doc-code-string">"display:none;"</span>&gt;
+        CCCCC
+    &lt;<span class="doc-code-regexp">/div&gt;
+&lt;/</span>section&gt;</code></pre>
+                </div>
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/TabControl"><a href="#api/TabControl" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ui/tabControl/tabControl.tsx#L4-17" target="_blank" title="源码：ui/tabControl/tabControl.tsx，第 4 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>TabControl 类</h3><p class="doc">表示一个选项卡控件。</p>
+<div class="doc doc-scrollable"><table class="doc-api"><tr>
+                            <th class="doc-api-method">方法</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/TabControl/render">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/tabControl/tabControl.tsx#L9-15" target="_blank" title="源码：ui/tabControl/tabControl.tsx，第 9 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>render<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>any</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">(保护的)当被子类重写时负责渲染当前控件。</p>
+
+                
+                
+                
+                <h4>返回值</h4>
+                <p>类型：<code>any</code></p>
+                <p class="doc">返回一个虚拟节点。</p>
+
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">(保护的)当被子类重写时负责渲染当前控件。</p>
+
+                                </td>
+                                
+                            </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../..","dir":"components","active":"ui/tabControl/","imports":["typo/reset","ui/tabControl"]})
+    </script>
+    <script src="../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"file":"flexible.js","sourceRoot":"../../..","sources":["components/ux/flexible/flexible.ts"],"sourcesContent":["/**\r\n * 自动缩放。\r\n */\r\nexport default function flexible() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,2BAEC"}

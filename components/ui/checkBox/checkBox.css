@@ -1,0 +1,34 @@
+.x-checkbox-button {
+  position: absolute;
+  opacity: 0;
+}
+
+.x-checkbox-button + i, .x-checkbox-button + i + i {
+  display: inline-block;
+  width: 1rem;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.x-checkbox-button + i + i {
+  color: #208fee;
+}
+
+.x-checkbox-button:focus + i, .x-checkbox-button:focus + i + i, .x-checkbox-button:hover + i, .x-checkbox-button:hover + i + i {
+  color: #117dda;
+}
+
+.x-checkbox-button:checked + i, .x-checkbox-button:not(:checked) + i + i {
+  display: none;
+}
+
+.x-checkbox-button[disabled] + i, .x-checkbox-button[disabled] + i + i {
+  color: #d9d9d9 !important;
+  cursor: not-allowed;
+}
+
+.x-checkbox + .x-checkbox {
+  margin-left: 1rem;
+}
+
+/*# sourceMappingURL=checkBox.css.map */

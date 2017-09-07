@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>touchScroll (2) - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+	<script>require(["ux/touch/old/touchScroll (2)"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ux/touch/old/touchScroll (2).ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ux/touch/old/touchScroll (2)" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ux/touch/old/touchScroll (2).md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <aside class="doc-demo"><style>.slider { width: 100%; overflow: hidden; } .slider ul { margin: 0; width: 500%; } .slider li { float: left; list-style: none; }</style>
+<div class="slider">
+<ul>
+<li class="doc">A</li>
+<li class="doc">B</li>
+<li class="doc">C</li>
+</ul>
+</div>
+<script>
+$('.slider ul').touchScroll();
+</script></aside>
+<h5>(组件功能说明)</h5>
+<pre>(组件源码示例)</pre>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>触摸滚动</title>
+    <meta name="module-info" content="parent-title=jQuery 插件, parent-order=openApi, parent-parent-ignore=true">
+    <meta name="author" content="xuld@vip.qq.com">
+    <meta name="description" content="实现触摸滚动翻页效果。">
+    <!-- 以下是本组件的全部源码 -->
+    <script type="text/javascript" src="../3rdlibs/jquery-1.11.1.js">
+script >
+    VNode.create("script", { type: "text/javascript", src: "../../utility/dom/touchScroll.js" });
+head >
+    VNode.create("body", null,
+        VNode.create("", null),
+        "-- \u4EE5\u4E0B\u4EE3\u7801\u4EC5\u7528\u4E8E\u6587\u6863\u6F14\u793A -->",
+        VNode.create("script", { type: "text/javascript", src: "../../../assets/doc/doc.js" }));
+</script>
+<pre><code>&lt;aside class=&quot;doc-demo&quot;&gt;
+    &lt;style&gt;
+        .slider {
+            width: 100%;
+            overflow: hidden;
+        }
+
+            .slider ul {
+                margin: 0;
+                width: 500%;
+            }
+
+            .slider li {
+                float: left;
+                list-style: none;
+            }
+    &lt;/style&gt;
+
+    &lt;div class=&quot;slider&quot;&gt;
+        &lt;ul&gt;
+            &lt;li class=&quot;doc-box-large doc-red&quot;&gt;
+                A
+            &lt;/li&gt;
+            &lt;li class=&quot;doc-box-large doc-yellow&quot;&gt;
+                B
+            &lt;/li&gt;
+            &lt;li class=&quot;doc-box-large doc-blue&quot;&gt;
+                C
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        $('.slider ul').touchScroll();
+    &lt;/script&gt;
+&lt;/aside&gt;
+&lt;h5&gt;(组件功能说明)&lt;/h5&gt;
+&lt;pre&gt;(组件源码示例)&lt;/pre&gt;
+</code></pre>
+</body>
+</html>
+
+                        
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ux/touch/old/touchScroll (2).html","imports":["ux/touch/old/touchScroll (2)"]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

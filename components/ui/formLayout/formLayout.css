@@ -1,0 +1,21 @@
+.x-form {
+  width: 100%;
+}
+
+.x-form > tbody > tr > th, .x-form > tbody > tr > td {
+  border: 0;
+  padding: 0 0.5rem 1rem 0;
+  vertical-align: middle;
+}
+
+.x-form > tbody > tr > th {
+  font-weight: normal;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.x-form > tbody > tr > td {
+  padding: 0 3rem 1rem 0;
+}
+
+/*# sourceMappingURL=formLayout.css.map */

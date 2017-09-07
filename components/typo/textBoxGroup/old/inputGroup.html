@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输入框组 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+	<script>require(["typo/textBoxGroup/old/inputGroup"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/typo/textBoxGroup/old/inputGroup.scss" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=typo/textBoxGroup/old/inputGroup" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/typo/textBoxGroup/old/inputGroup.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="输入框组">
+<a href="#输入框组" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>输入框组<div class="doc-menubutton">
+                        <small>typo/textBoxGroup/old/inputGroup</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import \&quot;typo/textBoxGroup/old/inputGroup\&quot;;\n&quot;)">复制 <code>import "typo/textBoxGroup/old/inputGroup"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;typo/textBoxGroup/old/inputGroup\&quot;], function (inputGroup_1) {\n\n\n});\n&quot;)">复制 <code>require("typo/textBoxGroup/old/inputGroup")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;typo/textBoxGroup/old/inputGroup\&quot;&quot;)">复制 <code>"typo/textBoxGroup/old/inputGroup"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">输入框组。</p>
+<link rel="stylesheet" href="reset.scss" />
+<link rel="stylesheet" href="tipBox.scss" />
+<link rel="stylesheet" href="icon.scss" />
+<link rel="stylesheet" href="textBox.scss" />
+<link rel="stylesheet" href="button.scss" />
+<link rel="stylesheet" href="inputGroup.scss" />
+<link rel="stylesheet" href="utility.scss" />
+<link rel="stylesheet" href="../form/buttonGroup.scss" />
+<pre><code>    .doc-demo {
+        line-height: 40px;
+    }
+</code></pre>
+<p class="doc">在一个 <code>x-textbox</code> 前后追加一个 <code>x-tipbox</code> 或 <code>x-buttongroup</code>。</p>
+<dl id="doc_toc">
+	<dt><a href="#追加提示框">追加提示框</a></dt>
+	<dt><a href="#复选框">复选框</a></dt>
+	<dt><a href="#按钮">按钮</a></dt>
+	<dt><a href="#多个按钮">多个按钮</a></dt>
+	<dt><a href="#占满一行">占满一行</a></dt>
+	<dt><a href="#基本用法">基本用法</a></dt>
+	<dt><a href="#占满一行-2">占满一行</a></dt>
+</dl>
+<h2 id="追加提示框">
+<a href="#追加提示框" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>追加提示框</h2>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;span class=&quot;x-inputgroup&quot;&gt;
+    &lt;span class=&quot;x-tipbox&quot;&gt;邮箱: &lt;/span&gt;
+    &lt;input type=&quot;text&quot; class=&quot;x-textbox&quot; /&gt;
+&lt;/span&gt;
+
+&lt;br /&gt;
+
+&lt;span class=&quot;x-inputgroup&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;x-textbox&quot; /&gt;
+    &lt;span class=&quot;x-tipbox&quot;&gt;@example.com&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;br /&gt;
+
+&lt;span class=&quot;x-inputgroup&quot;&gt;
+    &lt;span class=&quot;x-tipbox&quot;&gt;邮箱: &lt;/span&gt;
+    &lt;input type=&quot;text&quot; class=&quot;x-textbox&quot; /&gt;
+    &lt;span class=&quot;x-tipbox&quot;&gt;@example.com&lt;/span&gt;
+&lt;/span&gt;</code></pre><h2 id="复选框">
+<a href="#复选框" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>复选框</h2>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;span class=&quot;x-inputgroup&quot;&gt;
+    &lt;span class=&quot;x-tipbox&quot;&gt;
+        &lt;input type=&quot;checkbox&quot;&gt;
+    &lt;/span&gt;
+    &lt;input type=&quot;text&quot; class=&quot;x-textbox&quot; /&gt;
+&lt;/span&gt;</code></pre><h2 id="按钮">
+<a href="#按钮" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>按钮</h2>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;span class=&quot;x-inputgroup&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;x-textbox&quot; /&gt;
+    &lt;span&gt;&lt;button class=&quot;x-button&quot;&gt;&lt;span class=&quot;x-icon&quot;&gt;&amp;#9662;&lt;/span&gt;&lt;/button&gt;&lt;/span&gt;
+&lt;/span&gt;</code></pre><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;span class=&quot;x-inputgroup&quot;&gt;
+    &lt;span&gt;&lt;button class=&quot;x-button&quot;&gt;百度 &lt;span class=&quot;x-icon&quot;&gt;&amp;#9662;&lt;/span&gt;&lt;/button&gt;&lt;/span&gt;
+    &lt;input type=&quot;text&quot; class=&quot;x-textbox&quot; /&gt;
+    &lt;span&gt;&lt;button class=&quot;x-button&quot;&gt;&lt;span class=&quot;x-icon&quot;&gt;☌&lt;/span&gt;&lt;/button&gt;&lt;/span&gt;
+&lt;/span&gt;</code></pre><h2 id="多个按钮">
+<a href="#多个按钮" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>多个按钮</h2>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;span class=&quot;x-inputgroup&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;x-textbox&quot; /&gt;
+    &lt;span&gt;
+        &lt;button class=&quot;x-button&quot;&gt;更多菜单&lt;/button&gt;
+        &lt;button class=&quot;x-button&quot;&gt;&lt;span class=&quot;x-icon&quot;&gt;&amp;#9662;&lt;/span&gt;&lt;/button&gt;
+    &lt;/span&gt;
+&lt;/span&gt;</code></pre><h2 id="占满一行">
+<a href="#占满一行" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>占满一行</h2>
+<p class="doc">当使用 <code>div</code> 时，输入框组将占满一行。</p>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;div class=&quot;x-inputgroup&quot;&gt;
+    &lt;span class=&quot;x-tipbox&quot;&gt;邮箱: &lt;/span&gt;
+    &lt;input type=&quot;text&quot; class=&quot;x-textbox&quot; /&gt;
+    &lt;span&gt;
+        &lt;button class=&quot;x-button&quot;&gt;更多菜单&lt;/button&gt;
+    &lt;/span&gt;
+&lt;/div&gt;</code></pre><h1 id="按钮组">
+<a href="#按钮组" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>按钮组<div class="doc-menubutton">
+                        <small>typo/textBoxGroup/old/inputGroup</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import \&quot;typo/textBoxGroup/old/inputGroup\&quot;;\n&quot;)">复制 <code>import "typo/textBoxGroup/old/inputGroup"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;typo/textBoxGroup/old/inputGroup\&quot;], function (inputGroup_1) {\n\n\n});\n&quot;)">复制 <code>require("typo/textBoxGroup/old/inputGroup")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;typo/textBoxGroup/old/inputGroup\&quot;&quot;)">复制 <code>"typo/textBoxGroup/old/inputGroup"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">将多个按钮组成一个整体。</p>
+<link rel="stylesheet" href="reset.scss" />
+<link rel="stylesheet" href="../form/button.scss" />
+<link rel="stylesheet" href="../form/buttonGroup.scss" />
+<pre><code>    .doc-demo {
+        line-height: 40px;
+    }
+</code></pre>
+<h2 id="基本用法">
+<a href="#基本用法" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>基本用法</h2>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;span class=&quot;x-buttongroup&quot;&gt;
+    &lt;a href=&quot;###&quot; class=&quot;x-button&quot;&gt;左&lt;/a&gt;
+    &lt;a href=&quot;###&quot; class=&quot;x-button&quot;&gt;中&lt;/a&gt;
+    &lt;a href=&quot;###&quot; class=&quot;x-button&quot;&gt;右&lt;/a&gt;
+&lt;/span&gt;
+&lt;span class=&quot;x-buttongroup&quot;&gt;
+    &lt;a href=&quot;###&quot; class=&quot;x-button&quot;&gt;上&lt;/a&gt;
+    &lt;a href=&quot;###&quot; class=&quot;x-button&quot;&gt;中&lt;/a&gt;
+    &lt;a href=&quot;###&quot; class=&quot;x-button&quot;&gt;下&lt;/a&gt;
+&lt;/span&gt;</code></pre><h2 id="占满一行-2">
+<a href="#占满一行-2" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>占满一行</h2>
+<p class="doc">当使用 <code>div</code> 时，按钮组将占满一行。</p>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;div class=&quot;x-buttongroup&quot;&gt;
+    &lt;a href=&quot;###&quot; class=&quot;x-button x-button-active&quot;&gt;左边&lt;/a&gt;
+    &lt;a href=&quot;###&quot; class=&quot;x-button&quot;&gt;中间的&lt;/a&gt;
+    &lt;a href=&quot;###&quot; class=&quot;x-button&quot;&gt;右边&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+                        
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"typo/textBoxGroup/old/inputGroup.html","imports":["typo/textBoxGroup/old/inputGroup"]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"file":"clipboard-test.js","sourceRoot":"../../..","sources":["components/ux/clipboard/clipboard-test.ts"],"sourcesContent":["import * as assert from \"assert\";\r\nimport * as clipboard from \"./clipboard\";\r\n\r\nexport function clipboardTest() {\r\n\r\n}\r\n"],"mappings":";;IAGA;IAEA,CAAC;IAFD,sCAEC"}

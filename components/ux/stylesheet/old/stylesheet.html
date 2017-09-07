@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>样式表操作 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+	<script>require(["ux/stylesheet/old/stylesheet"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ux/stylesheet/old/stylesheet.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ux/stylesheet/old/stylesheet" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ux/stylesheet/old/stylesheet.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="样式表操作">
+<a href="#样式表操作" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>样式表操作<div class="doc-menubutton">
+                        <small>ux/stylesheet/old/stylesheet</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import \&quot;ux/stylesheet/old/stylesheet\&quot;;\n&quot;)">复制 <code>import "ux/stylesheet/old/stylesheet"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/stylesheet/old/stylesheet\&quot;], function (stylesheet_1) {\n\n\n});\n&quot;)">复制 <code>require("ux/stylesheet/old/stylesheet")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/stylesheet/old/stylesheet\&quot;&quot;)">复制 <code>"ux/stylesheet/old/stylesheet"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">提供统一的、快速的 DOM 操作方法。</p>
+<dl id="doc_toc">
+	<dt><a href="#api-源码-utilitydomcssrulejs">API (源码: utility/dom/cssRule.js)</a></dt>
+	<dt><a href="#api">API</a></dt>
+</dl>
+<h2 id="api-源码-utilitydomcssrulejs">
+<a href="#api-源码-utilitydomcssrulejs" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API (源码: <a href="../../utility/dom/cssRule.js">utility/dom/cssRule.js</a>)</h2>
+<pre><code>    |            API|            描述|            示例|        
+</code></pre>
+<p class="doc">--|--|--|--|--
+|            <code>CssRules.add</code>|            动态增加一个样式|            ```
+CssRules.add(&quot;body&quot;, &quot;background: #96CBFE;&quot;);</p>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-">|        
+        |            `CssRules.remove`|            动态删除一个样式|            ```
+CssRules.remove(&quot;body&quot;, &quot;background: #96CBFE;&quot;);</code></pre><p class="doc">|<br>
+|            <code>CssRules.get</code>|            获取指定样式|            ```
+CssRules.get(&quot;body&quot;);</p>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-">|        
+        |            `CssRules.set`|            设置指定样式|            ```
+CssRules.set(&quot;body&quot;, &quot;background: #96CBFE;&quot;);</code></pre><p class="doc">|<br>
+|            <code>CssRules.get</code>|            禁用或启用指定的样式表文件|                            ##### 禁用                ```
+CssRules.disableStyleSheet(&quot;css&quot;);</p>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-">##### 启用                ```
+CssRules.disableStyleSheet(&quot;css&quot;, false);</code></pre><pre><code>        |        
+    |            `CssRules.setStyleSheet`|            设置指定的样式表文件路径|            ```
+</code></pre>
+<p class="doc">CssRules.setStyleSheet(&quot;css&quot;, &quot;css2.css&quot;);</p>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-">|</code></pre>
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><div class="doc doc-scrollable"><table class="doc-api"><tr>
+                            <th class="doc-api-method">函数</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/addCssRule">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/stylesheet/old/stylesheet.ts#L8-13" target="_blank" title="源码：ux/stylesheet/old/stylesheet.ts，第 8 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>addCssRule<i class="doc-tip doc-api-ellipsis">(selector, styles, styleSheetName)</i><span class="doc-tip doc-api-more">(selector:<code>any</code>, styles:<code>any</code>, styleSheetName:<code>any</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">动态增加一个样式。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>selector<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>styles<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>styleSheetName<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">动态增加一个样式。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/removeCssRule">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/stylesheet/old/stylesheet.ts#L15-20" target="_blank" title="源码：ux/stylesheet/old/stylesheet.ts，第 15 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>removeCssRule<i class="doc-tip doc-api-ellipsis">(selector, styles, styleSheetName)</i><span class="doc-tip doc-api-more">(selector:<code>any</code>, styles:<code>any</code>, styleSheetName:<code>any</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">动态删除一个样式。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>selector<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>styles<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>styleSheetName<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">动态删除一个样式。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/getCssRule">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/stylesheet/old/stylesheet.ts#L22-27" target="_blank" title="源码：ux/stylesheet/old/stylesheet.ts，第 22 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>getCssRule<i class="doc-tip doc-api-ellipsis">(selector, styleSheetName)</i><span class="doc-tip doc-api-more">(selector:<code>any</code>, styleSheetName:<code>any</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">获取指定样式。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>selector<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>styleSheetName<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">获取指定样式。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/setCssRule">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/stylesheet/old/stylesheet.ts#L29-34" target="_blank" title="源码：ux/stylesheet/old/stylesheet.ts，第 29 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>setCssRule<i class="doc-tip doc-api-ellipsis">(selector, styles, styleSheetName)</i><span class="doc-tip doc-api-more">(selector:<code>any</code>, styles:<code>any</code>, styleSheetName:<code>any</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">获取指定样式。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>selector<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>styles<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>styleSheetName<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">获取指定样式。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/disableStyleSheet">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/stylesheet/old/stylesheet.ts#L36-41" target="_blank" title="源码：ux/stylesheet/old/stylesheet.ts，第 36 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>disableStyleSheet<i class="doc-tip doc-api-ellipsis">(styleSheetName, disabled)</i><span class="doc-tip doc-api-more">(styleSheetName:<code>any</code>, disabled:<code>any</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">禁用或启用指定的样式表文件。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>styleSheetName<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>disabled<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">禁用或启用指定的样式表文件。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/setStyleSheet">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/stylesheet/old/stylesheet.ts#L43-48" target="_blank" title="源码：ux/stylesheet/old/stylesheet.ts，第 43 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>setStyleSheet<i class="doc-tip doc-api-ellipsis">(styleSheetName, src)</i><span class="doc-tip doc-api-more">(styleSheetName:<code>any</code>, src:<code>any</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">设置指定的样式表文件路径。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>styleSheetName<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>src<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">设置指定的样式表文件路径。</p>
+
+                                </td>
+                                
+                            </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ux/stylesheet/old/stylesheet.html","imports":["ux/stylesheet/old/stylesheet"]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

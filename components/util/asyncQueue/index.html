@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
+    <meta name="version" content="0.0.1">
+    <title>异步队列 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/doc/doc.css">
+    <script src="../../../components/require.js"></script>
+	<script>require(["util/asyncQueue"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                <li><a href="javascript:Doc.toggleUnitTest()" accesskey="t"><i class="doc-icon">☕</i>单元测试</a></li>
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/asyncQueue/asyncQueue.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/asyncQueue" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/asyncQueue/asyncQueue.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="异步队列">
+<a href="#异步队列" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>异步队列<div class="doc-menubutton">
+                        <small>util/asyncQueue</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import AsyncQueue, { Abortable } from \&quot;util/asyncQueue\&quot;;\n&quot;)">复制 <code>import "util/asyncQueue"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/asyncQueue\&quot;], function (asyncQueue_1) {\n\tvar AsyncQueue = asyncQueue_1.default;\n\tvar Abortable = asyncQueue_1.Abortable;\n\n\n});\n&quot;)">复制 <code>require("util/asyncQueue")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/asyncQueue\&quot;&quot;)">复制 <code>"util/asyncQueue"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">串联异步任务，确保两个操作不会同时执行以避免临界资源冲突。</p>
+<dl id="doc_toc">
+	<dt><a href="#基本用法">基本用法</a></dt>
+	<dt><a href="#api">API</a></dt>
+	<dd><a href="#api/AsyncQueue">AsyncQueue 类</a></dd>
+	<dd><a href="#api/Abortable">Abortable 接口</a></dd>
+</dl>
+<h2 id="基本用法">
+<a href="#基本用法" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>基本用法</h2>
+<p class="doc">不同于 <code>Promise</code>，<code>AsyncQueue</code> 是可以反复设置状态的。
+要管理多个异步任务只需一个 <code>AsyncQueue</code> 示例。</p>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-js"><span class="doc-code-keyword">var</span> deferred = <span class="doc-code-keyword">new</span> AsyncQueue();
+
+<span class="doc-code-comment">// 添加一个异步任务。</span>
+deferred.then(<span class="doc-code-function"><span class="doc-code-keyword">function</span> (<span class="doc-code-params"></span>) </span>{
+
+    <span class="doc-code-comment">// 挂起等待。</span>
+    deferred.suspend();
+
+    <span class="doc-code-comment">// 使用 setTimeout 模拟异步执行的操作。</span>
+    setTimeout(<span class="doc-code-function"><span class="doc-code-keyword">function</span> (<span class="doc-code-params"></span>) </span>{
+
+        <span class="doc-code-comment">// 恢复执行、</span>
+        deferred.resume(<span class="doc-code-number">1</span>);
+    }, <span class="doc-code-number">1000</span>);
+});
+
+<span class="doc-code-comment">// 添加一个同步任务。</span>
+deferred.then(<span class="doc-code-function"><span class="doc-code-keyword">function</span> (<span class="doc-code-params">data</span>) </span>{
+    <span class="doc-code-built_in">console</span>.log(<span class="doc-code-string">'所有异步操作完成。返回的数据：'</span> + data);
+});</code></pre>
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/AsyncQueue"><a href="#api/AsyncQueue" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/util/asyncQueue/asyncQueue.ts#L1-144" target="_blank" title="源码：util/asyncQueue/asyncQueue.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>AsyncQueue 类</h3><p class="doc">表示一个异步任务队列。</p>
+<h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx"><span class="doc-code-keyword">var</span> deferred = <span class="doc-code-keyword">new</span> AsyncQueue();
+deferred.then(<span class="doc-code-function"><span class="doc-code-keyword">function</span> (<span class="doc-code-params"></span>) </span>{      <span class="doc-code-comment">// 添加一个异步任务。</span>
+deferred.suspend();          <span class="doc-code-comment">// 挂起等待。</span>
+setTimeout(<span class="doc-code-function"><span class="doc-code-keyword">function</span> (<span class="doc-code-params"></span>) </span>{     <span class="doc-code-comment">// 模拟异步执行。</span>
+deferred.resume(<span class="doc-code-number">1</span>);      <span class="doc-code-comment">// 恢复执行。</span>
+}, <span class="doc-code-number">2000</span>);
+});
+
+deferred.then(<span class="doc-code-function"><span class="doc-code-keyword">function</span> (<span class="doc-code-params">data</span>) </span>{  <span class="doc-code-comment">// 添加一个同步任务。</span>
+<span class="doc-code-built_in">console</span>.log(<span class="doc-code-string">"所有异步操作完成。返回的数据："</span> + data);
+});</code></pre><div class="doc doc-scrollable"><table class="doc-api"><tr>
+                                <th class="doc-api-property">字段</th>
+                                <th class="doc-api-type">类型</th>
+                                <th class="doc-api-summary">描述</th>
+                                
+                            </tr><tr id="api/AsyncQueue/suspended">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/asyncQueue/asyncQueue.ts#L28-31" target="_blank" title="源码：util/asyncQueue/asyncQueue.ts，第 28 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>suspended</code>
+                                <span class="doc-api-more">: <code>boolean</code></span>
+                                <div class="doc doc-api-detail">
+                                    <p class="doc">(只读)判断当前队列是否已被阻止。</p>
+
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>boolean</code>
+                            </td>
+                            <td class="doc">
+                                <p class="doc">(只读)判断当前队列是否已被阻止。</p>
+
+                            </td>
+                            
+                        </tr></table><table class="doc-api"><tr>
+                            <th class="doc-api-method">方法</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/AsyncQueue/suspend">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/asyncQueue/asyncQueue.ts#L56-63" target="_blank" title="源码：util/asyncQueue/asyncQueue.ts，第 56 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>suspend<i class="doc-tip doc-api-ellipsis">(...)</i><span class="doc-tip doc-api-more">(abortable?:<code><a href="#api/Abortable">Abortable</a></code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">挂起异步等待操作。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>abortable</code>
+                                </td>
+                                <td>
+                                    <code><a href="#api/Abortable">Abortable</a> | undefined</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">引发挂起的对象。将调用其 <code>abort()</code> 方法恢复挂起。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx"><span class="doc-code-keyword">new</span> AsyncQueue().suspend()</code></pre>
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">挂起异步等待操作。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/AsyncQueue/resume">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/asyncQueue/asyncQueue.ts#L65-77" target="_blank" title="源码：util/asyncQueue/asyncQueue.ts，第 65 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>resume<i class="doc-tip doc-api-ellipsis">(data)</i><span class="doc-tip doc-api-more">(data:<code>any</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">通知当前异步任务已经完成，并继续执行下一个任务。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>data<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>any</code>
+                                </td>
+                                <td class="doc">
+                                    
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx"><span class="doc-code-keyword">new</span> AsyncQueue().resume()</code></pre>
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">通知当前异步任务已经完成，并继续执行下一个任务。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/AsyncQueue/then">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/asyncQueue/asyncQueue.ts#L79-133" target="_blank" title="源码：util/asyncQueue/asyncQueue.ts，第 79 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>then<i class="doc-tip doc-api-ellipsis">(callback, ...)</i><span class="doc-tip doc-api-more">(callback:<code>function</code>, link?:<code>string</code>):<code>this</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">添加一个同步或异步任务。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>callback<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>(data: any) =&gt; void</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">要添加的任务函数。函数的参数为上个异步调用传递的数据。
+如果是异步函数，则函数内部必须调用</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>link</code>
+                                </td>
+                                <td>
+                                    <code>&quot;wait&quot; | &quot;abort&quot; | &quot;insert&quot; | &quot;replace&quot; | &quot;cancel&quot;</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">= &quot;wait&quot; 定义正在执行其它异步任务时，</p>
+
+                                </td>
+                                <td>
+                                    <code>&quot;wait&quot;</code>
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>this</code></p>
+                
+                <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx"><span class="doc-code-keyword">new</span> AsyncQueue().then(<span class="doc-code-function"><span class="doc-code-keyword">function</span>(<span class="doc-code-params"></span>)</span>{ });</code></pre>
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">添加一个同步或异步任务。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/AsyncQueue/skip">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/asyncQueue/asyncQueue.ts#L135-142" target="_blank" title="源码：util/asyncQueue/asyncQueue.ts，第 135 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>skip<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>this</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">终止当前正在执行的异步任务并执行后续任务。</p>
+
+                
+                
+                
+                <h4>返回值</h4>
+                <p>类型：<code>this</code></p>
+                
+                <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx"><span class="doc-code-keyword">new</span> AsyncQueue().abort();</code></pre>
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">终止当前正在执行的异步任务并执行后续任务。</p>
+
+                                </td>
+                                
+                            </tr></table></div><h3 id="api/Abortable"><a href="#api/Abortable" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/util/asyncQueue/asyncQueue.ts#L146-156" target="_blank" title="源码：util/asyncQueue/asyncQueue.ts，第 146 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Abortable 接口</h3><p class="doc">表示一个可终止的异步操作。</p>
+<div class="doc doc-scrollable"><table class="doc-api"><tr>
+                            <th class="doc-api-method">方法</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/Abortable/abort">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/asyncQueue/asyncQueue.ts#L151-154" target="_blank" title="源码：util/asyncQueue/asyncQueue.ts，第 151 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>abort<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">终止当前异步操作。</p>
+
+                
+                
+                
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">终止当前异步操作。</p>
+
+                                </td>
+                                
+                            </tr></table></div>
+                        <nav id="doc_pager">
+                            <a href="../../../components/util/queue/" title="队列" id="doc_pager_prev"><i class="doc-icon">⮜</i> 队列</a>
+                            <a href="../../../components/util/tween/" title="补间动画" id="doc_pager_next">补间动画 <i class="doc-icon">⮞</i></a>
+                        </nav>
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../..","dir":"components","active":"util/asyncQueue/","test":"util/asyncQueue/asyncQueue-test.ts","imports":["util/asyncQueue"]})
+    </script>
+    <script src="../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

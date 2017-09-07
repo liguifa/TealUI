@@ -1,0 +1,29 @@
+.x-toolbar {
+  color: #999;
+}
+
+.x-toolbar a {
+  margin: 0 1rem 0 0;
+  color: #999;
+}
+
+.x-toolbar a:last-child {
+  margin: 0;
+}
+
+.x-toolbar a:hover {
+  color: #208fee;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.x-toolbar-right {
+  float: right;
+}
+
+.x-toolbar-active {
+  color: #208fee !important;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=toolBar.css.map */

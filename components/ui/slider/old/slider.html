@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+	<script>require(["ui/slider/old/slider"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ui/slider/old/slider.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ui/slider/old/slider" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ui/slider/old/slider.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <dl id="doc_toc">
+	<dt><a href="#单个滑块">单个滑块</a></dt>
+	<dt><a href="#区间滑块">区间滑块</a></dt>
+	<dt><a href="#区间步长">区间步长</a></dt>
+	<dt><a href="#api">API</a></dt>
+	<dt><a href="#纯-html-样式">纯 HTML 样式</a></dt>
+	<dt><a href="#api">API</a></dt>
+</dl>
+<h2 id="单个滑块">
+<a href="#单个滑块" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>单个滑块</h2>
+<aside class="doc-demo">
+<div class="x-slider" x-role="slider" x-value="50">[](javascript://左右滑动)</div>
+</aside>
+<h2 id="区间滑块">
+<a href="#区间滑块" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>区间滑块</h2>
+<aside class="doc-demo">
+<div id="slider1" class="x-slider" x-role="slider" x-start="24" x-end="60">[](javascript://左右滑动)[](javascript://左右滑动)</div>
+</aside>
+<h2 id="区间步长">
+<a href="#区间步长" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>区间步长</h2>
+<aside class="doc-demo">
+<div id="slider1" class="x-slider" x-role="slider" x-step="20">[](javascript://左右滑动)</div>
+</aside>
+<h2 id="api">
+<a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2>
+<h5>获取当前滑块的值</h5>
+<pre>$('[x-role="slider"]').role().getValue();</pre>
+<h5>设置当前滑块的值</h5>
+<pre>$('[x-role="slider"]').role().setValue(30);</pre>
+<h5>设置滑块值改变的回调</h5>
+<pre>$('[x-role="slider"]').role().on('change', function(){ console.log('值改变了: ' + this.getValue()) });</pre>
+<h2 id="纯-html-样式">
+<a href="#纯-html-样式" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>纯 HTML 样式</h2>
+<aside class="doc-demo">
+<div id="slider1" class="x-slider" x-role="slider1">
+<div class="x-slider-fore" style="left: 24%; width: 52%;">52%</div>
+<p class="doc"><a href="###"></a><a href="###"></a></div></p>
+</aside>
+<script>
+Doc.renderCodes();
+</script>
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><div class="doc doc-scrollable"><table class="doc-api"><tr>
+                                <th class="doc-api-property">变量</th>
+                                <th class="doc-api-type">类型</th>
+                                <th class="doc-api-summary">描述</th>
+                                
+                            </tr><tr id="api/Slider">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/slider/old/slider.ts#L16-271" target="_blank" title="源码：ui/slider/old/slider.ts，第 16 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>Slider</code>
+                                <span class="doc-api-more">: <code>any</code> = <code>Input.extend({
+
+    /**
+     * ���û�������Сֵ��
+     * @type {Number}
+     */
+    min: 0,
+
+    /**
+     * ���û���������ֵ��
+     * @type {Number}
+     */
+    max: 100,
+
+    /**
+     * ���û����Ĳ�����
+     * @type {Number}
+     */
+    step: 0,
+
+    init: function (options) {
+        NodeList.each(this.elem.queryAll('.x-slider-handle'), this.initHandle, this);
+        var me = this;
+        this.elem.on('mousedown', function (e) { me.onClick(e); });
+        this.onChange();
+    },
+
+    onClick: function (e) {
+
+        if (e.target.matches('.x-slider-handle')) {
+            return;
+        }
+
+        var handles = this.elem.queryAll('.x-slider-handle'),
+            left = e.pageX - this.elem.getRect().left,
+            leftP = left * 100 / this.elem.offsetWidth,
+            min = 101,
+            handle = handles[0];
+
+        // �ҵ������ĵ㡣
+        for (var i = handles.length - 1; i &gt;= 0; i--) {
+            // ���ұ߸������˳�ѭ����
+            var value = Math.abs(parseFloat(handles[i].style.left) - leftP);
+            if (value &lt; min) {
+                handle = handles[i];
+                min = value;
+            }
+        }
+
+        this._setHandleOffset(handle, left);
+        handle.trigger('mousedown', e);
+    },
+
+    _setHandleOffset: function (handle, left) {
+        var draggable = {
+            endOffset: { left: left }
+        };
+        this._handleDragStart(handle, draggable);
+        this._handleDragMove(handle, draggable);
+    },
+
+    _handleDragStart: function (handle, draggable) {
+        // �϶���ʼǰȷ����ǰ�����Ŀ��÷�Χ��ÿ�������ķ�Χ��ǰ�󻬿�֮�䡣
+        var handles = this.elem.queryAll('.x-slider-handle'),
+            min = 101,
+            max = -1,
+            value;
+
+        for (var i = 0; i &lt; handles.length; i++) {
+            if (handles[i] !== i) {
+                value = parseFloat(handles[i].style.left);
+                if (value &lt; min) {
+                    min = value;
+                }
+                if (value &gt; max) {
+                    max = value;
+                }
+            }
+        }
+
+        if (min === 101) {
+            min = 0;
+        }
+
+        if (max === -1) {
+            max = 100;
+        }
+
+        draggable.min = min,
+        draggable.max = max;
+
+        // �����������ص�ʱ�����������л�˳����
+        var currentValue = parseFloat(handle.style.left);
+        if (currentValue === draggable.min) {
+            draggable.min = 0;
+        }
+        if (currentValue === draggable.max) {
+            draggable.max = 100;
+        }
+
+        draggable.part = this.step &amp;&amp; this.elem.offsetWidth * this.step / (this.max - this.min);
+    },
+
+    _handleDragMove: function (handle, draggable, e) {
+        var left = draggable.endOffset.left;
+
+        // ʵʱ������
+        if (draggable.part) {
+            left = draggable.part * Math.floor((left + draggable.part / 2) / draggable.part);
+        }
+
+        // �����ٷֱȡ�
+        left = left * 100 / this.elem.offsetWidth;
+
+        // ȷ�������ں����϶���Χ�ڡ�
+        draggable.value = left = Math.max(draggable.min, Math.min(draggable.max, left));
+
+        if (this.onChanging(draggable, e) !== false) {
+
+            // ������ X ���꼴�ɡ�
+            handle.style.left = left + '%';
+
+            // ���»���������
+            this.onChange();
+
+        }
+
+    },
+
+    initHandle: function (handle) {
+        var me = this;
+        handle.setDraggable({
+            autoSrcoll: 0,
+            onDragStart: function (e) {
+                me._handleDragStart(handle, this, e);
+            },
+            onDragMove: function (e) {
+                me._handleDragMove(handle, this, e);
+                // ��ֹĬ�ϵ�����λ�ù��ܡ�
+                return false;
+            }
+        });
+
+        // �޸� handle �� left ֵ��
+        if (!/%$/.test(handle.style.left)) {
+            handle.style.left = handle.getOffset().left * 100 / this.elem.offsetWidth + '%';
+        }
+    },
+
+    /**
+     * ����ĳ��������ֵ��
+     * @param {Element} handle Ҫ���õĻ��顣
+     * @return {Number} ����һ�� 0 �� 1 ��ֵ����ʾ����������ֵ��
+     */
+    getValueOfHandle: function (handle) {
+        return handle ? this.min + parseFloat(handle.style.left) * (this.max - this.min) / 100 : 0;
+    },
+
+    /**
+     * ����ĳ��������ֵ��
+     * @param {Element} handle Ҫ���õĻ��顣
+     * @param {Number} value һ�� 0 �� 1 ��ֵ����ʾ����������ֵ��
+     */
+    setValueOfHandle: function (handle, value) {
+        if (handle) {
+            handle.style.left = (value - this.min) * 100 / (this.max - this.min) + '%';
+            this.onChange();
+        }
+        return this;
+    },
+
+    /**
+     * �ڻ��鼴���ƶ�ǰ������
+     * @param {Object} draggable ���汾�λ������ص���Ϣ��
+     * @param {Event} e ����������ԭʼ�¼���Ϣ��
+     * @return {Boolean} �������λ�����Ч���򷵻� false��
+     */
+    onChanging: function (draggable, e) {
+        return this.trigger('chaning', draggable);
+    },
+
+    onChange: function () {
+
+        // �����ı�����
+        this.getInput().value = this.getValues();
+
+        // ���û���ǰ��ɫ��
+        var handles = this.elem.queryAll('.x-slider-handle'),
+            startHandle = this.getStartHandle(),
+            endHandle = this.getEndHandle(),
+            start = startHandle ? parseFloat(startHandle.style.left) : 0,
+            fore = this.elem.query('.x-slider-fore');
+        fore.style.left = start + '%';
+        fore.style.width = endHandle ? Math.max(0, parseFloat(endHandle.style.left) - start) + '%' : 0;
+
+        return this.trigger('change');
+    },
+
+    /**
+     * ��ȡÿ��������ֵ��
+     */
+    getValues: function () {
+        var values = [];
+        NodeList.each(this.elem.queryAll('.x-slider-handle'), function (handle, index) {
+            values[index] = this.getValueOfHandle(handle);
+        }, this);
+        return values;
+    },
+
+    getStartHandle: function () {
+        var handles =  this.elem.queryAll('.x-slider-handle'),
+            min = 0;
+        for (var i = 1; i &lt; handles.length; i++) {
+            if (parseFloat(handles[min].style.left) &gt; parseFloat(handles[i].style.left)) {
+                min = i;
+            }
+        }
+        return handles.length &gt; 1 ? handles[min] : null;
+    },
+
+    getEndHandle: function () {
+        var handles =  this.elem.queryAll('.x-slider-handle'),
+            max = 0;
+        for (var i = 1; i &lt; handles.length; i++) {
+            if (parseFloat(handles[max].style.left) &lt; parseFloat(handles[i].style.left)) {
+                max = i;
+            }
+        }
+        return handles[max];
+    },
+
+    getStart: function (value) {
+        return this.getValueOfHandle(this.getStartHandle());
+    },
+
+    setStart: function (value) {
+        return this.setValueOfHandle(this.getStartHandle(), value);
+    },
+
+    getEnd: function (value) {
+        return this.getValueOfHandle(this.getEndHandle());
+    },
+
+    setEnd: function (value) {
+        return this.setValueOfHandle(this.getEndHandle(), value);
+    },
+
+    getValue: function () {
+        return this.getEnd() - this.getStart();
+    },
+
+    setValue: function (value) {
+        return this.setEnd(this.getStart() + value);
+    }
+
+})</code></span>
+                                <div class="doc doc-api-detail">
+                                    <p class="doc">&quot;);
+��ʾһ�����顣</p>
+
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>any</code>
+                            </td>
+                            <td class="doc">
+                                <p class="doc">&quot;);
+��ʾһ�����顣</p>
+
+                            </td>
+                            
+                        </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ui/slider/old/slider.html","imports":["ui/slider/old/slider"]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

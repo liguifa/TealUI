@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
+    <meta name="version" content="0.0.1">
+    <title>补间动画 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/doc/doc.css">
+    <script src="../../../components/require.js"></script>
+	<script>require(["util/tween"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                <li><a href="javascript:Doc.toggleUnitTest()" accesskey="t"><i class="doc-icon">☕</i>单元测试</a></li>
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                <li><a href="javascript:Doc.toggleDemoCodes()" accesskey="c"><i class="doc-icon">⅏</i>折叠源码</a></li>
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/tween.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/tween" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/tween/tween.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="补间动画">
+<a href="#补间动画" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>补间动画<div class="doc-menubutton">
+                        <small>util/tween</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import Tween from \&quot;util/tween\&quot;;\n&quot;)">复制 <code>import "util/tween"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/tween\&quot;], function (tween_1) {\n\tvar Tween = tween_1.default;\n\n\n});\n&quot;)">复制 <code>require("util/tween")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/tween\&quot;&quot;)">复制 <code>"util/tween"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">底层实现补间动画算法，以便实现平滑渐变的效果。</p>
+<div class="doc-demo doc-demo-collapsed">
+                    <div class="doc-demo-body doc" aria-label="示例" id="doc_demo_1">
+<div style="border: 1px solid #e89109; width: 318px;">
+    <div id="box" style="width: 18px; height: 18px; background: #e89109; position: relative;"></div>
+</div>
+<div id="btn" class="doc" style="margin-top: 1rem;"></div>
+<script>
+define("doc_demo_1", ["require", "exports", "util/tween", "util/tween/transitions"], function (require, exports, tween_1, transitions) {
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var html = "";
+    for (var key in transitions) {
+        if (!/^ease/.test(key)) {
+            html += '<input type="button" onclick="run(transitions.' + key + ')" value="' + key + '"> ';
+            html += '<input type="button" onclick="run(transitions.easeOut(transitions.' + key + '))" value="easeOut(' + key + ')"> ';
+            html += '<input type="button" onclick="run(transitions.easeInOut(transitions.' + key + '))" value="easeInOut(' + key + ')"> ';
+            html += '<br>';
+        }
+    }
+    btn.innerHTML = html;
+    var f = new tween_1.default();
+    f.duration = 3000;
+    f.set = function (x) {
+        box.style.left = 300 * x + 'px';
+    };
+    window.transitions = transitions;
+    window.run = function (transition) {
+        if (!f.timer) {
+            f.reset();
+        }
+        f.transition = transition;
+        f.start();
+    };
+});
+
+var exports = require("doc_demo_1")
+</script>
+
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-html"><span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"border: 1px solid #e89109; width: 318px;"</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">id</span>=<span class="doc-code-string">"box"</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"width: 18px; height: 18px; background: #e89109; position: relative;"</span>&gt;</span><span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">id</span>=<span class="doc-code-string">"btn"</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"doc"</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"margin-top: 1rem;"</span>&gt;</span><span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">script</span>&gt;</span><span class="javascript">
+    <span class="doc-code-keyword">import</span> Tween <span class="doc-code-keyword">from</span> <span class="doc-code-string">"util/tween"</span>;
+    <span class="doc-code-keyword">import</span> * <span class="doc-code-keyword">as</span> transitions <span class="doc-code-keyword">from</span> <span class="doc-code-string">"util/tween/transitions"</span>;
+    <span class="doc-code-keyword">var</span> html = <span class="doc-code-string">""</span>;
+    <span class="doc-code-keyword">for</span> (<span class="doc-code-keyword">var</span> key <span class="doc-code-keyword">in</span> transitions) {
+        <span class="doc-code-keyword">if</span> (!<span class="doc-code-regexp">/^ease/</span>.test(key)) {
+            html += <span class="doc-code-string">'&lt;input type="button" onclick="run(transitions.'</span> + key + <span class="doc-code-string">')" value="'</span> + key + <span class="doc-code-string">'"&gt; '</span>;
+            html += <span class="doc-code-string">'&lt;input type="button" onclick="run(transitions.easeOut(transitions.'</span> + key + <span class="doc-code-string">'))" value="easeOut('</span> + key + <span class="doc-code-string">')"&gt; '</span>;
+            html += <span class="doc-code-string">'&lt;input type="button" onclick="run(transitions.easeInOut(transitions.'</span> + key + <span class="doc-code-string">'))" value="easeInOut('</span> + key + <span class="doc-code-string">')"&gt; '</span>;
+            html += <span class="doc-code-string">'&lt;br&gt;'</span>;
+        }
+    }
+    btn.innerHTML = html;
+    <span class="doc-code-keyword">var</span> f = <span class="doc-code-keyword">new</span> Tween();
+    f.duration = <span class="doc-code-number">3000</span>;
+    f.set = <span class="doc-code-function"><span class="doc-code-keyword">function</span> (<span class="doc-code-params">x</span>) </span>{
+        box.style.left = <span class="doc-code-number">300</span> * x + <span class="doc-code-string">'px'</span>;
+    };
+    <span class="doc-code-built_in">window</span>.transitions = transitions;
+    <span class="doc-code-built_in">window</span>.run = <span class="doc-code-function"><span class="doc-code-keyword">function</span> (<span class="doc-code-params">transition</span>) </span>{
+        <span class="doc-code-keyword">if</span> (!f.timer) {
+            f.reset();
+        }
+        f.transition = transition;
+        f.start();
+    };
+</span><span class="doc-code-tag">&lt;/<span class="doc-code-name">script</span>&gt;</span></code></pre>
+<a href="javascript://查看源码" aria-label="查看源码" aria-checked="true" class="doc-demo-toggle" onclick="Doc.toggleDemoCode(this.parentNode)"><i class="doc-icon">⏷</i></a>
+                </div><blockquote class="doc doc-blockquote">
+<h5>另参考</h5>
+<ul>
+<li class="doc"><a href="../../../components/util/tween/transitions.html" title="util/tween/transitions">补间动画转换函数</a></li>
+</ul>
+</blockquote>
+
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/Tween"><a href="#api/Tween" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/tween.ts#L1-95" target="_blank" title="源码：util/tween/tween.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Tween 类</h3><p class="doc">表示一个补间动画。</p>
+<h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx"><span class="doc-code-keyword">var</span> tween = <span class="doc-code-keyword">new</span> Tween();
+tween.set = <span class="doc-code-function"><span class="doc-code-params">x</span> =&gt;</span> { <span class="doc-code-built_in">console</span>.log(x); }
+tween.start();</code></pre><div class="doc doc-scrollable"><table class="doc-api"><tr>
+                                <th class="doc-api-property">字段</th>
+                                <th class="doc-api-type">类型</th>
+                                <th class="doc-api-summary">描述</th>
+                                
+                            </tr><tr id="api/Tween/duration">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/tween.ts#L10-13" target="_blank" title="源码：util/tween/tween.ts，第 10 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>duration</code>
+                                <span class="doc-api-more">: <code>number</code> = <code>300</code></span>
+                                <div class="doc doc-api-detail">
+                                    <p class="doc">渐变执行的总毫秒数。</p>
+
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>number</code>
+                            </td>
+                            <td class="doc">
+                                <p class="doc">渐变执行的总毫秒数。</p>
+
+                            </td>
+                            
+                        </tr><tr id="api/Tween/fps">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/tween.ts#L15-18" target="_blank" title="源码：util/tween/tween.ts，第 15 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>fps</code>
+                                <span class="doc-api-more">: <code>number</code> = <code>50</code></span>
+                                <div class="doc doc-api-detail">
+                                    <p class="doc">每秒的显示帧数。</p>
+
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>number</code>
+                            </td>
+                            <td class="doc">
+                                <p class="doc">每秒的显示帧数。</p>
+
+                            </td>
+                            
+                        </tr><tr id="api/Tween/done">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/tween.ts#L35-38" target="_blank" title="源码：util/tween/tween.ts，第 35 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>done</code>
+                                <span class="doc-api-more">: <code>() =&gt; void</code></span>
+                                <div class="doc doc-api-detail">
+                                    <p class="doc">当效果结束后执行。</p>
+
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>function</code>
+                            </td>
+                            <td class="doc">
+                                <p class="doc">当效果结束后执行。</p>
+
+                            </td>
+                            
+                        </tr></table><table class="doc-api"><tr>
+                            <th class="doc-api-method">方法</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/Tween/transition">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/tween.ts#L20-27" target="_blank" title="源码：util/tween/tween.ts，第 20 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>transition<i class="doc-tip doc-api-ellipsis">(x)</i><span class="doc-tip doc-api-more">(x:<code>number</code>):<code>number</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">当被子类重写时负责重写渐变曲线。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>x<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>number</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">转换前的数值，大小在 0-1 之间。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>number</code></p>
+                <p class="doc">返回根据渐变曲线变换后的值，大小在 0-1 之间。</p>
+
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">当被子类重写时负责重写渐变曲线。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/Tween/set">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/tween.ts#L29-33" target="_blank" title="源码：util/tween/tween.ts，第 29 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>set<i class="doc-tip doc-api-ellipsis">(x)</i><span class="doc-tip doc-api-more">(x:<code>number</code>):<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">当被子类重写时负责根据指定的变化量设置实际的效果值。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>x<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>number</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">当前的变化因子，大小在 0-1 之间。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">当被子类重写时负责根据指定的变化量设置实际的效果值。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/Tween/start">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/tween.ts#L40-50" target="_blank" title="源码：util/tween/tween.ts，第 40 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>start<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">开始执行渐变。</p>
+
+                
+                
+                
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">开始执行渐变。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/Tween/stop">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/tween.ts#L52-61" target="_blank" title="源码：util/tween/tween.ts，第 52 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>stop<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">停止执行渐变。</p>
+
+                
+                
+                
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">停止执行渐变。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/Tween/reset">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/tween.ts#L63-69" target="_blank" title="源码：util/tween/tween.ts，第 63 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>reset<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">重置执行渐变。</p>
+
+                
+                
+                
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">重置执行渐变。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/Tween/step">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/tween.ts#L81-93" target="_blank" title="源码：util/tween/tween.ts，第 81 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>step<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">(保护的)进入变换的下步。</p>
+
+                
+                
+                
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">(保护的)进入变换的下步。</p>
+
+                                </td>
+                                
+                            </tr></table></div>
+                        <nav id="doc_pager">
+                            <a href="../../../components/util/asyncQueue/" title="异步队列" id="doc_pager_prev"><i class="doc-icon">⮜</i> 异步队列</a>
+                            <a href="../../../components/util/sort/" title="排序算法" id="doc_pager_next">排序算法 <i class="doc-icon">⮞</i></a>
+                        </nav>
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../..","dir":"components","active":"util/tween/","test":"util/tween/tween-test.ts","imports":["util/tween"]})
+    </script>
+    <script src="../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

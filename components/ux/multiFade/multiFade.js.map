@@ -1,0 +1,1 @@
+{"version":3,"file":"multiFade.js","sourceRoot":"../../..","sources":["components/ux/multiFade/multiFade.ts"],"sourcesContent":["/**\r\n * 突出高亮。\r\n */\r\nexport default function multiFade() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,4BAEC"}

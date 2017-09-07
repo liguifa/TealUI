@@ -1,0 +1,44 @@
+.x-nav {
+  padding: 0;
+  list-style: none;
+}
+
+.x-nav a {
+  display: block;
+  margin-bottom: 0.5rem;
+  border-radius: 0.2rem;
+  padding: 0.375rem 1rem;
+}
+
+.x-nav a:hover {
+  background-color: #fafafa;
+  text-decoration: none;
+}
+
+.x-nav-active a {
+  background-color: #208fee !important;
+  color: #fff !important;
+}
+
+.x-nav-active a .x-badge {
+  background-color: #fff;
+  color: #208fee;
+}
+
+.x-nav-inline {
+  display: inline;
+}
+
+.x-nav-inline li {
+  display: inline;
+}
+
+.x-nav-inline li a {
+  display: inline-block;
+}
+
+.x-nav-inline li + li {
+  margin-left: 0.5rem;
+}
+
+/*# sourceMappingURL=nav.css.map */

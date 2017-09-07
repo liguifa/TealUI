@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                
+                                
+                                
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/edit/master/components/ui/form/form/index.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="表单">
+<a href="#表单" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>表单</h1>
+<h2 id="基本用法">
+<a href="#基本用法" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>基本用法</h2>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-htm">&lt;Form /&gt;</code></pre>
+                        
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ui/form/","imports":[]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>l="stylesheet" href="../../typo/utility/utility.scss">
+<link rel="stylesheet" href="../../typo/tip/tip.scss">
+<link rel="stylesheet" href="../tipBox/tipBox.scss">
+<link rel="stylesheet" href="../textBox/textBox.scss">
+<link rel="stylesheet" href="../button/button.scss">
+<div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_1">
+<script>
+VNode.create(Form, { method: "GET", onValidate: () => false },
+    VNode.create("button", null, "\u63D0\u4EA4"));
+
+</script>
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-tsx">&lt;Form method=<span class="doc-code-string">"GET"</span> onValidate={()=&gt;<span class="doc-code-literal">false</span>}&gt;
+    <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">button</span>&gt;</span>提交<span class="doc-code-tag">&lt;/<span class="doc-code-name">button</span>&gt;</span></span>
+&lt;<span class="doc-code-regexp">/Form&gt;</span></code></pre>
+                </div><dl id="doc_toc">
+	<dt><a href="#水平布局">水平布局</a></dt>
+	<dt><a href="#api">API</a></dt>
+	<dd><a href="#api/Form">Form 类</a></dd>
+</dl>
+<h2 id="水平布局">
+<a href="#水平布局" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>水平布局</h2>
+<div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_2">
+<script>
+VNode.create("form", { class: "x-form", action: "###" },
+    VNode.create("div", { class: "x-form-field" },
+        VNode.create("label", { class: "x-form-label" },
+            "\u8D26\u53F7\u540D",
+            VNode.create("span", { class: "x-tip x-tip-error" }, "*"),
+            ":"),
+        VNode.create("div", { class: "x-form-input" },
+            VNode.create("input", { type: "text", class: "x-textbox" }),
+            VNode.create("label", { class: "x-form-label" },
+                "\u8D26\u53F7",
+                VNode.create("span", { class: "x-tip x-tip-error" }, "*"),
+                ":"),
+            VNode.create("div", { class: "x-form-input" },
+                VNode.create("input", { type: "text", class: "x-textbox" }),
+                VNode.create("label", { class: "x-form-label" },
+                    "\u8D26\u53F7",
+                    VNode.create("span", { class: "x-tip x-tip-error" }, "*"),
+                    ":"),
+                VNode.create("div", { class: "x-form-input" },
+                    VNode.create("input", { type: "text", class: "x-textbox" },
+                        VNode.create("br", null,
+                            VNode.create("input", { type: "text", class: "x-textbox" })),
+                        VNode.create("div", { class: "x-form-field" },
+                            VNode.create("label", { class: "x-form-label" },
+                                "\u8D26\u53F7\u540D\u5B57",
+                                VNode.create("span", { class: "x-tip x-tip-error" }, "*"),
+                                ":"),
+                            VNode.create("div", { class: "x-form-input" },
+                                VNode.create("textarea", { class: "x-textbox" })),
+                            VNode.create("label", { class: "x-form-label" },
+                                "\u8D26",
+                                VNode.create("span", { class: "x-tip x-tip-error" }, "*"),
+                                ":"),
+                            VNode.create("div", { class: "x-form-input" },
+                                VNode.create("input", { type: "text", class: "x-textbox" }),
+                                VNode.create("label", { class: "x-form-label" },
+                                    "\u8D26",
+                                    VNode.create("span", { class: "x-tip x-tip-error" }, "*"),
+                                    ":"),
+                                VNode.create("div", { class: "x-form-input" },
+                                    VNode.create("input", { type: "text", class: "x-textbox" })),
+                                VNode.create("div", { class: "x-form-field" },
+                                    VNode.create("label", { class: "x-form-label" }),
+                                    VNode.create("div", { class: "x-form-input" },
+                                        VNode.create("input", { type: "button", class: "x-button", value: "提交" })))))))))));
+
+</script>
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-tsx">&lt;form <span class="doc-code-class"><span class="doc-code-keyword">class</span></span>=<span class="doc-code-string">"x-form"</span> action=<span class="doc-code-string">"###"</span>&gt;
+     &lt;div class="x-form-field"&gt;
+        &lt;label class="x-form-label"&gt;账号名&lt;span class="x-tip x-tip-error"&gt;*&lt;/span&gt;:&lt;/label&gt;
+        &lt;div class="x-form-input"&gt;&lt;input type="text" class="x-textbox"&gt;&lt;/div&gt;
+        
+        &lt;label class="x-form-label"&gt;账号&lt;span class="x-tip x-tip-error"&gt;*&lt;/span&gt;:&lt;/label&gt;
+        &lt;div class="x-form-input"&gt;&lt;input type="text" class="x-textbox"&gt;&lt;/div&gt;
+        
+        &lt;label class="x-form-label"&gt;账号&lt;span class="x-tip x-tip-error"&gt;*&lt;/span&gt;:&lt;/label&gt;
+        &lt;div class="x-form-input"&gt;
+            &lt;input type="text" class="x-textbox"&gt;&lt;br&gt;
+            &lt;input type="text" class="x-textbox"&gt;
+        &lt;/div&gt;
+     &lt;/div&gt;
+     
+     &lt;div class="x-form-field"&gt;
+        &lt;label class="x-form-label"&gt;账号名字&lt;span class="x-tip x-tip-error"&gt;*&lt;/span&gt;:&lt;/label&gt;
+        &lt;div class="x-form-input"&gt;
+            &lt;textarea class="x-textbox"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        
+        &lt;label class="x-form-label"&gt;账&lt;span class="x-tip x-tip-error"&gt;*&lt;/span&gt;:&lt;/label&gt;
+        &lt;div class="x-form-input"&gt;&lt;input type="text" class="x-textbox"&gt;&lt;/div&gt;
+
+        &lt;label class="x-form-label"&gt;账&lt;span class="x-tip x-tip-error"&gt;*&lt;/span&gt;:&lt;/label&gt;
+        &lt;div class="x-form-input"&gt;&lt;input type="text" class="x-textbox"&gt;&lt;/div&gt;
+     &lt;/div&gt;
+     
+     &lt;div class="x-form-field"&gt;
+        &lt;label class="x-form-label"&gt;&lt;/label&gt;
+        &lt;div class="x-form-input"&gt;&lt;input type="button" class="x-button" value="提交"&gt;&lt;/div&gt;
+     &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+                </div><div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_3">
+<script>
+VNode.create("form", { class: "x-form", action: "###" },
+    VNode.create("div", { class: "x-form-field" },
+        VNode.create("label", { class: "x-form-label" },
+            "\u8D26\u53F7\u540D",
+            VNode.create("span", { class: "x-tip x-tip-error" }, "*"),
+            ":"),
+        VNode.create("div", { class: "x-form-input" },
+            VNode.create("input", { type: "text", class: "x-textbox x-textbox-error" },
+                VNode.create("span", { class: "x-tipbox x-tipbox-error" }, "\u9519\u8BEF"))),
+        VNode.create("div", { class: "x-form-field" },
+            VNode.create("label", { class: "x-form-label" }, "\u9A8C\u8BC1\u7801:"),
+            VNode.create("div", { class: "x-form-input" },
+                VNode.create("input", { type: "text", class: "x-textbox" }),
+                VNode.create("a", { href: "###" },
+                    VNode.create("img", { src: "../../../assets/resources/100x100.png", height: "34" })),
+                VNode.create("a", { href: "###" }, "\u770B\u4E0D\u6E05\uFF0C\u6362\u4E00\u5F20"))),
+        VNode.create("div", { class: "x-form-field" },
+            VNode.create("label", { class: "x-form-label" }),
+            VNode.create("div", { class: "x-form-input" },
+                VNode.create("label", null,
+                    VNode.create("input", { type: "checkbox", checked: true }),
+                    " \u540C\u610F",
+                    VNode.create("a", { href: "###" }, "\u7528\u6237\u534F\u8BAE")))),
+        VNode.create("div", { class: "x-form-field" },
+            VNode.create("label", { class: "x-form-label" }),
+            VNode.create("div", { class: "x-form-input" },
+                VNode.create("button", { type: "submit", class: "x-button" }, "\u786E\u5B9A")))));
+
+</script>
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-tsx">&lt;form <span class="doc-code-class"><span class="doc-code-keyword">class</span></span>=<span class="doc-code-string">"x-form"</span> action=<span class="doc-code-string">"###"</span>&gt;
+    &lt;div class="x-form-field"&gt;
+        &lt;label class="x-form-label"&gt;账号名&lt;span class="x-tip x-tip-error"&gt;*&lt;/span&gt;:&lt;/label&gt;
+        &lt;div class="x-form-input"&gt;
+            &lt;input type="text" class="x-textbox x-textbox-error"&gt;
+            &lt;span class="x-tipbox x-tipbox-error"&gt;错误&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="x-form-field"&gt;
+        &lt;label class="x-form-label"&gt;验证码:&lt;/label&gt;
+        &lt;div class="x-form-input"&gt;
+            &lt;input type="text" class="x-textbox" /&gt;
+            &lt;a href="###"&gt;&lt;img src="../../../assets/resources/100x100.png" height="34" /&gt;&lt;/a&gt;
+            &lt;a href="###"&gt;看不清，换一张&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="x-form-field"&gt;
+        &lt;label class="x-form-label"&gt;&lt;/label&gt;
+        &lt;div class="x-form-input"&gt;
+            &lt;label&gt;&lt;input type="checkbox" checked /&gt; 同意&lt;a href="###"&gt;用户协议&lt;/a&gt;&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="x-form-field"&gt;
+        &lt;label class="x-form-label"&gt;&lt;/label&gt;
+        &lt;div class="x-form-input"&gt;
+            &lt;button type="submit" class="x-button"&gt;确定&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+                </div><p class="doc">当在手机上，水平布局会自动改为垂直布局。</p>
+<blockquote class="doc doc-blockquote">
+<p class="doc">另参考 <a href="validator.html">表单验证(validator)</a>。</p>
+</blockquote>
+
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/Form"><a href="#api/Form" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form/form.ts#L9-26" target="_blank" title="源码：ui/form/form/form.ts，第 9 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Form 类</h3><p class="doc">表示一个表单。</p>
+<div class="doc doc-scrollable"><table class="doc-api"><tr>
+                                <th class="doc-api-property">字段</th>
+                                <th class="doc-api-type">类型</th>
+                                <th class="doc-api-summary">描述</th>
+                                
+                            </tr><tr id="api/Form/tpl">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form/form.ts#L14-17" target="_blank" title="源码：ui/form/form/form.ts，第 14 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>tpl</code>
+                                <span class="doc-api-more">: <code>string</code> = <code>`&lt;div class=&quot;x-form&quot;&gt;&lt;/div&gt;`</code></span>
+                                <div class="doc doc-api-detail">
+                                    <p class="doc">(保护的)获取当前控件的模板。</p>
+
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>string</code>
+                            </td>
+                            <td class="doc">
+                                <p class="doc">(保护的)获取当前控件的模板。</p>
+
+                            </td>
+                            
+                        </tr></table><table class="doc-api"><tr>
+                            <th class="doc-api-method">方法</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/Form/init">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form/form.ts#L19-24" target="_blank" title="源码：ui/form/form/form.ts，第 19 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>init<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">(保护的)当被子类重写时，负责初始化当前控件。</p>
+
+                
+                
+                
+                <h4>返回值</h4>
+                <p>类型：<code>void</code></p>
+                
+                
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">(保护的)当被子类重写时，负责初始化当前控件。</p>
+
+                                </td>
+                                
+                            </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ui/form/","imports":["ui/form/form"]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

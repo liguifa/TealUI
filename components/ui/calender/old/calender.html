@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calender - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+	<script>require(["ui/calender/old/calender"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ui/calender/old/calender.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ui/calender/old/calender" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ui/calender/old/calender.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <blockquote class="doc doc-blockquote">
+<p class="doc">本组件是日历本身，如果需要日期时间选择器，请参考 <a href="../input/datePicker.html">日期选择器(datePicker)</a> 组件。</p>
+</blockquote>
+<dl id="doc_toc">
+	<dt><a href="#基本用法">基本用法</a></dt>
+	<dt><a href="#自定义样式">自定义样式</a></dt>
+	<dd><a href="#显示时间选择器">显示时间选择器</a></dd>
+	<dd><a href="#月份选择器">月份选择器</a></dd>
+	<dd><a href="#设置现在时间">设置现在时间</a></dd>
+	<dd><a href="#隐藏现在时间">隐藏现在时间</a></dd>
+	<dd><a href="#设置可选的区间">设置可选的区间</a></dd>
+	<dt><a href="#数据处理">数据处理</a></dt>
+	<dt><a href="#更多定制">更多定制</a></dt>
+	<dt><a href="#html-结构">HTML 结构</a></dt>
+	<dt><a href="#api">API</a></dt>
+</dl>
+<h2 id="基本用法">
+<a href="#基本用法" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>基本用法</h2>
+<p class="doc">日历组件不需要用户提供 HTML，指定为日历控件后内容将自动生成。</p>
+<aside class="doc-demo"></aside>
+<h2 id="自定义样式">
+<a href="#自定义样式" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>自定义样式</h2>
+<h3 id="显示时间选择器">
+<a href="#显示时间选择器" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>显示时间选择器</h3>
+<p class="doc">设置 <code>x-format</code> 字段，如果包含 HH:mm:ss 的任一部分，就会显示时间选择器，否则不显示。</p>
+<aside class="doc-demo"></aside>
+<h3 id="月份选择器">
+<a href="#月份选择器" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>月份选择器</h3>
+<p class="doc">设置 <code>x-format</code> 字段，如果不包含 d 的任一部分，就会只显示月份选择器。</p>
+<aside class="doc-demo"></aside>
+<h3 id="设置现在时间">
+<a href="#设置现在时间" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>设置现在时间</h3>
+<p class="doc">设置 <code>x-now</code> 字段可指定当前时间。这在需要显示服务器时间时非常有用。</p>
+<aside class="doc-demo"></aside>
+<h3 id="隐藏现在时间">
+<a href="#隐藏现在时间" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>隐藏现在时间</h3>
+<p class="doc">直接通过 CSS 覆盖即可隐藏。</p>
+<pre>        .x-calender-now { 
+            display:none; 
+        }
+    </pre>
+<h3 id="设置可选的区间">
+<a href="#设置可选的区间" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>设置可选的区间</h3>
+<aside class="doc-demo"></aside>
+<h2 id="数据处理">
+<a href="#数据处理" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>数据处理</h2>
+<p class="doc">c</p>
+<h5>获取当前用户选中的日期</h5>
+<pre>$('[x-role="calender"]').role().on('select', function(date){ alert(date); });</pre>
+<p class="doc">注意：当用户切换月份或点击禁用按钮都不会触发 <code>select</code> 事件。</p>
+<h5>当值发生改变后触发</h5>
+<pre>$('[x-role="calender"]').role().on('change', function(date){ alert(date); });</pre>
+<h5>获取当前选中的值</h5>
+<pre>$('[x-role="calender"]').role().getValue();</pre>
+<h5>设置当前选中的值</h5>
+<pre>$('[x-role="calender"]').role().setValue(new Date());</pre>
+<h2 id="更多定制">
+<a href="#更多定制" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>更多定制</h2>
+<h5>自定义节日</h5>
+<pre>$('[x-role="calender"]').role().getHoliday = function(date){ if(date.format("MM/dd") == "4/1") return "愚人节"; };</pre>
+<h5>自定义不可选日期</h5>
+<pre>$('[x-role="calender"]').role().getClassName = function(date){ if(date.format("MM/dd") == "4/1") return "x-calender-invalid"; };</pre>
+<h5>切换当前显示的视图</h5>
+<pre>$('[x-role="calender"]').role().setView('month');</pre>
+<h5>缩小渐变切换当前显示的视图</h5>
+<pre>$('[x-role="calender"]').role().setView('month', 'zoomIn');</pre>
+<h2 id="html-结构">
+<a href="#html-结构" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>HTML 结构</h2>
+<div class="x-calender">
+<div class="x-calender-container">
+<div class="x-calender-header">[▸](javascript://下一页 "下一页") [◂](javascript://上一页 "上一页") [2011年11月](javascript://上一级 "返回上一级")</div>
+<div class="x-calender-body">
+<div class="x-calender-days">
+<p class="doc">| 日 | 一 | 二 | 三 | 四 | 五 | 六 |
+| 31 | <a href="###">1</a> | <a href="###">2</a> | <a href="###">3</a> | <a href="###">4</a> | <a href="###">5</a> | <a href="###">6</a> |
+| <a href="###">7</a> | <a href="###">8</a> | <a href="###">9</a> | <a href="###">10</a> | <a href="###">11</a> | <a href="###">12</a> | <a href="###">13</a> |
+| <a href="###">14</a> | <a href="###">15</a> | <a href="###">16</a> | <a href="###">17</a> | <a href="###">18</a> | <a href="###">19</a> | <a href="###">20</a> |
+| <a href="###">21</a> | <a href="###">22</a> | <a href="###">23</a> | <a href="###">24</a> | <a href="###">25</a> | <a href="###">26</a> | <a href="###">27</a> |
+| <a href="###">28</a> | <a href="###">29</a> | <a href="###">30</a> | <a href="###">31</a> | 1 | 2 | 3 |
+| 4 | 5 | 6 | 7 | 8 | 9 | 10 |</p>
+</div>
+</div>
+<div class="x-calender-time">时间: <input type="number" value="23" min="0" max="24" maxlength="2"> :<input type="number" value="23" min="0" max="60" maxlength="2"> :<input type="number" value="23" maxlength="2" readonly=""></div>
+<div class="x-calender-footer">[今天: 2010年10月20日](javascript://今天)</div>
+</div>
+</div>
+<script>
+Doc.renderCodes();
+</script>
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><div class="doc doc-scrollable"><table class="doc-api"><tr>
+                                <th class="doc-api-property">变量</th>
+                                <th class="doc-api-type">类型</th>
+                                <th class="doc-api-summary">描述</th>
+                                
+                            </tr><tr id="api/Calender">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/calender/old/calender.ts#L14-438" target="_blank" title="源码：ui/calender/old/calender.ts，第 14 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>Calender</code>
+                                <span class="doc-api-more">: <code>any</code> = <code>Control.extend({
+
+    /**
+     * 设置当前日历显示的时间。
+     */
+    displayValue: null,
+
+    /**
+     * 设置当前日期的字符串格式。
+     */
+    _format: 'yyyy/M/d',
+
+    /**
+     * 获取或设置显示的日期格式。
+     */
+    format: function (value) {
+        if (value === undefined) {
+            return this._format;
+        }
+        this._format = value;
+        var showTime = /[Hhms]/.test(value);
+        this.dom.find('.x-calender-time').toggle(showTime);
+        if (showTime) {
+            var inputs = this.dom.find('.x-calender-time input');
+            inputs[0].readOnly = value.indexOf('H') &lt; 0;
+            inputs[1].readOnly = value.indexOf('m') &lt; 0;
+            inputs[2].readOnly = value.indexOf('s') &lt; 0;
+        }
+        return this;
+    },
+
+    /**
+     * 获取或设置当前日历显示的时间。
+     */
+    _now: null,
+
+    /**
+     * 设置显示的当前时间。
+     */
+    now: function (value) {
+        if (value === undefined) {
+            return this._now;
+        }
+        this._now = value = Date.parseDate(value);
+        this.dom.find('.x-calender-now').attr('data-value', +value).text(value.format(Calender.locale.today));
+        return this;
+    },
+
+    /**
+     * 设置可选择的最小值。
+     */
+    _min: null,
+
+    /**
+     * 设置可选择的最小值。
+     * @param {Date} value 要设置的最小值。
+     */
+    min: function (value) {
+        if (value === undefined) {
+            return this._min;
+        }
+        this._min = value = Date.parseDate(value);
+        if (this._value &lt; value) {
+            this.value(value);
+        }
+        return this;
+    },
+
+    /**
+     * 设置可选择的最大值。
+     */
+    _max: null,
+
+    /**
+     * 设置可选择的最小值。
+     * @param {Date} value 要设置的最大值。
+     */
+    max: function (value) {
+        if (value === undefined) {
+            return this._max;
+        }
+        this._max = value = Date.parseDate(value);
+        if (this._value &gt; value) {
+            this.value(value);
+        }
+        return this;
+    },
+
+    /**
+     * 获取或设置现在选中的时间。
+     */
+    _value: null,
+
+    /**
+     * 获取或设置当前日历的值。
+     * @param {Date} value 要设置的值。
+     */
+    value: function (value) {
+        var me = this;
+        if (value === undefined) {
+            return me._value;
+        }
+        if (me._value - value) {
+            me._value = value;
+            me.displayValue = new Date(+value);
+            me.loadHours(value);
+            me.view(/d/.test(me._format) ? 'day' : /M/.test(me._format) ? 'month' : 'year');
+            me.trigger('change');
+        }
+        return me;
+    },
+
+    /**
+     * 获取或设置当前显示的视图。可能的值为'day'、'month'、'year'或'decade'。
+     */
+    _view: null,
+
+    /**
+     * 获取或设置当前显示的视图。
+     * @param {String} view 视图名。可能的值为 'day'、'month'、'year' 或 'decade'。
+     * @param {String} [animation] 切换使用的渐变效果。可能值有： 'slideLeft'、'slideRight'、'zoomIn'或'zoomOut'。
+     * @return this
+     */
+    view: function (view, animation) {
+
+        var me = this;
+
+        if (view === undefined) {
+            return me._view;
+        }
+
+        // 保存当前显示的视图。
+        me.view = view;
+
+        // 渲染视图。
+        var body = me.dom.find('.x-calender-body');
+        var oldContainer = body.last();
+        var newContainer = !animation &amp;&amp; me.newContainer || body.appendChild(document.createElement('div'));
+        var reverse;
+        var newFrom;
+        var to;
+        var oldTo;
+
+        // 记住高宽。
+        var body = me.elem.querySelector('.x-calender-body');
+        if (!body.style.width &amp;&amp; body.offsetHeight) {
+            body.style.height = body.offsetHeight + 'px';
+            body.style.width = body.offsetWidth + 'px';
+        }
+
+        // 渲染当前视图的内容。
+        newContainer.setStyle('transform', 'translateX(0) scale(1, 1)');
+        Calender.views[view].render(this, newContainer, this.elem.querySelector('.x-calender-title'));
+
+        if (oldContainer) {
+            if (animation) {
+
+                reverse = /(Out|Right)$/.test(animation);
+
+                if (/^zoom/.test(animation)) {
+                    var container = reverse ? oldContainer : newContainer,
+                        actived = container.querySelector('.x-calender-actived'),
+                        activedRect = actived.getRect(),
+                        tableRect = container.getRect(),
+                        origin = (activedRect.left - tableRect.left + activedRect.width / 2) + 'px ' + (activedRect.top - tableRect.top + activedRect.height / 2) + 'px';
+
+                    newFrom = {
+                        transform: 'scale(4, 4)',
+                        transformOrigin: origin,
+                        opacity: 0
+                    };
+
+                    to = {
+                        transform: 'scale(1, 1)',
+                        transformOrigin: origin,
+                        opacity: 1
+                    };
+
+                    oldTo = {
+                        transform: 'scale(0, 0)',
+                        transformOrigin: origin,
+                        opacity: 0
+                    };
+
+                } else {
+
+                    newFrom = {
+                        transform: 'translateX(100%)',
+                    };
+
+                    to = {
+                        transform: 'translateX(0)',
+                    };
+
+                    oldTo = {
+                        transform: 'translateX(-100%)',
+                    };
+
+                }
+
+                if (reverse) {
+                    reverse = oldTo;
+                    oldTo = newFrom;
+                    newFrom = reverse;
+                }
+
+                newContainer.style.position = '';
+                oldContainer.style.position = 'absolute';
+
+                me.newContainer = newContainer;
+                newContainer.animate(newFrom, to, null, null, 'linear');
+
+                // 渐变缩小移除旧表。
+                oldContainer.animate(to, oldTo, function () {
+                    oldContainer.removeSelf();
+                    me.newContainer = null;
+                }, null, 'linear');
+
+            } else if (!me.newContainer) {
+                oldContainer.removeSelf();
+            }
+        }
+
+        this.trigger('update');
+
+        return this;
+
+    },
+
+    /**
+	 * 当被子类重写时，负责初始化当前控件。
+	 * @protected
+	 * @virtual
+	 */
+    init: function () {
+
+        var me = this;
+
+        // 初始化界面。
+        me.dom.html(Calender.locale.tpl);
+
+        me.min = Date.parseDate(me.min);
+        me.max = Date.parseDate(me.max);
+
+        // 初始化时间字段。
+        me.now = Date.parseDate(me.now) || new Date();
+        me.value = Date.parseDate(me.value) || me.now;
+        me.displayValue = Date.parseDate(me.displayValue) || new Date(+me.now);
+
+        // 初始化时间输入框。
+        me.setFormat(me.format);
+
+        // 初始化今天输入框。
+        me.setNow(me.now);
+
+        // 绑定事件。
+        me.elem.on('click', '.x-calender-title', me.onTitleClick, me);
+        me.elem.on('click', '.x-calender-prev', me.onPrevClick, me);
+        me.elem.on('click', '.x-calender-next', me.onNextClick, me);
+        me.elem.on('click', '.x-calender-now', function (e) { me.onNowClick(this, e); });
+        me.elem.on('click', '.x-calender-body td', function (e) { me.onItemClick(this, e); });
+        me.elem.on('change', '.x-calender-time input', function (e) { me.onTimeChange(this, e); });
+
+        // 载入时间部分。
+        me.loadHours(me.displayValue);
+
+        // 初始化视图。
+        if (!me.view) {
+            me.view = /d/.test(me.format) ? 'day' : 'year';
+        }
+        me.setView(me.view);
+
+    },
+
+    /**
+     * 当用户点击某一项时执行。
+     * @param {Element} item 正在被点击的项。
+     * @protected
+     * @virtual
+     */
+    onItemClick: function (item, e) {
+        e.preventDefault();
+        // 如果此项是允许点击的。则生成新的日期对象，并设置为当前值。
+        if (!item.classList.contains('x-calender-invalid')) {
+            Calender.views[this.view].select(this, item, e);
+        }
+    },
+
+    /**
+     * 当用户点击上一页时执行。
+     * @param {Element} item 正在被点击的项。
+     * @protected
+     * @virtual
+     */
+    onPrevClick: function (e) {
+        e.preventDefault();
+        Calender.views[this.view].movePage(this, -1);
+        this.setView(this.view, 'slideRight');
+    },
+
+    /**
+     * 当用户点击下一页时执行。
+     * @param {Element} item 正在被点击的项。
+     * @protected
+     * @virtual
+     */
+    onNextClick: function (e) {
+        e.preventDefault();
+        Calender.views[this.view].movePage(this, 1);
+        this.setView(this.view, 'slideLeft');
+    },
+
+    /**
+     * 当用户点击标题时执行。
+     * @param {Element} item 正在被点击的项。
+     * @protected
+     * @virtual
+     */
+    onTitleClick: function (e) {
+        e.preventDefault();
+        // 切换显示到父视图。
+        Calender.views[this.view].parentView &amp;&amp; this.setView(Calender.views[this.view].parentView, 'zoomIn');
+    },
+
+    /**
+     * 当用户点击当前时间时执行。
+     * @param {Element} item 正在被点击的项。
+     * @protected
+     * @virtual
+     */
+    onNowClick: function (item, e) {
+        this.selectItem(item);
+    },
+
+    /**
+     * 当用户更新时间时执行。
+     */
+    onTimeChange: function (item, e) {
+
+        // 更新时间部分。
+        var value = new Date(+this.value);
+        this.saveHours(value);
+
+        // 如果超过最大最小值，则恢复数据。
+        if ((this.min &amp;&amp; value &lt; this.min) || (this.max &amp;&amp; value &gt; this.max)) {
+            this.loadHours(value);
+        } else {
+            this.value = value;
+            this.trigger('change');
+        }
+    },
+
+    keyNav: {
+        up: function () {
+            Calender.views[this.view].moveRow(this, -1);
+        },
+        down: function () {
+            Calender.views[this.view].moveRow(this, 1);
+        },
+        left: function () {
+            Calender.views[this.view].moveColumn(this, -1);
+        },
+        right: function () {
+            Calender.views[this.view].moveColumn(this, 1);
+        },
+        enter: function (e) {
+            var item = this.elem.querySelector('.x-calender-selected');
+            item ? this.onItemClick(item, e) : this.trigger('select', this.value);
+        }
+    },
+
+    /**
+     * 当被用户重写时，负责返回指定的日期的类名。
+     * @protected
+     * @virtual
+     */
+    getClassName: function (date) {
+        return '';
+    },
+
+    /**
+     * 当被用户重写时，负责返回指定的日期的节日。
+     * @protected
+     * @virtual
+     */
+    getHoliday: function (date) {
+        return '';
+    },
+
+    /**
+     * 模拟用户选中某一项。
+     * @param {Element} item 需要选中的项。
+     * @return this
+     */
+    selectItem: function (item) {
+        var value = new Date(+item.getAttribute('x-value'));
+        this.saveHours(value);
+        if (!(this.min &amp;&amp; value &lt; this.min) &amp;&amp; !(this.max &amp;&amp; value &gt; this.max) &amp;&amp; this.trigger('select', value)) {
+            this.setValue(value);
+        }
+        return this;
+    },
+
+    /**
+     * 保存时间部分的值。
+     */
+    saveHours: function (date) {
+        var inputs = this.elem.querySelectorAll('.x-calender-time input');
+        date.setHours(+inputs[0].value);
+        date.setMinutes(+inputs[1].value);
+        date.setSeconds(+inputs[2].value);
+    },
+
+    /**
+     * 读取时间部分的值。
+     */
+    loadHours: function (value) {
+        var inputs = this.elem.querySelectorAll('.x-calender-time input');
+        value = Date.parseDate(value.format(this.format));
+        inputs[0].value = value.getHours();
+        inputs[1].value = value.getMinutes();
+        inputs[2].value = value.getSeconds();
+    }
+
+})</code></span>
+                                <div class="doc doc-api-detail">
+                                    <p class="doc">表示一个日历组件。</p>
+
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>any</code>
+                            </td>
+                            <td class="doc">
+                                <p class="doc">表示一个日历组件。</p>
+
+                            </td>
+                            
+                        </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ui/calender/old/calender.html","imports":["ui/calender/old/calender"]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"file":"at.js","sourceRoot":"../../..","sources":["components/ux/at/at.ts"],"sourcesContent":["// #todo\r\n\r\n\r\n/**\r\n * @param {Object} options 绑定各个事件的处理器。\r\n */\r\nDom.prototype.at = function (options) {\r\n    throw \"此函数未完成\";\r\n};\r\n"],"mappings":"AAAA,QAAQ;AAGR;;GAEG;AACH,GAAG,CAAC,SAAS,CAAC,EAAE,GAAG,UAAU,OAAO;IAChC,MAAM,QAAQ,CAAC;AACnB,CAAC,CAAC"}

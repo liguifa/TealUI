@@ -1,0 +1,1 @@
+{"version":3,"file":"touch.js","sourceRoot":"../../..","sources":["components/ux/touch/touch.ts"],"sourcesContent":["/**\r\n * 触摸相关。\r\n */\r\nexport default function touch() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,wBAEC"}

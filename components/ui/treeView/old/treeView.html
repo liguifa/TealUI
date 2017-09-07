@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>treeView - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+	<script>require(["ui/treeView/old/treeView"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ui/treeView/old/treeView.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ui/treeView/old/treeView" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ui/treeView/old/treeView.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <article><script type="text/html">
+VNode.create("div", { id: "ct", style: "width:300px" }), (VNode.create("script", null,
+    " var treeView = new TreeView(); treeView.renderTo('#ct'); var treeNode1 = treeView.add(\"1\"); treeNode1.add(\"1-1\"); treeNode1.add(\"1-2\"); var treeNode2 = treeView.add(\"2\"); ",
+    VNode.create("", null),
+    ">"), VNode.create("script", null,
+    "Demo.writeExamples(",
+    '添加一个子节点',
+    " 'treeView.add(\"",
+    VNode.create("em", null, "\u8FD9\u662F\u4F7F\u7528 add \u6DFB\u52A0\u7684"),
+    "\")', '\u5728\u7B2C\u4E00\u4E2A\u5B50\u8282\u70B9\u540E\u4E0B\u4E00\u4E2A\u5B50\u8282\u70B9': 'treeView.item(0).add(\"1 \u540E\u7684\u5B50\u8282\u70B9\")', '\u5220\u9664\u7B2C\u4E00\u4E2A\u5B50\u8282\u70B9': 'treeView.removeAt(0)', '\u6298\u53E0\u7B2C\u4E00\u4E2A\u5B50\u8282\u70B9': 'treeView.collapse()', '\u5C55\u5F00\u786E\u4FDD\u7B2C\u4E00\u4E2A\u5B50\u8282\u70B9\u5185\u53EF\u89C1': 'treeView.item(0).ensureVisible()', '\u83B7\u53D6\u9009\u4E2D\u7684\u8282\u70B9': 'treeView.getSelectedNode()' });"));
+</script></article>
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><div class="doc doc-scrollable"><table class="doc-api"><tr>
+                                <th class="doc-api-property">变量</th>
+                                <th class="doc-api-type">类型</th>
+                                <th class="doc-api-summary">描述</th>
+                                
+                            </tr><tr id="api/TreeView">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/treeView/old/treeView (2).ts#L11-123" target="_blank" title="源码：ui/treeView/old/treeView (2).ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>TreeView</code>
+                                <span class="doc-api-more">: <code>any</code> = <code>TreeControl.extend({
+
+    cssClass: 'x-treeview',
+
+    depth: 0,
+
+    createNode: function (exitsNode) {
+    	return new TreeNode(exitsNode);
+    },
+
+    initChildNode: function (li) {
+    	TreeControl.prototype.initChildNode.call(this, li);
+
+		// 更新子节点的深度。
+    	this.itemOf(li).setDepth(this.depth + 1);
+
+		// 如果当前树是子树，则更新所在节点的 + - 标记。
+    	if (this.owner()) {
+    		this.owner().update();
+    	}
+    },
+
+	/**
+	 * 点击时触发。
+	 */
+    onClick: function (e) {
+		
+    	var target = e.target;
+
+    	if (/\bui-treenode-(minus|plus|loading)\b/.test(target.className))
+    		return;
+
+    	target = Dom.closest(target, &quot;li&quot;);
+
+    	if (target = Dom.data(target).treeNode) {
+    		this.selectNode(target);
+    		return false;
+    	}
+
+    },
+
+    init: function () {
+
+        // 根据已有的 DOM 结构初始化菜单。
+    	TreeControl.prototype.init.call(this);
+
+		// 点击后展开/折叠子节点。
+        Dom.on(this.elem, 'click', this.onClick, this);
+    },
+
+    invoke: function (funcName, args) {
+        var i, node;
+        args = args || [];
+        for (i = 0 ; node = this.item(i) ; i++) {
+        	node[funcName].apply(node, args);
+        }
+        return this;
+    },
+
+    collapse: function (duration) {
+        return this.invoke('collapse', [duration]);
+    },
+
+    collapseAll: function (duration) {
+        return this.invoke('collapseAll', [duration]);
+    },
+
+    expand: function (duration) {
+        return this.invoke('expand', [duration]);
+    },
+
+    expandAll: function (duration) {
+        return this.invoke('expandAll', [duration]);
+    },
+
+    collapseTo: function (depth, duration) {
+        return this.invoke('collapseTo', [--depth, duration]);
+    },
+
+    /**
+	 * 模拟点击一项。
+	 */
+    selectNode: function (node) {
+        if (this.trigger('selecting', node)) {
+            var old = this.getSelectedNode();
+            this.setSelectedNode(node);
+            if (old !== node)
+                this.trigger('change');
+        }
+        return this;
+    },
+
+    getSelectedNode: function () {
+    	return this.selectedNode;
+    },
+
+    setSelectedNode: function (node) {
+
+        // 先反选当前选择项。
+        if (this.selectedNode)
+        	Dom.removeClass(this.selectedNode.elem, 'x-treenode-selected');
+
+        // 更新选择项。
+        this.selectedNode = node;
+
+        if (node != null) {
+        	Dom.addClass(node.elem, 'x-treenode-selected');
+        }
+
+        return this;
+    }
+
+})</code></span>
+                                <div class="doc doc-api-detail">
+                                    
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>any</code>
+                            </td>
+                            <td class="doc">
+                                
+                            </td>
+                            
+                        </tr><tr id="api/TreeNode">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/treeView/old/treeView (2).ts#L128-445" target="_blank" title="源码：ui/treeView/old/treeView (2).ts，第 128 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>TreeNode</code>
+                                <span class="doc-api-more">: <code>any</code> = <code>TreeControl.Node.extend(ICollapsable).implement({
+	
+	cssClass: 'x-treenode',
+	
+	tpl: '&lt;a class=&quot;{cssClass}&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/a&gt;',
+
+	depth: 0,
+	
+	/**
+	 * 获取当前用于折叠的容器对象。
+	 * @return {Control} 折叠的容器对象。
+	 * @protected override
+	 */
+	body: function () {
+		var sub = this.getSub();
+		return sub &amp;&amp; sub.elem;
+	},
+	
+	/**
+	 * 获取当前的文字对象。
+	 * @return {Control} 文字对象。
+	 * @protected override
+	 */
+	content: function(){
+		return Dom.last(this.elem);
+	},
+	
+	/**
+	 * 当被子类重写时，用于创建子树。
+	 * @param {TreeControl} treeControl 要初始化的子树。
+	 * @return {TreeControl} 新的 {@link TreeControl} 对象。
+	 * @protected override
+	 */
+	createSub: function (existNode) {
+		return new TreeView(existNode);
+	},
+	
+	/**
+	 * 当被子类重写时，用于初始化子树。
+	 * @param {TreeControl} treeControl 要初始化的子树。
+	 * @protected override
+	 */
+	initSub: function (treeControl) {
+
+		// 更新子树的类。
+		Dom.removeClass(treeControl.elem, 'x-treeview');
+		Dom.addClass(treeControl.elem, 'x-treeview-subtree');
+
+		// 标记子树的深度。
+	    treeControl.depth = this.depth;
+
+		// 子树不需要选择节点的功能。
+	    Dom.un(treeControl.elem, 'click', treeControl.onClick);
+	},
+
+	uninitSub: function (treeControl) {
+
+		// 更新子树的类。
+		Dom.addClass(treeControl.elem, 'x-treeview');
+		Dom.removeClass(treeControl.elem, 'x-treeview-subtree');
+
+		// 将树设为独立的树。
+		treeControl.depth = 0;
+
+		// 子树不需要选择节点的功能。
+		Dom.on(treeControl.elem, 'click', treeControl.onClick, treeControl);
+
+	},
+	
+	/**
+	 * 更新一个节点前面指定的占位符的类名。
+	 * @private
+	 */
+	_setSpan: function(depth, className){
+		this.sub().each(function(node){
+			var first = Dom.first(node.elem, depth);
+			if(first.tagName == 'SPAN')
+				first.className = className;
+			node._setSpan(depth, className);
+		});
+	},
+	
+	_markAsLastNode: function(){
+		Dom.addClass(this.elem, 'x-treenode-last');
+		this._setSpan(this.depth - 1, 'x-treenode-space x-treenode-none');
+	},
+	
+	_clearMarkAsLastNode: function(){
+		Dom.removeClass(this.elem, 'x-treenode-last');
+		this._setSpan(this.depth - 1, 'x-treenode-space');
+	},
+
+	/**
+	 * 获取当前节点的占位 span 。
+	 * @param {Integer} index 要获取的索引， 最靠近右的索引为 0 。
+	 * @protected
+	 */
+	span: function(index){
+		return Dom.prev(this.content(), index);
+	},
+	
+	/**
+	 * 由于子节点的改变刷新本节点和子节点状态。
+	 * @protected
+	 */
+	update: function(){
+		
+		// 更新图标。
+		this.updateType();
+
+		var sub = this.getSub();
+
+		if (sub) {
+
+			var last = sub.item(-1), lastNode;
+
+			// 更新 lastNode
+			if (last) {
+				lastNode = this._lastNode;
+				if (lastNode !== last.elem) {
+					last._markAsLastNode();
+					this._lastNode = last;
+					if (lastNode) lastNode._clearMarkAsLastNode();
+				}
+			}
+
+		}
+		
+	},
+	
+	/**
+	 * 根据当前的节点情况更新当前节点的图标。
+	 * @protected
+	 */
+	updateType: function () {
+		var sub = this.getSub();
+		this.setType(sub &amp;&amp; Dom.first(sub.elem) ? (this.isCollapsed() ? 'plus' : 'minus') : 'normal');
+	},
+	
+	/**
+	 * 获取一个值，该值指示当前节点是否为最后一个节点。
+	 * @return {Boolean}
+	 * @protected
+	 */
+	isLastNode: function () {
+		var parent = this.parent();
+		return parent &amp;&amp; parent._lastNode === this;
+	},
+	
+	onDblClick: function(e){
+		this.toggleCollapse();
+		e.preventDefault();
+		e.stopPropagation();
+	},
+
+	onCollapse: function () {
+		ICollapsable.onCollapse.call(this);
+		this.updateType();
+	},
+
+	onExpanding: function () {
+		this.setType(this.isCollapsed() ? 'minus' : 'plus');
+		ICollapsable.onExpanding.call(this);
+	},
+
+	init: function (options) {
+		TreeControl.Node.prototype.init.call(this, options);
+		Dom.setStyle(this.elem, 'user-select', 'none');
+		Dom.on(this.elem, 'dblclick', this.onDblClick, this);
+	},
+	
+	/**
+	 * 获取当前节点的图标。
+	 */
+	getType: function(){
+		var span = this.span(0);
+		return span ? (/x-treenode-(.+)/.exec(span.className.replace(/\bui-treenode-space\b/, '')) || [0, &quot;line&quot;])[1] : null;
+	},
+	
+	/**
+	 * 设置当前节点的图标。
+	 * @param {String} type 类型。肯能的值如： 'normal' 'plus' 'minus' 'none' 'loading' 'line'。
+	 * @return this
+	 */
+	setType: function(type){
+		var span = this.span(0);
+		if(span) {
+			span.className = 'x-treenode-space x-treenode-' + type;
+		}
+		return this;
+	},
+	
+	/**
+	 * 展开当前节点及子节点。
+	 * @param {Integer} duration 折叠动画使用的毫米数。
+	 * @param {Integer} maxDepth=0 最大折叠的深度。默认为 -1 表示全部折叠。
+	 * @return this
+	 */
+	expandAll: function(duration, maxDepth){
+		if (this.getSub() &amp;&amp; !(maxDepth === 0)) {
+			this.expand(duration);
+			this.invoke('expandAll', [duration, --maxDepth]);
+		}
+		return this;
+	},
+	
+	/**
+	 * 折叠当前节点及子节点。
+	 * @param {Integer} duration 折叠动画使用的毫米数。
+	 * @param {Integer} maxDepth=0 最大折叠的深度。默认为 -1 表示全部折叠。
+	 * @return this
+	 */
+	collapseAll: function(duration, maxDepth){
+		if (this.getSub() &amp;&amp; !(maxDepth === 0)) {
+			this.invoke('collapseAll', [duration, --maxDepth]);
+			this.collapse(duration);
+		}
+		return this;
+	},
+	
+	/**
+	 * 展开当前节点，但折叠指定深度以后的节点。
+	 */
+	collapseTo: function(depth, duration){
+		duration = duration === undefined ? 0 : duration;
+		depth = depth === undefined ? 1 : depth;
+		
+		if(depth &gt; 0){
+			this.expand(duration);
+		} else {
+			this.collapse(duration);
+		}
+		
+		this.invoke('collapseTo', [--depth, duration]);
+	},
+	
+	invoke: function (funcName, args) {
+		var sub = this.getSub();
+		if (sub) {
+			sub.invoke(funcName, args);
+		}
+		return this;
+	},
+
+	/**
+	 * 获取当前节点的深度。
+	 * @return {Integer} 返回节点深度。
+	 */
+	getDepth: function(){
+		return this.depth;
+	},
+
+	/**
+	 * 设置当前节点的深度。
+	 * @param {Integer} value 要设置的深度。
+	 * @return this
+	 */
+	setDepth: function(value){
+		
+		//assert(value &gt;= 0, &quot;TreeNode#setDepth(value): {value} 必须是不小于 0 的整数&quot;, value);
+		
+		var me = this,
+			currentDepth = me.getDepth(),
+			span,
+			current = me;
+		
+		// 删除多余的占位符。
+		
+		while(currentDepth &gt; value){
+			Dom.remove(Dom.first(this.elem));
+			currentDepth--;
+		}
+	
+		// 补上不够的占位符。
+		
+		while(currentDepth &lt; value){
+			Dom.prepend(this.elem, '&lt;span class=&quot;x-treenode-space&quot;&gt;&lt;/span&gt;');
+			currentDepth++;
+		}
+		
+		// 更新深度。
+		
+		this.depth = value;
+		
+		// 绑定最后一个 span 的点击事件。
+		
+		// 获取第一个占位符。
+		span = this.span(0);
+		
+		if(currentDepth) {
+			Dom.un(span, 'click', this.onDblClick);
+			Dom.on(span, 'click', this.onDblClick, this);
+		}
+		
+		// 更新 spans 的 class 状态。
+		
+		while ((current = current.parent()) &amp;&amp; (span = Dom.prev(span))) {
+			span.className = current.isLastNode &amp;&amp; current.isLastNode() ? 'x-treenode-space x-treenode-none' : 'x-treenode-space';
+		}
+		
+		me.updateType();
+		
+		// 对子节点设置深度+1
+		me.invoke('setDepth', [++value]);
+	},
+	
+	ensureVisible: function(duration){
+		var n = this;
+		while(n = n.parent()) {
+			n.expand(duration);
+		}
+
+		//   this.scrollIntoView();
+		
+		return this;
+	}
+
+})</code></span>
+                                <div class="doc doc-api-detail">
+                                    <p class="doc">表示是 {@link TreeView} 中的一个节点。
+表示是 {@link TreeView} 中的一个节点。</p>
+
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>any</code>
+                            </td>
+                            <td class="doc">
+                                <p class="doc">表示是 {@link TreeView} 中的一个节点。
+表示是 {@link TreeView} 中的一个节点。</p>
+
+                            </td>
+                            
+                        </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"ui/treeView/old/treeView.html","imports":["ui/treeView/old/treeView"]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

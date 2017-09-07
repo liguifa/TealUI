@@ -1,0 +1,1 @@
+{"version":3,"file":"stylesheet.js","sourceRoot":"../../..","sources":["components/ux/stylesheet/stylesheet.ts"],"sourcesContent":["/**\r\n * 样式处理。\r\n */\r\nexport default function stylesheet() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,6BAEC"}

@@ -1,0 +1,33 @@
+.x-treeview {
+  padding: 0;
+  overflow: auto;
+}
+
+.x-treeview .x-icon {
+  transition: transform 0.2s;
+}
+
+.x-treeview a {
+  color: #666;
+}
+
+.x-treeview li {
+  list-style: none;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.x-treeview ul {
+  padding-left: 1rem;
+  overflow: hidden;
+}
+
+.x-treeview-active > a {
+  color: #208fee;
+}
+
+.x-treeview-collapsed .x-icon {
+  transform: rotate(-90deg);
+}
+
+/*# sourceMappingURL=treeView.css.map */

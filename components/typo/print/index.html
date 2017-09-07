@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
+    <meta name="version" content="0.0.1">
+    <title>打印样式 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/doc/doc.css">
+    <script src="../../../components/require.js"></script>
+	<script>require(["typo/reset","typo/print"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                <li><a href="javascript:Doc.toggleDemoCodes()" accesskey="c"><i class="doc-icon">⅏</i>折叠源码</a></li>
+                                
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/typo/print/print.scss" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=typo/print" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/typo/print/print.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="打印样式">
+<a href="#打印样式" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>打印样式<div class="doc-menubutton">
+                        <small>typo/print</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import \&quot;typo/print\&quot;;\n&quot;)">复制 <code>import "typo/print"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;typo/print\&quot;], function (print_1) {\n\n\n});\n&quot;)">复制 <code>require("typo/print")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;typo/print\&quot;&quot;)">复制 <code>"typo/print"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">定义打印网页时的附加样式，增加打印后的易读性。</p>
+<blockquote class="doc doc-blockquote doc-blockquote-error">
+<h5>本页示例仅在打印时生效</h5>
+<p class="doc">按 Ctrl/Command+P (或点击浏览器菜单 文件/打印/打印预览)可以预览效果。</p>
+</blockquote>
+<dl id="doc_toc">
+	<dt><a href="#全局打印样式优化">全局打印样式优化</a></dt>
+	<dt><a href="#显示链接和描述">显示链接和描述</a></dt>
+	<dt><a href="#辅助样式打印时显示和隐藏">辅助样式：打印时显示和隐藏</a></dt>
+</dl>
+<h2 id="全局打印样式优化">
+<a href="#全局打印样式优化" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>全局打印样式优化</h2>
+<ol>
+<li class="doc">将文字改为纯黑色以提升打印速度。</li>
+<li class="doc">删除背景和阴影。</li>
+<li class="doc">防止图表等被分页。</li>
+</ol>
+<blockquote class="doc doc-blockquote">
+<h5>另参考</h5>
+<ul>
+<li class="doc"><a href="http://www.sanbeiji.com/archives/953" target="_blank" class="doc-external">The woes of css color in print typography</a></li>
+</ul>
+</blockquote>
+<h2 id="显示链接和描述">
+<a href="#显示链接和描述" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>显示链接和描述</h2>
+<p class="doc">链接在打印时将显示下划线，并在链接文字后追加链接地址。</p>
+<div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_1">
+<a href="http://github.com/Teal/TealUI/">我是链接</a>
+<abbr title="我是 ABBR 描述">ABBR</abbr>
+
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-html"><span class="doc-code-tag">&lt;<span class="doc-code-name">a</span> <span class="doc-code-attr">href</span>=<span class="doc-code-string">"http://github.com/Teal/TealUI/"</span>&gt;</span>我是链接<span class="doc-code-tag">&lt;/<span class="doc-code-name">a</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">abbr</span> <span class="doc-code-attr">title</span>=<span class="doc-code-string">"我是 ABBR 描述"</span>&gt;</span>ABBR<span class="doc-code-tag">&lt;/<span class="doc-code-name">abbr</span>&gt;</span></code></pre>
+                </div><h2 id="辅助样式打印时显示和隐藏">
+<a href="#辅助样式打印时显示和隐藏" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>辅助样式：打印时显示和隐藏</h2>
+<p class="doc">使用 <code>.x-hide-print</code> 在打印时隐藏；使用 <code>.x-show-print</code> 只在打印时显示。</p>
+<div class="doc-demo">
+                    <div class="doc-demo-body" aria-label="示例" id="doc_demo_2">
+<div class="x-show-print">现在正在打印。</div>
+<div class="x-hide-print">现在正在使用屏幕显示。</div>
+
+</div>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-html"><span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-show-print"</span>&gt;</span>现在正在打印。<span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-hide-print"</span>&gt;</span>现在正在使用屏幕显示。<span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span></code></pre>
+                </div><blockquote class="doc doc-blockquote">
+<h5>另参考</h5>
+<ul>
+<li class="doc"><a href="http://www.phpied.com/delay-loading-your-print-css/" target="_blank" class="doc-external">Delay loading your print CSS</a></li>
+</ul>
+</blockquote>
+
+                        
+                        <nav id="doc_pager">
+                            <a href="../../../components/typo/reset/" title="全局样式" id="doc_pager_prev"><i class="doc-icon">⮜</i> 全局样式</a>
+                            <a href="../../../components/typo/accessibility/" title="可访问性" id="doc_pager_next">可访问性 <i class="doc-icon">⮞</i></a>
+                        </nav>
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../..","dir":"components","active":"typo/print/","imports":["typo/reset","typo/print"]})
+    </script>
+    <script src="../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

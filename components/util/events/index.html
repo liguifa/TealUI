@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
+    <meta name="version" content="0.0.1">
+    <title>事件 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/doc/doc.css">
+    <script src="../../../components/require.js"></script>
+	<script>require(["util/events"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                <li><a href="javascript:Doc.toggleUnitTest()" accesskey="t"><i class="doc-icon">☕</i>单元测试</a></li>
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/events/events.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/events" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/events/events.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="事件">
+<a href="#事件" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>事件<div class="doc-menubutton">
+                        <small>util/events</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import EventEmitter from \&quot;util/events\&quot;;\n&quot;)">复制 <code>import "util/events"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/events\&quot;], function (events_1) {\n\tvar EventEmitter = events_1.default;\n\n\n});\n&quot;)">复制 <code>require("util/events")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/events\&quot;&quot;)">复制 <code>"util/events"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">提供事件管理对象。</p>
+<p class="doc">事件是一种设计模式。
+程序可以通过触发事件的方式通知外部。
+对此通知感兴趣的对象可以订阅事件并执行相应的回调函数。
+通过事件的设计模式可以将触发事件和实际处理事件的逻辑完全分开，提升代码的可重用性。</p>
+<blockquote class="doc doc-blockquote">
+<h5>另参考</h5>
+<p class="doc"><a href="https://nodejs.org/api/events.html" target="_blank" class="doc-external">Node.js: Event</a></p>
+</blockquote>
+
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/EventEmitter"><a href="#api/EventEmitter" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/util/events/events.ts#L1-91" target="_blank" title="源码：util/events/events.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>EventEmitter 类</h3><p class="doc">表示一个事件分发器。</p>
+<div class="doc doc-scrollable"><table class="doc-api"><tr>
+                            <th class="doc-api-method">方法</th>
+                            <th class="doc-api-summary">描述</th>
+                            
+                        </tr><tr id="api/EventEmitter/on">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/events/events.ts#L11-26" target="_blank" title="源码：util/events/events.ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>on<i class="doc-tip doc-api-ellipsis">(eventName, eventListener)</i><span class="doc-tip doc-api-more">(eventName:<code>string</code>, eventListener:<code>Function</code>):<code>this</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">添加一个事件监听器。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>eventName<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>string</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">要添加的事件名。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>eventListener<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>Function</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">要添加的事件监听器。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>this</code></p>
+                
+                <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx"><span class="doc-code-keyword">new</span> EventEmitter().on(<span class="doc-code-string">"click"</span>, <span class="doc-code-function"><span class="doc-code-keyword">function</span> (<span class="doc-code-params">e</span>) </span>{  });</code></pre>
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">添加一个事件监听器。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/EventEmitter/off">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/events/events.ts#L28-64" target="_blank" title="源码：util/events/events.ts，第 28 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>off<i class="doc-tip doc-api-ellipsis">(...)</i><span class="doc-tip doc-api-more">(eventName?:<code>string</code>, eventListener?:<code>Function</code>):<code>this</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">删除指定或所有的事件监听器。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>eventName</code>
+                                </td>
+                                <td>
+                                    <code>string | undefined</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">要删除的事件名。如果不传递此参数，则删除所有事件监听器。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>eventListener</code>
+                                </td>
+                                <td>
+                                    <code>Function | undefined</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">要删除的事件监听器。如果不传递此参数，则删除指定事件的所有监听器。如果同一个事件被多次添加，则只删除第一个。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>this</code></p>
+                
+                <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx"><span class="doc-code-keyword">var</span> fn =  <span class="doc-code-function"><span class="doc-code-keyword">function</span> (<span class="doc-code-params"></span>) </span>{}; <span class="doc-code-comment">// 必须保存函数的引用才能删除。</span>
+<span class="doc-code-keyword">var</span> ee = <span class="doc-code-keyword">new</span> EventEmitter();
+ee.on(<span class="doc-code-string">"click"</span>, fn); <span class="doc-code-comment">// 绑定一个 click 事件。</span>
+ee.off(<span class="doc-code-string">"click"</span>, fn); <span class="doc-code-comment">// 删除一个 click 事件。</span></code></pre>
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">删除指定或所有的事件监听器。</p>
+
+                                </td>
+                                
+                            </tr><tr id="api/EventEmitter/emit">
+                                <td>
+                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/events/events.ts#L66-89" target="_blank" title="源码：util/events/events.ts，第 66 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                    <code>emit<i class="doc-tip doc-api-ellipsis">(eventName, ...)</i><span class="doc-tip doc-api-more">(eventName:<code>string</code>, ...eventArgs:<code>any[]</code>):<code>boolean</code></span></code>
+                                    <div class="doc doc-api-detail">
+                                        <p class="doc">触发一个事件。</p>
+
+                
+                
+                <table>
+                        <tr>
+                            <th>参数</th>
+                            <th>类型</th>
+                            <th>描述</th>
+                            <th>默认值</th>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <code>eventName<span class="doc-api-required">*</span></code>
+                                </td>
+                                <td>
+                                    <code>string</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">要触发的事件名。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+<tr>
+                                <td>
+                                    <code>eventArgs</code>
+                                </td>
+                                <td>
+                                    <code>any[]</code>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">传递给监听器的所有参数。</p>
+
+                                </td>
+                                <td>
+                                    —
+                                </td>
+                            </tr>
+                    </table>
+                <h4>返回值</h4>
+                <p>类型：<code>boolean</code></p>
+                <p class="doc">如果事件被阻止则返回 false，否则返回 true。</p>
+
+                <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx"><span class="doc-code-keyword">var</span> ee = <span class="doc-code-keyword">new</span> EventEmitter(); <span class="doc-code-comment">// 创建一个实例。</span>
+ee.on(<span class="doc-code-string">"click"</span>, <span class="doc-code-function"><span class="doc-code-keyword">function</span> (<span class="doc-code-params">e</span>) </span>{ <span class="doc-code-built_in">console</span>.log(<span class="doc-code-string">"haha"</span>); }); <span class="doc-code-comment">// 绑定一个 click 事件。</span>
+ee.emit(<span class="doc-code-string">"click"</span>); <span class="doc-code-comment">// 手动触发 click。</span></code></pre>
+                                        
+                                    </div>
+                                </td>
+                                <td class="doc">
+                                    <p class="doc">触发一个事件。</p>
+
+                                </td>
+                                
+                            </tr></table></div>
+                        <nav id="doc_pager">
+                            <a href="../../../components/util/enum/" title="枚举" id="doc_pager_prev"><i class="doc-icon">⮜</i> 枚举</a>
+                            <a href="../../../components/util/delegate/" title="委托" id="doc_pager_next">委托 <i class="doc-icon">⮞</i></a>
+                        </nav>
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../..","dir":"components","active":"util/events/","test":"util/events/events-test.ts","imports":["util/events"]})
+    </script>
+    <script src="../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

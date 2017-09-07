@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zeroClipboard - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/doc/doc.css">
+    <script src="../../../components/require.js"></script>
+	<script>require(["ux/clipboard/zeroClipboard"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ux/clipboard/zeroClipboard.js" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ux/clipboard/zeroClipboard" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                
+                            </menu>
+                        </aside>
+                        <h1 id="zeroclipboard">
+<a href="#zeroclipboard" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>zeroClipboard<div class="doc-menubutton">
+                        <small>ux/clipboard/zeroClipboard</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import \&quot;ux/clipboard/zeroClipboard\&quot;;\n&quot;)">复制 <code>import "ux/clipboard/zeroClipboard"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/clipboard/zeroClipboard\&quot;], function (zeroClipboard_1) {\n\n\n});\n&quot;)">复制 <code>require("ux/clipboard/zeroClipboard")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/clipboard/zeroClipboard\&quot;&quot;)">复制 <code>"ux/clipboard/zeroClipboard"</code></a></li>
+                        </menu>
+                    </div></h1>
+
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><div class="doc doc-scrollable"><table class="doc-api"><tr>
+                                <th class="doc-api-property">变量</th>
+                                <th class="doc-api-type">类型</th>
+                                <th class="doc-api-summary">描述</th>
+                                
+                            </tr><tr id="api/ZeroClipboard">
+                            <td>
+                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/clipboard/zeroClipboard.js#L9-122" target="_blank" title="源码：ux/clipboard/zeroClipboard.js，第 9 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
+                                <code>ZeroClipboard</code>
+                                <span class="doc-api-more">: <code>{ [x: string]: any; moviePath: string; init: (options: any) =&gt; string; }</code> = <code>{
+    /**
+     * 配置当前使用的 Flash 文件。
+     * @inner
+     */    moviePath: 'resources/ZeroClipboard.swf',    /**
+     * 初始化指定节点为复制按钮。
+     * @param {Object} options 相关的配置。具体支持的字段有：
+     * * @param {Element} dom 指定复制按钮节点。
+     * * @param {mixed} [text] 要复制的文本或返回要复制文本的函数。其参数为：
+     * * * @param {Element} dom 当前相关的节点。
+     * * * @returns {String} 返回要复制的文本。
+     * * @param {Element} [input] 要复制的文本域。
+     * * @param {Function} [callback] Flash 统一事件回调。
+     * * @param {Function} [mouseover] 鼠标移到按钮上的回调。
+     * * @param {Function} [mouseout] 鼠标移出按钮上的回调。
+     * * @param {Function} [success] 复制成功的回调。
+     * * @param {Number} [delay=100] 等待 Flash 加载的延时。
+     */    init: function (options) {
+        var dom = options.dom;        function getContent() {
+            if (options.text instanceof Function) {
+                return options.text(dom);
+            }            if (options.input) {
+                return options.input.value;
+            }            return options.text;
+        }        // IE: 运行剪贴板操作。        if (window.clipboardData) {
+            dom.addEventListener(&quot;click&quot;, function () {
+                window.clipboardData.setData(&quot;Text&quot;, getContent());
+            }, false);            return;
+        }        // 基于 Flash 复制。        if (location.protocol !== 'file:' &amp;&amp; navigator.plugins &amp;&amp; navigator.plugins[&quot;Shockwave Flash&quot;]) {
+            var timer;            // 鼠标移入 100 毫秒后加载 Flash 动画。            dom.addEventListener(&quot;mouseover&quot;, function () {
+                timer = setTimeout(function () {
+                    timer = 0;
+
+                    // 初始化复制 FLASH。
+                    if (!ZeroClipboard.movie) {
+                        var div = document.createElement('div');
+                        div.style.position = 'absolute';                        div.style.zIndex = 300000;
+                        div.innerHTML = '&lt;embed id=&quot;zeroClipboard&quot; style=&quot;position:absolute;top:0;&quot; src=&quot;' + ZeroClipboard.moviePath + '&quot; loop=&quot;false&quot; menu=&quot;false&quot; quality=&quot;best&quot; bgcolor=&quot;#ffffff&quot; width=&quot;' + dom.offsetWidth + '&quot; height=&quot;' + dom.offsetHeight + '&quot; name=&quot;zeroClipboard&quot; align=&quot;middle&quot; allowScriptAccess=&quot;always&quot; allowFullScreen=&quot;false&quot; type=&quot;application/x-shockwave-flash&quot; pluginspage=&quot;http://www.macromedia.com/go/getflashplayer&quot; flashvars=&quot;' + 'id=zeroClipboard&amp;width=' + dom.offsetWidth + '&amp;height=' + dom.offsetHeight + '&quot; wmode=&quot;transparent&quot; /&gt;';
+                        document.body.appendChild(div);
+                        ZeroClipboard.movie = document.getElementById('zeroClipboard');
+                    }
+
+                    // 设置回调。                    ZeroClipboard.dispatch = function (id, eventName, args) {
+
+                        // 设置复制的内容。
+                        if ((eventName === &quot;load&quot; || eventName === &quot;mouseOver&quot;) &amp;&amp; ZeroClipboard.movie.setText) {
+                            ZeroClipboard.movie.setText(getContent());
+                        }
+
+                        var triggerType = eventName === &quot;mouseOver&quot; ? &quot;mouseover&quot; : eventName === 'mouseOut' ? &quot;mouseout&quot; : eventName === 'complete' ? &quot;success&quot; : null;                        triggerType &amp;&amp; options[triggerType] &amp;&amp; options[triggerType](id, eventName, args);                        options.callback &amp;&amp; options.callback(id, eventName, args);
+                    };
+
+                    // 设置按钮样式。
+                    ZeroClipboard.dispatch(null, 'mouseOver');
+
+                    // 设置flash样式。
+                    var div = window.ZeroClipboard.movie.parentNode;
+                    var rect = dom.getBoundingClientRect();
+                    div.style.left = rect.left + (window.pageXOffset || window.scrollX) + 'px';
+                    div.style.top = rect.top + (window.pageXOffset || window.scrollY) + 'px';
+
+                }, options.delay || 100);
+            }, false);            // 鼠标移出后不操作。            dom.addEventListener(&quot;mouseout&quot;, function () {
+                if (timer) {
+                    clearTimeout(timer);
+                    timer = 0;
+                }
+                ZeroClipboard.dispatch(null, 'mouseOut');
+            }, false);
+            return;
+        }
+        dom.addEventListener(&quot;click&quot;, function () {
+            if (options.input) {
+                alert(&quot;由于安全限制，自动复制失败。请按 Ctrl+C 手动复制&quot;);                options.input.focus();                options.input.select();
+            } else {
+                prompt(&quot;请直接按 Ctrl+C 复制: &quot;, getContent());
+            }
+        }, false);
+
+    }
+}</code></span>
+                                <div class="doc doc-api-detail">
+                                    <p class="doc">表示一个 Flash 复制工具。</p>
+
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <code>object</code>
+                            </td>
+                            <td class="doc">
+                                <p class="doc">表示一个 Flash 复制工具。</p>
+
+                            </td>
+                            
+                        </tr></table></div>
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../..","dir":"components","active":"ux/clipboard/zeroClipboard.html","imports":["ux/clipboard/zeroClipboard"]})
+    </script>
+    <script src="../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

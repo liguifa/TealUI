@@ -1,0 +1,1 @@
+{"version":3,"file":"selection-test.js","sourceRoot":"../../..","sources":["components/ux/selection/selection-test.ts"],"sourcesContent":["import * as assert from \"assert\";\r\nimport * as selection from \"./selection\";\r\n\r\nexport function selectionTest() {\r\n\r\n}\r\n"],"mappings":";;IAGA;IAEA,CAAC;IAFD,sCAEC"}

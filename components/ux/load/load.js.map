@@ -1,0 +1,1 @@
+{"version":3,"file":"load.js","sourceRoot":"../../..","sources":["components/ux/load/load.ts"],"sourcesContent":["/**\r\n * 动态载入。\r\n */\r\nexport default function load() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,uBAEC"}

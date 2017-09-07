@@ -1,0 +1,1 @@
+{"version":3,"file":"selection.js","sourceRoot":"../../..","sources":["components/ux/selection/selection.ts"],"sourcesContent":["/**\r\n * 选区操作。\r\n */\r\nexport default function selection() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,4BAEC"}

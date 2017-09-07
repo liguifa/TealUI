@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tpl - TealUI | 打造小而全、精而美的开源组件库</title>
+    <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../../../assets/doc/doc.css">
+    <script src="../../../../components/require.js"></script>
+	<script>require(["util/tpl/old/tpl"])</script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
+                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li><a href="../../../../docs" title="文档和规范">文档</a></li>
+                    <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找组件..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                
+                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/tpl/old/tpl.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/tpl/old/tpl" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/tpl/old/tpl.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="模板引擎">
+<a href="#模板引擎" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>模板引擎<div class="doc-menubutton">
+                        <small>util/tpl/old/tpl</small>
+                        <menu>
+                            <li><a href="javascript:Doc.copy(&quot;import \&quot;util/tpl/old/tpl\&quot;;\n&quot;)">复制 <code>import "util/tpl/old/tpl"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/tpl/old/tpl\&quot;], function (tpl_1) {\n\n\n});\n&quot;)">复制 <code>require("util/tpl/old/tpl")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/tpl/old/tpl\&quot;&quot;)">复制 <code>"util/tpl/old/tpl"</code></a></li>
+                        </menu>
+                    </div></h1>
+<p class="doc">@description 如果需要用 JS 生成一大段文本(特别是 HTML 片段)时，建议使用模板引擎。</p>
+<style>textarea { width: 800px; height: 190px; display: block; }</style>
+<dl id="doc_toc">
+	<dt><a href="#asp-语法">ASP 语法</a></dt>
+	<dt><a href="#tealui-模板引擎">TealUI 模板引擎</a></dt>
+	<dd><a href="#常量">常量</a></dd>
+	<dd><a href="#逻辑">逻辑</a></dd>
+	<dd><a href="#内置宏变量">内置宏变量</a></dd>
+</dl>
+<h2 id="asp-语法">
+<a href="#asp-语法" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>ASP 语法</h2>
+<h2 id="tealui-模板引擎">
+<a href="#tealui-模板引擎" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>TealUI 模板引擎</h2>
+<p class="doc"><textarea id="from">遍历 dataArr 数组，输出其中的奇数: <ul> {for(var i = 0; i &lt; $data.dataArr.length; i++)} {if (i &gt; 1)}<li>{i}: {$data.dataArr[i]}</li>{/if} {/for} </ul> <ul> {foreach a in $data.dataArr} {if a % 2 == 1}<li>{a}</li>{/if} {/foreach} </ul></textarea> 输入数据: <input type="text" value="{dataArr: [3,2,1,0]}" id="data">  <input onclick="document.getElementById('to').value = Tpl.parse(document.getElementById('from').value, eval('(' + document.getElementById('data').value + ')'))" type="button" value="解析模板">
+<textarea id="to"></textarea></p>
+<h3 id="常量">
+<a href="#常量" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>常量</h3>
+<p class="doc">模板内任意字符串都会原样输出，模板引擎只解析 {} 内的数据。模板内使用 {{ 代替 {，使用 }} 代替 }</p>
+<h3 id="逻辑">
+<a href="#逻辑" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>逻辑</h3>
+<p class="doc">所有的表达式语法和 JavaScript 相同。</p>
+<h4>if 语句</h4>
+<pre>        {if (true)}
+            text1
+        {else if (false)}
+            text2
+        {else}
+            text3
+        {/if}
+    </pre>
+<h4>foreach 语句</h4>
+<pre>        {foreach (value, key in [0,1,2])}
+            {key} = {value}
+        {/foreach}
+    </pre>
+<p class="doc">foreach 语句同时支持数组和对象。</p>
+<h4>for 语句</h4>
+<pre>        {for (var i=0; i < 3; i++) }
+            text{i}
+        {/for}
+        {for (var key in obj) }
+            text{key}
+        {/for}
+    </pre>
+<h4>while 语句</h4>
+<pre>        {while (false) }
+            text
+        {/while}
+    </pre>
+<h4>var 语句</h4>
+<pre>        {var a = 2;}
+    </pre>
+<h4>function 语句</h4>
+<pre>        {function a()}
+            func
+        {/function}
+        {a() // 函数调用}
+    </pre>
+<h4>void 语句</h4>
+<p class="doc">void 语句用于执行代码，但不会在模板字符串内添加任何内容。</p>
+<pre>        {void alert("alert")}
+    </pre>
+<h3 id="内置宏变量">
+<a href="#内置宏变量" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>内置宏变量</h3>
+<p class="doc">在模板内部可以直接使用一些内置宏变量。</p>
+<h4>$data</h4>
+<p class="doc">被解析的数据。</p>
+<h4>$key</h4>
+<p class="doc">foreach 语句中获取最近的循环索引或键。</p>
+<h4>$target</h4>
+<p class="doc">foreach 语句中获取最近的循环对象。</p>
+
+                        
+                        
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="../../../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../../../..","dir":"components","active":"util/tpl/","imports":["util/tpl/old/tpl"]})
+    </script>
+    <script src="../../../../components/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

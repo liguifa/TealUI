@@ -1,0 +1,1 @@
+{"version":3,"file":"morph.js","sourceRoot":"../../..","sources":["components/ux/morph/morph.ts"],"sourcesContent":["/**\r\n * 变形。\r\n */\r\nexport default function morph() {\r\n\r\n}\r\n"],"mappings":";;IAAA;;OAEG;IACH;IAEA,CAAC;IAFD,wBAEC"}

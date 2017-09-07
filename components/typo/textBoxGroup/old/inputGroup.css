@@ -1,0 +1,33 @@
+.x-inputgroup {
+  display: inline-table;
+  border-collapse: separate;
+}
+
+.x-inputgroup > .x-tipbox, .x-inputgroup > .x-textbox, .x-inputgroup > .x-button {
+  display: table-cell;
+}
+
+.x-inputgroup > .x-tipbox:not(:first-child), .x-inputgroup > .x-textbox:not(:first-child), .x-inputgroup > .x-button:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.x-inputgroup > .x-tipbox:not(:last-child), .x-inputgroup > .x-textbox:not(:last-child), .x-inputgroup > .x-button:not(:last-child) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right-width: 0;
+}
+
+.x-inputgroup > .x-tipbox:focus + .x-button, .x-inputgroup > .x-textbox:focus + .x-button, .x-inputgroup > .x-button:focus + .x-button {
+  border-left-color: #208fee;
+}
+
+.x-inputgroup.x-block {
+  display: table;
+}
+
+.x-inputgroup.x-block > .x-textbox, .x-inputgroup.x-block > .x-button {
+  width: 100%;
+}
+
+/*# sourceMappingURL=inputGroup.css.map */

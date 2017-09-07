@@ -1,0 +1,1 @@
+{"version":3,"file":"test.js","sourceRoot":"../../../..","sources":["components/ui/dataGridView/table/test.ts"],"sourcesContent":["import * as assert from \"assert\";\r\n\r\nexport function tableTest() {\r\n    assert.equal(true, true);\r\n}\r\n"],"mappings":";;IAEA;QACI,MAAM,CAAC,KAAK,CAAC,IAAI,EAAE,IAAI,CAAC,CAAC;IAC7B,CAAC;IAFD,8BAEC"}

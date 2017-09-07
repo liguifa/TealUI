@@ -1,0 +1,1 @@
+{"version":3,"file":"load-test.js","sourceRoot":"../../..","sources":["components/ux/load/load-test.ts"],"sourcesContent":["import * as assert from \"assert\";\r\nimport * as load from \"./load\";\r\n\r\nexport function loadTest() {\r\n\r\n}\r\n"],"mappings":";;IAGA;IAEA,CAAC;IAFD,4BAEC"}
