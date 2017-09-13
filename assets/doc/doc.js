@@ -15,7 +15,7 @@ const Doc = {
         }
         else {
             if (meta.test && Doc._hasQuery("doc-unittest")) {
-                document.title = "单元测试: " + document.title.replace(/ - .*$/, "");
+                document.title = "单元测试 - " + document.title.replace(/ - .*$/, "");
                 Doc._get("doc_main").innerHTML = `<aside id="doc_mainmenu" class="doc-menubutton" style="margin: -.25rem 1rem 0">
                         <a href="javascript:Doc.toggleUnitTest()"><i class="doc-icon">✖</i>退出单元测试</a>
                     </aside>
@@ -47,11 +47,18 @@ const Doc = {
                     const target = Doc._get(anchor.getAttribute("href").slice(1));
                     if (target) {
                         Doc._scrollTo(document, target.getBoundingClientRect().top - 5, true);
+                        if (target.parentNode && target.parentNode.parentNode && target.parentNode.parentNode.className === "doc-api") {
+                            Doc.toggleApi(target.querySelector("td > .doc-api-toggle"), true);
+                        }
                         history.pushState(null, document.title, anchor.href);
                         e.preventDefault();
                     }
                 };
             });
+            const target = Doc._get(location.hash.slice(1));
+            if (target && target.parentNode && target.parentNode.parentNode && target.parentNode.parentNode.className === "doc-api") {
+                Doc.toggleApi(target.querySelector("td > .doc-api-toggle"), true);
+            }
         }
         Doc.injectRequire();
     },
@@ -280,18 +287,17 @@ const Doc = {
      * 折叠或展开所有 API 详情。
      */
     toggleApis() {
-        let hasCollapsed = !!document.querySelector(".doc-api-open");
+        const open = !document.querySelector(".doc-api-open");
         Doc._each(".doc-api-toggle", elem => {
-            if (Doc._hasClass(elem.parentNode.parentNode, "doc-api-open") === hasCollapsed) {
-                Doc.toggleApi(elem);
-            }
+            Doc.toggleApi(elem, open);
         });
     },
     /**
      * 折叠或展开 API 详情。
      * @param elem 箭头元素。
+     * @param value 如果为 true 则强制打开，如果为 false 为强制关闭。
      */
-    toggleApi(elem) {
+    toggleApi(elem, value) {
         const td = elem.parentNode;
         const tr = td.parentNode;
         const table = tr.parentNode.parentNode;
@@ -302,16 +308,18 @@ const Doc = {
             table.style.tableLayout = "fixed";
         }
         const hide = Doc._hasClass(tr, "doc-api-open");
-        if (hide) {
-            Doc._toggleClass(tr, "doc-api-hiding");
-        }
-        Doc._toggle(td.querySelector(".doc-api-detail"), !hide, () => {
+        if (value === undefined || value !== hide) {
             if (hide) {
                 Doc._toggleClass(tr, "doc-api-hiding");
             }
-            td.colSpan = hide ? 0 : 5;
-            Doc._toggleClass(tr, "doc-api-open");
-        });
+            Doc._toggle(td.querySelector(".doc-api-detail"), !hide, () => {
+                if (hide) {
+                    Doc._toggleClass(tr, "doc-api-hiding");
+                }
+                td.colSpan = hide ? 0 : 5;
+                Doc._toggleClass(tr, "doc-api-open");
+            });
+        }
     },
     /**
      * 复制指定的内容。

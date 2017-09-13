@@ -361,7 +361,7 @@ define(["require", "exports"], function (require, exports) {
      * @example deepClone({a: 3, b: [5]}) // {a: 3, b: [5]}
      */
     function deepClone(obj, depth = Infinity) {
-        if (obj && typeof obj === "object" && depth-- === 0) {
+        if (obj && typeof obj === "object" && depth-- > 0) {
             if (obj instanceof Array) {
                 const newObj = [];
                 for (let i = 0; i < obj.length; i++) {

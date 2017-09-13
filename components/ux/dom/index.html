@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
-    <meta name="version" content="0.0.1">
-    <title>DOM 处理 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <meta name="version" content="0.0.2">
+    <title>DOM 处理 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,25 +53,26 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 <li><a href="javascript:Doc.toggleDemoCodes()" accesskey="c"><i class="doc-icon">⅏</i>折叠源码</a></li>
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ux/dom" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ux/dom/dom.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=ux/dom" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/ux/dom/dom.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="dom-处理">
 <a href="#dom-处理" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>DOM 处理<div class="doc-menubutton">
                         <small>ux/dom</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import { parse, query, find, match, first, last, next, prev, parent, closest, children, contains, index, append, prepend, before, after, remove, clone, getAttr, setAttr, getText, setText, getHtml, setHtml, hasClass, addClass, removeClass, toggleClass, vendor, getStyle, setStyle, computeStyle, Point, Size, Rect, getScroll, setScroll, getOffset, setOffset, offsetParent, getRect, setRect, on, off, trigger, animate, isHidden, ToggleAnimation, show, hide, toggle, ready } from \&quot;ux/dom\&quot;;\n&quot;)">复制 <code>import "ux/dom"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/dom\&quot;], function (dom_1) {\n\tvar parse = dom_1.parse;\n\tvar query = dom_1.query;\n\tvar find = dom_1.find;\n\tvar match = dom_1.match;\n\tvar first = dom_1.first;\n\tvar last = dom_1.last;\n\tvar next = dom_1.next;\n\tvar prev = dom_1.prev;\n\tvar parent = dom_1.parent;\n\tvar closest = dom_1.closest;\n\tvar children = dom_1.children;\n\tvar contains = dom_1.contains;\n\tvar index = dom_1.index;\n\tvar append = dom_1.append;\n\tvar prepend = dom_1.prepend;\n\tvar before = dom_1.before;\n\tvar after = dom_1.after;\n\tvar remove = dom_1.remove;\n\tvar clone = dom_1.clone;\n\tvar getAttr = dom_1.getAttr;\n\tvar setAttr = dom_1.setAttr;\n\tvar getText = dom_1.getText;\n\tvar setText = dom_1.setText;\n\tvar getHtml = dom_1.getHtml;\n\tvar setHtml = dom_1.setHtml;\n\tvar hasClass = dom_1.hasClass;\n\tvar addClass = dom_1.addClass;\n\tvar removeClass = dom_1.removeClass;\n\tvar toggleClass = dom_1.toggleClass;\n\tvar vendor = dom_1.vendor;\n\tvar getStyle = dom_1.getStyle;\n\tvar setStyle = dom_1.setStyle;\n\tvar computeStyle = dom_1.computeStyle;\n\tvar Point = dom_1.Point;\n\tvar Size = dom_1.Size;\n\tvar Rect = dom_1.Rect;\n\tvar getScroll = dom_1.getScroll;\n\tvar setScroll = dom_1.setScroll;\n\tvar getOffset = dom_1.getOffset;\n\tvar setOffset = dom_1.setOffset;\n\tvar offsetParent = dom_1.offsetParent;\n\tvar getRect = dom_1.getRect;\n\tvar setRect = dom_1.setRect;\n\tvar on = dom_1.on;\n\tvar off = dom_1.off;\n\tvar trigger = dom_1.trigger;\n\tvar animate = dom_1.animate;\n\tvar isHidden = dom_1.isHidden;\n\tvar ToggleAnimation = dom_1.ToggleAnimation;\n\tvar show = dom_1.show;\n\tvar hide = dom_1.hide;\n\tvar toggle = dom_1.toggle;\n\tvar ready = dom_1.ready;\n\n\n});\n&quot;)">复制 <code>require("ux/dom")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/dom\&quot;&quot;)">复制 <code>"ux/dom"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import { parse, query, find, match, first, last, next, prev, parent, closest, children, contains, index, append, prepend, before, after, remove, clone, getAttr, setAttr, getText, setText, getHtml, setHtml, hasClass, addClass, removeClass, toggleClass, vendor, getStyle, setStyle, computeStyle, Point, Size, Rect, getScroll, setScroll, getOffset, setOffset, offsetParent, getRect, setRect, on, off, trigger, animate, isHidden, ToggleAnimation, show, hide, toggle, ready } from \&quot;ux/dom\&quot;;\n&quot;); void 0">复制 <code>import "ux/dom"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/dom\&quot;], function (dom_1) {\n\tvar parse = dom_1.parse;\n\tvar query = dom_1.query;\n\tvar find = dom_1.find;\n\tvar match = dom_1.match;\n\tvar first = dom_1.first;\n\tvar last = dom_1.last;\n\tvar next = dom_1.next;\n\tvar prev = dom_1.prev;\n\tvar parent = dom_1.parent;\n\tvar closest = dom_1.closest;\n\tvar children = dom_1.children;\n\tvar contains = dom_1.contains;\n\tvar index = dom_1.index;\n\tvar append = dom_1.append;\n\tvar prepend = dom_1.prepend;\n\tvar before = dom_1.before;\n\tvar after = dom_1.after;\n\tvar remove = dom_1.remove;\n\tvar clone = dom_1.clone;\n\tvar getAttr = dom_1.getAttr;\n\tvar setAttr = dom_1.setAttr;\n\tvar getText = dom_1.getText;\n\tvar setText = dom_1.setText;\n\tvar getHtml = dom_1.getHtml;\n\tvar setHtml = dom_1.setHtml;\n\tvar hasClass = dom_1.hasClass;\n\tvar addClass = dom_1.addClass;\n\tvar removeClass = dom_1.removeClass;\n\tvar toggleClass = dom_1.toggleClass;\n\tvar vendor = dom_1.vendor;\n\tvar getStyle = dom_1.getStyle;\n\tvar setStyle = dom_1.setStyle;\n\tvar computeStyle = dom_1.computeStyle;\n\tvar Point = dom_1.Point;\n\tvar Size = dom_1.Size;\n\tvar Rect = dom_1.Rect;\n\tvar getScroll = dom_1.getScroll;\n\tvar setScroll = dom_1.setScroll;\n\tvar getOffset = dom_1.getOffset;\n\tvar setOffset = dom_1.setOffset;\n\tvar offsetParent = dom_1.offsetParent;\n\tvar getRect = dom_1.getRect;\n\tvar setRect = dom_1.setRect;\n\tvar on = dom_1.on;\n\tvar off = dom_1.off;\n\tvar trigger = dom_1.trigger;\n\tvar animate = dom_1.animate;\n\tvar isHidden = dom_1.isHidden;\n\tvar ToggleAnimation = dom_1.ToggleAnimation;\n\tvar show = dom_1.show;\n\tvar hide = dom_1.hide;\n\tvar toggle = dom_1.toggle;\n\tvar ready = dom_1.ready;\n\n\n});\n&quot;); void 0">复制 <code>require("ux/dom")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/dom\&quot;&quot;); void 0">复制 <code>"ux/dom"</code></a></li>
                         </menu>
                     </div></h1>
 <p class="doc">提供统一的、快速的 DOM 操作方法。</p>
 <dl id="doc_toc">
-	<dt><a href="#设计意图">设计意图</a></dt>
-	<dt><a href="#为什么不使用-jquery或-zepto">为什么不使用 jQuery（或 Zepto）</a></dt>
+	<dt><a href="#目的">目的</a></dt>
+	<dt><a href="#为什么不使用-jqueryzepto">为什么不使用 jQuery/Zepto</a></dt>
 	<dt><a href="#内置特效">内置特效</a></dt>
+	<dt><a href="#已知问题">已知问题</a></dt>
 	<dt><a href="#api">API</a></dt>
 	<dd><a href="#global">全局</a></dd>
 	<dd><a href="#api/Point">Point 接口</a></dd>
@@ -79,8 +80,8 @@
 	<dd><a href="#api/Rect">Rect 接口</a></dd>
 	<dd><a href="#api/ToggleAnimation">ToggleAnimation 类型</a></dd>
 </dl>
-<h2 id="设计意图">
-<a href="#设计意图" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>设计意图</h2>
+<h2 id="目的">
+<a href="#目的" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>目的</h2>
 <ul>
 <li class="doc">统一接口，彻底解决各浏览器在 DOM 层的兼容问题。</li>
 <li class="doc">提供定位等样式计算，简化组件实现。</li>
@@ -88,8 +89,8 @@
 <li class="doc">解决 click 事件 300ms 延时问题。</li>
 <li class="doc">内置动画效果，方便组件快速添加动画。</li>
 </ul>
-<h2 id="为什么不使用-jquery或-zepto">
-<a href="#为什么不使用-jquery或-zepto" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>为什么不使用 jQuery（或 Zepto）</h2>
+<h2 id="为什么不使用-jqueryzepto">
+<a href="#为什么不使用-jqueryzepto" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>为什么不使用 jQuery/Zepto</h2>
 <p class="doc">dom 和 jQuery 提供的接口相似，功能相当。
 组件开发时用到 jQuery 的功能不多，引入完整的 jQuery 浪费体积和性能。</p>
 <p class="doc">dom 所有接口功能单一、更接近底层，因此体积小很多、性能更高。
@@ -177,11 +178,6 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
 <a href="#内置特效" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>内置特效</h2>
 <div class="doc-demo doc-demo-collapsed">
                     <div class="doc-demo-body doc" aria-label="示例" id="doc_demo_1">
-<div style="height: 100px; ">
-    <div id="box" style="position: absolute; display: inline-block;">
-        <div class="doc-box"></div>
-    </div>
-</div>
 <select id="select" onchange="toggle(box, this.value, undefined, 1000)">
     <option>opacity</option>
     <option>height</option>
@@ -202,14 +198,14 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
     <option>rotate</option>
 </select>
 <button onclick="select.onchange();">执行</button>
+<div style="height: 100px; ">
+    <div id="box" style="position: absolute; display: inline-block;">
+        <div class="doc-box"></div>
+    </div>
+</div>
 
 </div>
-                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-html"><span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"height: 100px; "</span>&gt;</span>
-    <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">id</span>=<span class="doc-code-string">"box"</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"position: absolute; display: inline-block;"</span>&gt;</span>
-        <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"doc-box"</span>&gt;</span><span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
-    <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
-<span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
-<span class="doc-code-tag">&lt;<span class="doc-code-name">select</span> <span class="doc-code-attr">id</span>=<span class="doc-code-string">"select"</span> <span class="doc-code-attr">onchange</span>=<span class="doc-code-string">"toggle(box, this.value, undefined, 1000)"</span>&gt;</span>
+                    <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-html"><span class="doc-code-tag">&lt;<span class="doc-code-name">select</span> <span class="doc-code-attr">id</span>=<span class="doc-code-string">"select"</span> <span class="doc-code-attr">onchange</span>=<span class="doc-code-string">"toggle(box, this.value, undefined, 1000)"</span>&gt;</span>
     <span class="doc-code-tag">&lt;<span class="doc-code-name">option</span>&gt;</span>opacity<span class="doc-code-tag">&lt;/<span class="doc-code-name">option</span>&gt;</span>
     <span class="doc-code-tag">&lt;<span class="doc-code-name">option</span>&gt;</span>height<span class="doc-code-tag">&lt;/<span class="doc-code-name">option</span>&gt;</span>
     <span class="doc-code-tag">&lt;<span class="doc-code-name">option</span>&gt;</span>width<span class="doc-code-tag">&lt;/<span class="doc-code-name">option</span>&gt;</span>
@@ -228,20 +224,37 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
     <span class="doc-code-tag">&lt;<span class="doc-code-name">option</span>&gt;</span>zoomOut<span class="doc-code-tag">&lt;/<span class="doc-code-name">option</span>&gt;</span>
     <span class="doc-code-tag">&lt;<span class="doc-code-name">option</span>&gt;</span>rotate<span class="doc-code-tag">&lt;/<span class="doc-code-name">option</span>&gt;</span>
 <span class="doc-code-tag">&lt;/<span class="doc-code-name">select</span>&gt;</span>
-<span class="doc-code-tag">&lt;<span class="doc-code-name">button</span> <span class="doc-code-attr">onclick</span>=<span class="doc-code-string">"select.onchange();"</span>&gt;</span>执行<span class="doc-code-tag">&lt;/<span class="doc-code-name">button</span>&gt;</span></code></pre>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">button</span> <span class="doc-code-attr">onclick</span>=<span class="doc-code-string">"select.onchange();"</span>&gt;</span>执行<span class="doc-code-tag">&lt;/<span class="doc-code-name">button</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"height: 100px; "</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">id</span>=<span class="doc-code-string">"box"</span> <span class="doc-code-attr">style</span>=<span class="doc-code-string">"position: absolute; display: inline-block;"</span>&gt;</span>
+        <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"doc-box"</span>&gt;</span><span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+    <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span></code></pre>
 <a href="javascript://查看源码" aria-label="查看源码" aria-checked="true" class="doc-demo-toggle" onclick="Doc.toggleDemoCode(this.parentNode)"><i class="doc-icon">⏷</i></a>
-                </div>
+                </div><h2 id="已知问题">
+<a href="#已知问题" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>已知问题</h2>
+<p class="doc">由于历史原因，浏览器提供的原生 DOM 接口在有些情况可能和作者的预期不符。dom 组件修复了常见的问题，但仍有很多不常见的问题未被修复。</p>
+<ol>
+<li class="doc">即使限定查找的了根元素，但选择器仍然是针对全局的。如 <code>dom.find(&lt;div&gt;&lt;a&gt;&lt;/div&gt;, 'div&gt;a')</code> 可以找到 <code>&lt;a&gt;</code> 元素。</li>
+<li class="doc">如果表单内存在 <code>name=&quot;foo&quot;</code> 的元素，则 <code>getAttr(form, &quot;foo&quot;)</code> 会返回该元素，而不是表单本身的 <code>&quot;foo&quot;</code> 属性。</li>
+<li class="doc"><code>&lt;select&gt;</code> 中只有一个 <code>&lt;option&gt;</code> 时，<code>getAttr(&lt;option&gt;, &quot;selected&quot;)</code> 可能是 <code>false</code>。</li>
+<li class="doc">IE：<code>getAttr(&lt;table&gt;, &quot;test:attrib&quot;)</code> 在属性名有冒号时报错。</li>
+<li class="doc"><code>setAttr(&lt;datalist&gt;, &quot;list&quot;, &quot;...&quot;)</code> 在部分浏览器无效。</li>
+<li class="doc"><code>setAttr(elem, &quot;style&quot;, &quot;...&quot;)</code> 在部分浏览器无法使用。</li>
+<li class="doc"><code>setAttr(&lt;input&gt;, &quot;type&quot;, &quot;...&quot;)</code> 在部分浏览器无法使用。</li>
+</ol>
+
                         <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="global"><a href="#global" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>全局</h3><div class="doc doc-scrollable"><table class="doc-api"><tr>
                             <th class="doc-api-method">函数</th>
                             <th class="doc-api-summary">描述</th>
                             
                         </tr><tr id="api/parse">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L5-52" target="_blank" title="源码：ux/dom/dom.ts，第 5 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L5-52" target="_blank" title="源码：ux/dom/dom.ts，第 5 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>parse<i class="doc-tip doc-api-ellipsis">(html, ...)</i><span class="doc-tip doc-api-more">(html:<code>string</code>, context?:<code>Document</code>):<code>HTMLElement | Text | DocumentFragment</code></span></code>
                                     <div class="doc doc-api-detail">
-                                        <p class="doc">解析一段 HTML 并返回相应的节点。</p>
+                                        <p class="doc">解析一段 HTML 并创建相应的节点。</p>
 
                 
                 
@@ -275,7 +288,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Document</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">创建节点使用的文档。</p>
+                                    <p class="doc">节点所属的文档。</p>
 
                                 </td>
                                 <td>
@@ -285,24 +298,24 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                     </table>
                 <h4>返回值</h4>
                 <p>类型：<code>HTMLElement | Text | DocumentFragment</code></p>
-                <p class="doc">返回创建的节点。如果 HTML 片段中含多个节点，则返回一个文档片段。</p>
+                <p class="doc">返回创建的节点。如果 HTML 片段中有多个根节点，则返回一个文档片段。</p>
 
                 
                                         
                                     </div>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">解析一段 HTML 并返回相应的节点。</p>
+                                    <p class="doc">解析一段 HTML 并创建相应的节点。</p>
 
                                 </td>
                                 
                             </tr><tr id="api/query">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L69-71" target="_blank" title="源码：ux/dom/dom.ts，第 69 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L69-71" target="_blank" title="源码：ux/dom/dom.ts，第 69 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
-                                    <code>query<i class="doc-tip doc-api-ellipsis">(node, ...)</i><span class="doc-tip doc-api-more">(node:<code>string | Document | Element</code>, selector?:<code>string</code>):<code>any</code>(2 重载)</span></code>
+                                    <code>query<i class="doc-tip doc-api-ellipsis">(parent, ...)</i><span class="doc-tip doc-api-more">(parent:<code>string | Document | NodeSelector | Element</code>, selector?:<code>string</code>):<code>any</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
-                                        <p class="doc">查找 CSS 选择器匹配的所有元素。</p>
+                                        <p class="doc">在指定节点范围内查找 CSS 选择器匹配的所有元素。</p>
 
                 
                 
@@ -315,10 +328,10 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                         </tr>
                         <tr>
                                 <td>
-                                    <code>node<span class="doc-api-required">*</span></code>
+                                    <code>parent<span class="doc-api-required">*</span></code>
                                 </td>
                                 <td>
-                                    <code>Document | Element</code>
+                                    <code>Document | NodeSelector | Element</code>
                                 </td>
                                 <td class="doc">
                                     <p class="doc">要查找的根节点。</p>
@@ -350,7 +363,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
 
                 
 <hr>
-<p class="doc">查找 CSS 选择器匹配的所有元素。</p>
+<p class="doc">在整个文档内查找 CSS 选择器匹配的所有元素。</p>
 
                 
                 
@@ -386,17 +399,17 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     </div>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">查找 CSS 选择器匹配的所有元素。</p>
+                                    <p class="doc">在指定节点范围内查找 CSS 选择器匹配的所有元素。</p>
 
                                 </td>
                                 
                             </tr><tr id="api/find">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L88-90" target="_blank" title="源码：ux/dom/dom.ts，第 88 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L88-90" target="_blank" title="源码：ux/dom/dom.ts，第 88 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
-                                    <code>find<i class="doc-tip doc-api-ellipsis">(node, ...)</i><span class="doc-tip doc-api-more">(node:<code>string | Document | Element</code>, selector?:<code>string</code>):<code>Element | NodeListOf&lt;Element&gt;</code>(2 重载)</span></code>
+                                    <code>find<i class="doc-tip doc-api-ellipsis">(parent, ...)</i><span class="doc-tip doc-api-more">(parent:<code>string | Document | NodeSelector | Element</code>, selector?:<code>string</code>):<code>Element | NodeListOf&lt;Element&gt;</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
-                                        <p class="doc">查找 CSS 选择器匹配的第一个元素。</p>
+                                        <p class="doc">在指定节点范围内查找 CSS 选择器匹配的第一个元素。</p>
 
                 
                 
@@ -409,10 +422,10 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                         </tr>
                         <tr>
                                 <td>
-                                    <code>node<span class="doc-api-required">*</span></code>
+                                    <code>parent<span class="doc-api-required">*</span></code>
                                 </td>
                                 <td>
-                                    <code>Document | Element</code>
+                                    <code>Document | NodeSelector | Element</code>
                                 </td>
                                 <td class="doc">
                                     <p class="doc">要查找的根节点。</p>
@@ -444,7 +457,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
 
                 
 <hr>
-<p class="doc">查找 CSS 选择器匹配的第一个元素。</p>
+<p class="doc">在整个文档内查找 CSS 选择器匹配的第一个元素。</p>
 
                 
                 
@@ -480,13 +493,13 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     </div>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">查找 CSS 选择器匹配的第一个元素。</p>
+                                    <p class="doc">在指定节点范围内查找 CSS 选择器匹配的第一个元素。</p>
 
                                 </td>
                                 
                             </tr><tr id="api/match">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L100-119" target="_blank" title="源码：ux/dom/dom.ts，第 100 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L100-119" target="_blank" title="源码：ux/dom/dom.ts，第 100 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>match<i class="doc-tip doc-api-ellipsis">(elem, selector)</i><span class="doc-tip doc-api-more">(elem:<code>Element</code>, selector:<code>string</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -509,7 +522,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Element</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要判断的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -536,7 +549,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                 <p>类型：<code>boolean</code></p>
                 <p class="doc">如果匹配则返回 true，否则返回 false。</p>
 
-                <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx">matches(<span class="doc-code-built_in">document</span>.body, <span class="doc-code-string">"body"</span>) <span class="doc-code-comment">// true</span></code></pre>
+                <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx">match(<span class="doc-code-built_in">document</span>.body, <span class="doc-code-string">"body"</span>) <span class="doc-code-comment">// true</span></code></pre>
                                         
                                     </div>
                                 </td>
@@ -547,7 +560,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/first">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L121-129" target="_blank" title="源码：ux/dom/dom.ts，第 121 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L121-129" target="_blank" title="源码：ux/dom/dom.ts，第 121 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>first<i class="doc-tip doc-api-ellipsis">(node, ...)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>, selector?:<code>string</code>):<code>HTMLElement</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -570,7 +583,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Node</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的节点。</p>
+                                    <p class="doc">相关的节点。</p>
 
                                 </td>
                                 <td>
@@ -595,7 +608,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                     </table>
                 <h4>返回值</h4>
                 <p>类型：<code>HTMLElement | null</code></p>
-                <p class="doc">返回元素。如果元素不存在则返回 null。</p>
+                <p class="doc">返回一个元素。如果元素不存在或不匹配指定的 CSS 选择器则返回 null。</p>
 
                 
                                         
@@ -608,7 +621,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/last">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L131-139" target="_blank" title="源码：ux/dom/dom.ts，第 131 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L131-139" target="_blank" title="源码：ux/dom/dom.ts，第 131 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>last<i class="doc-tip doc-api-ellipsis">(node, ...)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>, selector?:<code>string</code>):<code>HTMLElement</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -631,7 +644,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Node</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的节点。</p>
+                                    <p class="doc">相关的节点。</p>
 
                                 </td>
                                 <td>
@@ -656,7 +669,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                     </table>
                 <h4>返回值</h4>
                 <p>类型：<code>HTMLElement | null</code></p>
-                <p class="doc">返回元素。如果元素不存在则返回 null。</p>
+                <p class="doc">返回一个元素。如果元素不存在或不匹配指定的 CSS 选择器则返回 null。</p>
 
                 
                                         
@@ -669,7 +682,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/next">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L141-149" target="_blank" title="源码：ux/dom/dom.ts，第 141 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L141-149" target="_blank" title="源码：ux/dom/dom.ts，第 141 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>next<i class="doc-tip doc-api-ellipsis">(node, ...)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>, selector?:<code>string</code>):<code>HTMLElement</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -692,7 +705,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Node</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的节点。</p>
+                                    <p class="doc">相关的节点。</p>
 
                                 </td>
                                 <td>
@@ -717,7 +730,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                     </table>
                 <h4>返回值</h4>
                 <p>类型：<code>HTMLElement | null</code></p>
-                <p class="doc">返回元素。如果元素不存在则返回 null。</p>
+                <p class="doc">返回一个元素。如果元素不存在或不匹配指定的 CSS 选择器则返回 null。</p>
 
                 
                                         
@@ -730,7 +743,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/prev">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L151-159" target="_blank" title="源码：ux/dom/dom.ts，第 151 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L151-159" target="_blank" title="源码：ux/dom/dom.ts，第 151 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>prev<i class="doc-tip doc-api-ellipsis">(node, ...)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>, selector?:<code>string</code>):<code>HTMLElement</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -753,7 +766,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Node</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的节点。</p>
+                                    <p class="doc">相关的节点。</p>
 
                                 </td>
                                 <td>
@@ -778,7 +791,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                     </table>
                 <h4>返回值</h4>
                 <p>类型：<code>HTMLElement | null</code></p>
-                <p class="doc">返回元素。如果元素不存在则返回 null。</p>
+                <p class="doc">返回一个元素。如果元素不存在或不匹配指定的 CSS 选择器则返回 null。</p>
 
                 
                                         
@@ -791,7 +804,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/parent">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L161-169" target="_blank" title="源码：ux/dom/dom.ts，第 161 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L161-169" target="_blank" title="源码：ux/dom/dom.ts，第 161 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>parent<i class="doc-tip doc-api-ellipsis">(node, ...)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>, selector?:<code>string</code>):<code>HTMLElement</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -814,7 +827,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Node</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的节点。</p>
+                                    <p class="doc">相关的节点。</p>
 
                                 </td>
                                 <td>
@@ -839,7 +852,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                     </table>
                 <h4>返回值</h4>
                 <p>类型：<code>HTMLElement | null</code></p>
-                <p class="doc">返回元素。如果元素不存在则返回 null。</p>
+                <p class="doc">返回一个元素。如果元素不存在或不匹配指定的 CSS 选择器则返回 null。</p>
 
                 
                                         
@@ -852,7 +865,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/closest">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L180-193" target="_blank" title="源码：ux/dom/dom.ts，第 180 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L180-193" target="_blank" title="源码：ux/dom/dom.ts，第 180 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>closest<i class="doc-tip doc-api-ellipsis">(node, selector, ...)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>, selector:<code>string</code>, context?:<code>Document | HTMLElement</code>):<code>HTMLElement</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -875,7 +888,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Node</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要开始查找的节点。</p>
+                                    <p class="doc">相关的节点。</p>
 
                                 </td>
                                 <td>
@@ -905,7 +918,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Document | HTMLElement | null | undefined</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">如果提供了上下文，则只在指定的元素内搜索。</p>
+                                    <p class="doc">如果提供了上下文则只在指定的元素范围内搜索，否则在整个文档查找。</p>
 
                                 </td>
                                 <td>
@@ -915,7 +928,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                     </table>
                 <h4>返回值</h4>
                 <p>类型：<code>HTMLElement | null</code></p>
-                <p class="doc">返回元素。如果元素不存在则返回 null。</p>
+                <p class="doc">返回一个元素。如果找不到匹配的元素则返回 null。</p>
 
                 <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx">closest(<span class="doc-code-built_in">document</span>.body, <span class="doc-code-string">"body"</span>)</code></pre>
                                         
@@ -928,7 +941,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/children">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L195-209" target="_blank" title="源码：ux/dom/dom.ts，第 195 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L195-209" target="_blank" title="源码：ux/dom/dom.ts，第 195 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>children<i class="doc-tip doc-api-ellipsis">(node, ...)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>, selector?:<code>string</code>):<code>HTMLElement[]</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -951,7 +964,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Node</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的节点。</p>
+                                    <p class="doc">相关的节点。</p>
 
                                 </td>
                                 <td>
@@ -989,7 +1002,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/contains">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L211-228" target="_blank" title="源码：ux/dom/dom.ts，第 211 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L211-228" target="_blank" title="源码：ux/dom/dom.ts，第 211 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>contains<i class="doc-tip doc-api-ellipsis">(node, child)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>, child:<code>Node</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1012,7 +1025,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Node</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要判断的节点。</p>
+                                    <p class="doc">相关的节点。</p>
 
                                 </td>
                                 <td>
@@ -1037,7 +1050,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                     </table>
                 <h4>返回值</h4>
                 <p>类型：<code>boolean</code></p>
-                <p class="doc">如果 child 同 node 或是其子节点则返回 true，否则返回 false。</p>
+                <p class="doc">如果 <em>child</em> 同 <em>node</em> 或 <em>child</em> 是 <em>node</em> 的子节点则返回 true，否则返回 false。</p>
 
                 <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx">contains(<span class="doc-code-built_in">document</span>.body, <span class="doc-code-built_in">document</span>.body) <span class="doc-code-comment">// true</span></code></pre>
                                         
@@ -1050,7 +1063,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/index">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L230-243" target="_blank" title="源码：ux/dom/dom.ts，第 230 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L230-243" target="_blank" title="源码：ux/dom/dom.ts，第 230 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>index<i class="doc-tip doc-api-ellipsis">(node)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1073,7 +1086,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Node</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要处理的节点。</p>
+                                    <p class="doc">相关的节点。</p>
 
                                 </td>
                                 <td>
@@ -1083,7 +1096,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                     </table>
                 <h4>返回值</h4>
                 <p>类型：<code>number</code></p>
-                <p class="doc">返回索引。如果没有父元素则返回 0。</p>
+                <p class="doc">返回从 0 开始的索引。计算时忽略元素以外的节点。如果没有父节点则返回 0。</p>
 
                 
                                         
@@ -1096,7 +1109,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/append">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L245-253" target="_blank" title="源码：ux/dom/dom.ts，第 245 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L245-253" target="_blank" title="源码：ux/dom/dom.ts，第 245 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>append<i class="doc-tip doc-api-ellipsis">(node, content)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>, content:<code>string | Node</code>):<code>Node</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1119,7 +1132,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Node</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">插入所在的节点。</p>
+                                    <p class="doc">相关的节点。</p>
 
                                 </td>
                                 <td>
@@ -1157,7 +1170,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/prepend">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L255-263" target="_blank" title="源码：ux/dom/dom.ts，第 255 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L255-263" target="_blank" title="源码：ux/dom/dom.ts，第 255 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>prepend<i class="doc-tip doc-api-ellipsis">(node, content)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>, content:<code>string | Node</code>):<code>Node</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1180,7 +1193,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Node</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">插入所在的节点。</p>
+                                    <p class="doc">相关的节点。</p>
 
                                 </td>
                                 <td>
@@ -1218,7 +1231,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/before">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L265-273" target="_blank" title="源码：ux/dom/dom.ts，第 265 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L265-273" target="_blank" title="源码：ux/dom/dom.ts，第 265 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>before<i class="doc-tip doc-api-ellipsis">(node, content)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>, content:<code>string | Node</code>):<code>Node</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1241,7 +1254,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Node</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">插入所在的节点。该节点必须具有父节点。</p>
+                                    <p class="doc">相关的节点。该节点必须具有父节点。</p>
 
                                 </td>
                                 <td>
@@ -1279,7 +1292,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/after">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L275-283" target="_blank" title="源码：ux/dom/dom.ts，第 275 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L275-283" target="_blank" title="源码：ux/dom/dom.ts，第 275 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>after<i class="doc-tip doc-api-ellipsis">(node, content)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>, content:<code>string | Node</code>):<code>Node</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1302,7 +1315,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Node</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">插入所在的节点。该节点必须具有父节点。</p>
+                                    <p class="doc">相关的节点。该节点必须具有父节点。</p>
 
                                 </td>
                                 <td>
@@ -1340,7 +1353,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/remove">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L297-303" target="_blank" title="源码：ux/dom/dom.ts，第 297 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L297-303" target="_blank" title="源码：ux/dom/dom.ts，第 297 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>remove<i class="doc-tip doc-api-ellipsis">(node)</i><span class="doc-tip doc-api-more">(node:<code>Node</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1385,7 +1398,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/clone">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L305-312" target="_blank" title="源码：ux/dom/dom.ts，第 305 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L305-312" target="_blank" title="源码：ux/dom/dom.ts，第 305 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>clone&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(node)</i><span class="doc-tip doc-api-more">(node:<code>T</code>):<code>T</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1440,7 +1453,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/getAttr">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L314-323" target="_blank" title="源码：ux/dom/dom.ts，第 314 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L314-323" target="_blank" title="源码：ux/dom/dom.ts，第 314 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getAttr<i class="doc-tip doc-api-ellipsis">(elem, attrName)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, attrName:<code>string</code>):<code>any</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1463,7 +1476,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -1478,7 +1491,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>string</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的属性名。</p>
+                                    <p class="doc">要获取的属性名（使用骆驼规则，如 <code>readOnly</code>）。</p>
 
                                 </td>
                                 <td>
@@ -1488,7 +1501,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                     </table>
                 <h4>返回值</h4>
                 <p>类型：<code>any</code></p>
-                <p class="doc">返回属性值。如果不存在则返回 null。</p>
+                <p class="doc">返回属性值。如果属性不存在则返回 null。</p>
 
                 <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx">getAttr(<span class="doc-code-built_in">document</span>.body, <span class="doc-code-string">"class"</span>)</code></pre>
                                         
@@ -1501,7 +1514,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/setAttr">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L325-349" target="_blank" title="源码：ux/dom/dom.ts，第 325 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L325-344" target="_blank" title="源码：ux/dom/dom.ts，第 325 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>setAttr<i class="doc-tip doc-api-ellipsis">(elem, attrName, value)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, attrName:<code>string</code>, value:<code>any</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1524,7 +1537,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要设置的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -1539,7 +1552,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>string</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要设置的属性名。</p>
+                                    <p class="doc">要设置的属性名（使用骆驼规则，如 <code>readOnly</code>）。</p>
 
                                 </td>
                                 <td>
@@ -1577,7 +1590,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/getText">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L351-359" target="_blank" title="源码：ux/dom/dom.ts，第 351 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L346-354" target="_blank" title="源码：ux/dom/dom.ts，第 346 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getText<i class="doc-tip doc-api-ellipsis">(elem)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1600,7 +1613,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -1610,7 +1623,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                     </table>
                 <h4>返回值</h4>
                 <p>类型：<code>string</code></p>
-                <p class="doc">返回文本内容。</p>
+                <p class="doc">返回文本内容。对于输入框则返回其输入值。</p>
 
                 <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx">getText(<span class="doc-code-built_in">document</span>.body)</code></pre>
                                         
@@ -1623,7 +1636,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/setText">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L361-369" target="_blank" title="源码：ux/dom/dom.ts，第 361 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L356-364" target="_blank" title="源码：ux/dom/dom.ts，第 356 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>setText<i class="doc-tip doc-api-ellipsis">(elem, value)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, value:<code>string</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1646,7 +1659,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要设置的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -1661,7 +1674,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>string</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要设置的文本内容。</p>
+                                    <p class="doc">要设置的文本内容。对于输入框则设置其输入值。</p>
 
                                 </td>
                                 <td>
@@ -1683,7 +1696,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/getHtml">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L375-383" target="_blank" title="源码：ux/dom/dom.ts，第 375 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L370-378" target="_blank" title="源码：ux/dom/dom.ts，第 370 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getHtml<i class="doc-tip doc-api-ellipsis">(elem)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1706,7 +1719,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -1729,7 +1742,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/setHtml">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L385-393" target="_blank" title="源码：ux/dom/dom.ts，第 385 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L380-388" target="_blank" title="源码：ux/dom/dom.ts，第 380 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>setHtml<i class="doc-tip doc-api-ellipsis">(elem, value)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, value:<code>string</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1752,7 +1765,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要设置的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -1789,7 +1802,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/hasClass">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L395-403" target="_blank" title="源码：ux/dom/dom.ts，第 395 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L390-398" target="_blank" title="源码：ux/dom/dom.ts，第 390 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>hasClass<i class="doc-tip doc-api-ellipsis">(elem, className)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, className:<code>string</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1812,7 +1825,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要判断的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -1827,7 +1840,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>string</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要判断的 CSS 类名。</p>
+                                    <p class="doc">要判断的 CSS 类名（只能有一个）。</p>
 
                                 </td>
                                 <td>
@@ -1850,7 +1863,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/addClass">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L405-413" target="_blank" title="源码：ux/dom/dom.ts，第 405 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L400-408" target="_blank" title="源码：ux/dom/dom.ts，第 400 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>addClass<i class="doc-tip doc-api-ellipsis">(elem, className)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, className:<code>string</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1873,7 +1886,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要处理的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -1888,7 +1901,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>string</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要添加的 CSS 类名。</p>
+                                    <p class="doc">要添加的 CSS 类名（只能有一个）。</p>
 
                                 </td>
                                 <td>
@@ -1910,7 +1923,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/removeClass">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L415-423" target="_blank" title="源码：ux/dom/dom.ts，第 415 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L410-418" target="_blank" title="源码：ux/dom/dom.ts，第 410 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>removeClass<i class="doc-tip doc-api-ellipsis">(elem, className)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, className:<code>string</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1933,7 +1946,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要处理的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -1948,7 +1961,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>string</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要删除的 CSS 类名。</p>
+                                    <p class="doc">要删除的 CSS 类名（只能有一个）。</p>
 
                                 </td>
                                 <td>
@@ -1970,7 +1983,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/toggleClass">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L425-440" target="_blank" title="源码：ux/dom/dom.ts，第 425 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L420-435" target="_blank" title="源码：ux/dom/dom.ts，第 420 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>toggleClass<i class="doc-tip doc-api-ellipsis">(elem, className, ...)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, className:<code>string</code>, value?:<code>boolean</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1993,7 +2006,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要处理的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -2008,7 +2021,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>string</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要添加或删除的 CSS 类名。</p>
+                                    <p class="doc">要添加或删除的 CSS 类名（只能有一个）。</p>
 
                                 </td>
                                 <td>
@@ -2023,7 +2036,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>boolean | undefined</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">如果为 true 则添加 CSS 类名；如果为 false 则删除 CSS 类名。</p>
+                                    <p class="doc">如果为 true 则强制添加 CSS 类名，如果为 false 则强制删除 CSS 类名。</p>
 
                                 </td>
                                 <td>
@@ -2045,11 +2058,11 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/vendor">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L442-458" target="_blank" title="源码：ux/dom/dom.ts，第 442 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L437-453" target="_blank" title="源码：ux/dom/dom.ts，第 437 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>vendor<i class="doc-tip doc-api-ellipsis">(propName)</i><span class="doc-tip doc-api-more">(propName:<code>string</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
-                                        <p class="doc">为指定的 CSS 属性添加当前浏览器特定的后缀（如 webkit-)。</p>
+                                        <p class="doc">为指定的 CSS 属性添加当前浏览器特定的后缀（如 <code>webkit-</code>)。</p>
 
                 
                 
@@ -2068,7 +2081,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>string</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要处理的 CSS 属性名。</p>
+                                    <p class="doc">相关的 CSS 属性名。</p>
 
                                 </td>
                                 <td>
@@ -2085,17 +2098,17 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     </div>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">为指定的 CSS 属性添加当前浏览器特定的后缀（如 webkit-)。</p>
+                                    <p class="doc">为指定的 CSS 属性添加当前浏览器特定的后缀（如 <code>webkit-</code>)。</p>
 
                                 </td>
                                 
                             </tr><tr id="api/getStyle">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L460-469" target="_blank" title="源码：ux/dom/dom.ts，第 460 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L455-464" target="_blank" title="源码：ux/dom/dom.ts，第 455 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getStyle<i class="doc-tip doc-api-ellipsis">(elem, propName)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, propName:<code>string</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
-                                        <p class="doc">获取指定元素的 CSS 属性值。</p>
+                                        <p class="doc">获取指定元素的实际 CSS 属性值。</p>
 
                 
                 
@@ -2114,7 +2127,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -2129,7 +2142,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>string</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的 CSS 属性名(骆驼规则)。</p>
+                                    <p class="doc">要获取的 CSS 属性名（使用骆驼规则，如 <code>fontSize</code>）。</p>
 
                                 </td>
                                 <td>
@@ -2146,13 +2159,13 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     </div>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">获取指定元素的 CSS 属性值。</p>
+                                    <p class="doc">获取指定元素的实际 CSS 属性值。</p>
 
                                 </td>
                                 
                             </tr><tr id="api/setStyle">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L471-480" target="_blank" title="源码：ux/dom/dom.ts，第 471 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L466-475" target="_blank" title="源码：ux/dom/dom.ts，第 466 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>setStyle<i class="doc-tip doc-api-ellipsis">(elem, propName, value)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, propName:<code>string</code>, value:<code>string | number</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2175,7 +2188,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要设置的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -2190,7 +2203,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>string</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要设置的 CSS 属性名(骆驼规则)。</p>
+                                    <p class="doc">要设置的 CSS 属性名（使用骆驼规则，如 <code>fontSize</code>）。</p>
 
                                 </td>
                                 <td>
@@ -2227,7 +2240,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/computeStyle">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L482-496" target="_blank" title="源码：ux/dom/dom.ts，第 482 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L477-491" target="_blank" title="源码：ux/dom/dom.ts，第 477 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>computeStyle<i class="doc-tip doc-api-ellipsis">(elem, ...)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, ...propNames:<code>string[]</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2265,7 +2278,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>string[]</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要计算的 CSS 属性名(骆驼规则)列表。</p>
+                                    <p class="doc">要计算的 CSS 属性名（使用骆驼规则，如 <code>fontSize</code>）列表。</p>
 
                                 </td>
                                 <td>
@@ -2277,7 +2290,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                 <p>类型：<code>number</code></p>
                 <p class="doc">返回所有 CSS 属性值的和。</p>
 
-                <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx">getStyleNumber(<span class="doc-code-built_in">document</span>.body, <span class="doc-code-string">"fontSize"</span>, <span class="doc-code-string">"lineHeight"</span>)</code></pre>
+                <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx">computeStyle(<span class="doc-code-built_in">document</span>.body, <span class="doc-code-string">"fontSize"</span>, <span class="doc-code-string">"lineHeight"</span>)</code></pre>
                                         
                                     </div>
                                 </td>
@@ -2288,7 +2301,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/getScroll">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L537-558" target="_blank" title="源码：ux/dom/dom.ts，第 537 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L532-553" target="_blank" title="源码：ux/dom/dom.ts，第 532 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getScroll<i class="doc-tip doc-api-ellipsis">(elem)</i><span class="doc-tip doc-api-more">(elem:<code>Document | HTMLElement</code>):<code><a href="#api/Point">Point</a></code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2311,7 +2324,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Document | HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的元素或文档。</p>
+                                    <p class="doc">相关的元素或文档。</p>
 
                                 </td>
                                 <td>
@@ -2334,7 +2347,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/setScroll">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L560-576" target="_blank" title="源码：ux/dom/dom.ts，第 560 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L555-571" target="_blank" title="源码：ux/dom/dom.ts，第 555 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>setScroll<i class="doc-tip doc-api-ellipsis">(elem, value)</i><span class="doc-tip doc-api-more">(elem:<code>Document | HTMLElement</code>, value:<code>Partial&lt;<a href="#api/Point">Point</a>&gt;</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2357,7 +2370,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Document | HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要设置的元素或文档。</p>
+                                    <p class="doc">相关的元素或文档。</p>
 
                                 </td>
                                 <td>
@@ -2394,7 +2407,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/getOffset">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L578-603" target="_blank" title="源码：ux/dom/dom.ts，第 578 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L573-598" target="_blank" title="源码：ux/dom/dom.ts，第 573 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getOffset<i class="doc-tip doc-api-ellipsis">(elem)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>):<code><a href="#api/Point">Point</a></code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2417,7 +2430,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -2440,7 +2453,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/setOffset">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L605-618" target="_blank" title="源码：ux/dom/dom.ts，第 605 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L600-613" target="_blank" title="源码：ux/dom/dom.ts，第 600 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>setOffset<i class="doc-tip doc-api-ellipsis">(elem, value)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, value:<code>Partial&lt;<a href="#api/Point">Point</a>&gt;</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2463,7 +2476,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要处理的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -2500,7 +2513,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/offsetParent">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L620-630" target="_blank" title="源码：ux/dom/dom.ts，第 620 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L615-625" target="_blank" title="源码：ux/dom/dom.ts，第 615 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>offsetParent<i class="doc-tip doc-api-ellipsis">(elem)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>):<code>HTMLElement</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2523,7 +2536,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -2546,7 +2559,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/getRect">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L632-653" target="_blank" title="源码：ux/dom/dom.ts，第 632 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L627-648" target="_blank" title="源码：ux/dom/dom.ts，第 627 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getRect<i class="doc-tip doc-api-ellipsis">(elem)</i><span class="doc-tip doc-api-more">(elem:<code>Document | HTMLElement</code>):<code><a href="#api/Rect">Rect</a></code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2569,7 +2582,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Document | HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要获取的元素或文档。</p>
+                                    <p class="doc">相关的元素或文档。</p>
 
                                 </td>
                                 <td>
@@ -2592,7 +2605,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/setRect">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L655-686" target="_blank" title="源码：ux/dom/dom.ts，第 655 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L650-681" target="_blank" title="源码：ux/dom/dom.ts，第 650 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>setRect<i class="doc-tip doc-api-ellipsis">(elem, value)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, value:<code>Partial&lt;<a href="#api/Rect">Rect</a>&gt;</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2615,7 +2628,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要设置的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -2652,9 +2665,9 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/on">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L739-928" target="_blank" title="源码：ux/dom/dom.ts，第 739 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L734-923" target="_blank" title="源码：ux/dom/dom.ts，第 734 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
-                                    <code>on<i class="doc-tip doc-api-ellipsis">(elem, eventName, selector, ...)</i><span class="doc-tip doc-api-more">(elem:<code>Document | HTMLElement</code>, eventName:<code>string</code>, selector:<code>any</code>, listener?:<code>any</code>, scope?:<code>any</code>):<code>void</code>(2 重载)</span></code>
+                                    <code>on<i class="doc-tip doc-api-ellipsis">(elem, eventName, selector, ...)</i><span class="doc-tip doc-api-more">(elem:<code>Document | HTMLElement</code>, eventName:<code>string</code>, selector:<code>any</code>, listener?:<code>any</code>, thisArg?:<code>any</code>):<code>void</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
                                         <p class="doc">绑定指定元素的事件。</p>
 
@@ -2675,7 +2688,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Document | HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要绑定的元素或文档。</p>
+                                    <p class="doc">相关的元素或文档。</p>
 
                                 </td>
                                 <td>
@@ -2729,7 +2742,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                             </tr>
 <tr>
                                 <td>
-                                    <code>scope</code>
+                                    <code>thisArg</code>
                                 </td>
                                 <td>
                                     <code>any</code>
@@ -2767,7 +2780,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Document | HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要绑定的元素或文档。</p>
+                                    <p class="doc">相关的元素或文档。</p>
 
                                 </td>
                                 <td>
@@ -2806,7 +2819,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                             </tr>
 <tr>
                                 <td>
-                                    <code>scope</code>
+                                    <code>thisArg</code>
                                 </td>
                                 <td>
                                     <code>any</code>
@@ -2834,9 +2847,9 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/off">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L951-990" target="_blank" title="源码：ux/dom/dom.ts，第 951 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L946-985" target="_blank" title="源码：ux/dom/dom.ts，第 946 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
-                                    <code>off<i class="doc-tip doc-api-ellipsis">(elem, eventName, ...)</i><span class="doc-tip doc-api-more">(elem:<code>Document | HTMLElement</code>, eventName:<code>string</code>, selector?:<code>string | function</code>, listener?:<code>function</code>, scope?:<code>any</code>):<code>void</code>(2 重载)</span></code>
+                                    <code>off<i class="doc-tip doc-api-ellipsis">(elem, eventName, ...)</i><span class="doc-tip doc-api-more">(elem:<code>Document | HTMLElement</code>, eventName:<code>string</code>, selector?:<code>string | function</code>, listener?:<code>function</code>, thisArg?:<code>any</code>):<code>void</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
                                         <p class="doc">解绑指定元素的事件。</p>
 
@@ -2857,7 +2870,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Document | HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要解绑的元素或文档。</p>
+                                    <p class="doc">相关的元素或文档。</p>
 
                                 </td>
                                 <td>
@@ -2911,7 +2924,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                             </tr>
 <tr>
                                 <td>
-                                    <code>scope</code>
+                                    <code>thisArg</code>
                                 </td>
                                 <td>
                                     <code>any</code>
@@ -2949,7 +2962,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Document | HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要解绑的元素或文档。</p>
+                                    <p class="doc">相关的元素或文档。</p>
 
                                 </td>
                                 <td>
@@ -2988,7 +3001,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                             </tr>
 <tr>
                                 <td>
-                                    <code>scope</code>
+                                    <code>thisArg</code>
                                 </td>
                                 <td>
                                     <code>any</code>
@@ -3016,11 +3029,11 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/trigger">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L1023-1041" target="_blank" title="源码：ux/dom/dom.ts，第 1023 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L1018-1036" target="_blank" title="源码：ux/dom/dom.ts，第 1018 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>trigger<i class="doc-tip doc-api-ellipsis">(elem, eventName, selector, ...)</i><span class="doc-tip doc-api-more">(elem:<code>Document | HTMLElement</code>, eventName:<code>string</code>, selector:<code>string | Partial&lt;Event&gt;</code>, event?:<code>Partial&lt;Event&gt;</code>):<code>void</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
-                                        <p class="doc">触发指定元素的指定事件，执行已添加的事件监听器。</p>
+                                        <p class="doc">触发指定元素的指定事件，即执行对应已添加的所有事件监听器。</p>
 
                 
                 
@@ -3039,7 +3052,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Document | HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要触发事件的元素或文档。</p>
+                                    <p class="doc">相关的元素或文档。</p>
 
                                 </td>
                                 <td>
@@ -3097,7 +3110,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                 
                 <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx">trigger(<span class="doc-code-built_in">document</span>.body, <span class="doc-code-string">"click"</span>)</code></pre>
 <hr>
-<p class="doc">触发指定元素的指定事件，执行已添加的事件监听器。</p>
+<p class="doc">触发指定元素的指定事件，即执行对应已添加的所有事件监听器。</p>
 
                 
                 
@@ -3116,7 +3129,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>Document | HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要触发事件的元素或文档。</p>
+                                    <p class="doc">相关的元素或文档。</p>
 
                                 </td>
                                 <td>
@@ -3162,17 +3175,17 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     </div>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">触发指定元素的指定事件，执行已添加的事件监听器。</p>
+                                    <p class="doc">触发指定元素的指定事件，即执行对应已添加的所有事件监听器。</p>
 
                                 </td>
                                 
                             </tr><tr id="api/animate">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L1065-1142" target="_blank" title="源码：ux/dom/dom.ts，第 1065 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L1060-1137" target="_blank" title="源码：ux/dom/dom.ts，第 1060 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>animate<i class="doc-tip doc-api-ellipsis">(elem, propNames, ...)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, propNames:<code>object</code>, callback?:<code>function</code>, duration?:<code>number</code>, timingFunction?:<code>string</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
-                                        <p class="doc">执行一个自定义动画渐变。</p>
+                                        <p class="doc">执行一个自定义渐变。</p>
 
                 
                 
@@ -3191,7 +3204,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要渐变的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -3218,7 +3231,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>callback</code>
                                 </td>
                                 <td>
-                                    <code>((this: HTMLElement) =&gt; void) | undefined</code>
+                                    <code>(() =&gt; void) | undefined</code>
                                 </td>
                                 <td class="doc">
                                     <p class="doc">渐变执行结束的回调函数。</p>
@@ -3267,13 +3280,13 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     </div>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">执行一个自定义动画渐变。</p>
+                                    <p class="doc">执行一个自定义渐变。</p>
 
                                 </td>
                                 
                             </tr><tr id="api/isHidden">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L1144-1152" target="_blank" title="源码：ux/dom/dom.ts，第 1144 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L1139-1147" target="_blank" title="源码：ux/dom/dom.ts，第 1139 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>isHidden<i class="doc-tip doc-api-ellipsis">(elem)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -3296,7 +3309,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要判断的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -3306,7 +3319,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                     </table>
                 <h4>返回值</h4>
                 <p>类型：<code>boolean</code></p>
-                <p class="doc">如果元素被隐藏或正在被隐藏则返回 true，否则返回 false。</p>
+                <p class="doc">如果元素本身被隐藏或正在被隐藏则返回 true，否则返回 false。</p>
 
                 <h4>示例</h4><pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx">isHidden(<span class="doc-code-built_in">document</span>.body)</code></pre>
                                         
@@ -3319,7 +3332,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/show">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L1169-1205" target="_blank" title="源码：ux/dom/dom.ts，第 1169 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L1164-1200" target="_blank" title="源码：ux/dom/dom.ts，第 1164 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>show<i class="doc-tip doc-api-ellipsis">(elem, ...)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, animation?:<code>string | object</code>, callback?:<code>function</code>, duration?:<code>number</code>, timingFunction?:<code>string</code>, target?:<code>HTMLElement</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -3342,7 +3355,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要显示的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -3369,7 +3382,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>callback</code>
                                 </td>
                                 <td>
-                                    <code>((this: HTMLElement, value: boolean) =&gt; void) | undefined</code>
+                                    <code>((value: boolean) =&gt; void) | undefined</code>
                                 </td>
                                 <td class="doc">
                                     <p class="doc">动画执行完成后的回调。</p>
@@ -3439,7 +3452,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/hide">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L1207-1226" target="_blank" title="源码：ux/dom/dom.ts，第 1207 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L1202-1221" target="_blank" title="源码：ux/dom/dom.ts，第 1202 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>hide<i class="doc-tip doc-api-ellipsis">(elem, ...)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, animation?:<code>string | object</code>, callback?:<code>function</code>, duration?:<code>number</code>, timingFunction?:<code>string</code>, target?:<code>HTMLElement</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -3462,7 +3475,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要隐藏的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -3489,7 +3502,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>callback</code>
                                 </td>
                                 <td>
-                                    <code>((this: HTMLElement, value: boolean) =&gt; void) | undefined</code>
+                                    <code>((value: boolean) =&gt; void) | undefined</code>
                                 </td>
                                 <td class="doc">
                                     <p class="doc">动画执行完成后的回调。</p>
@@ -3559,11 +3572,11 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                 
                             </tr><tr id="api/toggle">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L1260-1392" target="_blank" title="源码：ux/dom/dom.ts，第 1260 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L1255-1381" target="_blank" title="源码：ux/dom/dom.ts，第 1255 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>toggle<i class="doc-tip doc-api-ellipsis">(elem, ...)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, value?:<code>string | number | boolean | HTMLElement | object | function</code>, animation?:<code>string | number | HTMLElement | object | function</code>, callback?:<code>string | number | HTMLElement | function</code>, duration?:<code>string | number | HTMLElement</code>, timingFunction?:<code>string | HTMLElement</code>, target?:<code>HTMLElement</code>):<code>void</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
-                                        <p class="doc">切换显示或隐藏指定元素。</p>
+                                        <p class="doc">切换显示或隐藏指定的元素。</p>
 
                 
                 
@@ -3582,7 +3595,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要显示或隐藏的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -3609,7 +3622,7 @@ dom 为了组件开发作了一些优化，使得组件本身的代码量降低�
                                     <code>callback</code>
                                 </td>
                                 <td>
-                                    <code>((this: HTMLElement, value: boolean) =&gt; void) | undefined</code>
+                                    <code>((value: boolean) =&gt; void) | undefined</code>
                                 </td>
                                 <td class="doc">
                                     <p class="doc">动画执行完成后的回调。</p>
@@ -3677,7 +3690,7 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
 <span class="doc-code-comment">// 缩小/放大</span>
 toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-code-string">"scale"</span>);</code></pre>
 <hr>
-<p class="doc">切换显示或隐藏指定元素。</p>
+<p class="doc">切换显示或隐藏指定的元素。</p>
 
                 
                 
@@ -3696,7 +3709,7 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                     <code>HTMLElement</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">要显示或隐藏的元素。</p>
+                                    <p class="doc">相关的元素。</p>
 
                                 </td>
                                 <td>
@@ -3711,7 +3724,7 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                     <code>boolean</code>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">如果为 true 则显示元素；如果为 false 则隐藏元素。</p>
+                                    <p class="doc">如果为 true 则强制显示元素；如果为 false 则强制隐藏元素。</p>
 
                                 </td>
                                 <td>
@@ -3738,7 +3751,7 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                     <code>callback</code>
                                 </td>
                                 <td>
-                                    <code>((this: HTMLElement, value: boolean) =&gt; void) | undefined</code>
+                                    <code>((value: boolean) =&gt; void) | undefined</code>
                                 </td>
                                 <td class="doc">
                                     <p class="doc">动画执行完成后的回调。</p>
@@ -3802,17 +3815,17 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                     </div>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">切换显示或隐藏指定元素。</p>
+                                    <p class="doc">切换显示或隐藏指定的元素。</p>
 
                                 </td>
                                 
                             </tr><tr id="api/ready">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L1394-1405" target="_blank" title="源码：ux/dom/dom.ts，第 1394 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L1383-1394" target="_blank" title="源码：ux/dom/dom.ts，第 1383 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>ready<i class="doc-tip doc-api-ellipsis">(callback, ...)</i><span class="doc-tip doc-api-more">(callback:<code>function</code>, context?:<code>Document</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
-                                        <p class="doc">确保在页面加载后执行指定的函数。</p>
+                                        <p class="doc">确保在文档加载完成后再执行指定的函数。</p>
 
                 
                 
@@ -3862,11 +3875,11 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                     </div>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">确保在页面加载后执行指定的函数。</p>
+                                    <p class="doc">确保在文档加载完成后再执行指定的函数。</p>
 
                                 </td>
                                 
-                            </tr></table></div><h3 id="api/Point"><a href="#api/Point" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L498-513" target="_blank" title="源码：ux/dom/dom.ts，第 498 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Point 接口</h3><p class="doc">表示一个坐标。</p>
+                            </tr></table></div><h3 id="api/Point"><a href="#api/Point" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L493-508" target="_blank" title="源码：ux/dom/dom.ts，第 493 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Point 接口</h3><p class="doc">表示一个坐标。</p>
 <div class="doc doc-scrollable"><table class="doc-api"><tr>
                                 <th class="doc-api-property">字段</th>
                                 <th class="doc-api-type">类型</th>
@@ -3874,12 +3887,12 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                 
                             </tr><tr id="api/Point/x">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L503-506" target="_blank" title="源码：ux/dom/dom.ts，第 503 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L498-501" target="_blank" title="源码：ux/dom/dom.ts，第 498 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>x</code>
                                 <span class="doc-api-more">: <code>number</code></span>
                                 <div class="doc doc-api-detail">
-                                    <p class="doc">X 坐标值。</p>
+                                    <p class="doc">相对于屏幕左上角的水平距离（单位为像素）。</p>
 
                                     
                                 </div>
@@ -3888,18 +3901,18 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                 <code>number</code>
                             </td>
                             <td class="doc">
-                                <p class="doc">X 坐标值。</p>
+                                <p class="doc">相对于屏幕左上角的水平距离（单位为像素）。</p>
 
                             </td>
                             
                         </tr><tr id="api/Point/y">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L508-511" target="_blank" title="源码：ux/dom/dom.ts，第 508 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L503-506" target="_blank" title="源码：ux/dom/dom.ts，第 503 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>y</code>
                                 <span class="doc-api-more">: <code>number</code></span>
                                 <div class="doc doc-api-detail">
-                                    <p class="doc">Y 坐标值。</p>
+                                    <p class="doc">相对于屏幕左上角的垂直距离（单位为像素）。</p>
 
                                     
                                 </div>
@@ -3908,11 +3921,11 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                 <code>number</code>
                             </td>
                             <td class="doc">
-                                <p class="doc">Y 坐标值。</p>
+                                <p class="doc">相对于屏幕左上角的垂直距离（单位为像素）。</p>
 
                             </td>
                             
-                        </tr></table></div><h3 id="api/Size"><a href="#api/Size" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L515-530" target="_blank" title="源码：ux/dom/dom.ts，第 515 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Size 接口</h3><p class="doc">表示一个大小。</p>
+                        </tr></table></div><h3 id="api/Size"><a href="#api/Size" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L510-525" target="_blank" title="源码：ux/dom/dom.ts，第 510 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Size 接口</h3><p class="doc">表示一个大小。</p>
 <div class="doc doc-scrollable"><table class="doc-api"><tr>
                                 <th class="doc-api-property">字段</th>
                                 <th class="doc-api-type">类型</th>
@@ -3920,12 +3933,12 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                 
                             </tr><tr id="api/Size/width">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L520-523" target="_blank" title="源码：ux/dom/dom.ts，第 520 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L515-518" target="_blank" title="源码：ux/dom/dom.ts，第 515 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>width</code>
                                 <span class="doc-api-more">: <code>number</code></span>
                                 <div class="doc doc-api-detail">
-                                    <p class="doc">宽度。</p>
+                                    <p class="doc">宽度（单位为像素）。</p>
 
                                     
                                 </div>
@@ -3934,18 +3947,18 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                 <code>number</code>
                             </td>
                             <td class="doc">
-                                <p class="doc">宽度。</p>
+                                <p class="doc">宽度（单位为像素）。</p>
 
                             </td>
                             
                         </tr><tr id="api/Size/height">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L525-528" target="_blank" title="源码：ux/dom/dom.ts，第 525 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L520-523" target="_blank" title="源码：ux/dom/dom.ts，第 520 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>height</code>
                                 <span class="doc-api-more">: <code>number</code></span>
                                 <div class="doc doc-api-detail">
-                                    <p class="doc">高度。</p>
+                                    <p class="doc">高度（单位为像素）。</p>
 
                                     
                                 </div>
@@ -3954,11 +3967,11 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                 <code>number</code>
                             </td>
                             <td class="doc">
-                                <p class="doc">高度。</p>
+                                <p class="doc">高度（单位为像素）。</p>
 
                             </td>
                             
-                        </tr></table></div><h3 id="api/Rect"><a href="#api/Rect" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L532-535" target="_blank" title="源码：ux/dom/dom.ts，第 532 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Rect 接口</h3><p>继承自：<code><a href="#api/Point">Point</a>, <a href="#api/Size">Size</a></code></p><p class="doc">表示一个矩形区域。</p>
+                        </tr></table></div><h3 id="api/Rect"><a href="#api/Rect" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L527-530" target="_blank" title="源码：ux/dom/dom.ts，第 527 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Rect 接口</h3><p>继承自：<code><a href="#api/Point">Point</a>, <a href="#api/Size">Size</a></code></p><p class="doc">表示一个矩形区域。</p>
 <div class="doc doc-scrollable"><table class="doc-api"><tr>
                                 <th class="doc-api-property">字段</th>
                                 <th class="doc-api-type">类型</th>
@@ -3966,12 +3979,12 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                 <th class="doc-api-extends">继承自</th>
                             </tr><tr id="api/Rect/x">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L503-506" target="_blank" title="源码：ux/dom/dom.ts，第 503 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L498-501" target="_blank" title="源码：ux/dom/dom.ts，第 498 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>x</code>
                                 <span class="doc-api-more">: <code>number</code></span>
                                 <div class="doc doc-api-detail">
-                                    <p class="doc">X 坐标值。</p>
+                                    <p class="doc">相对于屏幕左上角的水平距离（单位为像素）。</p>
 
                                     <h4>继承自</h4><p><code><a href="#api/Point">Point</a></code></p>
                                 </div>
@@ -3980,18 +3993,18 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                 <code>number</code>
                             </td>
                             <td class="doc">
-                                <p class="doc">X 坐标值。</p>
+                                <p class="doc">相对于屏幕左上角的水平距离（单位为像素）。</p>
 
                             </td>
                             <td><code><a href="#api/Point">Point</a></code></td>
                         </tr><tr id="api/Rect/y">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L508-511" target="_blank" title="源码：ux/dom/dom.ts，第 508 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L503-506" target="_blank" title="源码：ux/dom/dom.ts，第 503 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>y</code>
                                 <span class="doc-api-more">: <code>number</code></span>
                                 <div class="doc doc-api-detail">
-                                    <p class="doc">Y 坐标值。</p>
+                                    <p class="doc">相对于屏幕左上角的垂直距离（单位为像素）。</p>
 
                                     <h4>继承自</h4><p><code><a href="#api/Point">Point</a></code></p>
                                 </div>
@@ -4000,18 +4013,18 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                 <code>number</code>
                             </td>
                             <td class="doc">
-                                <p class="doc">Y 坐标值。</p>
+                                <p class="doc">相对于屏幕左上角的垂直距离（单位为像素）。</p>
 
                             </td>
                             <td><code><a href="#api/Point">Point</a></code></td>
                         </tr><tr id="api/Rect/width">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L520-523" target="_blank" title="源码：ux/dom/dom.ts，第 520 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L515-518" target="_blank" title="源码：ux/dom/dom.ts，第 515 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>width</code>
                                 <span class="doc-api-more">: <code>number</code></span>
                                 <div class="doc doc-api-detail">
-                                    <p class="doc">宽度。</p>
+                                    <p class="doc">宽度（单位为像素）。</p>
 
                                     <h4>继承自</h4><p><code><a href="#api/Size">Size</a></code></p>
                                 </div>
@@ -4020,18 +4033,18 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                 <code>number</code>
                             </td>
                             <td class="doc">
-                                <p class="doc">宽度。</p>
+                                <p class="doc">宽度（单位为像素）。</p>
 
                             </td>
                             <td><code><a href="#api/Size">Size</a></code></td>
                         </tr><tr id="api/Rect/height">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L525-528" target="_blank" title="源码：ux/dom/dom.ts，第 525 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L520-523" target="_blank" title="源码：ux/dom/dom.ts，第 520 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>height</code>
                                 <span class="doc-api-more">: <code>number</code></span>
                                 <div class="doc doc-api-detail">
-                                    <p class="doc">高度。</p>
+                                    <p class="doc">高度（单位为像素）。</p>
 
                                     <h4>继承自</h4><p><code><a href="#api/Size">Size</a></code></p>
                                 </div>
@@ -4040,22 +4053,22 @@ toggle(<span class="doc-code-built_in">document</span>.body, <span class="doc-co
                                 <code>number</code>
                             </td>
                             <td class="doc">
-                                <p class="doc">高度。</p>
+                                <p class="doc">高度（单位为像素）。</p>
 
                             </td>
                             <td><code><a href="#api/Size">Size</a></code></td>
-                        </tr></table></div><h3 id="api/ToggleAnimation"><a href="#api/ToggleAnimation" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ux/dom/dom.ts#L1164-1167" target="_blank" title="源码：ux/dom/dom.ts，第 1164 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>ToggleAnimation 类型</h3><p class="doc">内置的切换动画名。</p>
+                        </tr></table></div><h3 id="api/ToggleAnimation"><a href="#api/ToggleAnimation" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/dom/dom.ts#L1159-1162" target="_blank" title="源码：ux/dom/dom.ts，第 1159 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>ToggleAnimation 类型</h3><p class="doc">表示一个切换动画。</p>
 <p>同：<code>&quot;opacity&quot; | &quot;height&quot; | &quot;width&quot; | &quot;top&quot; | &quot;bottom&quot; | &quot;left&quot; | &quot;right&quot; | &quot;scale&quot; | &quot;scaleX&quot; | &quot;scaleY&quot; | &quot;slideDown&quot; | &quot;slideRight&quot; | &quot;slideUp&quot; | &quot;slideLeft&quot; | &quot;zoomIn&quot; | &quot;zoomOut&quot; | &quot;rotate&quot; | { [propName: string]: string | number; }</code></p>
                         <nav id="doc_pager">
-                            <a href="../../../components/ui/toolTip/" title="工具提示" id="doc_pager_prev"><i class="doc-icon">⮜</i> 工具提示</a>
-                            <a href="../../../components/ux/within/" title="判断区域" id="doc_pager_next">判断区域 <i class="doc-icon">⮞</i></a>
+                            <a href="../../../components/ui/messageBox/" title="消息框" id="doc_pager_prev"><i class="doc-icon">⮜</i> 消息框</a>
+                            <a href="../../../components/ux/scroll/" title="滚动" id="doc_pager_next">滚动 <i class="doc-icon">⮞</i></a>
                         </nav>
 </article>
     </div>
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

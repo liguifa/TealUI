@@ -1,7 +1,13 @@
 define(["require", "exports"], function (require, exports) {
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.transparent = "rgba(255; 255; 255; 0)";
-    exports.none = "rgba(0; 0; 0; 0)";
+    /**
+     * 透明。
+     */
+    exports.transparent = "rgba(255, 255, 255, 0)";
+    /**
+     * 无色。
+     */
+    exports.none = "rgba(0, 0, 0, 0)";
     exports.aliceblue = "#f0f8ff";
     exports.antiquewhite = "#faebd7";
     exports.aqua = "#00ffff";
@@ -9,8 +15,14 @@ define(["require", "exports"], function (require, exports) {
     exports.azure = "#f0ffff";
     exports.beige = "#f5f5dc";
     exports.bisque = "#ffe4c4";
+    /**
+     * 黑色。
+     */
     exports.black = "#000000";
     exports.blanchedalmond = "#ffebcd";
+    /**
+     * 蓝色。
+     */
     exports.blue = "#0000ff";
     exports.blueviolet = "#8a2be2";
     exports.brown = "#a52a2a";
@@ -23,25 +35,25 @@ define(["require", "exports"], function (require, exports) {
     exports.cornsilk = "#fff8dc";
     exports.crimson = "#dc143c";
     exports.cyan = "#00ffff";
-    exports.darkblue = "#00008b";
-    exports.darkcyan = "#008b8b";
-    exports.darkgoldenrod = "#b8860b";
-    exports.darkgray = "#a9a9a9";
-    exports.darkgrey = "#a9a9a9";
-    exports.darkgreen = "#006400";
-    exports.darkkhaki = "#bdb76b";
-    exports.darkmagenta = "#8b008b";
-    exports.darkolivegreen = "#556b2f";
-    exports.darkorange = "#ff8c00";
-    exports.darkorchid = "#9932cc";
-    exports.darkred = "#8b0000";
-    exports.darksalmon = "#e9967a";
-    exports.darkseagreen = "#8fbc8f";
-    exports.darkslateblue = "#483d8b";
-    exports.darkslategray = "#2f4f4f";
-    exports.darkslategrey = "#2f4f4f";
-    exports.darkturquoise = "#00ced1";
-    exports.darkviolet = "#9400d3";
+    exports.darkBlue = "#00008b";
+    exports.darkCyan = "#008b8b";
+    exports.darkGoldenrod = "#b8860b";
+    exports.darkGray = "#a9a9a9";
+    exports.darkGrey = "#a9a9a9";
+    exports.darkGreen = "#006400";
+    exports.darkKhaki = "#bdb76b";
+    exports.darkMagenta = "#8b008b";
+    exports.darkOlivegreen = "#556b2f";
+    exports.darkOrange = "#ff8c00";
+    exports.darkOrchid = "#9932cc";
+    exports.darkRed = "#8b0000";
+    exports.darkSalmon = "#e9967a";
+    exports.darkSeagreen = "#8fbc8f";
+    exports.darkSlateblue = "#483d8b";
+    exports.darkSlategray = "#2f4f4f";
+    exports.darkSlategrey = "#2f4f4f";
+    exports.darkTurquoise = "#00ced1";
+    exports.darkViolet = "#9400d3";
     exports.deeppink = "#ff1493";
     exports.deepskyblue = "#00bfff";
     exports.dimgray = "#696969";
@@ -53,6 +65,9 @@ define(["require", "exports"], function (require, exports) {
     exports.fuchsia = "#ff00ff";
     exports.gainsboro = "#dcdcdc";
     exports.ghostwhite = "#f8f8ff";
+    /**
+     * 金色。
+     */
     exports.gold = "#ffd700";
     exports.goldenrod = "#daa520";
     exports.gray = "#808080";
@@ -69,21 +84,21 @@ define(["require", "exports"], function (require, exports) {
     exports.lavenderblush = "#fff0f5";
     exports.lawngreen = "#7cfc00";
     exports.lemonchiffon = "#fffacd";
-    exports.lightblue = "#add8e6";
-    exports.lightcoral = "#f08080";
-    exports.lightcyan = "#e0ffff";
-    exports.lightgoldenrodyellow = "#fafad2";
-    exports.lightgray = "#d3d3d3";
-    exports.lightgrey = "#d3d3d3";
-    exports.lightgreen = "#90ee90";
-    exports.lightpink = "#ffb6c1";
-    exports.lightsalmon = "#ffa07a";
-    exports.lightseagreen = "#20b2aa";
-    exports.lightskyblue = "#87cefa";
-    exports.lightslategray = "#778899";
-    exports.lightslategrey = "#778899";
-    exports.lightsteelblue = "#b0c4de";
-    exports.lightyellow = "#ffffe0";
+    exports.lightBlue = "#add8e6";
+    exports.lightCoral = "#f08080";
+    exports.lightCyan = "#e0ffff";
+    exports.lightGoldenrodyellow = "#fafad2";
+    exports.lightGray = "#d3d3d3";
+    exports.lightGrey = "#d3d3d3";
+    exports.lightGreen = "#90ee90";
+    exports.lightPink = "#ffb6c1";
+    exports.lightSalmon = "#ffa07a";
+    exports.lightSeagreen = "#20b2aa";
+    exports.lightSkyblue = "#87cefa";
+    exports.lightSlategray = "#778899";
+    exports.lightSlategrey = "#778899";
+    exports.lightSteelblue = "#b0c4de";
+    exports.lightYellow = "#ffffe0";
     exports.lime = "#00ff00";
     exports.limegreen = "#32cd32";
     exports.linen = "#faf0e6";
@@ -105,8 +120,14 @@ define(["require", "exports"], function (require, exports) {
     exports.navajowhite = "#ffdead";
     exports.navy = "#000080";
     exports.oldlace = "#fdf5e6";
+    /**
+     * 银色。
+     */
     exports.olive = "#808000";
     exports.olivedrab = "#6b8e23";
+    /**
+     * 橙色。
+     */
     exports.orange = "#ffa500";
     exports.orangered = "#ff4500";
     exports.orchid = "#da70d6";
@@ -120,7 +141,13 @@ define(["require", "exports"], function (require, exports) {
     exports.pink = "#ffc0cb";
     exports.plum = "#dda0dd";
     exports.powderblue = "#b0e0e6";
+    /**
+     * 紫色。
+     */
     exports.purple = "#800080";
+    /**
+     * 红色。
+     */
     exports.red = "#ff0000";
     exports.rosybrown = "#bc8f8f";
     exports.royalblue = "#4169e1";
@@ -132,21 +159,30 @@ define(["require", "exports"], function (require, exports) {
     exports.sienna = "#a0522d";
     exports.silver = "#c0c0c0";
     exports.skyblue = "#87ceeb";
-    exports.slateblue = "#6a5acd";
-    exports.slategray = "#708090";
-    exports.slategrey = "#708090";
+    exports.slateBlue = "#6a5acd";
+    exports.slateGray = "#708090";
+    exports.slateGrey = "#708090";
     exports.snow = "#fffafa";
     exports.springgreen = "#00ff7f";
     exports.steelblue = "#4682b4";
     exports.tan = "#d2b48c";
+    /**
+     * 鸭绿色。
+     */
     exports.teal = "#008080";
     exports.thistle = "#d8bfd8";
     exports.tomato = "#ff6347";
     exports.turquoise = "#40e0d0";
     exports.violet = "#ee82ee";
     exports.wheat = "#f5deb3";
+    /**
+     * 白色。
+     */
     exports.white = "#ffffff";
     exports.whitesmoke = "#f5f5f5";
+    /**
+     * 黄色。
+     */
     exports.yellow = "#ffff00";
     exports.yellowgreen = "#9acd32";
 });

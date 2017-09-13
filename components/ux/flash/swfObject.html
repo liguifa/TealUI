@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>swfObject - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>swfObject - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -13,8 +13,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -29,7 +29,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -51,8 +51,8 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ux/flash/swfObject.js" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ux/flash/swfObject" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/flash/swfObject.js" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=ux/flash/swfObject" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
                                 
                             </menu>
                         </aside>
@@ -60,9 +60,9 @@
 <a href="#swfobject" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>swfObject<div class="doc-menubutton">
                         <small>ux/flash/swfObject</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import \&quot;ux/flash/swfObject\&quot;;\n&quot;)">复制 <code>import "ux/flash/swfObject"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/flash/swfObject\&quot;], function (swfObject_1) {\n\n\n});\n&quot;)">复制 <code>require("ux/flash/swfObject")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/flash/swfObject\&quot;&quot;)">复制 <code>"ux/flash/swfObject"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import \&quot;ux/flash/swfObject\&quot;;\n&quot;); void 0">复制 <code>import "ux/flash/swfObject"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/flash/swfObject\&quot;], function (swfObject_1) {\n\n\n});\n&quot;); void 0">复制 <code>require("ux/flash/swfObject")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/flash/swfObject\&quot;&quot;); void 0">复制 <code>"ux/flash/swfObject"</code></a></li>
                         </menu>
                     </div></h1>
 
@@ -73,7 +73,7 @@
                                 
                             </tr><tr id="api/swfobject">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/flash/swfObject.js#L7-818" target="_blank" title="源码：ux/flash/swfObject.js，第 7 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/flash/swfObject.js#L7-818" target="_blank" title="源码：ux/flash/swfObject.js，第 7 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>swfobject</code>
                                 <span class="doc-api-more">: <code>{ [x: string]: any; registerObject: (objectIdStr: any, swfVersionStr: any, xiSwfUrlStr: any, callbackFn: any) =&gt; void; getObjectById: (objectIdStr: any) =&gt; any; embedSWF: (swfUrlStr: any, replaceElemIdStr: any, widthStr: any, heightStr: any, swfVersionStr: any, xiSwfUrlStr: any, flashvarsObj: any, parObj: any, attObj: any, callbackFn: any) =&gt; void; switchOffAutoHideShow: () =&gt; void; enableUriEncoding: (bool: any) =&gt; void; ua: { [x: string]: any; w3: boolean; pv: number[]; wk: number | boolean; ie: boolean; win: boolean; mac: boolean; }; getFlashPlayerVersion: () =&gt; { [x: string]: any; major: number; minor: number; release: number; }; hasFlashPlayerVersion: (rv: any) =&gt; boolean; createSWF: (attObj: any, parObj: any, replaceElemIdStr: any) =&gt; any; showExpressInstall: (att: any, par: any, replaceElemIdStr: any, callbackFn: any) =&gt; void; removeSWF: (objElemIdStr: any) =&gt; void; createCSS: (selStr: any, declStr: any, mediaStr: any, newStyleBoolean: any) =&gt; void; addDomLoadEvent: (fn: any) =&gt; void; addLoadEvent: (fn: any) =&gt; void; getQueryParamValue: (param: any) =&gt; any; expressInstallCallback: () =&gt; void; version: string; }</code> = <code>function () {
@@ -907,7 +907,7 @@
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

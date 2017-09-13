@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
     <meta name="version" content="0.0.2">
-    <title>数组扩展 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>数组扩展 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,18 +53,18 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/array" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/array/array.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=util/array" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/util/array/array.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="数组扩展">
 <a href="#数组扩展" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>数组扩展<div class="doc-menubutton">
                         <small>util/array</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import { range, pushIf, insert, remove, removeAll, clean, clear, swap, sortBy, sortByDesc, shuffle, item, pick, random, count, isUnique, unique, flatten, sub, permute, associate, invoke, select, min, max, sum, avg } from \&quot;util/array\&quot;;\n&quot;)">复制 <code>import "util/array"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/array\&quot;], function (array_1) {\n\tvar range = array_1.range;\n\tvar pushIf = array_1.pushIf;\n\tvar insert = array_1.insert;\n\tvar remove = array_1.remove;\n\tvar removeAll = array_1.removeAll;\n\tvar clean = array_1.clean;\n\tvar clear = array_1.clear;\n\tvar swap = array_1.swap;\n\tvar sortBy = array_1.sortBy;\n\tvar sortByDesc = array_1.sortByDesc;\n\tvar shuffle = array_1.shuffle;\n\tvar item = array_1.item;\n\tvar pick = array_1.pick;\n\tvar random = array_1.random;\n\tvar count = array_1.count;\n\tvar isUnique = array_1.isUnique;\n\tvar unique = array_1.unique;\n\tvar flatten = array_1.flatten;\n\tvar sub = array_1.sub;\n\tvar permute = array_1.permute;\n\tvar associate = array_1.associate;\n\tvar invoke = array_1.invoke;\n\tvar select = array_1.select;\n\tvar min = array_1.min;\n\tvar max = array_1.max;\n\tvar sum = array_1.sum;\n\tvar avg = array_1.avg;\n\n\n});\n&quot;)">复制 <code>require("util/array")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/array\&quot;&quot;)">复制 <code>"util/array"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import { range, pushIf, insert, remove, removeAll, clean, clear, swap, sortBy, sortByDesc, shuffle, item, pick, random, count, isUnique, unique, flatten, sub, permute, associate, invoke, select, min, max, sum, avg } from \&quot;util/array\&quot;;\n&quot;); void 0">复制 <code>import "util/array"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/array\&quot;], function (array_1) {\n\tvar range = array_1.range;\n\tvar pushIf = array_1.pushIf;\n\tvar insert = array_1.insert;\n\tvar remove = array_1.remove;\n\tvar removeAll = array_1.removeAll;\n\tvar clean = array_1.clean;\n\tvar clear = array_1.clear;\n\tvar swap = array_1.swap;\n\tvar sortBy = array_1.sortBy;\n\tvar sortByDesc = array_1.sortByDesc;\n\tvar shuffle = array_1.shuffle;\n\tvar item = array_1.item;\n\tvar pick = array_1.pick;\n\tvar random = array_1.random;\n\tvar count = array_1.count;\n\tvar isUnique = array_1.isUnique;\n\tvar unique = array_1.unique;\n\tvar flatten = array_1.flatten;\n\tvar sub = array_1.sub;\n\tvar permute = array_1.permute;\n\tvar associate = array_1.associate;\n\tvar invoke = array_1.invoke;\n\tvar select = array_1.select;\n\tvar min = array_1.min;\n\tvar max = array_1.max;\n\tvar sum = array_1.sum;\n\tvar avg = array_1.avg;\n\n\n});\n&quot;); void 0">复制 <code>require("util/array")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/array\&quot;&quot;); void 0">复制 <code>"util/array"</code></a></li>
                         </menu>
                     </div></h1>
 <p class="doc">提供 JavaScript 内置对象 Array 的扩展接口。</p>
@@ -75,7 +75,7 @@
                             
                         </tr><tr id="api/range">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L1-16" target="_blank" title="源码：util/array/array.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L1-16" target="_blank" title="源码：util/array/array.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>range<i class="doc-tip doc-api-ellipsis">(start, end, ...)</i><span class="doc-tip doc-api-more">(start:<code>number</code>, end:<code>number</code>, step?:<code>number</code>):<code>number[]</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -152,7 +152,7 @@
                                 
                             </tr><tr id="api/pushIf">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L18-28" target="_blank" title="源码：util/array/array.ts，第 18 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L18-28" target="_blank" title="源码：util/array/array.ts，第 18 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>pushIf&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr, item)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>, item:<code>T</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -223,7 +223,7 @@
                                 
                             </tr><tr id="api/insert">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L30-39" target="_blank" title="源码：util/array/array.ts，第 30 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L30-39" target="_blank" title="源码：util/array/array.ts，第 30 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>insert&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr, index, item)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>, index:<code>number</code>, item:<code>T</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -307,7 +307,7 @@
                                 
                             </tr><tr id="api/remove">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L41-54" target="_blank" title="源码：util/array/array.ts，第 41 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L41-54" target="_blank" title="源码：util/array/array.ts，第 41 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>remove&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr, item, ...)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>, item:<code>T</code>, startIndex?:<code>number</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -393,7 +393,7 @@
                                 
                             </tr><tr id="api/removeAll">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L56-66" target="_blank" title="源码：util/array/array.ts，第 56 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L56-66" target="_blank" title="源码：util/array/array.ts，第 56 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>removeAll&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr, item, ...)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>, item:<code>T</code>, startIndex?:<code>number</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -477,7 +477,7 @@
                                 
                             </tr><tr id="api/clean">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L68-79" target="_blank" title="源码：util/array/array.ts，第 68 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L68-79" target="_blank" title="源码：util/array/array.ts，第 68 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>clean&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -531,11 +531,11 @@
                                 
                             </tr><tr id="api/clear">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L81-88" target="_blank" title="源码：util/array/array.ts，第 81 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L81-88" target="_blank" title="源码：util/array/array.ts，第 81 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>clear&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
-                                        <p class="doc">清空数组所有项。</p>
+                                        <p class="doc">清空数组的所有项。</p>
 
                 <table>
                     <tr>
@@ -579,13 +579,13 @@
                                     </div>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">清空数组所有项。</p>
+                                    <p class="doc">清空数组的所有项。</p>
 
                                 </td>
                                 
                             </tr><tr id="api/swap">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L90-101" target="_blank" title="源码：util/array/array.ts，第 90 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L90-101" target="_blank" title="源码：util/array/array.ts，第 90 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>swap&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr, x, y)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>, x:<code>number</code>, y:<code>number</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -669,7 +669,7 @@
                                 
                             </tr><tr id="api/sortBy">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L103-124" target="_blank" title="源码：util/array/array.ts，第 103 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L103-124" target="_blank" title="源码：util/array/array.ts，第 103 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>sortBy&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr, ...)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>, ...keys:<code>(function | (keyof T))[]</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -739,7 +739,7 @@
                                 
                             </tr><tr id="api/sortByDesc">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L126-147" target="_blank" title="源码：util/array/array.ts，第 126 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L126-147" target="_blank" title="源码：util/array/array.ts，第 126 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>sortByDesc&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr, ...)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>, ...keys:<code>(function | (keyof T))[]</code>):<code>T[]</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -809,7 +809,7 @@
                                 
                             </tr><tr id="api/shuffle">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L149-162" target="_blank" title="源码：util/array/array.ts，第 149 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L149-162" target="_blank" title="源码：util/array/array.ts，第 149 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>shuffle&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -863,7 +863,7 @@
                                 
                             </tr><tr id="api/item">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L164-173" target="_blank" title="源码：util/array/array.ts，第 164 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L164-173" target="_blank" title="源码：util/array/array.ts，第 164 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>item&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr, index)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>, index:<code>number</code>):<code>T</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -933,7 +933,7 @@
                                 
                             </tr><tr id="api/pick">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L175-187" target="_blank" title="源码：util/array/array.ts，第 175 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L175-187" target="_blank" title="源码：util/array/array.ts，第 175 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>pick&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>):<code>T</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -988,7 +988,7 @@
                                 
                             </tr><tr id="api/random">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L189-197" target="_blank" title="源码：util/array/array.ts，第 189 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L189-197" target="_blank" title="源码：util/array/array.ts，第 189 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>random&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>):<code>T</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1043,7 +1043,7 @@
                                 
                             </tr><tr id="api/count">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L199-216" target="_blank" title="源码：util/array/array.ts，第 199 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L199-216" target="_blank" title="源码：util/array/array.ts，第 199 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>count&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr, item, ...)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>, item:<code>T</code>, startIndex?:<code>number</code>, endIndex?:<code>number</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1143,7 +1143,7 @@
                                 
                             </tr><tr id="api/isUnique">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L218-232" target="_blank" title="源码：util/array/array.ts，第 218 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L218-232" target="_blank" title="源码：util/array/array.ts，第 218 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>isUnique&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1199,7 +1199,7 @@
                                 
                             </tr><tr id="api/unique">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L234-246" target="_blank" title="源码：util/array/array.ts，第 234 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L234-246" target="_blank" title="源码：util/array/array.ts，第 234 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>unique&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>):<code>T[]</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1254,7 +1254,7 @@
                                 
                             </tr><tr id="api/flatten">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L248-260" target="_blank" title="源码：util/array/array.ts，第 248 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L248-260" target="_blank" title="源码：util/array/array.ts，第 248 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>flatten<i class="doc-tip doc-api-ellipsis">(arr)</i><span class="doc-tip doc-api-more">(arr:<code>any[]</code>):<code>any[]</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1300,7 +1300,7 @@
                                 
                             </tr><tr id="api/sub">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L262-275" target="_blank" title="源码：util/array/array.ts，第 262 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L262-275" target="_blank" title="源码：util/array/array.ts，第 262 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>sub&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr, other)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>, other:<code>T[]</code>):<code>T[]</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1370,7 +1370,7 @@
                                 
                             </tr><tr id="api/permute">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L277-300" target="_blank" title="源码：util/array/array.ts，第 277 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L277-300" target="_blank" title="源码：util/array/array.ts，第 277 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>permute&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>):<code>T[][]</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1425,7 +1425,7 @@
                                 
                             </tr><tr id="api/associate">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L302-316" target="_blank" title="源码：util/array/array.ts，第 302 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L302-316" target="_blank" title="源码：util/array/array.ts，第 302 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>associate&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr, keys)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>, keys:<code>string[]</code>):<code>object</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1495,7 +1495,7 @@
                                 
                             </tr><tr id="api/invoke">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L318-336" target="_blank" title="源码：util/array/array.ts，第 318 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L318-336" target="_blank" title="源码：util/array/array.ts，第 318 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>invoke&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(arr, funcName, ...)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>, funcName:<code>string</code>, ...args:<code>any[]</code>):<code>T[]</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1580,7 +1580,7 @@
                                 
                             </tr><tr id="api/select">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L338-352" target="_blank" title="源码：util/array/array.ts，第 338 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L338-352" target="_blank" title="源码：util/array/array.ts，第 338 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>select&lt;T, R&gt;<i class="doc-tip doc-api-ellipsis">(arr, key)</i><span class="doc-tip doc-api-more">(arr:<code>T[]</code>, key:<code>function | (keyof T)</code>):<code>R[]</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1655,7 +1655,7 @@
                                 
                             </tr><tr id="api/min">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L354-362" target="_blank" title="源码：util/array/array.ts，第 354 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L354-362" target="_blank" title="源码：util/array/array.ts，第 354 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>min<i class="doc-tip doc-api-ellipsis">(arr)</i><span class="doc-tip doc-api-more">(arr:<code>number[]</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1701,7 +1701,7 @@
                                 
                             </tr><tr id="api/max">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L364-372" target="_blank" title="源码：util/array/array.ts，第 364 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L364-372" target="_blank" title="源码：util/array/array.ts，第 364 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>max<i class="doc-tip doc-api-ellipsis">(arr)</i><span class="doc-tip doc-api-more">(arr:<code>number[]</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1747,7 +1747,7 @@
                                 
                             </tr><tr id="api/sum">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L374-387" target="_blank" title="源码：util/array/array.ts，第 374 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L374-387" target="_blank" title="源码：util/array/array.ts，第 374 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>sum<i class="doc-tip doc-api-ellipsis">(arr)</i><span class="doc-tip doc-api-more">(arr:<code>number[]</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1793,7 +1793,7 @@
                                 
                             </tr><tr id="api/avg">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/array/array.ts#L389-406" target="_blank" title="源码：util/array/array.ts，第 389 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/array/array.ts#L389-406" target="_blank" title="源码：util/array/array.ts，第 389 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>avg<i class="doc-tip doc-api-ellipsis">(arr)</i><span class="doc-tip doc-api-more">(arr:<code>number[]</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1847,7 +1847,7 @@
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

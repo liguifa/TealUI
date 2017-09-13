@@ -1,7 +1,7 @@
-define(["require", "exports", "assert", "./class"], function (require, exports, assert, classes) {
+define(["require", "exports", "assert", "./class"], function (require, exports, assert, class_1) {
     Object.defineProperty(exports, "__esModule", { value: true });
     function extendTest() {
-        var clazz = classes.Class.extend({
+        var clazz = class_1.default.extend({
             fontSize: 1
         });
         assert.strictEqual(new clazz().fontSize, 1);

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
     <meta name="version" content="0.0.1">
-    <title>对象扩展 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>对象扩展 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,18 +53,18 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/object" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/object/object.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=util/object" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/util/object/object.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="对象扩展">
 <a href="#对象扩展" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>对象扩展<div class="doc-menubutton">
                         <small>util/object</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import { assignIf, insertBefore, each, forEach, filter, map, every, some, find, findIndex, reduce, reduceRight, subset, isObject, type, size, isEmpty, clone, deepClone, deepCloneSafe, deepEqual, diff, deepDiff, pick, keyOf, get, set, setProperty, addCallback, addSetter } from \&quot;util/object\&quot;;\n&quot;)">复制 <code>import "util/object"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/object\&quot;], function (object_1) {\n\tvar assignIf = object_1.assignIf;\n\tvar insertBefore = object_1.insertBefore;\n\tvar each = object_1.each;\n\tvar forEach = object_1.forEach;\n\tvar filter = object_1.filter;\n\tvar map = object_1.map;\n\tvar every = object_1.every;\n\tvar some = object_1.some;\n\tvar find = object_1.find;\n\tvar findIndex = object_1.findIndex;\n\tvar reduce = object_1.reduce;\n\tvar reduceRight = object_1.reduceRight;\n\tvar subset = object_1.subset;\n\tvar isObject = object_1.isObject;\n\tvar type = object_1.type;\n\tvar size = object_1.size;\n\tvar isEmpty = object_1.isEmpty;\n\tvar clone = object_1.clone;\n\tvar deepClone = object_1.deepClone;\n\tvar deepCloneSafe = object_1.deepCloneSafe;\n\tvar deepEqual = object_1.deepEqual;\n\tvar diff = object_1.diff;\n\tvar deepDiff = object_1.deepDiff;\n\tvar pick = object_1.pick;\n\tvar keyOf = object_1.keyOf;\n\tvar get = object_1.get;\n\tvar set = object_1.set;\n\tvar setProperty = object_1.setProperty;\n\tvar addCallback = object_1.addCallback;\n\tvar addSetter = object_1.addSetter;\n\n\n});\n&quot;)">复制 <code>require("util/object")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/object\&quot;&quot;)">复制 <code>"util/object"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import { assignIf, insertBefore, each, forEach, filter, map, every, some, find, findIndex, reduce, reduceRight, subset, isObject, type, size, isEmpty, clone, deepClone, deepCloneSafe, deepEqual, diff, deepDiff, pick, keyOf, get, set, setProperty, addCallback, addSetter } from \&quot;util/object\&quot;;\n&quot;); void 0">复制 <code>import "util/object"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/object\&quot;], function (object_1) {\n\tvar assignIf = object_1.assignIf;\n\tvar insertBefore = object_1.insertBefore;\n\tvar each = object_1.each;\n\tvar forEach = object_1.forEach;\n\tvar filter = object_1.filter;\n\tvar map = object_1.map;\n\tvar every = object_1.every;\n\tvar some = object_1.some;\n\tvar find = object_1.find;\n\tvar findIndex = object_1.findIndex;\n\tvar reduce = object_1.reduce;\n\tvar reduceRight = object_1.reduceRight;\n\tvar subset = object_1.subset;\n\tvar isObject = object_1.isObject;\n\tvar type = object_1.type;\n\tvar size = object_1.size;\n\tvar isEmpty = object_1.isEmpty;\n\tvar clone = object_1.clone;\n\tvar deepClone = object_1.deepClone;\n\tvar deepCloneSafe = object_1.deepCloneSafe;\n\tvar deepEqual = object_1.deepEqual;\n\tvar diff = object_1.diff;\n\tvar deepDiff = object_1.deepDiff;\n\tvar pick = object_1.pick;\n\tvar keyOf = object_1.keyOf;\n\tvar get = object_1.get;\n\tvar set = object_1.set;\n\tvar setProperty = object_1.setProperty;\n\tvar addCallback = object_1.addCallback;\n\tvar addSetter = object_1.addSetter;\n\n\n});\n&quot;); void 0">复制 <code>require("util/object")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/object\&quot;&quot;); void 0">复制 <code>"util/object"</code></a></li>
                         </menu>
                     </div></h1>
 <p class="doc">提供 JavaScript 内置对象 Object 的扩展接口。</p>
@@ -75,7 +75,7 @@
                             
                         </tr><tr id="api/assignIf">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L1-14" target="_blank" title="源码：util/object/object.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L1-14" target="_blank" title="源码：util/object/object.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>assignIf&lt;T, R&gt;<i class="doc-tip doc-api-ellipsis">(iterable, source)</i><span class="doc-tip doc-api-more">(iterable:<code>T</code>, source:<code>R</code>):<code>T &amp; R</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -148,7 +148,7 @@
                                 
                             </tr><tr id="api/insertBefore">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L16-39" target="_blank" title="源码：util/object/object.ts，第 16 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L16-39" target="_blank" title="源码：util/object/object.ts，第 16 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>insertBefore&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(obj, newKey, newValue, ...)</i><span class="doc-tip doc-api-more">(obj:<code>T</code>, newKey:<code>string</code>, newValue:<code>any</code>, refKey?:<code>(keyof T)</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -247,7 +247,7 @@
                                 
                             </tr><tr id="api/each">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L69-84" target="_blank" title="源码：util/object/object.ts，第 69 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L69-84" target="_blank" title="源码：util/object/object.ts，第 69 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>each&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(iterable, callback, ...)</i><span class="doc-tip doc-api-more">(iterable:<code>ArrayLike&lt;T&gt; | object</code>, callback:<code>function</code>, thisArg?:<code>any</code>):<code>boolean</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
@@ -416,7 +416,7 @@
                                 
                             </tr><tr id="api/forEach">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L110-122" target="_blank" title="源码：util/object/object.ts，第 110 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L110-122" target="_blank" title="源码：util/object/object.ts，第 110 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>forEach&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(iterable, callback, ...)</i><span class="doc-tip doc-api-more">(iterable:<code>ArrayLike&lt;T&gt; | object</code>, callback:<code>function</code>, thisArg?:<code>any</code>):<code>void</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
@@ -581,7 +581,7 @@
                                 
                             </tr><tr id="api/filter">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L152-170" target="_blank" title="源码：util/object/object.ts，第 152 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L152-170" target="_blank" title="源码：util/object/object.ts，第 152 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>filter&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(iterable, callback, ...)</i><span class="doc-tip doc-api-more">(iterable:<code>ArrayLike&lt;T&gt; | object</code>, callback:<code>function</code>, thisArg?:<code>any</code>):<code>T[] | object</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
@@ -750,7 +750,7 @@
                                 
                             </tr><tr id="api/map">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L201-217" target="_blank" title="源码：util/object/object.ts，第 201 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L201-217" target="_blank" title="源码：util/object/object.ts，第 201 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>map&lt;T, R&gt;<i class="doc-tip doc-api-ellipsis">(iterable, callback, ...)</i><span class="doc-tip doc-api-more">(iterable:<code>ArrayLike&lt;T&gt; | object</code>, callback:<code>function</code>, thisArg?:<code>any</code>):<code>R[] | object</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
@@ -928,7 +928,7 @@
                                 
                             </tr><tr id="api/every">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L251-266" target="_blank" title="源码：util/object/object.ts，第 251 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L251-266" target="_blank" title="源码：util/object/object.ts，第 251 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>every&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(iterable, callback, ...)</i><span class="doc-tip doc-api-more">(iterable:<code>ArrayLike&lt;T&gt; | object</code>, callback:<code>function</code>, thisArg?:<code>any</code>):<code>boolean</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
@@ -1101,7 +1101,7 @@
                                 
                             </tr><tr id="api/some">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L300-315" target="_blank" title="源码：util/object/object.ts，第 300 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L300-315" target="_blank" title="源码：util/object/object.ts，第 300 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>some&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(iterable, callback, ...)</i><span class="doc-tip doc-api-more">(iterable:<code>ArrayLike&lt;T&gt; | object</code>, callback:<code>function</code>, thisArg?:<code>any</code>):<code>boolean</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
@@ -1274,7 +1274,7 @@
                                 
                             </tr><tr id="api/find">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L345-359" target="_blank" title="源码：util/object/object.ts，第 345 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L345-359" target="_blank" title="源码：util/object/object.ts，第 345 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>find&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(iterable, callback, ...)</i><span class="doc-tip doc-api-more">(iterable:<code>ArrayLike&lt;T&gt; | object</code>, callback:<code>function</code>, thisArg?:<code>any</code>):<code>T</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
@@ -1443,7 +1443,7 @@
                                 
                             </tr><tr id="api/findIndex">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L391-406" target="_blank" title="源码：util/object/object.ts，第 391 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L391-406" target="_blank" title="源码：util/object/object.ts，第 391 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>findIndex&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(iterable, callback, ...)</i><span class="doc-tip doc-api-more">(iterable:<code>ArrayLike&lt;T&gt; | object</code>, callback:<code>function</code>, thisArg?:<code>any</code>):<code>string | number</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
@@ -1614,7 +1614,7 @@
                                 
                             </tr><tr id="api/reduce">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L442-467" target="_blank" title="源码：util/object/object.ts，第 442 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L442-467" target="_blank" title="源码：util/object/object.ts，第 442 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>reduce&lt;T, R&gt;<i class="doc-tip doc-api-ellipsis">(iterable, callback, ...)</i><span class="doc-tip doc-api-more">(iterable:<code>ArrayLike&lt;T&gt; | object</code>, callback:<code>function</code>, initialValue?:<code>R</code>, thisArg?:<code>any</code>):<code>R</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
@@ -1825,7 +1825,7 @@
                                 
                             </tr><tr id="api/reduceRight">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L503-532" target="_blank" title="源码：util/object/object.ts，第 503 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L503-532" target="_blank" title="源码：util/object/object.ts，第 503 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>reduceRight&lt;T, R&gt;<i class="doc-tip doc-api-ellipsis">(iterable, callback, ...)</i><span class="doc-tip doc-api-more">(iterable:<code>ArrayLike&lt;T&gt; | object</code>, callback:<code>function</code>, initialValue?:<code>R</code>, thisArg?:<code>any</code>):<code>R</code>(2 重载)</span></code>
                                     <div class="doc doc-api-detail">
@@ -2036,7 +2036,7 @@
                                 
                             </tr><tr id="api/subset">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L534-549" target="_blank" title="源码：util/object/object.ts，第 534 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L534-549" target="_blank" title="源码：util/object/object.ts，第 534 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>subset&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(obj, keys)</i><span class="doc-tip doc-api-more">(obj:<code>object | object</code>, keys:<code>(string | number)[]</code>):<code>object</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2106,7 +2106,7 @@
                                 
                             </tr><tr id="api/isObject">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L551-561" target="_blank" title="源码：util/object/object.ts，第 551 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L551-561" target="_blank" title="源码：util/object/object.ts，第 551 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>isObject<i class="doc-tip doc-api-ellipsis">(obj)</i><span class="doc-tip doc-api-more">(obj:<code>any</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2154,7 +2154,7 @@
                                 
                             </tr><tr id="api/type">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L568-585" target="_blank" title="源码：util/object/object.ts，第 568 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L568-585" target="_blank" title="源码：util/object/object.ts，第 568 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>type<i class="doc-tip doc-api-ellipsis">(obj)</i><span class="doc-tip doc-api-more">(obj:<code>any</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2205,7 +2205,7 @@
                                 
                             </tr><tr id="api/size">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L587-602" target="_blank" title="源码：util/object/object.ts，第 587 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L587-602" target="_blank" title="源码：util/object/object.ts，第 587 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>size<i class="doc-tip doc-api-ellipsis">(obj)</i><span class="doc-tip doc-api-more">(obj:<code>any</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2252,7 +2252,7 @@
                                 
                             </tr><tr id="api/isEmpty">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L604-623" target="_blank" title="源码：util/object/object.ts，第 604 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L604-623" target="_blank" title="源码：util/object/object.ts，第 604 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>isEmpty<i class="doc-tip doc-api-ellipsis">(obj)</i><span class="doc-tip doc-api-more">(obj:<code>any</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2303,7 +2303,7 @@
                                 
                             </tr><tr id="api/clone">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L625-637" target="_blank" title="源码：util/object/object.ts，第 625 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L625-637" target="_blank" title="源码：util/object/object.ts，第 625 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>clone&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(obj)</i><span class="doc-tip doc-api-more">(obj:<code>T</code>):<code>any</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2359,7 +2359,7 @@
                                 
                             </tr><tr id="api/deepClone">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L639-666" target="_blank" title="源码：util/object/object.ts，第 639 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L639-666" target="_blank" title="源码：util/object/object.ts，第 639 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>deepClone&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(obj, ...)</i><span class="doc-tip doc-api-more">(obj:<code>T</code>, depth?:<code>number</code>):<code>T</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2430,7 +2430,7 @@
                                 
                             </tr><tr id="api/deepCloneSafe">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L668-703" target="_blank" title="源码：util/object/object.ts，第 668 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L668-703" target="_blank" title="源码：util/object/object.ts，第 668 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>deepCloneSafe&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(obj, ...)</i><span class="doc-tip doc-api-more">(obj:<code>T</code>, cloned?:<code>any[]</code>, clonedResult?:<code>any[]</code>):<code>any</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2514,7 +2514,7 @@
                                 
                             </tr><tr id="api/deepEqual">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L705-730" target="_blank" title="源码：util/object/object.ts，第 705 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L705-730" target="_blank" title="源码：util/object/object.ts，第 705 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>deepEqual<i class="doc-tip doc-api-ellipsis">(x, y)</i><span class="doc-tip doc-api-more">(x:<code>any</code>, y:<code>any</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2575,7 +2575,7 @@
                                 
                             </tr><tr id="api/diff">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L732-771" target="_blank" title="源码：util/object/object.ts，第 732 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L732-771" target="_blank" title="源码：util/object/object.ts，第 732 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>diff<i class="doc-tip doc-api-ellipsis">(x, y)</i><span class="doc-tip doc-api-more">(x:<code>any</code>, y:<code>any</code>):<code>object</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2636,7 +2636,7 @@
                                 
                             </tr><tr id="api/deepDiff">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L773-823" target="_blank" title="源码：util/object/object.ts，第 773 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L773-823" target="_blank" title="源码：util/object/object.ts，第 773 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>deepDiff<i class="doc-tip doc-api-ellipsis">(x, y, ...)</i><span class="doc-tip doc-api-more">(x:<code>any</code>, y:<code>any</code>, depth?:<code>number</code>):<code>object</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2710,7 +2710,7 @@
                                 
                             </tr><tr id="api/pick">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L825-837" target="_blank" title="源码：util/object/object.ts，第 825 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L825-837" target="_blank" title="源码：util/object/object.ts，第 825 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>pick<i class="doc-tip doc-api-ellipsis">(...)</i><span class="doc-tip doc-api-more">(...values:<code>any[]</code>):<code>any</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2756,7 +2756,7 @@
                                 
                             </tr><tr id="api/keyOf">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L839-853" target="_blank" title="源码：util/object/object.ts，第 839 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L839-853" target="_blank" title="源码：util/object/object.ts，第 839 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>keyOf<i class="doc-tip doc-api-ellipsis">(obj, value)</i><span class="doc-tip doc-api-more">(obj:<code>any</code>, value:<code>any</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2817,7 +2817,7 @@
                                 
                             </tr><tr id="api/get">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L855-869" target="_blank" title="源码：util/object/object.ts，第 855 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L855-869" target="_blank" title="源码：util/object/object.ts，第 855 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>get<i class="doc-tip doc-api-ellipsis">(obj, prop)</i><span class="doc-tip doc-api-more">(obj:<code>any</code>, prop:<code>string</code>):<code>any</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2878,7 +2878,7 @@
                                 
                             </tr><tr id="api/set">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L871-898" target="_blank" title="源码：util/object/object.ts，第 871 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L871-898" target="_blank" title="源码：util/object/object.ts，第 871 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>set<i class="doc-tip doc-api-ellipsis">(obj, prop, value)</i><span class="doc-tip doc-api-more">(obj:<code>any</code>, prop:<code>string</code>, value:<code>any</code>):<code>any</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -2953,7 +2953,7 @@
                                 
                             </tr><tr id="api/setProperty">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L900-915" target="_blank" title="源码：util/object/object.ts，第 900 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L900-915" target="_blank" title="源码：util/object/object.ts，第 900 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>setProperty<i class="doc-tip doc-api-ellipsis">(obj, key, value)</i><span class="doc-tip doc-api-more">(obj:<code>any</code>, key:<code>string</code>, value:<code>any</code>):<code>any</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -3029,7 +3029,7 @@
                                 
                             </tr><tr id="api/addCallback">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L917-934" target="_blank" title="源码：util/object/object.ts，第 917 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L917-934" target="_blank" title="源码：util/object/object.ts，第 917 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>addCallback&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(obj, key, callback)</i><span class="doc-tip doc-api-more">(obj:<code>T</code>, key:<code>keyof T</code>, callback:<code>Function</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -3115,7 +3115,7 @@ obj.func(); <span class="doc-code-comment">// 输出 1, 2</span></code></pre>
                                 
                             </tr><tr id="api/addSetter">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/object/object.ts#L936-953" target="_blank" title="源码：util/object/object.ts，第 936 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/object/object.ts#L936-953" target="_blank" title="源码：util/object/object.ts，第 936 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>addSetter&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(obj, key, callback)</i><span class="doc-tip doc-api-more">(obj:<code>T</code>, key:<code>keyof T</code>, callback:<code>Function</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -3207,7 +3207,7 @@ obj.func(); <span class="doc-code-comment">// 输出 1, 2</span></code></pre>
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

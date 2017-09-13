@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
-    <meta name="version" content="0.0.1">
-    <title>状态 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <meta name="version" content="0.0.2">
+    <title>状态 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -49,48 +49,49 @@
 <aside id="doc_mainmenu" class="doc-menubutton">
                             <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
                             <menu>
-                                
+                                <li><a href="javascript:Doc.toggleUnitTest()" accesskey="t"><i class="doc-icon">☕</i>单元测试</a></li>
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ux/status/status.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ux/status" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ux/status/status.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/status/status.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=ux/status" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/ux/status/status.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="状态">
 <a href="#状态" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>状态<div class="doc-menubutton">
                         <small>ux/status</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import { Status, getStatus, setStatus } from \&quot;ux/status\&quot;;\n&quot;)">复制 <code>import "ux/status"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/status\&quot;], function (status_1) {\n\tvar Status = status_1.Status;\n\tvar getStatus = status_1.getStatus;\n\tvar setStatus = status_1.setStatus;\n\n\n});\n&quot;)">复制 <code>require("ux/status")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/status\&quot;&quot;)">复制 <code>"ux/status"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import { Status, getStatus, setStatus } from \&quot;ux/status\&quot;;\n&quot;); void 0">复制 <code>import "ux/status"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/status\&quot;], function (status_1) {\n\tvar Status = status_1.Status;\n\tvar getStatus = status_1.getStatus;\n\tvar setStatus = status_1.setStatus;\n\n\n});\n&quot;); void 0">复制 <code>require("ux/status")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/status\&quot;&quot;); void 0">复制 <code>"ux/status"</code></a></li>
                         </menu>
                     </div></h1>
-<p class="doc">快速读写状态 CSS 类名。</p>
+<p class="doc">快速切换 CSS 类名。</p>
 <dl id="doc_toc">
-	<dt><a href="#设计意图">设计意图</a></dt>
+	<dt><a href="#目的">目的</a></dt>
 	<dt><a href="#api">API</a></dt>
 	<dd><a href="#global">全局</a></dd>
 	<dd><a href="#api/Status">Status 类型</a></dd>
 </dl>
-<h2 id="设计意图">
-<a href="#设计意图" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>设计意图</h2>
-<p class="doc">项目中一般对输入框添加 <code>.input-success</code> 表示成功，添加 <code>.input-error</code> 表示失败。</p>
-<p class="doc">因此在标记为失败时需要：</p>
-<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-js">removeClass(input, <span class="doc-code-string">"input-success"</span>);
-addClass(input, <span class="doc-code-string">"input-error"</span>);</code></pre><p class="doc">使用 <code>setStatus</code> 可以简化代码为：</p>
-<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-js">setStatus(input, <span class="doc-code-string">"input-"</span>, <span class="doc-code-string">"error"</span>);</code></pre><p class="doc">通过 <code>setStatus</code> 可以快速切换输入框的状态。</p>
+<h2 id="目的">
+<a href="#目的" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>目的</h2>
+<p class="doc">项目中一般对输入框添加 <code>.input-success</code> CSS 类名表示成功，添加 <code>.input-error</code> CSS 类名表示失败。
+使用 <code>setStatus</code> 可以快速设置输入框的状态：</p>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-js">setStatus(input, <span class="doc-code-string">"input-"</span>, <span class="doc-code-string">"error"</span>);
 
+<span class="doc-code-comment">// 等效于以下代码：</span>
+<span class="doc-code-comment">// removeClass(input, "input-success");</span>
+<span class="doc-code-comment">// addClass(input, "input-error");</span></code></pre>
                         <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="global"><a href="#global" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>全局</h3><div class="doc doc-scrollable"><table class="doc-api"><tr>
                             <th class="doc-api-method">函数</th>
                             <th class="doc-api-summary">描述</th>
                             
                         </tr><tr id="api/getStatus">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/status/status.ts#L8-21" target="_blank" title="源码：ux/status/status.ts，第 8 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/status/status.ts#L8-21" target="_blank" title="源码：ux/status/status.ts，第 8 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
-                                    <code>getStatus<i class="doc-tip doc-api-ellipsis">(elem, prefix)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, prefix:<code>string</code>):<code><a href="#api/Status">Status</a></code></span></code>
+                                    <code>getStatus<i class="doc-tip doc-api-ellipsis">(elem, classPrefix)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, classPrefix:<code>string</code>):<code><a href="#api/Status">Status</a></code></span></code>
                                     <div class="doc doc-api-detail">
                                         <p class="doc">获取元素的状态。</p>
 
@@ -120,7 +121,7 @@ addClass(input, <span class="doc-code-string">"input-error"</span>);</code></pre
                             </tr>
 <tr>
                                 <td>
-                                    <code>prefix<span class="doc-api-required">*</span></code>
+                                    <code>classPrefix<span class="doc-api-required">*</span></code>
                                 </td>
                                 <td>
                                     <code>string</code>
@@ -149,9 +150,9 @@ addClass(input, <span class="doc-code-string">"input-error"</span>);</code></pre
                                 
                             </tr><tr id="api/setStatus">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/status/status.ts#L23-36" target="_blank" title="源码：ux/status/status.ts，第 23 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/status/status.ts#L23-36" target="_blank" title="源码：ux/status/status.ts，第 23 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
-                                    <code>setStatus<i class="doc-tip doc-api-ellipsis">(elem, prefix, value)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, prefix:<code>string</code>, value:<code><a href="#api/Status">Status</a></code>):<code>void</code></span></code>
+                                    <code>setStatus<i class="doc-tip doc-api-ellipsis">(elem, classPrefix, value)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, classPrefix:<code>string</code>, value:<code><a href="#api/Status">Status</a></code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
                                         <p class="doc">设置元素的状态。</p>
 
@@ -181,7 +182,7 @@ addClass(input, <span class="doc-code-string">"input-error"</span>);</code></pre
                             </tr>
 <tr>
                                 <td>
-                                    <code>prefix<span class="doc-api-required">*</span></code>
+                                    <code>classPrefix<span class="doc-api-required">*</span></code>
                                 </td>
                                 <td>
                                     <code>string</code>
@@ -222,18 +223,18 @@ addClass(input, <span class="doc-code-string">"input-error"</span>);</code></pre
 
                                 </td>
                                 
-                            </tr></table></div><h3 id="api/Status"><a href="#api/Status" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ux/status/status.ts#L3-6" target="_blank" title="源码：ux/status/status.ts，第 3 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Status 类型</h3><p class="doc">表示验证状态。</p>
+                            </tr></table></div><h3 id="api/Status"><a href="#api/Status" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/status/status.ts#L3-6" target="_blank" title="源码：ux/status/status.ts，第 3 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Status 类型</h3><p class="doc">表示验证状态。</p>
 <p>同：<code>&quot;error&quot; | &quot;warning&quot; | &quot;info&quot; | &quot;success&quot; | null</code></p>
                         <nav id="doc_pager">
-                            <a href="../../../components/ux/active/" title="激活样式" id="doc_pager_prev"><i class="doc-icon">⮜</i> 激活样式</a>
-                            <a href="../../../components/ux/outerHTML/" title="外部 HTML" id="doc_pager_next">外部 HTML <i class="doc-icon">⮞</i></a>
+                            <a href="../../../components/ux/within/" title="判断区域" id="doc_pager_prev"><i class="doc-icon">⮜</i> 判断区域</a>
+                            <a href="../../../components/ux/active/" title="激活样式" id="doc_pager_next">激活样式 <i class="doc-icon">⮞</i></a>
                         </nav>
 </article>
     </div>
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>
@@ -242,7 +243,7 @@ addClass(input, <span class="doc-code-string">"input-error"</span>);</code></pre
     </footer>
     <script src="../../../assets/doc/doc.js"></script>
     <script>
-        Doc.init({"root":"../../..","dir":"components","active":"ux/status/","imports":["ux/status"]})
+        Doc.init({"root":"../../..","dir":"components","active":"ux/status/","test":"ux/status/status-test.ts","imports":["ux/status"]})
     </script>
     <script src="../../../components/index.js"></script>
     <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>

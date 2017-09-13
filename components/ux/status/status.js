@@ -3,12 +3,12 @@ define(["require", "exports", "ux/dom"], function (require, exports, dom) {
     /**
      * 获取元素的状态。
      * @param elem 要获取的元素。
-     * @param prefix CSS 类名前缀。
+     * @param classPrefix CSS 类名前缀。
      * @return 返回状态。
      */
-    function getStatus(elem, prefix) {
+    function getStatus(elem, classPrefix) {
         for (const state of ["error", "warning", "info", "success"]) {
-            if (dom.hasClass(elem, `${prefix}${state}`)) {
+            if (dom.hasClass(elem, `${classPrefix}${state}`)) {
                 return state;
             }
         }
@@ -18,15 +18,15 @@ define(["require", "exports", "ux/dom"], function (require, exports, dom) {
     /**
      * 设置元素的状态。
      * @param elem 要设置的元素。
-     * @param prefix CSS 类名前缀。
+     * @param classPrefix CSS 类名前缀。
      * @param value 要设置的状态。
      */
-    function setStatus(elem, prefix, value) {
+    function setStatus(elem, classPrefix, value) {
         for (const state of ["error", "warning", "info", "success"]) {
-            dom.removeClass(elem, `${prefix}${state}`);
+            dom.removeClass(elem, `${classPrefix}${state}`);
         }
         if (value) {
-            dom.addClass(elem, `${prefix}${value}`);
+            dom.addClass(elem, `${classPrefix}${value}`);
         }
     }
     exports.setStatus = setStatus;

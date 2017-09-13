@@ -1,13 +1,13 @@
 define(["require", "exports"], function (require, exports) {
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-     * 用于快速定义一个类。
+     * 定义一个类。
      */
     class Class {
         /**
-         * 继承当前类创建派生类。
+         * 创建继承当前类的子类。
          * @param prototype 子类实例成员列表。其中 `contructor` 成员表示类型构造函数。
-         * @return 返回继承创建的子类。
+         * @return 返回创建的子类。
          * @desc
          * 此函数只实现单继承。不同于真正面向对象的语言，
          * 子类的构造函数默认不会调用父类构造函数，除非子类不存在新的构造函数。
@@ -28,8 +28,10 @@ define(["require", "exports"], function (require, exports) {
             let subClass;
             // 生成缺省构造函数：直接调用父类构造函数 。
             if (!Object.prototype.hasOwnProperty.call(prototype, "constructor")) {
-                prototype.constructor = function Class() {
-                    return subClass.__proto__.apply(this, arguments);
+                prototype.constructor = function Object() {
+                    if (subClass.__proto__ !== Class) {
+                        return subClass.__proto__.apply(this, arguments);
+                    }
                 };
             }
             // 直接使用构造函数作为类型本身。
@@ -61,6 +63,6 @@ define(["require", "exports"], function (require, exports) {
             return subClass;
         }
     }
-    exports.Class = Class;
+    exports.default = Class;
 });
 //# sourceMappingURL=class.js.map

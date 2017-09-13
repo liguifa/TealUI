@@ -1,7 +1,7 @@
 define(["require", "exports"], function (require, exports) {
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-     * 令文本域随输入内容自动调整高度。
+     * 让文本域随输入内容自动调整高度。
      * @param elem 要处理的文本域节点。
      */
     function autoResize(elem) {

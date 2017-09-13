@@ -3,10 +3,10 @@ define(["require", "exports"], function (require, exports) {
     var parseFix;
     var parseContainer;
     /**
-     * 解析一段 HTML 并返回相应的节点。
+     * 解析一段 HTML 并创建相应的节点。
      * @param html 要解析的 HTML 片段。
-     * @param context 创建节点使用的文档。
-     * @return 返回创建的节点。如果 HTML 片段中含多个节点，则返回一个文档片段。
+     * @param context 节点所属的文档。
+     * @return 返回创建的节点。如果 HTML 片段中有多个根节点，则返回一个文档片段。
      */
     function parse(html, context = document) {
         if (!parseFix) {
@@ -53,27 +53,27 @@ define(["require", "exports"], function (require, exports) {
         return result;
     }
     exports.parse = parse;
-    function query(node, selector) {
-        return Array.prototype.slice.call(querySelector(node, selector), 0);
+    function query(parent, selector) {
+        return Array.prototype.slice.call(querySelector(parent, selector), 0);
     }
     exports.query = query;
-    function find(node, selector) {
-        return querySelector(node, selector, true);
+    function find(parent, selector) {
+        return querySelector(parent, selector, true);
     }
     exports.find = find;
-    function querySelector(node, selector, first) {
-        if (typeof node === "string") {
-            selector = node;
-            node = document;
+    function querySelector(parent, selector, first) {
+        if (typeof parent === "string") {
+            selector = parent;
+            parent = document;
         }
-        return first ? node.querySelector(selector) : node.querySelectorAll(selector);
+        return first ? parent.querySelector(selector) : parent.querySelectorAll(selector);
     }
     /**
      * 判断元素是否匹配指定的 CSS 选择器。
-     * @param elem 要判断的元素。
+     * @param elem 相关的元素。
      * @param selector 要判断的 CSS 选择器。
      * @return 如果匹配则返回 true，否则返回 false。
-     * @example matches(document.body, "body") // true
+     * @example match(document.body, "body") // true
      */
     function match(elem, selector) {
         if (elem.matches) {
@@ -92,9 +92,9 @@ define(["require", "exports"], function (require, exports) {
     exports.match = match;
     /**
      * 获取节点的第一个子元素。
-     * @param node 要获取的节点。
+     * @param node 相关的节点。
      * @param selector 用于筛选元素的 CSS 选择器。
-     * @return 返回元素。如果元素不存在则返回 null。
+     * @return 返回一个元素。如果元素不存在或不匹配指定的 CSS 选择器则返回 null。
      */
     function first(node, selector) {
         return walk(node, selector, "nextSibling", "firstChild");
@@ -102,9 +102,9 @@ define(["require", "exports"], function (require, exports) {
     exports.first = first;
     /**
      * 获取节点的最后一个子元素。
-     * @param node 要获取的节点。
+     * @param node 相关的节点。
      * @param selector 用于筛选元素的 CSS 选择器。
-     * @return 返回元素。如果元素不存在则返回 null。
+     * @return 返回一个元素。如果元素不存在或不匹配指定的 CSS 选择器则返回 null。
      */
     function last(node, selector) {
         return walk(node, selector, "previousSibling", "lastChild");
@@ -112,9 +112,9 @@ define(["require", "exports"], function (require, exports) {
     exports.last = last;
     /**
      * 获取节点的下一个相邻元素。
-     * @param node 要获取的节点。
+     * @param node 相关的节点。
      * @param selector 用于筛选元素的 CSS 选择器。
-     * @return 返回元素。如果元素不存在则返回 null。
+     * @return 返回一个元素。如果元素不存在或不匹配指定的 CSS 选择器则返回 null。
      */
     function next(node, selector) {
         return walk(node, selector, "nextSibling");
@@ -122,9 +122,9 @@ define(["require", "exports"], function (require, exports) {
     exports.next = next;
     /**
      * 获取节点的上一个相邻元素。
-     * @param node 要获取的节点。
+     * @param node 相关的节点。
      * @param selector 用于筛选元素的 CSS 选择器。
-     * @return 返回元素。如果元素不存在则返回 null。
+     * @return 返回一个元素。如果元素不存在或不匹配指定的 CSS 选择器则返回 null。
      */
     function prev(node, selector) {
         return walk(node, selector, "previousSibling");
@@ -132,9 +132,9 @@ define(["require", "exports"], function (require, exports) {
     exports.prev = prev;
     /**
      * 获取指定节点的父元素。
-     * @param node 要获取的节点。
+     * @param node 相关的节点。
      * @param selector 用于筛选元素的 CSS 选择器。
-     * @return 返回元素。如果元素不存在则返回 null。
+     * @return 返回一个元素。如果元素不存在或不匹配指定的 CSS 选择器则返回 null。
      */
     function parent(node, selector) {
         return walk(node, selector, "parentNode");
@@ -150,10 +150,10 @@ define(["require", "exports"], function (require, exports) {
     }
     /**
      * 从指定节点开始向父元素查找第一个匹配指定 CSS 选择器的元素。
-     * @param node 要开始查找的节点。
+     * @param node 相关的节点。
      * @param selector 要匹配的 CSS 选择器。
-     * @param context 如果提供了上下文，则只在指定的元素内搜索。
-     * @return 返回元素。如果元素不存在则返回 null。
+     * @param context 如果提供了上下文则只在指定的元素范围内搜索，否则在整个文档查找。
+     * @return 返回一个元素。如果找不到匹配的元素则返回 null。
      * @example closest(document.body, "body")
      */
     function closest(node, selector, context) {
@@ -165,7 +165,7 @@ define(["require", "exports"], function (require, exports) {
     exports.closest = closest;
     /**
      * 获取指定节点的所有子元素。
-     * @param node 要获取的节点。
+     * @param node 相关的节点。
      * @param selector 用于筛选元素的 CSS 选择器。
      * @return 返回包含所有子元素的数组。
      */
@@ -181,9 +181,9 @@ define(["require", "exports"], function (require, exports) {
     exports.children = children;
     /**
      * 判断指定节点是否包含另一个节点。
-     * @param node 要判断的节点。
+     * @param node 相关的节点。
      * @param child 要判断的子节点。
-     * @return 如果 child 同 node 或是其子节点则返回 true，否则返回 false。
+     * @return 如果 *child* 同 *node* 或 *child* 是 *node* 的子节点则返回 true，否则返回 false。
      * @example contains(document.body, document.body) // true
      */
     function contains(node, child) {
@@ -200,8 +200,8 @@ define(["require", "exports"], function (require, exports) {
     exports.contains = contains;
     /**
      * 获取指定节点在其父节点中的索引。
-     * @param node 要处理的节点。
-     * @return 返回索引。如果没有父元素则返回 0。
+     * @param node 相关的节点。
+     * @return 返回从 0 开始的索引。计算时忽略元素以外的节点。如果没有父节点则返回 0。
      */
     function index(node) {
         let result = 0;
@@ -215,7 +215,7 @@ define(["require", "exports"], function (require, exports) {
     exports.index = index;
     /**
      * 在指定节点末尾插入一段 HTML 或一个节点。
-     * @param node 插入所在的节点。
+     * @param node 相关的节点。
      * @param content 要插入的 HTML 或节点。
      * @return 返回插入的新节点。
      */
@@ -225,7 +225,7 @@ define(["require", "exports"], function (require, exports) {
     exports.append = append;
     /**
      * 在指定节点开头插入一段 HTML 或一个节点。
-     * @param node 插入所在的节点。
+     * @param node 相关的节点。
      * @param content 要插入的 HTML 或节点。
      * @return 返回插入的新节点。
      */
@@ -235,7 +235,7 @@ define(["require", "exports"], function (require, exports) {
     exports.prepend = prepend;
     /**
      * 在指定节点前插入一段 HTML 或一个节点。
-     * @param node 插入所在的节点。该节点必须具有父节点。
+     * @param node 相关的节点。该节点必须具有父节点。
      * @param content 要插入的 HTML 或节点。
      * @return 返回插入的新节点。
      */
@@ -245,7 +245,7 @@ define(["require", "exports"], function (require, exports) {
     exports.before = before;
     /**
      * 在指定节点后插入一段 HTML 或一个节点。
-     * @param node 插入所在的节点。该节点必须具有父节点。
+     * @param node 相关的节点。该节点必须具有父节点。
      * @param content 要插入的 HTML 或节点。
      * @return 返回插入的新节点。
      */
@@ -283,9 +283,9 @@ define(["require", "exports"], function (require, exports) {
     exports.clone = clone;
     /**
      * 获取指定元素的属性值。
-     * @param elem 要获取的元素。
-     * @param attrName 要获取的属性名。
-     * @return 返回属性值。如果不存在则返回 null。
+     * @param elem 相关的元素。
+     * @param attrName 要获取的属性名（使用骆驼规则，如 `readOnly`）。
+     * @return 返回属性值。如果属性不存在则返回 null。
      * @example getAttr(document.body, "class")
      */
     function getAttr(elem, attrName) {
@@ -294,38 +294,31 @@ define(["require", "exports"], function (require, exports) {
     exports.getAttr = getAttr;
     /**
      * 设置指定元素的属性值。
-     * @param elem 要设置的元素。
-     * @param attrName 要设置的属性名。
+     * @param elem 相关的元素。
+     * @param attrName 要设置的属性名（使用骆驼规则，如 `readOnly`）。
      * @param value 要设置的属性值。设置为 null 表示删除属性。
      * @example setAttr(document.body, "class", "red")
      * @example setAttr(document.body, "class", null)
      */
     function setAttr(elem, attrName, value) {
-        if (/^on./.test(attrName) && attrName in elem) {
-            if (typeof value === "string") {
-                elem.setAttribute(attrName, value);
+        if (attrName in elem && (typeof value !== "string" || !/^on./.test(attrName)) || value != null && typeof value !== "string") {
+            if (value == null && typeof elem[attrName] === "string") {
+                value = "";
             }
-            else {
-                elem[attrName] = value;
-            }
+            elem[attrName] = value;
+        }
+        else if (value == null) {
+            elem.removeAttribute(attrName);
         }
         else {
-            if (attrName in elem || value != null && typeof value !== "string") {
-                elem[attrName] = value;
-            }
-            else if (value == null) {
-                elem.removeAttribute(attrName);
-            }
-            else {
-                elem.setAttribute(attrName, value);
-            }
+            elem.setAttribute(attrName, value);
         }
     }
     exports.setAttr = setAttr;
     /**
      * 获取指定元素的文本内容。
-     * @param elem 要获取的元素。
-     * @return 返回文本内容。
+     * @param elem 相关的元素。
+     * @return 返回文本内容。对于输入框则返回其输入值。
      * @example getText(document.body)
      */
     function getText(elem) {
@@ -334,8 +327,8 @@ define(["require", "exports"], function (require, exports) {
     exports.getText = getText;
     /**
      * 设置指定元素的文本内容。
-     * @param elem 要设置的元素。
-     * @param value 要设置的文本内容。
+     * @param elem 相关的元素。
+     * @param value 要设置的文本内容。对于输入框则设置其输入值。
      * @example setText(document.body, "text")
      */
     function setText(elem, value) {
@@ -347,7 +340,7 @@ define(["require", "exports"], function (require, exports) {
     }
     /**
      * 获取指定元素的内部 HTML。
-     * @param elem 要获取的元素。
+     * @param elem 相关的元素。
      * @return 返回内部 HTML。
      * @example getHtml(document.body)
      */
@@ -357,7 +350,7 @@ define(["require", "exports"], function (require, exports) {
     exports.getHtml = getHtml;
     /**
      * 设置指定元素的内部 HTML。
-     * @param elem 要设置的元素。
+     * @param elem 相关的元素。
      * @param value 要设置的内部 HTML。
      * @example setHtml(document.body, "html")
      */
@@ -367,8 +360,8 @@ define(["require", "exports"], function (require, exports) {
     exports.setHtml = setHtml;
     /**
      * 判断指定元素是否已添加指定的 CSS 类名。
-     * @param elem 要判断的元素。
-     * @param className 要判断的 CSS 类名。
+     * @param elem 相关的元素。
+     * @param className 要判断的 CSS 类名（只能有一个）。
      * @return 如果已添加则返回 true，否则返回 false。
      */
     function hasClass(elem, className) {
@@ -377,8 +370,8 @@ define(["require", "exports"], function (require, exports) {
     exports.hasClass = hasClass;
     /**
      * 添加指定元素的 CSS 类名。
-     * @param elem 要处理的元素。
-     * @param className 要添加的 CSS 类名。
+     * @param elem 相关的元素。
+     * @param className 要添加的 CSS 类名（只能有一个）。
      * @example addClass(document.body, "light")
      */
     function addClass(elem, className) {
@@ -387,8 +380,8 @@ define(["require", "exports"], function (require, exports) {
     exports.addClass = addClass;
     /**
      * 删除指定元素的 CSS 类名。
-     * @param elem 要处理的元素。
-     * @param className 要删除的 CSS 类名。
+     * @param elem 相关的元素。
+     * @param className 要删除的 CSS 类名（只能有一个）。
      * @example removeClass(document.body, "light")
      */
     function removeClass(elem, className) {
@@ -397,25 +390,25 @@ define(["require", "exports"], function (require, exports) {
     exports.removeClass = removeClass;
     /**
      * 如果存在（不存在）则删除（添加）指定元素的 CSS 类名。
-     * @param elem 要处理的元素。
-     * @param className 要添加或删除的 CSS 类名。
-     * @param value 如果为 true 则添加 CSS 类名；如果为 false 则删除 CSS 类名。
+     * @param elem 相关的元素。
+     * @param className 要添加或删除的 CSS 类名（只能有一个）。
+     * @param value 如果为 true 则强制添加 CSS 类名，如果为 false 则强制删除 CSS 类名。
      * @example toggleClass(document.body, "light")
      */
     function toggleClass(elem, className, value) {
         if (hasClass(elem, className)) {
-            if (value !== true) {
+            if (!value) {
                 elem.className = (" " + elem.className + " ").replace(" " + className + " ", " ").trim();
             }
         }
-        else if (value !== false) {
+        else if (value === undefined || value) {
             elem.className = elem.className ? elem.className + " " + className : className;
         }
     }
     exports.toggleClass = toggleClass;
     /**
-     * 为指定的 CSS 属性添加当前浏览器特定的后缀（如 webkit-)。
-     * @param propName 要处理的 CSS 属性名。
+     * 为指定的 CSS 属性添加当前浏览器特定的后缀（如 `webkit-`)。
+     * @param propName 相关的 CSS 属性名。
      * @return 返回已添加后缀的 CSS 属性名。
      * @example vendor("transform")
      */
@@ -432,9 +425,9 @@ define(["require", "exports"], function (require, exports) {
     }
     exports.vendor = vendor;
     /**
-     * 获取指定元素的 CSS 属性值。
-     * @param elem 要获取的元素。
-     * @param propName 要获取的 CSS 属性名(骆驼规则)。
+     * 获取指定元素的实际 CSS 属性值。
+     * @param elem 相关的元素。
+     * @param propName 要获取的 CSS 属性名（使用骆驼规则，如 `fontSize`）。
      * @return 返回 CSS 属性值。
      * @example getStyle(document.body, "fontSize")
      */
@@ -444,8 +437,8 @@ define(["require", "exports"], function (require, exports) {
     exports.getStyle = getStyle;
     /**
      * 设置指定元素的 CSS 属性值。
-     * @param elem 要设置的元素。
-     * @param propName 要设置的 CSS 属性名(骆驼规则)。
+     * @param elem 相关的元素。
+     * @param propName 要设置的 CSS 属性名（使用骆驼规则，如 `fontSize`）。
      * @param value 要设置的 CSS 属性值。如果是数字则自动追加像素单位。
      * @example setStyle(document.body, "fontSize")
      */
@@ -456,9 +449,9 @@ define(["require", "exports"], function (require, exports) {
     /**
      * 计算一个元素的样式值。
      * @param elem 要计算的元素。
-     * @param propNames 要计算的 CSS 属性名(骆驼规则)列表。
+     * @param propNames 要计算的 CSS 属性名（使用骆驼规则，如 `fontSize`）列表。
      * @return 返回所有 CSS 属性值的和。
-     * @example getStyleNumber(document.body, "fontSize", "lineHeight")
+     * @example computeStyle(document.body, "fontSize", "lineHeight")
      */
     function computeStyle(elem, ...propNames) {
         let result = 0;
@@ -471,7 +464,7 @@ define(["require", "exports"], function (require, exports) {
     exports.computeStyle = computeStyle;
     /**
      * 获取指定元素的滚动距离。
-     * @param elem 要获取的元素或文档。
+     * @param elem 相关的元素或文档。
      * @return 返回坐标。如果元素不可滚动则返回原点。
      * @example getScroll(document.body)
      */
@@ -494,7 +487,7 @@ define(["require", "exports"], function (require, exports) {
     exports.getScroll = getScroll;
     /**
      * 设置指定元素的滚动距离。
-     * @param elem 要设置的元素或文档。
+     * @param elem 相关的元素或文档。
      * @param value 要设置的坐标。允许只设置部分属性。
      * @example setScroll(document.body, { x: 100, y: 500 });
      */
@@ -512,7 +505,7 @@ define(["require", "exports"], function (require, exports) {
     exports.setScroll = setScroll;
     /**
      * 获取指定元素和其定位父元素的偏移距离。
-     * @param elem 要获取的元素。
+     * @param elem 相关的元素。
      * @return 返回坐标。
      * @example getOffset(document.body)
      */
@@ -539,7 +532,7 @@ define(["require", "exports"], function (require, exports) {
     exports.getOffset = getOffset;
     /**
      * 设置指定元素和其定位父元素的偏移距离。
-     * @param elem 要处理的元素。
+     * @param elem 相关的元素。
      * @param value 要设置的坐标。允许只设置部分属性。
      * @example setOffset(document.body, { x: 100 });
      */
@@ -554,7 +547,7 @@ define(["require", "exports"], function (require, exports) {
     exports.setOffset = setOffset;
     /**
      * 获取指定元素的定位父元素。
-     * @param elem 要获取的元素。
+     * @param elem 相关的元素。
      * @return 返回定位父元素。
      * @example offsetParent(document.body)
      */
@@ -567,7 +560,7 @@ define(["require", "exports"], function (require, exports) {
     exports.offsetParent = offsetParent;
     /**
      * 获取指定元素的区域。
-     * @param elem 要获取的元素或文档。
+     * @param elem 相关的元素或文档。
      * @return 返回元素实际占用区域（含内边距和边框、不含外边距）。如果元素不可见则返回空区域。
      * @example getRect(document.body)
      */
@@ -591,7 +584,7 @@ define(["require", "exports"], function (require, exports) {
     exports.getRect = getRect;
     /**
      * 设置指定元素的区域。
-     * @param elem 要设置的元素。
+     * @param elem 相关的元素。
      * @param value 要设置的区域内容（含内边距和边框、不含外边距）。允许只设置部分属性。
      * @example setRect(document.body, {width: 200, height: 400})
      */
@@ -623,7 +616,7 @@ define(["require", "exports"], function (require, exports) {
     }
     exports.setRect = setRect;
     var eventFix;
-    function on(elem, eventName, selector, listener, scope) {
+    function on(elem, eventName, selector, listener, thisArg) {
         if (!eventFix) {
             const isEnterOrLeave = (e, target) => /(?:ter|e)$/.test(e.type) || !contains(target, e.relatedTarget);
             eventFix = {
@@ -753,11 +746,11 @@ define(["require", "exports"], function (require, exports) {
             }
         }
         if (typeof selector !== "string") {
-            scope = listener;
+            thisArg = listener;
             listener = selector;
             selector = "";
         }
-        scope = scope || elem;
+        thisArg = thisArg || elem;
         const events = elem.__events__ || (elem.__events__ = { __proto__: null });
         const key = selector ? eventName + " " + selector : eventName;
         const listeners = events[key];
@@ -769,20 +762,20 @@ define(["require", "exports"], function (require, exports) {
         // 3. 需要重写回调函数中的 this。
         // 4. 监听器具有第二参数，需要重写回调函数的第二参数。
         // 5. 监听器已添加需要重新封装才能绑定成功。
-        if (selector || scope !== elem || bindFix.filter || listener.length > 1 || listeners && indexOfListener(listeners, listener, scope) >= 0) {
+        if (selector || thisArg !== elem || bindFix.filter || listener.length > 1 || listeners && indexOfListener(listeners, listener, thisArg) >= 0) {
             const originalListener = listener;
             listener = (e) => {
-                let target = scope;
+                let target = thisArg;
                 if (selector && (!(target = closest(e.target, selector, target)) || (delegateFix !== bindFix && delegateFix.filter && delegateFix.filter(e, target) === false))) {
                     return;
                 }
                 if (bindFix.filter && bindFix.filter(e, target) === false) {
                     return;
                 }
-                originalListener.call(scope, e, target);
+                originalListener.call(thisArg, e, target);
             };
             listener.__original__ = originalListener;
-            listener.__scope__ = scope;
+            listener.__this__ = thisArg;
         }
         // 保存监听器以便之后解绑或手动触发事件。
         if (!listeners) {
@@ -798,20 +791,20 @@ define(["require", "exports"], function (require, exports) {
         bindFix.add ? bindFix.add(elem, listener) : elem.addEventListener(bindFix.bind || eventName, listener, false);
     }
     exports.on = on;
-    function off(elem, eventName, selector, listener, scope) {
+    function off(elem, eventName, selector, listener, thisArg) {
         if (typeof selector !== "string") {
-            scope = listener;
+            thisArg = listener;
             listener = selector;
             selector = "";
         }
-        scope = scope || elem;
+        thisArg = thisArg || elem;
         const events = elem.__events__;
         const key = selector ? eventName + " " + selector : eventName;
         const listeners = events && events[key];
         if (listeners) {
             if (listener) {
                 // 更新事件列表。
-                const index = indexOfListener(listeners, listener, scope);
+                const index = indexOfListener(listeners, listener, thisArg);
                 if (~index) {
                     if (Array.isArray(listeners)) {
                         listener = listeners[index];
@@ -831,25 +824,25 @@ define(["require", "exports"], function (require, exports) {
             }
             else if (Array.isArray(listeners)) {
                 for (listener of listeners) {
-                    off(elem, eventName, selector, listener, scope);
+                    off(elem, eventName, selector, listener, thisArg);
                 }
             }
             else {
-                off(elem, eventName, selector, listeners, scope);
+                off(elem, eventName, selector, listeners, thisArg);
             }
         }
     }
     exports.off = off;
-    function indexOfListener(listeners, listener, scope) {
+    function indexOfListener(listeners, listener, thisArg) {
         if (Array.isArray(listeners)) {
             for (let i = 0; i < listeners.length; i++) {
-                if (listeners[i] === listener || listeners[i].__original__ === listener && listeners[i].__scope__ === scope) {
+                if (listeners[i] === listener || listeners[i].__original__ === listener && listeners[i].__this__ === thisArg) {
                     return i;
                 }
             }
             return -1;
         }
-        return listeners === listener || listeners.__original__ === listener && listeners.__scope__ === scope ? 0 : -1;
+        return listeners === listener || listeners.__original__ === listener && listeners.__this__ === thisArg ? 0 : -1;
     }
     function trigger(elem, eventName, selector, event) {
         if (typeof selector !== "string") {
@@ -879,8 +872,8 @@ define(["require", "exports"], function (require, exports) {
      */
     var animateFix;
     /**
-     * 执行一个自定义动画渐变。
-     * @param elem 要渐变的元素。
+     * 执行一个自定义渐变。
+     * @param elem 相关的元素。
      * @param propNames 要渐变的 CSS 属性名和最终的属性值组成的键值对。
      * @param callback 渐变执行结束的回调函数。
      * @param duration 渐变执行的总毫秒数。
@@ -923,7 +916,7 @@ define(["require", "exports"], function (require, exports) {
                     }
                     if (contextUpdated) {
                         setTransition();
-                        callback && callback.call(elem);
+                        callback && callback();
                     }
                 }
             };
@@ -944,7 +937,7 @@ define(["require", "exports"], function (require, exports) {
             let timer = setTimeout(end, duration);
         }
         else {
-            callback && setTimeout(() => { callback.call(elem); }, duration);
+            callback && setTimeout(callback, duration);
         }
         // 设置属性为最终值，触发动画。
         for (const propName in propNames) {
@@ -954,8 +947,8 @@ define(["require", "exports"], function (require, exports) {
     exports.animate = animate;
     /**
      * 判断指定的元素是否被隐藏。
-     * @param elem 要判断的元素。
-     * @return 如果元素被隐藏或正在被隐藏则返回 true，否则返回 false。
+     * @param elem 相关的元素。
+     * @return 如果元素本身被隐藏或正在被隐藏则返回 true，否则返回 false。
      * @example isHidden(document.body)
      */
     function isHidden(elem) {
@@ -967,12 +960,12 @@ define(["require", "exports"], function (require, exports) {
      */
     var defaultDisplays;
     /**
-     * 存储默认显示动画。
+     * 存储内置切换动画。
      */
     var toggleAnimations;
     /**
      * 显示指定的元素。
-     * @param elem 要显示的元素。
+     * @param elem 相关的元素。
      * @param animation 显示时使用的动画。
      * @param callback 动画执行完成后的回调。
      * @param duration 动画执行的总毫秒数。
@@ -1010,7 +1003,7 @@ define(["require", "exports"], function (require, exports) {
     exports.show = show;
     /**
      * 隐藏指定的元素。
-     * @param elem 要隐藏的元素。
+     * @param elem 相关的元素。
      * @param animation 显示时使用的动画。
      * @param callback 动画执行完成后的回调。
      * @param duration 动画执行的总毫秒数。
@@ -1039,55 +1032,49 @@ define(["require", "exports"], function (require, exports) {
             animation = value;
             value = undefined;
         }
-        const hidden = isHidden(elem);
-        if (value == undefined) {
-            value = hidden;
+        if (value === undefined) {
+            value = isHidden(elem);
         }
         if (typeof animation === "string") {
-            if (!toggleAnimations) {
-                toggleAnimations = {
-                    opacity: {
-                        opacity: 0
-                    },
-                    height: {
-                        marginTop: 0,
-                        borderTopWidth: 0,
-                        paddingTop: 0,
-                        height: 0,
-                        paddingBottom: 0,
-                        borderBottomWidth: 0,
-                        marginBottom: 0
-                    },
-                    width: {
-                        marginLeft: 0,
-                        borderLeftWidth: 0,
-                        paddingLeft: 0,
-                        width: 0,
-                        paddinRight: 0,
-                        borderRightWidth: 0,
-                        marginRight: 0
-                    },
-                    top: { transform: "translateY(-100%)" },
-                    bottom: { transform: "translateY(100%)" },
-                    left: { transform: "translateX(-100%)" },
-                    right: { transform: "translateX(100%)" },
-                    scale: { transform: "scale(0, 0)" },
-                    scaleX: { transform: "scaleX(0)" },
-                    scaleY: { transform: "scaleY(0)" },
-                    slideDown: { opacity: 0, transform: "translateY(10%)" },
-                    slideRight: { opacity: 0, transform: "translateX(10%)" },
-                    slideUp: { opacity: 0, transform: "translateY(-10%)" },
-                    slideLeft: { opacity: 0, transform: "translateX(-10%)" },
-                    zoomIn: { opacity: 0, transform: "scale(0, 0)" },
-                    zoomOut: { opacity: 0, transform: "scale(1.2, 1.2)" },
-                    rotate: { opacity: 0, transform: "rotate(180deg)" }
-                };
-            }
-            animation = toggleAnimations[animation];
+            animation = (toggleAnimations || (toggleAnimations = {
+                opacity: { opacity: 0 },
+                height: {
+                    marginTop: 0,
+                    borderTopWidth: 0,
+                    paddingTop: 0,
+                    height: 0,
+                    paddingBottom: 0,
+                    borderBottomWidth: 0,
+                    marginBottom: 0
+                },
+                width: {
+                    marginLeft: 0,
+                    borderLeftWidth: 0,
+                    paddingLeft: 0,
+                    width: 0,
+                    paddinRight: 0,
+                    borderRightWidth: 0,
+                    marginRight: 0
+                },
+                top: { transform: "translateY(-100%)" },
+                bottom: { transform: "translateY(100%)" },
+                left: { transform: "translateX(-100%)" },
+                right: { transform: "translateX(100%)" },
+                scale: { transform: "scale(0, 0)" },
+                scaleX: { transform: "scaleX(0)" },
+                scaleY: { transform: "scaleY(0)" },
+                slideDown: { opacity: 0, transform: "translateY(10%)" },
+                slideRight: { opacity: 0, transform: "translateX(10%)" },
+                slideUp: { opacity: 0, transform: "translateY(-10%)" },
+                slideLeft: { opacity: 0, transform: "translateX(-10%)" },
+                zoomIn: { opacity: 0, transform: "scale(0, 0)" },
+                zoomOut: { opacity: 0, transform: "scale(1.2, 1.2)" },
+                rotate: { opacity: 0, transform: "rotate(180deg)" }
+            }))[animation];
         }
         if (animation && duration !== 0) {
             // 优先显示元素以便后续计算。
-            if (value && hidden) {
+            if (value) {
                 show(elem);
             }
             // 设置渐变目标。
@@ -1108,8 +1095,8 @@ define(["require", "exports"], function (require, exports) {
                 elem.style.overflowY = "hidden";
             }
             // 计算渐变的最终属性。
-            // 如果隐藏元素，则 animation 表示最终属性。
-            // 如果显示元素，则需要手动计算最终属性。
+            // 如果需要隐藏元素，则 animation 表示最终属性。
+            // 如果需要显示元素，则需要手动计算最终属性。
             let to = animation;
             if (value) {
                 to = {};
@@ -1148,17 +1135,17 @@ define(["require", "exports"], function (require, exports) {
                 if (!value) {
                     hide(elem);
                 }
-                callback && callback.call(elem, value);
+                callback && callback(value);
             }, duration, timingFunction);
         }
         else {
             value ? show(elem) : hide(elem);
-            callback && callback.call(elem, value);
+            callback && callback(value);
         }
     }
     exports.toggle = toggle;
     /**
-     * 确保在页面加载后执行指定的函数。
+     * 确保在文档加载完成后再执行指定的函数。
      * @param callback 要执行的回调函数。
      * @param context 要等待的文档对象。
      */

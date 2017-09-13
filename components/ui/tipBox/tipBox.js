@@ -19,10 +19,10 @@ define(["require", "exports", "ux/dom", "ui/control", "ui/input", "typo/icon", "
          * 关闭当前提示框。
          */
         close() { dom_1.hide(this.elem, "height", this.duration); }
-        get state() {
+        get readyState() {
             return input_1.getState(this.elem, "x-textbox-");
         }
-        set state(value) {
+        set readyState(value) {
             input_1.setState(this.elem, "x-textbox-", value);
         }
     }

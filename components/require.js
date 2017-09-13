@@ -77,9 +77,7 @@ require._ensure = (url, callback) => {
     }
     return module;
 };
-require.modules = {
-    __proto__: null
-};
+require.modules = {};
 require.css = path => {
     const link = document.createElement("link");
     link.rel = "stylesheet";

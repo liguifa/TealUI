@@ -15,6 +15,6 @@ define(["require", "exports", "ux/dom"], function (require, exports, dom) {
         const deltaX = rect.x - container.x;
         return (deltaY < padding ? deltaY + rect.height > padding : deltaY < container.height) && (deltaX < padding ? deltaX + rect.width > padding : deltaX < container.width);
     }
-    exports.within = within;
+    exports.default = within;
 });
 //# sourceMappingURL=within.js.map

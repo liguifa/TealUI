@@ -25,29 +25,26 @@ define(["require", "exports", "assert", "./check"], function (require, exports, 
         assert.strictEqual(check.isNumber("0x00"), false);
     }
     exports.isNumberTest = isNumberTest;
-    function isEmailTest() {
-        assert.strictEqual(check.isEmail("bug@tealui.com"), true);
-        assert.strictEqual(check.isEmail("bug@@tealui.com"), false);
-    }
-    exports.isEmailTest = isEmailTest;
     function isDateTest() {
         assert.strictEqual(check.isDate("2014/1/1"), true);
         assert.strictEqual(check.isDate("hello"), false);
         assert.strictEqual(check.isDate("2014年1月1日"), false);
     }
     exports.isDateTest = isDateTest;
+    function isTimeTest() {
+        assert.strictEqual(check.isTime("10:00:00"), true);
+        assert.strictEqual(check.isTime(""), false);
+    }
+    exports.isTimeTest = isTimeTest;
+    function isEmailTest() {
+        assert.strictEqual(check.isEmail("bug@tealui.com"), true);
+        assert.strictEqual(check.isEmail("bug@@tealui.com"), false);
+    }
+    exports.isEmailTest = isEmailTest;
     function isIpTest() {
         assert.strictEqual(check.isIp("127.0.0.1"), true);
     }
     exports.isIpTest = isIpTest;
-    function isPhoneTest() {
-        assert.strictEqual(check.isPhone("+8613211111111"), true);
-    }
-    exports.isPhoneTest = isPhoneTest;
-    function isTelephoneTest() {
-        assert.strictEqual(check.isTelephone("010-86000000"), true);
-    }
-    exports.isTelephoneTest = isTelephoneTest;
     function isUrlTest() {
         assert.strictEqual(check.isUrl("http://tealui.com/"), true);
     }
@@ -56,6 +53,22 @@ define(["require", "exports", "assert", "./check"], function (require, exports, 
         assert.strictEqual(check.isIndentifier("x09"), true);
     }
     exports.isIndentifierTest = isIndentifierTest;
+    function isCurrencyTest() {
+        assert.strictEqual(check.isCurrency("0"), false);
+        assert.strictEqual(check.isCurrency("0.01"), true);
+        assert.strictEqual(check.isCurrency("1"), true);
+        assert.strictEqual(check.isCurrency("1.25"), true);
+        assert.strictEqual(check.isCurrency("1.250"), false);
+    }
+    exports.isCurrencyTest = isCurrencyTest;
+    function isPhoneTest() {
+        assert.strictEqual(check.isPhone("+8613211111111"), true);
+    }
+    exports.isPhoneTest = isPhoneTest;
+    function isTelephoneTest() {
+        assert.strictEqual(check.isTelephone("010-86000000"), true);
+    }
+    exports.isTelephoneTest = isTelephoneTest;
     function isEnglishTest() {
         assert.strictEqual(check.isEnglish("Hello"), true);
     }

@@ -1,15 +1,11 @@
 define(["require", "exports", "ux/dom", "ux/scroll", "ux/keyPress", "ui/control", "ui/picker", "ui/listBox", "typo/icon"], function (require, exports, dom, scroll_1, keyPress_1, control_1, picker_1, listBox_1) {
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-     * 表示一个组合框基类。
+     * 表示一个组合框。
      */
-    class ComboBoxBase extends picker_1.default {
-        constructor() {
-            super(...arguments);
-            this.menu = new listBox_1.default();
-        }
-        get body() {
-            return this.menu.body;
+    class ComboBox extends picker_1.default {
+        createMenu() {
+            return new listBox_1.default();
         }
         init() {
             super.init();
@@ -66,12 +62,6 @@ define(["require", "exports", "ux/dom", "ux/scroll", "ux/keyPress", "ui/control"
                 scroll_1.scrollIntoViewIfNeeded(item.elem, this.menu.body, 0);
             }
         }
-    }
-    exports.ComboBoxBase = ComboBoxBase;
-    /**
-     * 表示一个组合框。
-     */
-    class ComboBox extends ComboBoxBase {
     }
     exports.default = ComboBox;
 });

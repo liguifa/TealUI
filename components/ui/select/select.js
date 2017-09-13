@@ -4,9 +4,25 @@ define(["require", "exports", "ux/dom", "ui/comboBox"], function (require, expor
      * 表示一个选择框。
      */
     class Select extends comboBox_1.ComboBoxBase {
+        get readOnly() {
+            return this.input.readOnly && this.button.disabled;
+        }
+        set readOnly(value) {
+            this.button.disabled = this.input.readOnly = value;
+            dom.toggleClass(this.elem, "x-picker-readonly", value);
+        }
+        /**
+         * 是否允许用户输入。
+         */
+        get canInput() {
+            return !dom.hasClass(this.elem, "x-picker-select");
+        }
+        set canInput(value) {
+            dom.toggleClass(this.elem, "x-picker-select", !value);
+            this.input.readOnly = !value;
+        }
         init() {
             super.init();
-            this.canInput = false;
             dom.on(this.input, "click", this.dropDown.show, this.dropDown);
         }
         get value() {

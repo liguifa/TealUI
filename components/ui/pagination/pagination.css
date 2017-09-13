@@ -28,6 +28,10 @@
   background-color: transparent;
 }
 
+.x-pagination-footer .x-textbox {
+  width: 4.5rem;
+}
+
 @media (min-width: 641px) {
   .x-pagination-body {
     float: right;
@@ -53,10 +57,6 @@
   border-color: #208fee !important;
   background-color: #fff !important;
   color: #208fee !important;
-}
-
-.x-pagination .x-textbox {
-  width: 4.5rem;
 }
 
 .x-pagination-large-body a {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
     <meta name="version" content="0.0.1">
-    <title>对话框 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>对话框 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,18 +53,18 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 <li><a href="javascript:Doc.toggleDemoCodes()" accesskey="c"><i class="doc-icon">⅏</i>折叠源码</a></li>
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ui/dialog" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ui/dialog/dialog.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=ui/dialog" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/ui/dialog/dialog.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="对话框">
 <a href="#对话框" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>对话框<div class="doc-menubutton">
                         <small>ui/dialog</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import Dialog from \&quot;ui/dialog\&quot;;\n&quot;)">复制 <code>import "ui/dialog"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/dialog\&quot;], function (dialog_1) {\n\tvar Dialog = dialog_1.default;\n\n\n});\n&quot;)">复制 <code>require("ui/dialog")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/dialog\&quot;&quot;)">复制 <code>"ui/dialog"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import Dialog from \&quot;ui/dialog\&quot;;\n&quot;); void 0">复制 <code>import "ui/dialog"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/dialog\&quot;], function (dialog_1) {\n\tvar Dialog = dialog_1.default;\n\n\n});\n&quot;); void 0">复制 <code>require("ui/dialog")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/dialog\&quot;&quot;); void 0">复制 <code>"ui/dialog"</code></a></li>
                         </menu>
                     </div></h1>
 <dl id="doc_toc">
@@ -300,7 +300,7 @@ var exports = require("doc_demo_3")
 <p class="doc">如果需要一个含有确定/取消按钮或者含有一个图标的对话框，请使用<a href="../../../components/ui/messageBox/" title="ui/messageBox">消息框</a>。</p>
 </blockquote>
 
-                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/Dialog"><a href="#api/Dialog" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L9-157" target="_blank" title="源码：ui/dialog/dialog.tsx，第 9 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Dialog 类</h3><p>继承自：<code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></p><p class="doc">表示一个对话框。</p>
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/Dialog"><a href="#api/Dialog" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L9-157" target="_blank" title="源码：ui/dialog/dialog.tsx，第 9 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Dialog 类</h3><p>继承自：<code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></p><p class="doc">表示一个对话框。</p>
 <div class="doc doc-scrollable"><table class="doc-api"><tr>
                                 <th class="doc-api-property">字段</th>
                                 <th class="doc-api-type">类型</th>
@@ -308,7 +308,7 @@ var exports = require("doc_demo_3")
                                 <th class="doc-api-extends">继承自</th>
                             </tr><tr id="api/Dialog/header">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L27-30" target="_blank" title="源码：ui/dialog/dialog.tsx，第 27 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L27-30" target="_blank" title="源码：ui/dialog/dialog.tsx，第 27 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>header</code>
                                 <span class="doc-api-more">: <code>HTMLElement</code></span>
@@ -328,7 +328,7 @@ var exports = require("doc_demo_3")
                             <td>—</td>
                         </tr><tr id="api/Dialog/title">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L32-35" target="_blank" title="源码：ui/dialog/dialog.tsx，第 32 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L32-35" target="_blank" title="源码：ui/dialog/dialog.tsx，第 32 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>title</code>
                                 <span class="doc-api-more">: <code><a href="../../../components/ui/control/index.html#api/NodeLike">NodeLike</a></code></span>
@@ -348,7 +348,7 @@ var exports = require("doc_demo_3")
                             <td>—</td>
                         </tr><tr id="api/Dialog/hideClose">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L37-40" target="_blank" title="源码：ui/dialog/dialog.tsx，第 37 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L37-40" target="_blank" title="源码：ui/dialog/dialog.tsx，第 37 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>hideClose</code>
                                 <span class="doc-api-more">: <code>boolean</code></span>
@@ -368,7 +368,7 @@ var exports = require("doc_demo_3")
                             <td>—</td>
                         </tr><tr id="api/Dialog/content">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L44-47" target="_blank" title="源码：ui/dialog/dialog.tsx，第 44 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L44-47" target="_blank" title="源码：ui/dialog/dialog.tsx，第 44 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>content</code>
                                 <span class="doc-api-more">: <code><a href="../../../components/ui/control/index.html#api/NodeLike">NodeLike</a></code></span>
@@ -388,7 +388,7 @@ var exports = require("doc_demo_3")
                             <td>—</td>
                         </tr><tr id="api/Dialog/animation">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L64-67" target="_blank" title="源码：ui/dialog/dialog.tsx，第 64 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L64-67" target="_blank" title="源码：ui/dialog/dialog.tsx，第 64 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>animation</code>
                                 <span class="doc-api-more">: <code><a href="../../../components/ux/dom/index.html#api/ToggleAnimation">ToggleAnimation</a></code></span>
@@ -408,7 +408,7 @@ var exports = require("doc_demo_3")
                             <td>—</td>
                         </tr><tr id="api/Dialog/target">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L69-72" target="_blank" title="源码：ui/dialog/dialog.tsx，第 69 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L69-72" target="_blank" title="源码：ui/dialog/dialog.tsx，第 69 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>target</code>
                                 <span class="doc-api-more">: <code>HTMLElement | undefined</code></span>
@@ -428,7 +428,7 @@ var exports = require("doc_demo_3")
                             <td>—</td>
                         </tr><tr id="api/Dialog/onBeforeClose">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L117-120" target="_blank" title="源码：ui/dialog/dialog.tsx，第 117 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L117-120" target="_blank" title="源码：ui/dialog/dialog.tsx，第 117 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onBeforeClose</code>
                                 <span class="doc-api-more">: <code>() =&gt; boolean | void</code></span>
@@ -448,7 +448,7 @@ var exports = require("doc_demo_3")
                             <td>—</td>
                         </tr><tr id="api/Dialog/onClose">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L122-125" target="_blank" title="源码：ui/dialog/dialog.tsx，第 122 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L122-125" target="_blank" title="源码：ui/dialog/dialog.tsx，第 122 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onClose</code>
                                 <span class="doc-api-more">: <code>() =&gt; void</code></span>
@@ -468,7 +468,7 @@ var exports = require("doc_demo_3")
                             <td>—</td>
                         </tr><tr id="api/Dialog/draggable">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L129-134" target="_blank" title="源码：ui/dialog/dialog.tsx，第 129 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L129-134" target="_blank" title="源码：ui/dialog/dialog.tsx，第 129 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>draggable</code>
                                 <span class="doc-api-more">: <code>boolean</code></span>
@@ -488,7 +488,7 @@ var exports = require("doc_demo_3")
                             <td>—</td>
                         </tr><tr id="api/Dialog/body">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L42-42" target="_blank" title="源码：ui/dialog/dialog.tsx，第 42 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L42-42" target="_blank" title="源码：ui/dialog/dialog.tsx，第 42 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>body</code>
                                 <span class="doc-api-more">: <code>HTMLElement</code></span>
@@ -506,11 +506,11 @@ var exports = require("doc_demo_3")
 
                             </td>
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
-                        </tr><tr id="api/Dialog/state">
+                        </tr><tr id="api/Dialog/readyState">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L10-13" target="_blank" title="源码：ui/control/control.tsx，第 10 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L10-13" target="_blank" title="源码：ui/control/control.tsx，第 10 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
-                                <code>state</code>
+                                <code>readyState</code>
                                 <span class="doc-api-more">: <code><a href="../../../components/ui/control/index.html#api/ControlState">ControlState</a></code></span>
                                 <div class="doc doc-api-detail">
                                     <p class="doc">获取当前控件的状态。</p>
@@ -528,7 +528,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/elem">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L20-28" target="_blank" title="源码：ui/control/control.tsx，第 20 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L20-28" target="_blank" title="源码：ui/control/control.tsx，第 20 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>elem</code>
                                 <span class="doc-api-more">: <code>HTMLElement</code></span>
@@ -548,12 +548,12 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/vNode">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L63-66" target="_blank" title="源码：ui/control/control.tsx，第 63 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L63-66" target="_blank" title="源码：ui/control/control.tsx，第 63 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>vNode</code>
                                 <span class="doc-api-more">: <code><a href="../../../components/ui/control/index.html#api/VNode">VNode</a> | null</code></span>
                                 <div class="doc doc-api-detail">
-                                    <p class="doc">(保护的)当前控件关联的虚拟节点。</p>
+                                    <p class="doc">(保护的)获取当前控件关联的虚拟节点。</p>
 
                                     <h4>继承自</h4><p><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></p>
                                 </div>
@@ -562,16 +562,16 @@ var exports = require("doc_demo_3")
                                 <code><a href="../../../components/ui/control/index.html#api/VNode">VNode</a></code>
                             </td>
                             <td class="doc">
-                                <p class="doc">(保护的)当前控件关联的虚拟节点。</p>
+                                <p class="doc">(保护的)获取当前控件关联的虚拟节点。</p>
 
                             </td>
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/children">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L109-114" target="_blank" title="源码：ui/control/control.tsx，第 109 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L109-114" target="_blank" title="源码：ui/control/control.tsx，第 109 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>children</code>
-                                <span class="doc-api-more">: <code><a href="../../../components/ui/control/index.html#api/NodeLike">NodeLike</a>[]</code></span>
+                                <span class="doc-api-more">: <code><a href="../../../components/ui/control/index.html#api/VNode">VNode</a>[]</code></span>
                                 <div class="doc doc-api-detail">
                                     <p class="doc">内部子节点。</p>
 
@@ -579,7 +579,7 @@ var exports = require("doc_demo_3")
                                 </div>
                             </td>
                             <td>
-                                <code><a href="../../../components/ui/control/index.html#api/NodeLike">NodeLike</a>[]</code>
+                                <code><a href="../../../components/ui/control/index.html#api/VNode">VNode</a>[]</code>
                             </td>
                             <td class="doc">
                                 <p class="doc">内部子节点。</p>
@@ -588,7 +588,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/duration">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L190-193" target="_blank" title="源码：ui/control/control.tsx，第 190 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L190-193" target="_blank" title="源码：ui/control/control.tsx，第 190 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>duration</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -608,7 +608,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/hidden">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L195-198" target="_blank" title="源码：ui/control/control.tsx，第 195 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L195-198" target="_blank" title="源码：ui/control/control.tsx，第 195 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>hidden</code>
                                 <span class="doc-api-more">: <code>boolean</code></span>
@@ -628,7 +628,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/class">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L205-210" target="_blank" title="源码：ui/control/control.tsx，第 205 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L205-210" target="_blank" title="源码：ui/control/control.tsx，第 205 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>class</code>
                                 <span class="doc-api-more">: <code>string</code></span>
@@ -648,7 +648,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/style">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L221-224" target="_blank" title="源码：ui/control/control.tsx，第 221 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L221-224" target="_blank" title="源码：ui/control/control.tsx，第 221 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>style</code>
                                 <span class="doc-api-more">: <code>string | { [key: string]: string | number; }</code></span>
@@ -668,7 +668,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/id">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L226-229" target="_blank" title="源码：ui/control/control.tsx，第 226 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L226-229" target="_blank" title="源码：ui/control/control.tsx，第 226 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>id</code>
                                 <span class="doc-api-more">: <code>string</code></span>
@@ -688,7 +688,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onSelectStart">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L231-235" target="_blank" title="源码：ui/control/control.tsx，第 231 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L231-235" target="_blank" title="源码：ui/control/control.tsx，第 231 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onSelectStart</code>
                                 <span class="doc-api-more">: <code>(e: Event, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -708,7 +708,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onClick">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L237-241" target="_blank" title="源码：ui/control/control.tsx，第 237 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L237-241" target="_blank" title="源码：ui/control/control.tsx，第 237 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onClick</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -728,7 +728,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onAuxClick">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L243-247" target="_blank" title="源码：ui/control/control.tsx，第 243 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L243-247" target="_blank" title="源码：ui/control/control.tsx，第 243 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onAuxClick</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -748,7 +748,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onDblClick">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L249-253" target="_blank" title="源码：ui/control/control.tsx，第 249 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L249-253" target="_blank" title="源码：ui/control/control.tsx，第 249 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onDblClick</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -768,7 +768,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onContextMenu">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L255-259" target="_blank" title="源码：ui/control/control.tsx，第 255 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L255-259" target="_blank" title="源码：ui/control/control.tsx，第 255 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onContextMenu</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -788,7 +788,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onMouseDown">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L261-265" target="_blank" title="源码：ui/control/control.tsx，第 261 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L261-265" target="_blank" title="源码：ui/control/control.tsx，第 261 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseDown</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -808,7 +808,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onMouseUp">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L267-271" target="_blank" title="源码：ui/control/control.tsx，第 267 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L267-271" target="_blank" title="源码：ui/control/control.tsx，第 267 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseUp</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -828,7 +828,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onMouseOver">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L273-277" target="_blank" title="源码：ui/control/control.tsx，第 273 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L273-277" target="_blank" title="源码：ui/control/control.tsx，第 273 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseOver</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -848,7 +848,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onMouseOut">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L279-283" target="_blank" title="源码：ui/control/control.tsx，第 279 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L279-283" target="_blank" title="源码：ui/control/control.tsx，第 279 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseOut</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -868,7 +868,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onMouseEnter">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L285-289" target="_blank" title="源码：ui/control/control.tsx，第 285 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L285-289" target="_blank" title="源码：ui/control/control.tsx，第 285 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseEnter</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -888,7 +888,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onMouseLeave">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L291-295" target="_blank" title="源码：ui/control/control.tsx，第 291 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L291-295" target="_blank" title="源码：ui/control/control.tsx，第 291 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseLeave</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -908,7 +908,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onMouseMove">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L297-301" target="_blank" title="源码：ui/control/control.tsx，第 297 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L297-301" target="_blank" title="源码：ui/control/control.tsx，第 297 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseMove</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -928,7 +928,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onWheel">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L303-307" target="_blank" title="源码：ui/control/control.tsx，第 303 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L303-307" target="_blank" title="源码：ui/control/control.tsx，第 303 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onWheel</code>
                                 <span class="doc-api-more">: <code>(e: WheelEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -948,7 +948,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onScroll">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L309-313" target="_blank" title="源码：ui/control/control.tsx，第 309 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L309-313" target="_blank" title="源码：ui/control/control.tsx，第 309 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onScroll</code>
                                 <span class="doc-api-more">: <code>(e: UIEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -968,7 +968,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onTouchStart">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L315-319" target="_blank" title="源码：ui/control/control.tsx，第 315 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L315-319" target="_blank" title="源码：ui/control/control.tsx，第 315 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onTouchStart</code>
                                 <span class="doc-api-more">: <code>(e: TouchEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -988,7 +988,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onTouchMove">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L321-325" target="_blank" title="源码：ui/control/control.tsx，第 321 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L321-325" target="_blank" title="源码：ui/control/control.tsx，第 321 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onTouchMove</code>
                                 <span class="doc-api-more">: <code>(e: TouchEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -1008,7 +1008,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onTouchEnd">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L327-331" target="_blank" title="源码：ui/control/control.tsx，第 327 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L327-331" target="_blank" title="源码：ui/control/control.tsx，第 327 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onTouchEnd</code>
                                 <span class="doc-api-more">: <code>(e: TouchEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -1028,7 +1028,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onTouchCancel">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L333-337" target="_blank" title="源码：ui/control/control.tsx，第 333 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L333-337" target="_blank" title="源码：ui/control/control.tsx，第 333 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onTouchCancel</code>
                                 <span class="doc-api-more">: <code>(e: TouchEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -1048,7 +1048,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onPointerEnter">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L339-343" target="_blank" title="源码：ui/control/control.tsx，第 339 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L339-343" target="_blank" title="源码：ui/control/control.tsx，第 339 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerEnter</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -1068,7 +1068,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onPointerLeave">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L345-349" target="_blank" title="源码：ui/control/control.tsx，第 345 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L345-349" target="_blank" title="源码：ui/control/control.tsx，第 345 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerLeave</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -1088,7 +1088,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onPointerOver">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L351-355" target="_blank" title="源码：ui/control/control.tsx，第 351 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L351-355" target="_blank" title="源码：ui/control/control.tsx，第 351 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerOver</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -1108,7 +1108,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onPointerOut">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L357-361" target="_blank" title="源码：ui/control/control.tsx，第 357 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L357-361" target="_blank" title="源码：ui/control/control.tsx，第 357 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerOut</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -1128,7 +1128,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onPointerDown">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L363-367" target="_blank" title="源码：ui/control/control.tsx，第 363 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L363-367" target="_blank" title="源码：ui/control/control.tsx，第 363 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerDown</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -1148,7 +1148,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onPointerMove">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L369-373" target="_blank" title="源码：ui/control/control.tsx，第 369 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L369-373" target="_blank" title="源码：ui/control/control.tsx，第 369 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerMove</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -1168,7 +1168,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onPointerUp">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L375-379" target="_blank" title="源码：ui/control/control.tsx，第 375 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L375-379" target="_blank" title="源码：ui/control/control.tsx，第 375 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerUp</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -1188,7 +1188,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onPointerCancel">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L381-385" target="_blank" title="源码：ui/control/control.tsx，第 381 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L381-385" target="_blank" title="源码：ui/control/control.tsx，第 381 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerCancel</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -1208,7 +1208,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onGotPointerCapture">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L387-391" target="_blank" title="源码：ui/control/control.tsx，第 387 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L387-391" target="_blank" title="源码：ui/control/control.tsx，第 387 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onGotPointerCapture</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -1228,7 +1228,7 @@ var exports = require("doc_demo_3")
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Dialog/onLostPointerCapture">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L393-397" target="_blank" title="源码：ui/control/control.tsx，第 393 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L393-397" target="_blank" title="源码：ui/control/control.tsx，第 393 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onLostPointerCapture</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Dialog">Dialog</a>) =&gt; void</code></span>
@@ -1252,7 +1252,7 @@ var exports = require("doc_demo_3")
                             <th class="doc-api-extends">继承自</th>
                         </tr><tr id="api/Dialog/handleCloseClick">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L57-62" target="_blank" title="源码：ui/dialog/dialog.tsx，第 57 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L57-62" target="_blank" title="源码：ui/dialog/dialog.tsx，第 57 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>handleCloseClick<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1275,7 +1275,7 @@ var exports = require("doc_demo_3")
                                 <td>—</td>
                             </tr><tr id="api/Dialog/show">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L74-94" target="_blank" title="源码：ui/dialog/dialog.tsx，第 74 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L74-94" target="_blank" title="源码：ui/dialog/dialog.tsx，第 74 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>show<i class="doc-tip doc-api-ellipsis">(...)</i><span class="doc-tip doc-api-more">(target?:<code>HTMLElement</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1320,7 +1320,7 @@ var exports = require("doc_demo_3")
                                 <td>—</td>
                             </tr><tr id="api/Dialog/close">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L96-115" target="_blank" title="源码：ui/dialog/dialog.tsx，第 96 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L96-115" target="_blank" title="源码：ui/dialog/dialog.tsx，第 96 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>close<i class="doc-tip doc-api-ellipsis">(...)</i><span class="doc-tip doc-api-more">(target?:<code>HTMLElement</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1365,7 +1365,7 @@ var exports = require("doc_demo_3")
                                 <td>—</td>
                             </tr><tr id="api/Dialog/render">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L14-25" target="_blank" title="源码：ui/dialog/dialog.tsx，第 14 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L14-25" target="_blank" title="源码：ui/dialog/dialog.tsx，第 14 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>render<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>any</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1389,7 +1389,7 @@ var exports = require("doc_demo_3")
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Dialog/init">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/dialog/dialog.tsx#L49-55" target="_blank" title="源码：ui/dialog/dialog.tsx，第 49 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/dialog/dialog.tsx#L49-55" target="_blank" title="源码：ui/dialog/dialog.tsx，第 49 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>init<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1412,7 +1412,7 @@ var exports = require("doc_demo_3")
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Dialog/uninit">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L58-61" target="_blank" title="源码：ui/control/control.tsx，第 58 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L58-61" target="_blank" title="源码：ui/control/control.tsx，第 58 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>uninit<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1435,7 +1435,7 @@ var exports = require("doc_demo_3")
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Dialog/update">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L68-80" target="_blank" title="源码：ui/control/control.tsx，第 68 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L68-80" target="_blank" title="源码：ui/control/control.tsx，第 68 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>update<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1458,7 +1458,7 @@ var exports = require("doc_demo_3")
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Dialog/invalidate">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L90-102" target="_blank" title="源码：ui/control/control.tsx，第 90 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L90-102" target="_blank" title="源码：ui/control/control.tsx，第 90 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>invalidate<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1481,7 +1481,7 @@ var exports = require("doc_demo_3")
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Dialog/layout">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L130-133" target="_blank" title="源码：ui/control/control.tsx，第 130 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L130-133" target="_blank" title="源码：ui/control/control.tsx，第 130 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>layout<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1504,7 +1504,7 @@ var exports = require("doc_demo_3")
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Dialog/renderTo">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L135-156" target="_blank" title="源码：ui/control/control.tsx，第 135 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L135-156" target="_blank" title="源码：ui/control/control.tsx，第 135 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>renderTo<i class="doc-tip doc-api-ellipsis">(parent, ...)</i><span class="doc-tip doc-api-more">(parent:<code><a href="../../../components/ui/control/index.html#api/Control">Control</a> | Node</code>, refChild?:<code><a href="../../../components/ui/control/index.html#api/Control">Control</a> | Node</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1564,7 +1564,7 @@ var exports = require("doc_demo_3")
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Dialog/find">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L158-170" target="_blank" title="源码：ui/control/control.tsx，第 158 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L158-170" target="_blank" title="源码：ui/control/control.tsx，第 158 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>find<i class="doc-tip doc-api-ellipsis">(selector)</i><span class="doc-tip doc-api-more">(selector:<code>string</code>):<code>any</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1610,7 +1610,7 @@ var exports = require("doc_demo_3")
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Dialog/query">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L172-183" target="_blank" title="源码：ui/control/control.tsx，第 172 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L172-183" target="_blank" title="源码：ui/control/control.tsx，第 172 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>query<i class="doc-tip doc-api-ellipsis">(selector)</i><span class="doc-tip doc-api-more">(selector:<code>string</code>):<code>any[]</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1656,7 +1656,7 @@ var exports = require("doc_demo_3")
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr></table></div>
                         <nav id="doc_pager">
-                            <a href="../../../components/typo/linkButton/" title="链接按钮" id="doc_pager_prev"><i class="doc-icon">⮜</i> 链接按钮</a>
+                            <a href="../../../components/ui/toolTip/" title="工具提示" id="doc_pager_prev"><i class="doc-icon">⮜</i> 工具提示</a>
                             <a href="../../../components/ui/messageBox/" title="消息框" id="doc_pager_next">消息框 <i class="doc-icon">⮞</i></a>
                         </nav>
 </article>
@@ -1664,7 +1664,7 @@ var exports = require("doc_demo_3")
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

@@ -1,15 +1,6 @@
 define(["require", "exports", "uux/dom;", "ui/control", "typo/table/table.scss", "./dataGridView.scss"], function (require, exports, dom, control_1) {
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-     * 表示一个表格视图。
-     */
-    class DataGridView extends control_1.default {
-        render() {
-            return control_1.VNode.create("div", { class: "x-datagridview" });
-        }
-    }
-    exports.default = DataGridView;
-    /**
      * 表示一个数据表视图。
      */
     class DataGridView extends control_1.default {

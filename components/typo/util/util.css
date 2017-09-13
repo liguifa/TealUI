@@ -27,7 +27,7 @@ table.x-inline-block {
 .x-block {
   display: block !important;
   box-sizing: border-box;
-  width: 100%;
+  width: 100% !important;
 }
 
 table.x-block {

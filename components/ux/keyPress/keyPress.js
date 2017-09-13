@@ -38,10 +38,10 @@ define(["require", "exports"], function (require, exports) {
         }
         elem.addEventListener("keydown", function (e) {
             const func = map[e.keyCode];
-            if (func && func.call(this, e) !== true) {
+            if (func && func.call(this, e) !== false) {
                 e.preventDefault();
             }
-        }, false);
+        });
         if (map.other) {
             elem.addEventListener("keyup", function (e) {
                 // 忽略 Shift 等组合键。
@@ -49,7 +49,7 @@ define(["require", "exports"], function (require, exports) {
                 if ((keyCode < 16 || keyCode > 18) && !map[keyCode]) {
                     map.other.call(this, e);
                 }
-            }, false);
+            });
         }
     }
     exports.default = keyPress;

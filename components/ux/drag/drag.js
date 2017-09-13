@@ -11,7 +11,7 @@ define(["require", "exports", "ux/dom", "ux/scroll"], function (require, exports
         /**
          * 禁用拖动。
          */
-        disable() { dom_1.off(this.handle, "pointerdown", this.handlePointerDown); }
+        disable() { dom_1.off(this.handle, "pointerdown", this.handlePointerDown, this); }
         /**
          * 是否禁止拖动。
          * @param e 事件对象。

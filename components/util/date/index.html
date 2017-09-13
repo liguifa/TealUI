@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
     <meta name="version" content="0.0.1">
-    <title>日期扩展 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>日期扩展 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,18 +53,18 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/date" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/date/date.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=util/date" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/util/date/date.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="日期扩展">
 <a href="#日期扩展" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>日期扩展<div class="doc-menubutton">
                         <small>util/date</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import { format, parse, clone, addYear, addMonth, addWeek, addDay, addHours, addMinutes, addSeconds, addMilliseconds, toDay, dayLeft, compareDay, isLeapYear, isValid, getDayInMonth, getWeek, getTimezone, toFirstDay, toLastDay } from \&quot;util/date\&quot;;\n&quot;)">复制 <code>import "util/date"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/date\&quot;], function (date_1) {\n\tvar format = date_1.format;\n\tvar parse = date_1.parse;\n\tvar clone = date_1.clone;\n\tvar addYear = date_1.addYear;\n\tvar addMonth = date_1.addMonth;\n\tvar addWeek = date_1.addWeek;\n\tvar addDay = date_1.addDay;\n\tvar addHours = date_1.addHours;\n\tvar addMinutes = date_1.addMinutes;\n\tvar addSeconds = date_1.addSeconds;\n\tvar addMilliseconds = date_1.addMilliseconds;\n\tvar toDay = date_1.toDay;\n\tvar dayLeft = date_1.dayLeft;\n\tvar compareDay = date_1.compareDay;\n\tvar isLeapYear = date_1.isLeapYear;\n\tvar isValid = date_1.isValid;\n\tvar getDayInMonth = date_1.getDayInMonth;\n\tvar getWeek = date_1.getWeek;\n\tvar getTimezone = date_1.getTimezone;\n\tvar toFirstDay = date_1.toFirstDay;\n\tvar toLastDay = date_1.toLastDay;\n\n\n});\n&quot;)">复制 <code>require("util/date")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/date\&quot;&quot;)">复制 <code>"util/date"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import { format, parse, clone, addYear, addMonth, addWeek, addDay, addHours, addMinutes, addSeconds, addMilliseconds, toDay, dayLeft, compareDay, isLeapYear, isValid, getDayInMonth, getWeek, getTimezone, toFirstDay, toLastDay } from \&quot;util/date\&quot;;\n&quot;); void 0">复制 <code>import "util/date"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/date\&quot;], function (date_1) {\n\tvar format = date_1.format;\n\tvar parse = date_1.parse;\n\tvar clone = date_1.clone;\n\tvar addYear = date_1.addYear;\n\tvar addMonth = date_1.addMonth;\n\tvar addWeek = date_1.addWeek;\n\tvar addDay = date_1.addDay;\n\tvar addHours = date_1.addHours;\n\tvar addMinutes = date_1.addMinutes;\n\tvar addSeconds = date_1.addSeconds;\n\tvar addMilliseconds = date_1.addMilliseconds;\n\tvar toDay = date_1.toDay;\n\tvar dayLeft = date_1.dayLeft;\n\tvar compareDay = date_1.compareDay;\n\tvar isLeapYear = date_1.isLeapYear;\n\tvar isValid = date_1.isValid;\n\tvar getDayInMonth = date_1.getDayInMonth;\n\tvar getWeek = date_1.getWeek;\n\tvar getTimezone = date_1.getTimezone;\n\tvar toFirstDay = date_1.toFirstDay;\n\tvar toLastDay = date_1.toLastDay;\n\n\n});\n&quot;); void 0">复制 <code>require("util/date")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/date\&quot;&quot;); void 0">复制 <code>"util/date"</code></a></li>
                         </menu>
                     </div></h1>
 <p class="doc">提供 JavaScript 内置对象 Date 的扩展接口。</p>
@@ -75,7 +75,7 @@
                             
                         </tr><tr id="api/format">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L15-43" target="_blank" title="源码：util/date/date.ts，第 15 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L15-43" target="_blank" title="源码：util/date/date.ts，第 15 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>format<i class="doc-tip doc-api-ellipsis">(...)</i><span class="doc-tip doc-api-more">(date?:<code>Date</code>, format?:<code>string</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -183,7 +183,7 @@
                                 
                             </tr><tr id="api/parse">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L45-85" target="_blank" title="源码：util/date/date.ts，第 45 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L45-85" target="_blank" title="源码：util/date/date.ts，第 45 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>parse<i class="doc-tip doc-api-ellipsis">(value, ...)</i><span class="doc-tip doc-api-more">(value:<code>any</code>, format?:<code>string</code>):<code>any</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -287,7 +287,7 @@
                                 
                             </tr><tr id="api/clone">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L87-94" target="_blank" title="源码：util/date/date.ts，第 87 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L87-94" target="_blank" title="源码：util/date/date.ts，第 87 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>clone<i class="doc-tip doc-api-ellipsis">(date)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>):<code>Date</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -332,7 +332,7 @@
                                 
                             </tr><tr id="api/addYear">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L96-104" target="_blank" title="源码：util/date/date.ts，第 96 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L96-104" target="_blank" title="源码：util/date/date.ts，第 96 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>addYear<i class="doc-tip doc-api-ellipsis">(date, value)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>, value:<code>number</code>):<code>Date</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -392,7 +392,7 @@
                                 
                             </tr><tr id="api/addMonth">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L106-119" target="_blank" title="源码：util/date/date.ts，第 106 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L106-119" target="_blank" title="源码：util/date/date.ts，第 106 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>addMonth<i class="doc-tip doc-api-ellipsis">(date, value)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>, value:<code>number</code>):<code>Date</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -452,7 +452,7 @@
                                 
                             </tr><tr id="api/addWeek">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L121-129" target="_blank" title="源码：util/date/date.ts，第 121 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L121-129" target="_blank" title="源码：util/date/date.ts，第 121 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>addWeek<i class="doc-tip doc-api-ellipsis">(date, value)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>, value:<code>number</code>):<code>Date</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -512,7 +512,7 @@
                                 
                             </tr><tr id="api/addDay">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L131-139" target="_blank" title="源码：util/date/date.ts，第 131 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L131-139" target="_blank" title="源码：util/date/date.ts，第 131 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>addDay<i class="doc-tip doc-api-ellipsis">(date, value)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>, value:<code>number</code>):<code>Date</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -572,7 +572,7 @@
                                 
                             </tr><tr id="api/addHours">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L141-149" target="_blank" title="源码：util/date/date.ts，第 141 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L141-149" target="_blank" title="源码：util/date/date.ts，第 141 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>addHours<i class="doc-tip doc-api-ellipsis">(date, value)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>, value:<code>number</code>):<code>Date</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -632,7 +632,7 @@
                                 
                             </tr><tr id="api/addMinutes">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L151-159" target="_blank" title="源码：util/date/date.ts，第 151 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L151-159" target="_blank" title="源码：util/date/date.ts，第 151 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>addMinutes<i class="doc-tip doc-api-ellipsis">(date, value)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>, value:<code>number</code>):<code>Date</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -692,7 +692,7 @@
                                 
                             </tr><tr id="api/addSeconds">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L161-169" target="_blank" title="源码：util/date/date.ts，第 161 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L161-169" target="_blank" title="源码：util/date/date.ts，第 161 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>addSeconds<i class="doc-tip doc-api-ellipsis">(date, value)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>, value:<code>number</code>):<code>Date</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -752,7 +752,7 @@
                                 
                             </tr><tr id="api/addMilliseconds">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L171-179" target="_blank" title="源码：util/date/date.ts，第 171 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L171-179" target="_blank" title="源码：util/date/date.ts，第 171 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>addMilliseconds<i class="doc-tip doc-api-ellipsis">(date, value)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>, value:<code>number</code>):<code>Date</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -812,7 +812,7 @@
                                 
                             </tr><tr id="api/toDay">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L181-188" target="_blank" title="源码：util/date/date.ts，第 181 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L181-188" target="_blank" title="源码：util/date/date.ts，第 181 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>toDay<i class="doc-tip doc-api-ellipsis">(date)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>):<code>Date</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -857,7 +857,7 @@
                                 
                             </tr><tr id="api/dayLeft">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L190-207" target="_blank" title="源码：util/date/date.ts，第 190 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L190-207" target="_blank" title="源码：util/date/date.ts，第 190 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>dayLeft<i class="doc-tip doc-api-ellipsis">(date, month, day)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>, month:<code>number</code>, day:<code>number</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -935,7 +935,7 @@
                                 
                             </tr><tr id="api/compareDay">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L209-218" target="_blank" title="源码：util/date/date.ts，第 209 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L209-218" target="_blank" title="源码：util/date/date.ts，第 209 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>compareDay<i class="doc-tip doc-api-ellipsis">(x, y)</i><span class="doc-tip doc-api-more">(x:<code>Date</code>, y:<code>Date</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -996,7 +996,7 @@
                                 
                             </tr><tr id="api/isLeapYear">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L220-231" target="_blank" title="源码：util/date/date.ts，第 220 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L220-231" target="_blank" title="源码：util/date/date.ts，第 220 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>isLeapYear<i class="doc-tip doc-api-ellipsis">(year)</i><span class="doc-tip doc-api-more">(year:<code>number</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1045,7 +1045,7 @@
                                 
                             </tr><tr id="api/isValid">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L233-248" target="_blank" title="源码：util/date/date.ts，第 233 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L233-248" target="_blank" title="源码：util/date/date.ts，第 233 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>isValid<i class="doc-tip doc-api-ellipsis">(year, month, ...)</i><span class="doc-tip doc-api-more">(year:<code>number</code>, month:<code>number</code>, day?:<code>number</code>, hour?:<code>number</code>, minute?:<code>number</code>, second?:<code>number</code>, milliSecond?:<code>number</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1181,7 +1181,7 @@
                                 
                             </tr><tr id="api/getDayInMonth">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L250-261" target="_blank" title="源码：util/date/date.ts，第 250 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L250-261" target="_blank" title="源码：util/date/date.ts，第 250 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getDayInMonth<i class="doc-tip doc-api-ellipsis">(year, month)</i><span class="doc-tip doc-api-more">(year:<code>number</code>, month:<code>number</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1244,7 +1244,7 @@
                                 
                             </tr><tr id="api/getWeek">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L263-272" target="_blank" title="源码：util/date/date.ts，第 263 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L263-272" target="_blank" title="源码：util/date/date.ts，第 263 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getWeek<i class="doc-tip doc-api-ellipsis">(date, ...)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>, base?:<code>Date</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1305,7 +1305,7 @@
                                 
                             </tr><tr id="api/getTimezone">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L274-283" target="_blank" title="源码：util/date/date.ts，第 274 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L274-283" target="_blank" title="源码：util/date/date.ts，第 274 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getTimezone<i class="doc-tip doc-api-ellipsis">(date)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1350,7 +1350,7 @@
                                 
                             </tr><tr id="api/toFirstDay">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L285-294" target="_blank" title="源码：util/date/date.ts，第 285 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L285-294" target="_blank" title="源码：util/date/date.ts，第 285 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>toFirstDay<i class="doc-tip doc-api-ellipsis">(date)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>):<code>Date</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1395,7 +1395,7 @@
                                 
                             </tr><tr id="api/toLastDay">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/date/date.ts#L296-307" target="_blank" title="源码：util/date/date.ts，第 296 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/date/date.ts#L296-307" target="_blank" title="源码：util/date/date.ts，第 296 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>toLastDay<i class="doc-tip doc-api-ellipsis">(date)</i><span class="doc-tip doc-api-more">(date:<code>Date</code>):<code>Date</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1448,7 +1448,7 @@
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

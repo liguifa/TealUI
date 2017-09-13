@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
     <meta name="version" content="0.0.1">
-    <title>补间动画转换函数 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>补间动画转换函数 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,18 +53,18 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/transitions.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/tween/transitions" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/tween/transitions.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/tween/transitions.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=util/tween/transitions" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/util/tween/transitions.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="补间动画转换函数">
 <a href="#补间动画转换函数" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>补间动画转换函数<div class="doc-menubutton">
                         <small>util/tween/transitions</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import { linear, power, exponential, circular, sinusoidal, back, bounce, elastic, easeIn, easeOut, easeInOut } from \&quot;util/tween/transitions\&quot;;\n&quot;)">复制 <code>import "util/tween/transitions"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/tween/transitions\&quot;], function (transitions_1) {\n\tvar linear = transitions_1.linear;\n\tvar power = transitions_1.power;\n\tvar exponential = transitions_1.exponential;\n\tvar circular = transitions_1.circular;\n\tvar sinusoidal = transitions_1.sinusoidal;\n\tvar back = transitions_1.back;\n\tvar bounce = transitions_1.bounce;\n\tvar elastic = transitions_1.elastic;\n\tvar easeIn = transitions_1.easeIn;\n\tvar easeOut = transitions_1.easeOut;\n\tvar easeInOut = transitions_1.easeInOut;\n\n\n});\n&quot;)">复制 <code>require("util/tween/transitions")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/tween/transitions\&quot;&quot;)">复制 <code>"util/tween/transitions"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import { linear, power, exponential, circular, sinusoidal, back, bounce, elastic, easeIn, easeOut, easeInOut } from \&quot;util/tween/transitions\&quot;;\n&quot;); void 0">复制 <code>import "util/tween/transitions"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/tween/transitions\&quot;], function (transitions_1) {\n\tvar linear = transitions_1.linear;\n\tvar power = transitions_1.power;\n\tvar exponential = transitions_1.exponential;\n\tvar circular = transitions_1.circular;\n\tvar sinusoidal = transitions_1.sinusoidal;\n\tvar back = transitions_1.back;\n\tvar bounce = transitions_1.bounce;\n\tvar elastic = transitions_1.elastic;\n\tvar easeIn = transitions_1.easeIn;\n\tvar easeOut = transitions_1.easeOut;\n\tvar easeInOut = transitions_1.easeInOut;\n\n\n});\n&quot;); void 0">复制 <code>require("util/tween/transitions")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/tween/transitions\&quot;&quot;); void 0">复制 <code>"util/tween/transitions"</code></a></li>
                         </menu>
                     </div></h1>
 <p class="doc">提供常用的补间动画函数。</p>
@@ -75,7 +75,7 @@
                             
                         </tr><tr id="api/linear">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/transitions.ts#L1-8" target="_blank" title="源码：util/tween/transitions.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/tween/transitions.ts#L1-8" target="_blank" title="源码：util/tween/transitions.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>linear<i class="doc-tip doc-api-ellipsis">(x)</i><span class="doc-tip doc-api-more">(x:<code>number</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -121,7 +121,7 @@
                                 
                             </tr><tr id="api/power">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/transitions.ts#L10-18" target="_blank" title="源码：util/tween/transitions.ts，第 10 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/tween/transitions.ts#L10-18" target="_blank" title="源码：util/tween/transitions.ts，第 10 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>power<i class="doc-tip doc-api-ellipsis">(x, ...)</i><span class="doc-tip doc-api-more">(x:<code>number</code>, base?:<code>number</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -182,7 +182,7 @@
                                 
                             </tr><tr id="api/exponential">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/transitions.ts#L20-27" target="_blank" title="源码：util/tween/transitions.ts，第 20 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/tween/transitions.ts#L20-27" target="_blank" title="源码：util/tween/transitions.ts，第 20 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>exponential<i class="doc-tip doc-api-ellipsis">(x)</i><span class="doc-tip doc-api-more">(x:<code>number</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -228,7 +228,7 @@
                                 
                             </tr><tr id="api/circular">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/transitions.ts#L29-36" target="_blank" title="源码：util/tween/transitions.ts，第 29 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/tween/transitions.ts#L29-36" target="_blank" title="源码：util/tween/transitions.ts，第 29 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>circular<i class="doc-tip doc-api-ellipsis">(x)</i><span class="doc-tip doc-api-more">(x:<code>number</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -274,7 +274,7 @@
                                 
                             </tr><tr id="api/sinusoidal">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/transitions.ts#L38-45" target="_blank" title="源码：util/tween/transitions.ts，第 38 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/tween/transitions.ts#L38-45" target="_blank" title="源码：util/tween/transitions.ts，第 38 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>sinusoidal<i class="doc-tip doc-api-ellipsis">(x)</i><span class="doc-tip doc-api-more">(x:<code>number</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -320,7 +320,7 @@
                                 
                             </tr><tr id="api/back">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/transitions.ts#L47-55" target="_blank" title="源码：util/tween/transitions.ts，第 47 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/tween/transitions.ts#L47-55" target="_blank" title="源码：util/tween/transitions.ts，第 47 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>back<i class="doc-tip doc-api-ellipsis">(x, ...)</i><span class="doc-tip doc-api-more">(x:<code>number</code>, base?:<code>number</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -381,7 +381,7 @@
                                 
                             </tr><tr id="api/bounce">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/transitions.ts#L57-68" target="_blank" title="源码：util/tween/transitions.ts，第 57 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/tween/transitions.ts#L57-68" target="_blank" title="源码：util/tween/transitions.ts，第 57 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>bounce<i class="doc-tip doc-api-ellipsis">(x)</i><span class="doc-tip doc-api-more">(x:<code>number</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -427,7 +427,7 @@
                                 
                             </tr><tr id="api/elastic">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/transitions.ts#L70-78" target="_blank" title="源码：util/tween/transitions.ts，第 70 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/tween/transitions.ts#L70-78" target="_blank" title="源码：util/tween/transitions.ts，第 70 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>elastic<i class="doc-tip doc-api-ellipsis">(x, ...)</i><span class="doc-tip doc-api-more">(x:<code>number</code>, base?:<code>number</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -488,7 +488,7 @@
                                 
                             </tr><tr id="api/easeIn">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/transitions.ts#L80-87" target="_blank" title="源码：util/tween/transitions.ts，第 80 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/tween/transitions.ts#L80-87" target="_blank" title="源码：util/tween/transitions.ts，第 80 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>easeIn<i class="doc-tip doc-api-ellipsis">(transition)</i><span class="doc-tip doc-api-more">(transition:<code>function</code>):<code>function</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -534,7 +534,7 @@
                                 
                             </tr><tr id="api/easeOut">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/transitions.ts#L89-98" target="_blank" title="源码：util/tween/transitions.ts，第 89 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/tween/transitions.ts#L89-98" target="_blank" title="源码：util/tween/transitions.ts，第 89 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>easeOut<i class="doc-tip doc-api-ellipsis">(transition)</i><span class="doc-tip doc-api-more">(transition:<code>function</code>):<code>function</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -580,7 +580,7 @@
                                 
                             </tr><tr id="api/easeInOut">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/tween/transitions.ts#L100-109" target="_blank" title="源码：util/tween/transitions.ts，第 100 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/tween/transitions.ts#L100-109" target="_blank" title="源码：util/tween/transitions.ts，第 100 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>easeInOut<i class="doc-tip doc-api-ellipsis">(transition)</i><span class="doc-tip doc-api-more">(transition:<code>function</code>):<code>function</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -631,7 +631,7 @@
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

@@ -1,9 +1,9 @@
 {
   "name": "tealui",
-  "displayName": "TealUI",
+  "displayName": "Frag",
   "version": "4.0.0",
   "repository": "https://github.com/Teal/TealUI",
-  "description": "打造小而全、精而美的开源组件库",
+  "description": "最上流的组件库",
   "keywords": [
     "HTML5 UI Framework",
     "前端 UI 组件库"

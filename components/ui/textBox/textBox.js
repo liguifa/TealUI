@@ -26,5 +26,6 @@ define(["require", "exports", "ui/control", "ui/input", "./textBox.scss"], funct
     exports.default = TextBox;
     TextBox.prototype.statusClassPrefix = "x-textbox-";
     TextBox.prototype.validateEvent = "input";
+    TextBox.prototype.validateDelay = 500;
 });
 //# sourceMappingURL=textBox.js.map

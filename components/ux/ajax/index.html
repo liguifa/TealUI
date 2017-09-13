@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
     <meta name="version" content="0.0.1">
-    <title>AJAX - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>AJAX - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,18 +53,18 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ux/ajax" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ux/ajax/ajax.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=ux/ajax" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/ux/ajax/ajax.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="ajax">
 <a href="#ajax" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>AJAX<div class="doc-menubutton">
                         <small>ux/ajax</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import ajax, { Ajax, checkStatus } from \&quot;ux/ajax\&quot;;\n&quot;)">复制 <code>import "ux/ajax"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/ajax\&quot;], function (ajax_1) {\n\tvar ajax = ajax_1.default;\n\tvar Ajax = ajax_1.Ajax;\n\tvar checkStatus = ajax_1.checkStatus;\n\n\n});\n&quot;)">复制 <code>require("ux/ajax")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/ajax\&quot;&quot;)">复制 <code>"ux/ajax"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import ajax, { Ajax, checkStatus } from \&quot;ux/ajax\&quot;;\n&quot;); void 0">复制 <code>import "ux/ajax"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/ajax\&quot;], function (ajax_1) {\n\tvar ajax = ajax_1.default;\n\tvar Ajax = ajax_1.Ajax;\n\tvar checkStatus = ajax_1.checkStatus;\n\n\n});\n&quot;); void 0">复制 <code>require("ux/ajax")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/ajax\&quot;&quot;); void 0">复制 <code>"ux/ajax"</code></a></li>
                         </menu>
                     </div></h1>
 <p class="doc">发送请求。</p>
@@ -87,7 +87,7 @@
                             
                         </tr><tr id="api/checkStatus">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L242-254" target="_blank" title="源码：ux/ajax/ajax.ts，第 242 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L242-254" target="_blank" title="源码：ux/ajax/ajax.ts，第 242 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>checkStatus<i class="doc-tip doc-api-ellipsis">(status)</i><span class="doc-tip doc-api-more">(status:<code>number</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -133,7 +133,7 @@
                                 
                             </tr><tr id="api/ajax">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L256-272" target="_blank" title="源码：ux/ajax/ajax.ts，第 256 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L256-272" target="_blank" title="源码：ux/ajax/ajax.ts，第 256 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>ajax<i class="doc-tip doc-api-ellipsis">(options)</i><span class="doc-tip doc-api-more">(options:<code>Partial&lt;<a href="#api/Ajax">Ajax</a>&gt;</code>):<code>Promise&lt;{}&gt;</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -177,7 +177,7 @@
 
                                 </td>
                                 
-                            </tr></table></div><h3 id="api/Ajax"><a href="#api/Ajax" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L3-240" target="_blank" title="源码：ux/ajax/ajax.ts，第 3 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Ajax 类</h3><p class="doc">表示一个 AJAX 请求。</p>
+                            </tr></table></div><h3 id="api/Ajax"><a href="#api/Ajax" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L3-240" target="_blank" title="源码：ux/ajax/ajax.ts，第 3 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Ajax 类</h3><p class="doc">表示一个 AJAX 请求。</p>
 <div class="doc doc-scrollable"><table class="doc-api"><tr>
                                 <th class="doc-api-property">字段</th>
                                 <th class="doc-api-type">类型</th>
@@ -185,7 +185,7 @@
                                 
                             </tr><tr id="api/Ajax/type">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L8-11" target="_blank" title="源码：ux/ajax/ajax.ts，第 8 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L8-11" target="_blank" title="源码：ux/ajax/ajax.ts，第 8 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>type</code>
                                 <span class="doc-api-more">: <code>string</code></span>
@@ -205,7 +205,7 @@
                             
                         </tr><tr id="api/Ajax/url">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L13-16" target="_blank" title="源码：ux/ajax/ajax.ts，第 13 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L13-16" target="_blank" title="源码：ux/ajax/ajax.ts，第 13 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>url</code>
                                 <span class="doc-api-more">: <code>string</code></span>
@@ -225,7 +225,7 @@
                             
                         </tr><tr id="api/Ajax/data">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L18-21" target="_blank" title="源码：ux/ajax/ajax.ts，第 18 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L18-21" target="_blank" title="源码：ux/ajax/ajax.ts，第 18 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>data</code>
                                 <span class="doc-api-more">: <code>any</code></span>
@@ -245,7 +245,7 @@
                             
                         </tr><tr id="api/Ajax/contentType">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L23-26" target="_blank" title="源码：ux/ajax/ajax.ts，第 23 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L23-26" target="_blank" title="源码：ux/ajax/ajax.ts，第 23 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>contentType</code>
                                 <span class="doc-api-more">: <code>string</code></span>
@@ -265,7 +265,7 @@
                             
                         </tr><tr id="api/Ajax/headers">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L28-31" target="_blank" title="源码：ux/ajax/ajax.ts，第 28 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L28-31" target="_blank" title="源码：ux/ajax/ajax.ts，第 28 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>headers</code>
                                 <span class="doc-api-more">: <code>{ [name: string]: string; }</code></span>
@@ -285,7 +285,7 @@
                             
                         </tr><tr id="api/Ajax/username">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L33-36" target="_blank" title="源码：ux/ajax/ajax.ts，第 33 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L33-36" target="_blank" title="源码：ux/ajax/ajax.ts，第 33 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>username</code>
                                 <span class="doc-api-more">: <code>string</code></span>
@@ -305,7 +305,7 @@
                             
                         </tr><tr id="api/Ajax/password">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L38-41" target="_blank" title="源码：ux/ajax/ajax.ts，第 38 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L38-41" target="_blank" title="源码：ux/ajax/ajax.ts，第 38 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>password</code>
                                 <span class="doc-api-more">: <code>string</code></span>
@@ -325,7 +325,7 @@
                             
                         </tr><tr id="api/Ajax/async">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L43-46" target="_blank" title="源码：ux/ajax/ajax.ts，第 43 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L43-46" target="_blank" title="源码：ux/ajax/ajax.ts，第 43 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>async</code>
                                 <span class="doc-api-more">: <code>boolean</code></span>
@@ -345,7 +345,7 @@
                             
                         </tr><tr id="api/Ajax/timeout">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L48-51" target="_blank" title="源码：ux/ajax/ajax.ts，第 48 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L48-51" target="_blank" title="源码：ux/ajax/ajax.ts，第 48 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>timeout</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -365,7 +365,7 @@
                             
                         </tr><tr id="api/Ajax/withCredentials">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L53-56" target="_blank" title="源码：ux/ajax/ajax.ts，第 53 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L53-56" target="_blank" title="源码：ux/ajax/ajax.ts，第 53 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>withCredentials</code>
                                 <span class="doc-api-more">: <code>boolean</code></span>
@@ -385,7 +385,7 @@
                             
                         </tr><tr id="api/Ajax/success">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L58-63" target="_blank" title="源码：ux/ajax/ajax.ts，第 58 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L58-63" target="_blank" title="源码：ux/ajax/ajax.ts，第 58 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>success</code>
                                 <span class="doc-api-more">: <code>(responseText: string, ajax: <a href="#api/Ajax">Ajax</a>) =&gt; void</code></span>
@@ -405,7 +405,7 @@
                             
                         </tr><tr id="api/Ajax/error">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L65-70" target="_blank" title="源码：ux/ajax/ajax.ts，第 65 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L65-70" target="_blank" title="源码：ux/ajax/ajax.ts，第 65 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>error</code>
                                 <span class="doc-api-more">: <code>(error: any, ajax: <a href="#api/Ajax">Ajax</a>) =&gt; void</code></span>
@@ -425,7 +425,7 @@
                             
                         </tr><tr id="api/Ajax/complete">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L72-77" target="_blank" title="源码：ux/ajax/ajax.ts，第 72 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L72-77" target="_blank" title="源码：ux/ajax/ajax.ts，第 72 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>complete</code>
                                 <span class="doc-api-more">: <code>(error: any, ajax: <a href="#api/Ajax">Ajax</a>) =&gt; void</code></span>
@@ -445,7 +445,7 @@
                             
                         </tr><tr id="api/Ajax/xhr">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L79-82" target="_blank" title="源码：ux/ajax/ajax.ts，第 79 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L79-82" target="_blank" title="源码：ux/ajax/ajax.ts，第 79 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>xhr</code>
                                 <span class="doc-api-more">: <code>XMLHttpRequest</code></span>
@@ -465,7 +465,7 @@
                             
                         </tr><tr id="api/Ajax/status">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L84-87" target="_blank" title="源码：ux/ajax/ajax.ts，第 84 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L84-87" target="_blank" title="源码：ux/ajax/ajax.ts，第 84 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>status</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -485,7 +485,7 @@
                             
                         </tr><tr id="api/Ajax/statusText">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L89-92" target="_blank" title="源码：ux/ajax/ajax.ts，第 89 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L89-92" target="_blank" title="源码：ux/ajax/ajax.ts，第 89 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>statusText</code>
                                 <span class="doc-api-more">: <code>string</code></span>
@@ -505,7 +505,7 @@
                             
                         </tr><tr id="api/Ajax/responseText">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L94-97" target="_blank" title="源码：ux/ajax/ajax.ts，第 94 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L94-97" target="_blank" title="源码：ux/ajax/ajax.ts，第 94 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>responseText</code>
                                 <span class="doc-api-more">: <code>string</code></span>
@@ -529,7 +529,7 @@
                             
                         </tr><tr id="api/Ajax/send">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L99-226" target="_blank" title="源码：ux/ajax/ajax.ts，第 99 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L99-226" target="_blank" title="源码：ux/ajax/ajax.ts，第 99 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>send<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -553,7 +553,7 @@
                                 
                             </tr><tr id="api/Ajax/abort">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/ajax/ajax.ts#L233-238" target="_blank" title="源码：ux/ajax/ajax.ts，第 233 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/ajax/ajax.ts#L233-238" target="_blank" title="源码：ux/ajax/ajax.ts，第 233 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>abort<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -584,7 +584,7 @@
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

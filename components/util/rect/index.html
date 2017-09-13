@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
     <meta name="version" content="0.0.1">
-    <title>矩形运算 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>矩形运算 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,18 +53,18 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/rect" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/rect/rect.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=util/rect" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/util/rect/rect.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="矩形运算">
 <a href="#矩形运算" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>矩形运算<div class="doc-menubutton">
                         <small>util/rect</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import { Point, Size, Rect, offsetRect, inRect, onRect, intersectRect, unionRect, Circle, inCircle } from \&quot;util/rect\&quot;;\n&quot;)">复制 <code>import "util/rect"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/rect\&quot;], function (rect_1) {\n\tvar Point = rect_1.Point;\n\tvar Size = rect_1.Size;\n\tvar Rect = rect_1.Rect;\n\tvar offsetRect = rect_1.offsetRect;\n\tvar inRect = rect_1.inRect;\n\tvar onRect = rect_1.onRect;\n\tvar intersectRect = rect_1.intersectRect;\n\tvar unionRect = rect_1.unionRect;\n\tvar Circle = rect_1.Circle;\n\tvar inCircle = rect_1.inCircle;\n\n\n});\n&quot;)">复制 <code>require("util/rect")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/rect\&quot;&quot;)">复制 <code>"util/rect"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import { Point, Size, Rect, offsetRect, inRect, onRect, intersectRect, unionRect, Circle, inCircle } from \&quot;util/rect\&quot;;\n&quot;); void 0">复制 <code>import "util/rect"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/rect\&quot;], function (rect_1) {\n\tvar Point = rect_1.Point;\n\tvar Size = rect_1.Size;\n\tvar Rect = rect_1.Rect;\n\tvar offsetRect = rect_1.offsetRect;\n\tvar inRect = rect_1.inRect;\n\tvar onRect = rect_1.onRect;\n\tvar intersectRect = rect_1.intersectRect;\n\tvar unionRect = rect_1.unionRect;\n\tvar Circle = rect_1.Circle;\n\tvar inCircle = rect_1.inCircle;\n\n\n});\n&quot;); void 0">复制 <code>require("util/rect")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/rect\&quot;&quot;); void 0">复制 <code>"util/rect"</code></a></li>
                         </menu>
                     </div></h1>
 <p class="doc">提供图形计算相关函数。</p>
@@ -83,7 +83,7 @@
                             
                         </tr><tr id="api/offsetRect">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L40-51" target="_blank" title="源码：util/rect/rect.ts，第 40 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L40-51" target="_blank" title="源码：util/rect/rect.ts，第 40 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>offsetRect<i class="doc-tip doc-api-ellipsis">(rect, p)</i><span class="doc-tip doc-api-more">(rect:<code><a href="#api/Rect">Rect</a></code>, p:<code><a href="#api/Point">Point</a></code>):<code><a href="#api/Rect">Rect</a></code></span></code>
                                     <div class="doc doc-api-detail">
@@ -144,7 +144,7 @@
                                 
                             </tr><tr id="api/inRect">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L53-73" target="_blank" title="源码：util/rect/rect.ts，第 53 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L53-73" target="_blank" title="源码：util/rect/rect.ts，第 53 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>inRect<i class="doc-tip doc-api-ellipsis">(rect, p)</i><span class="doc-tip doc-api-more">(rect:<code><a href="#api/Rect">Rect</a></code>, p:<code><a href="#api/Point">Point</a></code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -207,7 +207,7 @@
                                 
                             </tr><tr id="api/onRect">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L75-101" target="_blank" title="源码：util/rect/rect.ts，第 75 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L75-101" target="_blank" title="源码：util/rect/rect.ts，第 75 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>onRect<i class="doc-tip doc-api-ellipsis">(rect, p)</i><span class="doc-tip doc-api-more">(rect:<code><a href="#api/Rect">Rect</a></code>, p:<code><a href="#api/Point">Point</a></code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -271,7 +271,7 @@
                                 
                             </tr><tr id="api/intersectRect">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L103-143" target="_blank" title="源码：util/rect/rect.ts，第 103 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L103-143" target="_blank" title="源码：util/rect/rect.ts，第 103 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>intersectRect<i class="doc-tip doc-api-ellipsis">(rectX, rectY)</i><span class="doc-tip doc-api-more">(rectX:<code><a href="#api/Rect">Rect</a></code>, rectY:<code><a href="#api/Rect">Rect</a></code>):<code><a href="#api/Rect">Rect</a></code></span></code>
                                     <div class="doc doc-api-detail">
@@ -333,7 +333,7 @@
                                 
                             </tr><tr id="api/unionRect">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L145-177" target="_blank" title="源码：util/rect/rect.ts，第 145 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L145-177" target="_blank" title="源码：util/rect/rect.ts，第 145 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>unionRect<i class="doc-tip doc-api-ellipsis">(rectX, rectY)</i><span class="doc-tip doc-api-more">(rectX:<code><a href="#api/Rect">Rect</a></code>, rectY:<code><a href="#api/Rect">Rect</a></code>):<code>object</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -396,7 +396,7 @@
                                 
                             </tr><tr id="api/inCircle">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L191-206" target="_blank" title="源码：util/rect/rect.ts，第 191 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L191-206" target="_blank" title="源码：util/rect/rect.ts，第 191 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>inCircle<i class="doc-tip doc-api-ellipsis">(circle, p)</i><span class="doc-tip doc-api-more">(circle:<code><a href="#api/Circle">Circle</a></code>, p:<code><a href="#api/Point">Point</a></code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -458,7 +458,7 @@
 
                                 </td>
                                 
-                            </tr></table></div><h3 id="api/Point"><a href="#api/Point" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L1-16" target="_blank" title="源码：util/rect/rect.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Point 接口</h3><p class="doc">表示一个点。</p>
+                            </tr></table></div><h3 id="api/Point"><a href="#api/Point" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L1-16" target="_blank" title="源码：util/rect/rect.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Point 接口</h3><p class="doc">表示一个点。</p>
 <div class="doc doc-scrollable"><table class="doc-api"><tr>
                                 <th class="doc-api-property">字段</th>
                                 <th class="doc-api-type">类型</th>
@@ -466,7 +466,7 @@
                                 
                             </tr><tr id="api/Point/x">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L6-9" target="_blank" title="源码：util/rect/rect.ts，第 6 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L6-9" target="_blank" title="源码：util/rect/rect.ts，第 6 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>x</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -486,7 +486,7 @@
                             
                         </tr><tr id="api/Point/y">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L11-14" target="_blank" title="源码：util/rect/rect.ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L11-14" target="_blank" title="源码：util/rect/rect.ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>y</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -504,7 +504,7 @@
 
                             </td>
                             
-                        </tr></table></div><h3 id="api/Size"><a href="#api/Size" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L18-33" target="_blank" title="源码：util/rect/rect.ts，第 18 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Size 接口</h3><p class="doc">表示一个大小。</p>
+                        </tr></table></div><h3 id="api/Size"><a href="#api/Size" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L18-33" target="_blank" title="源码：util/rect/rect.ts，第 18 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Size 接口</h3><p class="doc">表示一个大小。</p>
 <div class="doc doc-scrollable"><table class="doc-api"><tr>
                                 <th class="doc-api-property">字段</th>
                                 <th class="doc-api-type">类型</th>
@@ -512,7 +512,7 @@
                                 
                             </tr><tr id="api/Size/width">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L23-26" target="_blank" title="源码：util/rect/rect.ts，第 23 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L23-26" target="_blank" title="源码：util/rect/rect.ts，第 23 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>width</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -532,7 +532,7 @@
                             
                         </tr><tr id="api/Size/height">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L28-31" target="_blank" title="源码：util/rect/rect.ts，第 28 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L28-31" target="_blank" title="源码：util/rect/rect.ts，第 28 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>height</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -550,7 +550,7 @@
 
                             </td>
                             
-                        </tr></table></div><h3 id="api/Rect"><a href="#api/Rect" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L35-38" target="_blank" title="源码：util/rect/rect.ts，第 35 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Rect 接口</h3><p>继承自：<code><a href="#api/Point">Point</a>, <a href="#api/Size">Size</a></code></p><p class="doc">表示一个矩形区域。</p>
+                        </tr></table></div><h3 id="api/Rect"><a href="#api/Rect" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L35-38" target="_blank" title="源码：util/rect/rect.ts，第 35 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Rect 接口</h3><p>继承自：<code><a href="#api/Point">Point</a>, <a href="#api/Size">Size</a></code></p><p class="doc">表示一个矩形区域。</p>
 <div class="doc doc-scrollable"><table class="doc-api"><tr>
                                 <th class="doc-api-property">字段</th>
                                 <th class="doc-api-type">类型</th>
@@ -558,7 +558,7 @@
                                 <th class="doc-api-extends">继承自</th>
                             </tr><tr id="api/Rect/x">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L6-9" target="_blank" title="源码：util/rect/rect.ts，第 6 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L6-9" target="_blank" title="源码：util/rect/rect.ts，第 6 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>x</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -578,7 +578,7 @@
                             <td><code><a href="#api/Point">Point</a></code></td>
                         </tr><tr id="api/Rect/y">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L11-14" target="_blank" title="源码：util/rect/rect.ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L11-14" target="_blank" title="源码：util/rect/rect.ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>y</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -598,7 +598,7 @@
                             <td><code><a href="#api/Point">Point</a></code></td>
                         </tr><tr id="api/Rect/width">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L23-26" target="_blank" title="源码：util/rect/rect.ts，第 23 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L23-26" target="_blank" title="源码：util/rect/rect.ts，第 23 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>width</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -618,7 +618,7 @@
                             <td><code><a href="#api/Size">Size</a></code></td>
                         </tr><tr id="api/Rect/height">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L28-31" target="_blank" title="源码：util/rect/rect.ts，第 28 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L28-31" target="_blank" title="源码：util/rect/rect.ts，第 28 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>height</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -636,7 +636,7 @@
 
                             </td>
                             <td><code><a href="#api/Size">Size</a></code></td>
-                        </tr></table></div><h3 id="api/Circle"><a href="#api/Circle" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L179-189" target="_blank" title="源码：util/rect/rect.ts，第 179 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Circle 接口</h3><p>继承自：<code><a href="#api/Point">Point</a></code></p><p class="doc">表示一个正圆区域。</p>
+                        </tr></table></div><h3 id="api/Circle"><a href="#api/Circle" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L179-189" target="_blank" title="源码：util/rect/rect.ts，第 179 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Circle 接口</h3><p>继承自：<code><a href="#api/Point">Point</a></code></p><p class="doc">表示一个正圆区域。</p>
 <div class="doc doc-scrollable"><table class="doc-api"><tr>
                                 <th class="doc-api-property">字段</th>
                                 <th class="doc-api-type">类型</th>
@@ -644,7 +644,7 @@
                                 <th class="doc-api-extends">继承自</th>
                             </tr><tr id="api/Circle/r">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L184-187" target="_blank" title="源码：util/rect/rect.ts，第 184 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L184-187" target="_blank" title="源码：util/rect/rect.ts，第 184 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>r</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -664,7 +664,7 @@
                             <td>—</td>
                         </tr><tr id="api/Circle/x">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L6-9" target="_blank" title="源码：util/rect/rect.ts，第 6 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L6-9" target="_blank" title="源码：util/rect/rect.ts，第 6 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>x</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -684,7 +684,7 @@
                             <td><code><a href="#api/Point">Point</a></code></td>
                         </tr><tr id="api/Circle/y">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/rect/rect.ts#L11-14" target="_blank" title="源码：util/rect/rect.ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/rect/rect.ts#L11-14" target="_blank" title="源码：util/rect/rect.ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>y</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -709,7 +709,7 @@
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

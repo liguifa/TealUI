@@ -82,7 +82,7 @@ define(["require", "exports"], function (require, exports) {
     }
     exports.clean = clean;
     /**
-     * 清空数组所有项。
+     * 清空数组的所有项。
      * @param arr 相关的数组。
      * @example clear([1, 2]) // 数组变成 []
      */

@@ -8,40 +8,34 @@ define(["require", "exports", "ux/dom"], function (require, exports, dom_1) {
      * @param callback 滚动动画结束的回调函数。
      * @example scrollTo(document, {y: 400})
      */
-    function scrollTo(elem, value, duration = 150, callback) {
-        let last = dom_1.getScroll(elem);
+    function scrollTo(elem, value, duration = 200, callback) {
+        const start = dom_1.getScroll(elem);
+        let last = start;
         if (duration === 0) {
             dom_1.setScroll(elem, value);
         }
         else if (value.x != null || value.y != null) {
-            let leftX = (value.x - last.x) || 0;
-            let leftY = (value.y - last.y) || 0;
-            const count = duration / 10;
-            const deltaX = leftX / count;
-            const deltaY = leftY / count;
+            const deltaX = value.x - start.x;
+            const deltaY = value.y - start.y;
+            const maxCount = duration / 20;
+            let count = 0;
             const step = () => {
-                const current = dom_1.getScroll(elem);
-                if (current.x === last.x && current.y === last.y) {
-                    if (Math.abs(leftX) > Math.abs(deltaX)) {
-                        current.x += deltaX;
-                        leftX -= deltaX;
+                value = dom_1.getScroll(elem);
+                if (value.x === last.x && value.y === last.y) {
+                    if (deltaX) {
+                        value.x = start.x + (1 - Math.pow((1 - count / maxCount), 3)) * deltaX;
+                    }
+                    if (deltaY) {
+                        value.y = start.y + (1 - Math.pow((1 - count / maxCount), 3)) * deltaY;
+                    }
+                    dom_1.setScroll(elem, value);
+                    if (count++ < maxCount) {
+                        last = dom_1.getScroll(elem);
+                        setTimeout(step, 20);
                     }
                     else {
-                        current.x = value.x;
+                        callback && callback(last);
                     }
-                    if (Math.abs(leftY) > Math.abs(deltaY)) {
-                        current.y += deltaY;
-                        leftY -= deltaY;
-                    }
-                    else {
-                        current.y = value.y;
-                    }
-                    dom_1.setScroll(elem, current);
-                    last = dom_1.getScroll(elem);
-                    setTimeout(step, 10);
-                }
-                else {
-                    callback && callback(last);
                 }
             };
             step();
@@ -197,7 +191,7 @@ define(["require", "exports", "ux/dom"], function (require, exports, dom_1) {
     }
     exports.scrollShow = scrollShow;
     /**
-     * 返回指定元素第一个可滚动的父元素。
+     * 获取指定元素第一个可滚动的父元素。
      * @param elem 要搜索的元素。
      * @return 返回父元素。
      */

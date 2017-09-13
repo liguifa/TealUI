@@ -63,7 +63,7 @@ define(["require", "exports"], function (require, exports) {
     /**
      * 金额。
      */
-    exports.currency = /^(0|[1-9]\d*)+(.\d\d?)?$/;
+    exports.currency = /^(0|[1-9]\d*)(\.\d\d?)?$/;
     /**
      * 合法路径。
      */

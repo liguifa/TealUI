@@ -1,8 +1,11 @@
 define(["require", "exports"], function (require, exports) {
     Object.defineProperty(exports, "__esModule", { value: true });
+    function format(color, format) {
+    }
+    exports.format = format;
     /**
-     * 将任意颜色转为 RGB 格式。
-     * @param color 要处理的颜色。
+     * 将任意颜色格式转为 RGB 格式。
+     * @param color 相关的颜色。
      * @return 返回包含 RGB 信息的对象。
      * @example toRGB("#000") // {r: 0, g: 0, b: 0}
      * @example toRGB("#ff0000") // {r: 255, g: 0, b: 0}
@@ -35,10 +38,6 @@ define(["require", "exports"], function (require, exports) {
                     };
                 }
                 else {
-                    const parsePercent = (value) => {
-                        const val = parseFloat(value);
-                        return /%$/.test(value) ? val / 100 : val;
-                    };
                     const rgb = /rgba?\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([\d\.]+%?))?\)/.exec(value);
                     if (rgb) {
                         value = {
@@ -71,20 +70,23 @@ define(["require", "exports"], function (require, exports) {
         }
         else if (typeof value.l === "number") {
             value = {
-                r: hue(value, 1 / 3),
-                g: hue(value, 0),
-                b: hue(value, -1 / 3),
+                r: hslToRGB(value, 1 / 3),
+                g: hslToRGB(value, 0),
+                b: hslToRGB(value, -1 / 3),
                 a: value.a
             };
         }
         return value;
     }
     exports.toRGB = toRGB;
-    // hsl转rgb公式
-    function hue(v, cv) {
-        const h = v.h;
-        const s = parseFloat((v.s / 255).toFixed(10));
-        const l = parseFloat((v.l / 255).toFixed(10));
+    function parsePercent(value) {
+        const val = parseFloat(value);
+        return /%$/.test(value) ? val / 100 : val;
+    }
+    function hslToRGB(value, cv) {
+        const h = value.h;
+        const s = parseFloat((value.s / 255).toFixed(10));
+        const l = parseFloat((value.l / 255).toFixed(10));
         let t1, t2, color;
         if (s == 0) {
             return l;
@@ -135,6 +137,65 @@ define(["require", "exports"], function (require, exports) {
      * @example toHSL({r:255, g: 0, b: 0, a: 1}) // {h: 0, s: 255, l: 128, a: 1}
      */
     function toHSL(value) {
+        if (typeof value === "string") {
+            const hex = /^#([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})?$/.exec(value);
+            if (hex) {
+                value = {
+                    r: parseInt(hex[1], 16),
+                    g: parseInt(hex[2], 16),
+                    b: parseInt(hex[3], 16),
+                    a: hex[4] ? parseInt(hex[4], 16) / 255 : undefined
+                };
+            }
+            else {
+                const hexSimple = /^#([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])$/.exec(value);
+                if (hexSimple) {
+                    value = {
+                        r: parseInt(hexSimple[1] + hexSimple[1], 16),
+                        g: parseInt(hexSimple[2] + hexSimple[2], 16),
+                        b: parseInt(hexSimple[3] + hexSimple[3], 16)
+                    };
+                }
+                else {
+                    const rgb = /rgba?\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([\d\.]+%?))?\)/.exec(value);
+                    if (rgb) {
+                        value = {
+                            r: parseInt(rgb[1]),
+                            g: parseInt(rgb[2]),
+                            b: parseInt(rgb[3]),
+                            a: rgb[4] ? parsePercent(rgb[4]) : undefined
+                        };
+                    }
+                    else {
+                        const hsl = /hsla?\s*\(\s*(\d+)\s*,\s*([\d\.]+%?)\s*,\s*([\d\.]+%?)\s*(?:,\s*([\d\.]+%?))?\)/.exec(value);
+                        if (hsl) {
+                            return toRGB({
+                                h: parseInt(hsl[1]),
+                                s: parsePercent(hsl[2]),
+                                l: parsePercent(hsl[3]),
+                                a: hsl[4] ? parsePercent(hsl[4]) : undefined
+                            });
+                        }
+                        else {
+                            return {
+                                r: 0,
+                                g: 0,
+                                b: 0
+                            };
+                        }
+                    }
+                }
+            }
+        }
+        else if (typeof value.l === "number") {
+            value = {
+                r: hslToRGB(value, 1 / 3),
+                g: hslToRGB(value, 0),
+                b: hslToRGB(value, -1 / 3),
+                a: value.a
+            };
+        }
+        return value;
     }
     exports.toHSL = toHSL;
     function convert(value, type) {

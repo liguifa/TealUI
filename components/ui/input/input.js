@@ -19,11 +19,6 @@ define(["require", "exports", "ux/dom", "ui/control", "ux/status", "ui/toolTip"]
         get input() {
             return (dom.find(this.elem, "input,select,textarea") || this.elem);
         }
-        init() {
-            if (this.validateEvent) {
-                dom.on(this.input, this.validateEvent, this.reportValidity, this);
-            }
-        }
         /**
          * 字段值。
          */
@@ -35,17 +30,62 @@ define(["require", "exports", "ux/dom", "ui/control", "ux/status", "ui/toolTip"]
             }
         }
         /**
+         * 控件状态。
+         */
+        get status() {
+            return status_1.getStatus(this.input, this.statusClassPrefix);
+        }
+        set status(value) {
+            status_1.setStatus(this.input, this.statusClassPrefix, value);
+        }
+        /**
+         * 判断当前输入域是否需要验证。
+         */
+        get willValidate() {
+            if (this.noValidate || this.readOnly || this.disabled || this.hidden) {
+                return false;
+            }
+            if (this.onValidate || this.required || this.maxLength >= 0 || this.minLength >= 0 || this.max != null || this.min != null || this.pattern || this.validate !== Input.prototype.validate) {
+                return true;
+            }
+            return false;
+        }
+        init() {
+            if (this.validateEvent) {
+                dom.on(this.input, this.validateEvent, this.handleValidate, this);
+            }
+        }
+        /**
+         * 处理验证字段。
+         */
+        handleValidate() {
+            if (this.validateEvent) {
+                const delay = this.status === "error" ? this.revalidateDelay : this.validateDelay;
+                if (delay) {
+                    if (this._validateTimer)
+                        clearTimeout(this._validateTimer);
+                    this._validateTimer = setTimeout(() => {
+                        delete this._validateTimer;
+                        this.reportValidity();
+                    }, delay);
+                }
+                else {
+                    this.reportValidity();
+                }
+            }
+        }
+        /**
          * 验证当前输入域。
          * @return 返回验证结果。如果正在执行异步验证则返回一个确认对象。
          */
         checkValidity() {
             // 测试是否已填数据。
             const value = this.value;
-            if (value == null || (typeof value === "string" || Array.isArray(value)) && value.length === 0) {
+            if (value == null || value.length === 0 && (typeof value === "string" || Array.isArray(value))) {
                 if (this.required) {
                     return { valid: false, status: "error", message: this.requiredMessage };
                 }
-                return { valid: true, status: "success", message: null };
+                return { valid: true, status: null };
             }
             // 执行内置验证。
             const result = this.normlizeValidityResult(this.validate(value));
@@ -73,18 +113,6 @@ define(["require", "exports", "ux/dom", "ui/control", "ux/status", "ui/toolTip"]
             return result;
         }
         /**
-         * 判断当前输入域是否需要验证。
-         */
-        get willValidate() {
-            if (this.noValidate || this.readOnly || this.disabled || this.hidden) {
-                return false;
-            }
-            if (this.onValidate || this.required || this.maxLength >= 0 || this.minLength >= 0 || this.max != null || this.min != null || this.pattern) {
-                return true;
-            }
-            return false;
-        }
-        /**
          * 当被子类重写时负责验证指定的值。
          * @param value 要验证的值。
          * @return 返回验证结果。如果正在执行异步验证则返回一个确认对象。
@@ -110,7 +138,7 @@ define(["require", "exports", "ux/dom", "ui/control", "ux/status", "ui/toolTip"]
         /**
          * 规范化验证结果对象。
          * @param result 用户返回的验证结果。
-         * @param 返回已格式化的严重结果。
+         * @param 返回已格式化的验证结果。
          */
         normlizeValidityResult(result) {
             if (result instanceof Promise) {
@@ -123,10 +151,9 @@ define(["require", "exports", "ux/dom", "ui/control", "ux/status", "ui/toolTip"]
                 return {
                     valid: !result,
                     status: result ? "error" : "success",
-                    message: result ? this.validateErrorMessagePrefix + result : this.validateSuccessMessagePrefix + "",
+                    message: result ? this.validateErrorMessagePrefix + result : "",
                 };
             }
-            result.message = result.message || "";
             if (result.valid == undefined) {
                 result.valid = !result.status || result.status === "success";
             }
@@ -134,74 +161,63 @@ define(["require", "exports", "ux/dom", "ui/control", "ux/status", "ui/toolTip"]
         }
         /**
          * 向用户报告验证结果。
+         * @param hideSuccess 是否隐藏验证成功状态。
          * @return 返回验证结果。如果正在执行异步验证则返回一个确认对象。
          */
-        reportValidity() {
-            const result = this.willValidate ? this.checkValidity() : { valid: true, status: null, message: null };
+        reportValidity(hideSuccess = this.hideSuccess) {
+            const result = this.willValidate ? this.checkValidity() : { valid: true };
             if (result instanceof Promise) {
                 if (!this._validatePromise) {
-                    this.setCustomValidity({ valid: false, status: "warning", message: this.validateStartMessage });
+                    this.setCustomValidity({ valid: false, status: "warning", message: this.validateStartMessage }, hideSuccess);
                 }
                 const promise = this._validatePromise = result.then(result => {
                     if (this._validatePromise === promise) {
                         delete this._validatePromise;
-                        this.setCustomValidity(result);
+                        this.setCustomValidity(result, hideSuccess);
                     }
                     return result;
                 }, (reason) => {
-                    const result = this.normlizeValidityResult(this.validateFailMessage.replace("{reason}", reason));
+                    const result = { valid: false, status: "error", message: this.validateFailMessage.replace("{reason}", reason) };
                     if (this._validatePromise === promise) {
                         delete this._validatePromise;
-                        this.setCustomValidity(result);
+                        this.setCustomValidity(result, hideSuccess);
                     }
                     return result;
                 });
                 return promise;
             }
-            this.setCustomValidity(result);
+            this.setCustomValidity(result, hideSuccess);
             return result;
         }
         /**
          * 设置自定义的验证消息。
          * @param validityResult 要报告的验证结果。
+         * @param hideSuccess 是否隐藏验证成功状态。
          */
-        setCustomValidity(validityResult) {
+        setCustomValidity(validityResult, hideSuccess = this.hideSuccess) {
+            // 统一验证结果数据格式。
             validityResult = this.normlizeValidityResult(validityResult);
+            if (hideSuccess && validityResult.status === "success") {
+                validityResult = { valid: validityResult.valid, status: null, message: validityResult.message };
+            }
             // 更新状态。
             this.status = validityResult.status;
             // 自定义错误报告。
             if (this.onReportValidity && this.onReportValidity(validityResult, this) === false) {
                 return;
             }
-            // 成功状态且没有设置消息则关闭提示。
-            const successWithNoMessage = this.status === "success" && (!validityResult.message || validityResult.message === this.validateSuccessMessagePrefix);
+            // 提示验证信息。
             const tip = dom.next(this.elem, ".x-tip,.x-tipbox");
             if (tip) {
-                const isTipBox = dom.hasClass(tip, "x-tipbox");
-                status_1.setStatus(tip, isTipBox ? "x-tipbox-" : "x-tip-", this.status);
+                status_1.setStatus(tip, dom.hasClass(tip, "x-tipbox") ? "x-tipbox-" : "x-tip-", this.status);
+                dom.toggle(tip, !!validityResult.message);
                 tip.innerHTML = validityResult.message;
-                if (isTipBox) {
-                    dom.toggle(tip, !!this.status);
-                    dom.toggleClass(tip, "x-transparent", successWithNoMessage);
-                }
-                else {
-                    dom.toggle(tip, !!this.status && !successWithNoMessage);
-                }
             }
             else {
                 let validityToolTip = this._validityToolTip;
-                if (this.status && !successWithNoMessage) {
+                if (validityResult.message) {
                     if (!validityToolTip) {
-                        this._validityToolTip = validityToolTip = new toolTip_1.default();
-                        validityToolTip.event = "focusin";
-                        validityToolTip.target = this.elem;
-                        validityToolTip.onShow = () => {
-                            if (!this.status || this.status === "success") {
-                                this._validityToolTip.hide();
-                            }
-                        };
-                        Object.assign(validityToolTip, this.validityToolTipOptions);
-                        dom.after(this.elem, validityToolTip.elem);
+                        this._validityToolTip = validityToolTip = this.createValidityToolTip();
                     }
                     const arrow = dom.first(validityToolTip.elem, ".x-arrow");
                     validityToolTip.elem.innerHTML = validityResult.message;
@@ -215,19 +231,28 @@ define(["require", "exports", "ux/dom", "ui/control", "ux/status", "ui/toolTip"]
             }
         }
         /**
-         * 控件状态。
+         * 当被子类重写时负责创建当前输入框的默认验证提示。
          */
-        get status() {
-            return status_1.getStatus(this.elem, this.statusClassPrefix);
-        }
-        set status(value) {
-            status_1.setStatus(this.elem, this.statusClassPrefix, value);
+        createValidityToolTip() {
+            const validityToolTip = new toolTip_1.default();
+            validityToolTip.event = "focusin";
+            validityToolTip.animation = "zoomIn";
+            validityToolTip.autoHide = false;
+            validityToolTip.onShow = () => {
+                if (!this.status || this.status === "success") {
+                    this._validityToolTip.hide();
+                }
+            };
+            validityToolTip.target = this.elem;
+            Object.assign(validityToolTip, this.validityToolTipOptions);
+            dom.after(this.elem, validityToolTip.elem);
+            return validityToolTip;
         }
         /**
          * 重置当前输入域。
          */
         reset() {
-            this.setCustomValidity({ valid: true, status: null, message: null });
+            this.setCustomValidity({ valid: true, status: null });
             this.value = this.defaultValue;
         }
         /**

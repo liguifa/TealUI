@@ -15,7 +15,7 @@ define(["require", "exports"], function (require, exports) {
                 timer = 0;
                 mouseEnter && mouseEnter(e);
             }, delay);
-        }, false);
+        });
         elem.addEventListener("mouseleave", e => {
             if (timer) {
                 clearTimeout(timer);
@@ -24,7 +24,7 @@ define(["require", "exports"], function (require, exports) {
             else {
                 mouseLeave && mouseLeave(e);
             }
-        }, false);
+        });
     }
     exports.default = hover;
 });

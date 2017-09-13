@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
     <meta name="version" content="0.0.1">
-    <title>汉字转拼音 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>汉字转拼音 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,18 +53,18 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 <li><a href="javascript:Doc.toggleDemoCodes()" accesskey="c"><i class="doc-icon">⅏</i>折叠源码</a></li>
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/pinyin/pinyin.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/pinyin" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/pinyin/pinyin.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/pinyin/pinyin.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=util/pinyin" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/util/pinyin/pinyin.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="汉字转拼音">
 <a href="#汉字转拼音" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>汉字转拼音<div class="doc-menubutton">
                         <small>util/pinyin</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import getPinYin, { dict, getPinYinOfChar } from \&quot;util/pinyin\&quot;;\n&quot;)">复制 <code>import "util/pinyin"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/pinyin\&quot;], function (pinyin_1) {\n\tvar getPinYin = pinyin_1.default;\n\tvar dict = pinyin_1.dict;\n\tvar getPinYinOfChar = pinyin_1.getPinYinOfChar;\n\n\n});\n&quot;)">复制 <code>require("util/pinyin")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/pinyin\&quot;&quot;)">复制 <code>"util/pinyin"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import getPinYin, { dict, getPinYinOfChar } from \&quot;util/pinyin\&quot;;\n&quot;); void 0">复制 <code>import "util/pinyin"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/pinyin\&quot;], function (pinyin_1) {\n\tvar getPinYin = pinyin_1.default;\n\tvar dict = pinyin_1.dict;\n\tvar getPinYinOfChar = pinyin_1.getPinYinOfChar;\n\n\n});\n&quot;); void 0">复制 <code>require("util/pinyin")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/pinyin\&quot;&quot;); void 0">复制 <code>"util/pinyin"</code></a></li>
                         </menu>
                     </div></h1>
 <p class="doc">查询汉字对应的拼音。</p>
@@ -94,7 +94,7 @@
                                 
                             </tr><tr id="api/dict">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/pinyin/pinyin.ts#L4-406" target="_blank" title="源码：util/pinyin/pinyin.ts，第 4 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/pinyin/pinyin.ts#L4-406" target="_blank" title="源码：util/pinyin/pinyin.ts，第 4 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>dict</code>
                                 <span class="doc-api-more">: <code>{ [pinyin: string]: string; }</code> = <code>{
@@ -520,7 +520,7 @@
                             
                         </tr><tr id="api/getPinYinOfChar">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/pinyin/pinyin.ts#L408-421" target="_blank" title="源码：util/pinyin/pinyin.ts，第 408 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/pinyin/pinyin.ts#L408-421" target="_blank" title="源码：util/pinyin/pinyin.ts，第 408 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getPinYinOfChar<i class="doc-tip doc-api-ellipsis">(value)</i><span class="doc-tip doc-api-more">(value:<code>string</code>):<code>string[]</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -566,7 +566,7 @@
                                 
                             </tr><tr id="api/getPinYin">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/pinyin/pinyin.ts#L423-435" target="_blank" title="源码：util/pinyin/pinyin.ts，第 423 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/pinyin/pinyin.ts#L423-435" target="_blank" title="源码：util/pinyin/pinyin.ts，第 423 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getPinYin<i class="doc-tip doc-api-ellipsis">(value)</i><span class="doc-tip doc-api-more">(value:<code>string</code>):<code>string[][]</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -612,7 +612,7 @@
                                 
                             </tr></table></div>
                         <nav id="doc_pager">
-                            <a href="../../../components/util/sqlike/" title="仿 SQL 引擎" id="doc_pager_prev"><i class="doc-icon">⮜</i> 仿 SQL 引擎</a>
+                            <a href="../../../components/util/bresenham/" title="贝塞尔曲线" id="doc_pager_prev"><i class="doc-icon">⮜</i> 贝塞尔曲线</a>
                             <a href="../../../components/util/searchPinYin/" title="拼音模糊搜索" id="doc_pager_next">拼音模糊搜索 <i class="doc-icon">⮞</i></a>
                         </nav>
 </article>
@@ -620,7 +620,7 @@
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pager (2) - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>pager (2) - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../../assets/doc/doc.css">
     <script src="../../../../components/require.js"></script>
@@ -13,8 +13,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../../" title="Teal" id="doc_logo_image"><img src="../../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -29,7 +29,7 @@
                     <li class="doc-navbar-active"><a href="../../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -51,8 +51,8 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ui/pagination/old/pager (2).ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ui/pagination/old/pager (2)" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/pagination/old/pager (2).ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=ui/pagination/old/pager (2)" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
                                 
                             </menu>
                         </aside>
@@ -60,9 +60,9 @@
 <a href="#pager-2" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>pager (2)<div class="doc-menubutton">
                         <small>ui/pagination/old/pager (2)</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import \&quot;ui/pagination/old/pager (2)\&quot;;\n&quot;)">复制 <code>import "ui/pagination/old/pager (2)"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/pagination/old/pager (2)\&quot;], function (pager (2)_1) {\n\n\n});\n&quot;)">复制 <code>require("ui/pagination/old/pager (2)")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/pagination/old/pager (2)\&quot;&quot;)">复制 <code>"ui/pagination/old/pager (2)"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import \&quot;ui/pagination/old/pager (2)\&quot;;\n&quot;); void 0">复制 <code>import "ui/pagination/old/pager (2)"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/pagination/old/pager (2)\&quot;], function (pager (2)_1) {\n\n\n});\n&quot;); void 0">复制 <code>require("ui/pagination/old/pager (2)")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/pagination/old/pager (2)\&quot;&quot;); void 0">复制 <code>"ui/pagination/old/pager (2)"</code></a></li>
                         </menu>
                     </div></h1>
 
@@ -72,7 +72,7 @@
                             
                         </tr><tr id="api/generatePager">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/pagination/old/pager (2).ts#L10-47" target="_blank" title="源码：ui/pagination/old/pager (2).ts，第 10 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/pagination/old/pager (2).ts#L10-47" target="_blank" title="源码：ui/pagination/old/pager (2).ts，第 10 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>generatePager<i class="doc-tip doc-api-ellipsis">(totalCount, pageSize, pagerCount, currentPage, href)</i><span class="doc-tip doc-api-more">(totalCount:<code>any</code>, pageSize:<code>any</code>, pagerCount:<code>any</code>, currentPage:<code>any</code>, href:<code>any</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -177,7 +177,7 @@
                                 
                             </tr><tr id="api/initPager">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/pagination/old/pager (2).ts#L55-84" target="_blank" title="源码：ui/pagination/old/pager (2).ts，第 55 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/pagination/old/pager (2).ts#L55-84" target="_blank" title="源码：ui/pagination/old/pager (2).ts，第 55 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>initPager<i class="doc-tip doc-api-ellipsis">(elem, totalCount, pageSize, pagerCount, currentPage, callback)</i><span class="doc-tip doc-api-more">(elem:<code>any</code>, totalCount:<code>any</code>, pageSize:<code>any</code>, pagerCount:<code>any</code>, currentPage:<code>any</code>, callback:<code>any</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -301,7 +301,7 @@
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

@@ -16,6 +16,9 @@ define(["require", "exports", "ui/control", "ui/checkBox", "ui/input", "ux/scrol
              * 处理表单提交事件。
              */
             this.handleSubmit = (e) => {
+                if (!this.action) {
+                    e.preventDefault();
+                }
                 if (this.willValidate) {
                     const result = this.reportValidity();
                     if (result instanceof Promise) {
@@ -218,20 +221,20 @@ define(["require", "exports", "ui/control", "ui/checkBox", "ui/input", "ux/scrol
                 return Promise.all(promises).then(() => result);
             }
             if (report && firstError) {
-                scroll_1.scrollIntoViewIfNeeded(firstError.elem, true);
+                scroll_1.scrollIntoViewIfNeeded(firstError.elem);
             }
             return result;
         }
     }
-    __decorate([
-        control_1.bind("")
-    ], Form.prototype, "body", void 0);
     __decorate([
         control_1.bind("", "action")
     ], Form.prototype, "action", void 0);
     __decorate([
         control_1.bind("", "method")
     ], Form.prototype, "method", void 0);
+    __decorate([
+        control_1.bind("")
+    ], Form.prototype, "body", void 0);
     exports.default = Form;
 });
 //# sourceMappingURL=form.js.map

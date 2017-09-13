@@ -12,5 +12,6 @@ define(["require", "exports", "ui/control", "ui/popup", "./toolTip.scss"], funct
     exports.default = ToolTip;
     ToolTip.prototype.event = "hover";
     ToolTip.prototype.align = "top";
+    ToolTip.prototype.animation = "zoomIn";
 });
 //# sourceMappingURL=toolTip.js.map

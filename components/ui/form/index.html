@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
     <meta name="version" content="0.0.1">
-    <title>表单布局 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>表单布局 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
-	<script>require(["typo/reset","typo/icon","typo/util","ui/tipBox","ui/textBox","ui/button","ui/form"])</script>
+	<script>require(["typo/reset","typo/icon","typo/util","typo/tip","ui/tipBox","ui/textBox","ui/button","ui/form"])</script>
 </head>
 <body>
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,27 +53,56 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 <li><a href="javascript:Doc.toggleDemoCodes()" accesskey="c"><i class="doc-icon">⅏</i>折叠源码</a></li>
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ui/form" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ui/form/form.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=ui/form" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/ui/form/form.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="表单布局">
 <a href="#表单布局" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>表单布局<div class="doc-menubutton">
                         <small>ui/form</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import Form, { FormValidityResult } from \&quot;ui/form\&quot;;\n&quot;)">复制 <code>import "ui/form"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/form\&quot;], function (form_1) {\n\tvar Form = form_1.default;\n\tvar FormValidityResult = form_1.FormValidityResult;\n\n\n});\n&quot;)">复制 <code>require("ui/form")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/form\&quot;&quot;)">复制 <code>"ui/form"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import Form, { FormValidityResult } from \&quot;ui/form\&quot;;\n&quot;); void 0">复制 <code>import "ui/form"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ui/form\&quot;], function (form_1) {\n\tvar Form = form_1.default;\n\tvar FormValidityResult = form_1.FormValidityResult;\n\n\n});\n&quot;); void 0">复制 <code>require("ui/form")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ui/form\&quot;&quot;); void 0">复制 <code>"ui/form"</code></a></li>
                         </menu>
                     </div></h1>
 <div class="doc-demo">
                     <div class="doc-demo-body" aria-label="示例" id="doc_demo_1">
 <script>
-define("doc_demo_1", ["require", "exports", "ui/control", "ui/form"], function (require, exports, control_1, form_1) {
+define("doc_demo_1", ["require", "exports", "ui/control", "ui/form", "ui/listBox", "ui/select", "ui/textBox"], function (require, exports, control_1, form_1, listBox_1, select_1, textBox_1) {
     Object.defineProperty(exports, "__esModule", { value: true });
-    control_1.render(doc_demo_1, control_1.VNode.create(form_1.default, { method: "GET", onValidate: () => false },
-        control_1.VNode.create("button", null, "\u63D0\u4EA4")));
+    control_1.render(doc_demo_1, control_1.VNode.create(form_1.default, { class: "x-form-horizontal", method: "GET", onValidate: () => false },
+        control_1.VNode.create("div", { class: "x-form-field" },
+            control_1.VNode.create("label", { class: "x-form-label" },
+                "\u8D26\u53F7\u540D",
+                control_1.VNode.create("span", { class: "x-tip x-tip-error" }, "*"),
+                ":"),
+            control_1.VNode.create("div", { class: "x-form-input" },
+                control_1.VNode.create(textBox_1.default, { name: "uid" })),
+            control_1.VNode.create("label", { class: "x-form-label" },
+                "\u8EAB\u4EFD\u8BC1",
+                control_1.VNode.create("span", { class: "x-tip x-tip-error" }, "*"),
+                ":"),
+            control_1.VNode.create("div", { class: "x-form-input" },
+                control_1.VNode.create(textBox_1.default, { name: "cid", pattern: /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}(\d|x|X)$/ }))),
+        control_1.VNode.create("div", { class: "x-form-field" },
+            control_1.VNode.create("label", { class: "x-form-label" },
+                "\u9009\u62E9\u6846",
+                control_1.VNode.create("span", { class: "x-tip x-tip-error" }, "*"),
+                ":"),
+            control_1.VNode.create("div", { class: "x-form-input" },
+                control_1.VNode.create(select_1.default, { name: "sb", placeholder: "请选择" },
+                    control_1.VNode.create(listBox_1.ListItem, null, "A"),
+                    control_1.VNode.create(listBox_1.ListItem, null, "B"),
+                    control_1.VNode.create(listBox_1.ListItem, null, "C"),
+                    control_1.VNode.create(listBox_1.ListItem, null, "D"))),
+            control_1.VNode.create("label", { class: "x-form-label" }),
+            control_1.VNode.create("div", { class: "x-form-input" },
+                control_1.VNode.create(Button, { type: "submit", class: "x-button-primary x-space" },
+                    control_1.VNode.create("i", { class: "x-icon" }, "\uD83D\uDD0D"),
+                    " \u67E5\u8BE2"),
+                control_1.VNode.create(Button, { type: "reset" }, "\u91CD\u7F6E")))));
 });
 
 var exports = require("doc_demo_1")
@@ -82,13 +111,39 @@ var exports = require("doc_demo_1")
 </div>
                     <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx"><span class="doc-code-keyword">import</span> { VNode, render } <span class="doc-code-keyword">from</span> <span class="doc-code-string">"ui/control"</span>;
 <span class="doc-code-keyword">import</span> Form <span class="doc-code-keyword">from</span> <span class="doc-code-string">"ui/form"</span>;
+<span class="doc-code-keyword">import</span> { ListItem } <span class="doc-code-keyword">from</span> <span class="doc-code-string">"ui/listBox"</span>;
+<span class="doc-code-keyword">import</span> Select <span class="doc-code-keyword">from</span> <span class="doc-code-string">"ui/select"</span>;
+<span class="doc-code-keyword">import</span> TextBox <span class="doc-code-keyword">from</span> <span class="doc-code-string">"ui/textBox"</span>;
 
 render(
     __root__,
-    &lt;Form method=<span class="doc-code-string">"GET"</span> onValidate={()=&gt;<span class="doc-code-literal">false</span>}&gt;
-        <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">button</span>&gt;</span>提交<span class="doc-code-tag">&lt;/<span class="doc-code-name">button</span>&gt;</span></span>
-    &lt;<span class="doc-code-regexp">/Form&gt;
-)</span></code></pre>
+    &lt;Form <span class="doc-code-class"><span class="doc-code-keyword">class</span></span>=<span class="doc-code-string">"x-form-horizontal"</span> method=<span class="doc-code-string">"GET"</span> onValidate={()=&gt;<span class="doc-code-literal">false</span>}&gt;
+        <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-form-field"</span>&gt;</span>
+            <span class="doc-code-tag">&lt;<span class="doc-code-name">label</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-form-label"</span>&gt;</span>账号名<span class="doc-code-tag">&lt;<span class="doc-code-name">span</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tip x-tip-error"</span>&gt;</span>*<span class="doc-code-tag">&lt;/<span class="doc-code-name">span</span>&gt;</span>:<span class="doc-code-tag">&lt;/<span class="doc-code-name">label</span>&gt;</span>
+            <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-form-input"</span>&gt;</span><span class="doc-code-tag">&lt;<span class="doc-code-name">TextBox</span> <span class="doc-code-attr">name</span>=<span class="doc-code-string">"uid"</span>&gt;</span><span class="doc-code-tag">&lt;/<span class="doc-code-name">TextBox</span>&gt;</span><span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+            
+            <span class="doc-code-tag">&lt;<span class="doc-code-name">label</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-form-label"</span>&gt;</span>身份证<span class="doc-code-tag">&lt;<span class="doc-code-name">span</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tip x-tip-error"</span>&gt;</span>*<span class="doc-code-tag">&lt;/<span class="doc-code-name">span</span>&gt;</span>:<span class="doc-code-tag">&lt;/<span class="doc-code-name">label</span>&gt;</span>
+            <span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-form-input"</span>&gt;</span><span class="doc-code-tag">&lt;<span class="doc-code-name">TextBox</span> <span class="doc-code-attr">name</span>=<span class="doc-code-string">"cid"</span> <span class="doc-code-attr">pattern</span>=<span class="doc-code-string">{/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}(\d|x|X)$/}</span>&gt;</span><span class="doc-code-tag">&lt;/<span class="doc-code-name">TextBox</span>&gt;</span><span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span>
+        <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span></span>
+        &lt;div <span class="doc-code-class"><span class="doc-code-keyword">class</span></span>=<span class="doc-code-string">"x-form-field"</span>&gt;
+            <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">label</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-form-label"</span>&gt;</span>选择框<span class="doc-code-tag">&lt;<span class="doc-code-name">span</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-tip x-tip-error"</span>&gt;</span>*<span class="doc-code-tag">&lt;/<span class="doc-code-name">span</span>&gt;</span>:<span class="doc-code-tag">&lt;/<span class="doc-code-name">label</span>&gt;</span></span>
+            &lt;div <span class="doc-code-class"><span class="doc-code-keyword">class</span></span>=<span class="doc-code-string">"x-form-input"</span>&gt;
+                <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">Select</span> <span class="doc-code-attr">name</span>=<span class="doc-code-string">"sb"</span> <span class="doc-code-attr">placeholder</span>=<span class="doc-code-string">"请选择"</span>&gt;</span>
+                    <span class="doc-code-tag">&lt;<span class="doc-code-name">ListItem</span>&gt;</span>A<span class="doc-code-tag">&lt;/<span class="doc-code-name">ListItem</span>&gt;</span>
+                    <span class="doc-code-tag">&lt;<span class="doc-code-name">ListItem</span>&gt;</span>B<span class="doc-code-tag">&lt;/<span class="doc-code-name">ListItem</span>&gt;</span>
+                    <span class="doc-code-tag">&lt;<span class="doc-code-name">ListItem</span>&gt;</span>C<span class="doc-code-tag">&lt;/<span class="doc-code-name">ListItem</span>&gt;</span>
+                    <span class="doc-code-tag">&lt;<span class="doc-code-name">ListItem</span>&gt;</span>D<span class="doc-code-tag">&lt;/<span class="doc-code-name">ListItem</span>&gt;</span>
+                <span class="doc-code-tag">&lt;/<span class="doc-code-name">Select</span>&gt;</span></span>
+            &lt;<span class="doc-code-regexp">/div&gt;
+
+            &lt;label class="x-form-label"&gt;&lt;/</span>label&gt;
+            <span class="xml"><span class="doc-code-tag">&lt;<span class="doc-code-name">div</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-form-input"</span>&gt;</span>
+                <span class="doc-code-tag">&lt;<span class="doc-code-name">Button</span> <span class="doc-code-attr">type</span>=<span class="doc-code-string">"submit"</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-button-primary x-space"</span>&gt;</span><span class="doc-code-tag">&lt;<span class="doc-code-name">i</span> <span class="doc-code-attr">class</span>=<span class="doc-code-string">"x-icon"</span>&gt;</span>🔍<span class="doc-code-tag">&lt;/<span class="doc-code-name">i</span>&gt;</span> 查询<span class="doc-code-tag">&lt;/<span class="doc-code-name">Button</span>&gt;</span>
+                <span class="doc-code-tag">&lt;<span class="doc-code-name">Button</span> <span class="doc-code-attr">type</span>=<span class="doc-code-string">"reset"</span>&gt;</span>重置<span class="doc-code-tag">&lt;/<span class="doc-code-name">Button</span>&gt;</span>
+            <span class="doc-code-tag">&lt;/<span class="doc-code-name">div</span>&gt;</span></span>
+        &lt;<span class="doc-code-regexp">/div&gt;
+    &lt;/</span>Form&gt;
+)</code></pre>
                 </div><dl id="doc_toc">
 	<dt><a href="#水平布局">水平布局</a></dt>
 	<dt><a href="#api">API</a></dt>
@@ -234,7 +289,7 @@ render(
 <p class="doc">另参考 <a href="validator.html">表单验证(validator)</a>。</p>
 </blockquote>
 
-                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/Form"><a href="#api/Form" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L7-269" target="_blank" title="源码：ui/form/form.tsx，第 7 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Form 类</h3><p>继承自：<code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></p><p class="doc">表示一个表单。</p>
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/Form"><a href="#api/Form" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L7-272" target="_blank" title="源码：ui/form/form.tsx，第 7 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Form 类</h3><p>继承自：<code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></p><p class="doc">表示一个表单。</p>
 <div class="doc doc-scrollable"><table class="doc-api"><tr>
                                 <th class="doc-api-property">字段</th>
                                 <th class="doc-api-type">类型</th>
@@ -242,7 +297,7 @@ render(
                                 <th class="doc-api-extends">继承自</th>
                             </tr><tr id="api/Form/action">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L20-23" target="_blank" title="源码：ui/form/form.tsx，第 20 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L14-17" target="_blank" title="源码：ui/form/form.tsx，第 14 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>action</code>
                                 <span class="doc-api-more">: <code>string</code></span>
@@ -262,7 +317,7 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/method">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L25-28" target="_blank" title="源码：ui/form/form.tsx，第 25 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L19-22" target="_blank" title="源码：ui/form/form.tsx，第 19 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>method</code>
                                 <span class="doc-api-more">: <code>string</code></span>
@@ -282,7 +337,7 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/async">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L30-33" target="_blank" title="源码：ui/form/form.tsx，第 30 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L30-33" target="_blank" title="源码：ui/form/form.tsx，第 30 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>async</code>
                                 <span class="doc-api-more">: <code>boolean</code></span>
@@ -302,7 +357,7 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/noValidate">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L35-38" target="_blank" title="源码：ui/form/form.tsx，第 35 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L35-38" target="_blank" title="源码：ui/form/form.tsx，第 35 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>noValidate</code>
                                 <span class="doc-api-more">: <code>boolean</code></span>
@@ -322,7 +377,7 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/data">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L40-43" target="_blank" title="源码：ui/form/form.tsx，第 40 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L40-43" target="_blank" title="源码：ui/form/form.tsx，第 40 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>data</code>
                                 <span class="doc-api-more">: <code>{ [key: string]: any; }</code></span>
@@ -342,7 +397,7 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/value">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L45-50" target="_blank" title="源码：ui/form/form.tsx，第 45 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L45-50" target="_blank" title="源码：ui/form/form.tsx，第 45 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>value</code>
                                 <span class="doc-api-more">: <code>{ [key: string]: any; }</code></span>
@@ -362,7 +417,7 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/disabled">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L93-98" target="_blank" title="源码：ui/form/form.tsx，第 93 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L93-98" target="_blank" title="源码：ui/form/form.tsx，第 93 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>disabled</code>
                                 <span class="doc-api-more">: <code>boolean</code></span>
@@ -382,7 +437,7 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/readOnly">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L103-108" target="_blank" title="源码：ui/form/form.tsx，第 103 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L103-108" target="_blank" title="源码：ui/form/form.tsx，第 103 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>readOnly</code>
                                 <span class="doc-api-more">: <code>boolean</code></span>
@@ -402,7 +457,7 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/inputs">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L113-118" target="_blank" title="源码：ui/form/form.tsx，第 113 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L113-118" target="_blank" title="源码：ui/form/form.tsx，第 113 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>inputs</code>
                                 <span class="doc-api-more">: <code><a href="../../../components/ui/input/index.html#api/Input">Input</a>[]</code></span>
@@ -422,7 +477,7 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/willValidate">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L120-125" target="_blank" title="源码：ui/form/form.tsx，第 120 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L120-125" target="_blank" title="源码：ui/form/form.tsx，第 120 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>willValidate</code>
                                 <span class="doc-api-more">: <code>boolean</code></span>
@@ -442,10 +497,13 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/handleSubmit">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L127-165" target="_blank" title="源码：ui/form/form.tsx，第 127 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L127-168" target="_blank" title="源码：ui/form/form.tsx，第 127 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>handleSubmit</code>
                                 <span class="doc-api-more">: <code>(e: Event) =&gt; void</code> = <code>(e: Event) =&gt; {
+        if (!this.action) {
+            e.preventDefault();
+        }
         if (this.willValidate) {
             const result = this.reportValidity();
             if (result instanceof Promise) {
@@ -497,7 +555,7 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/handleReset">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L167-172" target="_blank" title="源码：ui/form/form.tsx，第 167 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L170-175" target="_blank" title="源码：ui/form/form.tsx，第 170 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>handleReset</code>
                                 <span class="doc-api-more">: <code>(e: Event) =&gt; void</code> = <code>(e: Event) =&gt; {
@@ -519,7 +577,7 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/onValidate">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L188-193" target="_blank" title="源码：ui/form/form.tsx，第 188 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L191-196" target="_blank" title="源码：ui/form/form.tsx，第 191 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onValidate</code>
                                 <span class="doc-api-more">: <code>(result: <a href="#api/FormValidityResult">FormValidityResult</a>) =&gt; boolean | void | Promise&lt;boolean&gt;</code></span>
@@ -539,7 +597,7 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/onSubmit">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L195-198" target="_blank" title="源码：ui/form/form.tsx，第 195 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L198-201" target="_blank" title="源码：ui/form/form.tsx，第 198 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onSubmit</code>
                                 <span class="doc-api-more">: <code>(e: Event) =&gt; void</code></span>
@@ -559,7 +617,7 @@ render(
                             <td>—</td>
                         </tr><tr id="api/Form/elem">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L12-12" target="_blank" title="源码：ui/form/form.tsx，第 12 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L12-12" target="_blank" title="源码：ui/form/form.tsx，第 12 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>elem</code>
                                 <span class="doc-api-more">: <code>HTMLFormElement</code></span>
@@ -579,7 +637,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/body">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L18-18" target="_blank" title="源码：ui/form/form.tsx，第 18 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L28-28" target="_blank" title="源码：ui/form/form.tsx，第 28 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>body</code>
                                 <span class="doc-api-more">: <code>HTMLElement</code></span>
@@ -597,11 +655,11 @@ render(
 
                             </td>
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
-                        </tr><tr id="api/Form/state">
+                        </tr><tr id="api/Form/readyState">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L10-13" target="_blank" title="源码：ui/control/control.tsx，第 10 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L10-13" target="_blank" title="源码：ui/control/control.tsx，第 10 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
-                                <code>state</code>
+                                <code>readyState</code>
                                 <span class="doc-api-more">: <code><a href="../../../components/ui/control/index.html#api/ControlState">ControlState</a></code></span>
                                 <div class="doc doc-api-detail">
                                     <p class="doc">获取当前控件的状态。</p>
@@ -619,12 +677,12 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/vNode">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L63-66" target="_blank" title="源码：ui/control/control.tsx，第 63 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L63-66" target="_blank" title="源码：ui/control/control.tsx，第 63 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>vNode</code>
                                 <span class="doc-api-more">: <code><a href="../../../components/ui/control/index.html#api/VNode">VNode</a> | null</code></span>
                                 <div class="doc doc-api-detail">
-                                    <p class="doc">(保护的)当前控件关联的虚拟节点。</p>
+                                    <p class="doc">(保护的)获取当前控件关联的虚拟节点。</p>
 
                                     <h4>继承自</h4><p><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></p>
                                 </div>
@@ -633,16 +691,16 @@ render(
                                 <code><a href="../../../components/ui/control/index.html#api/VNode">VNode</a></code>
                             </td>
                             <td class="doc">
-                                <p class="doc">(保护的)当前控件关联的虚拟节点。</p>
+                                <p class="doc">(保护的)获取当前控件关联的虚拟节点。</p>
 
                             </td>
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/children">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L109-114" target="_blank" title="源码：ui/control/control.tsx，第 109 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L109-114" target="_blank" title="源码：ui/control/control.tsx，第 109 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>children</code>
-                                <span class="doc-api-more">: <code><a href="../../../components/ui/control/index.html#api/NodeLike">NodeLike</a>[]</code></span>
+                                <span class="doc-api-more">: <code><a href="../../../components/ui/control/index.html#api/VNode">VNode</a>[]</code></span>
                                 <div class="doc doc-api-detail">
                                     <p class="doc">内部子节点。</p>
 
@@ -650,7 +708,7 @@ render(
                                 </div>
                             </td>
                             <td>
-                                <code><a href="../../../components/ui/control/index.html#api/NodeLike">NodeLike</a>[]</code>
+                                <code><a href="../../../components/ui/control/index.html#api/VNode">VNode</a>[]</code>
                             </td>
                             <td class="doc">
                                 <p class="doc">内部子节点。</p>
@@ -659,7 +717,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/duration">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L190-193" target="_blank" title="源码：ui/control/control.tsx，第 190 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L190-193" target="_blank" title="源码：ui/control/control.tsx，第 190 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>duration</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -679,7 +737,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/hidden">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L195-198" target="_blank" title="源码：ui/control/control.tsx，第 195 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L195-198" target="_blank" title="源码：ui/control/control.tsx，第 195 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>hidden</code>
                                 <span class="doc-api-more">: <code>boolean</code></span>
@@ -699,7 +757,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/class">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L205-210" target="_blank" title="源码：ui/control/control.tsx，第 205 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L205-210" target="_blank" title="源码：ui/control/control.tsx，第 205 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>class</code>
                                 <span class="doc-api-more">: <code>string</code></span>
@@ -719,7 +777,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/style">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L221-224" target="_blank" title="源码：ui/control/control.tsx，第 221 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L221-224" target="_blank" title="源码：ui/control/control.tsx，第 221 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>style</code>
                                 <span class="doc-api-more">: <code>string | { [key: string]: string | number; }</code></span>
@@ -739,7 +797,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/id">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L226-229" target="_blank" title="源码：ui/control/control.tsx，第 226 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L226-229" target="_blank" title="源码：ui/control/control.tsx，第 226 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>id</code>
                                 <span class="doc-api-more">: <code>string</code></span>
@@ -759,7 +817,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onSelectStart">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L231-235" target="_blank" title="源码：ui/control/control.tsx，第 231 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L231-235" target="_blank" title="源码：ui/control/control.tsx，第 231 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onSelectStart</code>
                                 <span class="doc-api-more">: <code>(e: Event, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -779,7 +837,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onClick">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L237-241" target="_blank" title="源码：ui/control/control.tsx，第 237 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L237-241" target="_blank" title="源码：ui/control/control.tsx，第 237 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onClick</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -799,7 +857,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onAuxClick">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L243-247" target="_blank" title="源码：ui/control/control.tsx，第 243 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L243-247" target="_blank" title="源码：ui/control/control.tsx，第 243 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onAuxClick</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -819,7 +877,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onDblClick">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L249-253" target="_blank" title="源码：ui/control/control.tsx，第 249 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L249-253" target="_blank" title="源码：ui/control/control.tsx，第 249 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onDblClick</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -839,7 +897,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onContextMenu">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L255-259" target="_blank" title="源码：ui/control/control.tsx，第 255 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L255-259" target="_blank" title="源码：ui/control/control.tsx，第 255 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onContextMenu</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -859,7 +917,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onMouseDown">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L261-265" target="_blank" title="源码：ui/control/control.tsx，第 261 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L261-265" target="_blank" title="源码：ui/control/control.tsx，第 261 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseDown</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -879,7 +937,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onMouseUp">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L267-271" target="_blank" title="源码：ui/control/control.tsx，第 267 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L267-271" target="_blank" title="源码：ui/control/control.tsx，第 267 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseUp</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -899,7 +957,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onMouseOver">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L273-277" target="_blank" title="源码：ui/control/control.tsx，第 273 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L273-277" target="_blank" title="源码：ui/control/control.tsx，第 273 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseOver</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -919,7 +977,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onMouseOut">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L279-283" target="_blank" title="源码：ui/control/control.tsx，第 279 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L279-283" target="_blank" title="源码：ui/control/control.tsx，第 279 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseOut</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -939,7 +997,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onMouseEnter">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L285-289" target="_blank" title="源码：ui/control/control.tsx，第 285 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L285-289" target="_blank" title="源码：ui/control/control.tsx，第 285 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseEnter</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -959,7 +1017,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onMouseLeave">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L291-295" target="_blank" title="源码：ui/control/control.tsx，第 291 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L291-295" target="_blank" title="源码：ui/control/control.tsx，第 291 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseLeave</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -979,7 +1037,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onMouseMove">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L297-301" target="_blank" title="源码：ui/control/control.tsx，第 297 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L297-301" target="_blank" title="源码：ui/control/control.tsx，第 297 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onMouseMove</code>
                                 <span class="doc-api-more">: <code>(e: MouseEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -999,7 +1057,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onWheel">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L303-307" target="_blank" title="源码：ui/control/control.tsx，第 303 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L303-307" target="_blank" title="源码：ui/control/control.tsx，第 303 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onWheel</code>
                                 <span class="doc-api-more">: <code>(e: WheelEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1019,7 +1077,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onScroll">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L309-313" target="_blank" title="源码：ui/control/control.tsx，第 309 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L309-313" target="_blank" title="源码：ui/control/control.tsx，第 309 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onScroll</code>
                                 <span class="doc-api-more">: <code>(e: UIEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1039,7 +1097,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onTouchStart">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L315-319" target="_blank" title="源码：ui/control/control.tsx，第 315 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L315-319" target="_blank" title="源码：ui/control/control.tsx，第 315 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onTouchStart</code>
                                 <span class="doc-api-more">: <code>(e: TouchEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1059,7 +1117,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onTouchMove">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L321-325" target="_blank" title="源码：ui/control/control.tsx，第 321 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L321-325" target="_blank" title="源码：ui/control/control.tsx，第 321 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onTouchMove</code>
                                 <span class="doc-api-more">: <code>(e: TouchEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1079,7 +1137,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onTouchEnd">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L327-331" target="_blank" title="源码：ui/control/control.tsx，第 327 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L327-331" target="_blank" title="源码：ui/control/control.tsx，第 327 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onTouchEnd</code>
                                 <span class="doc-api-more">: <code>(e: TouchEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1099,7 +1157,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onTouchCancel">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L333-337" target="_blank" title="源码：ui/control/control.tsx，第 333 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L333-337" target="_blank" title="源码：ui/control/control.tsx，第 333 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onTouchCancel</code>
                                 <span class="doc-api-more">: <code>(e: TouchEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1119,7 +1177,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onPointerEnter">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L339-343" target="_blank" title="源码：ui/control/control.tsx，第 339 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L339-343" target="_blank" title="源码：ui/control/control.tsx，第 339 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerEnter</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1139,7 +1197,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onPointerLeave">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L345-349" target="_blank" title="源码：ui/control/control.tsx，第 345 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L345-349" target="_blank" title="源码：ui/control/control.tsx，第 345 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerLeave</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1159,7 +1217,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onPointerOver">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L351-355" target="_blank" title="源码：ui/control/control.tsx，第 351 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L351-355" target="_blank" title="源码：ui/control/control.tsx，第 351 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerOver</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1179,7 +1237,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onPointerOut">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L357-361" target="_blank" title="源码：ui/control/control.tsx，第 357 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L357-361" target="_blank" title="源码：ui/control/control.tsx，第 357 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerOut</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1199,7 +1257,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onPointerDown">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L363-367" target="_blank" title="源码：ui/control/control.tsx，第 363 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L363-367" target="_blank" title="源码：ui/control/control.tsx，第 363 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerDown</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1219,7 +1277,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onPointerMove">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L369-373" target="_blank" title="源码：ui/control/control.tsx，第 369 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L369-373" target="_blank" title="源码：ui/control/control.tsx，第 369 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerMove</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1239,7 +1297,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onPointerUp">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L375-379" target="_blank" title="源码：ui/control/control.tsx，第 375 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L375-379" target="_blank" title="源码：ui/control/control.tsx，第 375 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerUp</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1259,7 +1317,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onPointerCancel">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L381-385" target="_blank" title="源码：ui/control/control.tsx，第 381 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L381-385" target="_blank" title="源码：ui/control/control.tsx，第 381 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onPointerCancel</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1279,7 +1337,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onGotPointerCapture">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L387-391" target="_blank" title="源码：ui/control/control.tsx，第 387 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L387-391" target="_blank" title="源码：ui/control/control.tsx，第 387 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onGotPointerCapture</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1299,7 +1357,7 @@ render(
                             <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                         </tr><tr id="api/Form/onLostPointerCapture">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L393-397" target="_blank" title="源码：ui/control/control.tsx，第 393 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L393-397" target="_blank" title="源码：ui/control/control.tsx，第 393 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onLostPointerCapture</code>
                                 <span class="doc-api-more">: <code>(e: PointerEvent, sender: <a href="#api/Form">Form</a>) =&gt; void</code></span>
@@ -1323,7 +1381,7 @@ render(
                             <th class="doc-api-extends">继承自</th>
                         </tr><tr id="api/Form/getValue">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L65-91" target="_blank" title="源码：ui/form/form.tsx，第 65 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L65-91" target="_blank" title="源码：ui/form/form.tsx，第 65 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getValue<i class="doc-tip doc-api-ellipsis">(__0)</i><span class="doc-tip doc-api-more">(__0:<code>object</code>):<code>object</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1365,7 +1423,7 @@ render(
                                 <td>—</td>
                             </tr><tr id="api/Form/submit">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L174-179" target="_blank" title="源码：ui/form/form.tsx，第 174 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L177-182" target="_blank" title="源码：ui/form/form.tsx，第 177 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>submit<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1388,7 +1446,7 @@ render(
                                 <td>—</td>
                             </tr><tr id="api/Form/reset">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L181-186" target="_blank" title="源码：ui/form/form.tsx，第 181 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L184-189" target="_blank" title="源码：ui/form/form.tsx，第 184 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>reset<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1411,7 +1469,7 @@ render(
                                 <td>—</td>
                             </tr><tr id="api/Form/checkValidity">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L200-206" target="_blank" title="源码：ui/form/form.tsx，第 200 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L203-209" target="_blank" title="源码：ui/form/form.tsx，第 203 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>checkValidity<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code><a href="#api/FormValidityResult">FormValidityResult</a> | Promise&lt;<a href="#api/FormValidityResult">FormValidityResult</a>&gt;</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1435,7 +1493,7 @@ render(
                                 <td>—</td>
                             </tr><tr id="api/Form/reportValidity">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L208-213" target="_blank" title="源码：ui/form/form.tsx，第 208 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L211-216" target="_blank" title="源码：ui/form/form.tsx，第 211 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>reportValidity<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code><a href="#api/FormValidityResult">FormValidityResult</a> | Promise&lt;<a href="#api/FormValidityResult">FormValidityResult</a>&gt;</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1458,7 +1516,7 @@ render(
                                 <td>—</td>
                             </tr><tr id="api/Form/render">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L14-16" target="_blank" title="源码：ui/form/form.tsx，第 14 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L24-26" target="_blank" title="源码：ui/form/form.tsx，第 24 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>render<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>any</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1482,7 +1540,7 @@ render(
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Form/init">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L53-56" target="_blank" title="源码：ui/control/control.tsx，第 53 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L53-56" target="_blank" title="源码：ui/control/control.tsx，第 53 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>init<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1505,7 +1563,7 @@ render(
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Form/uninit">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L58-61" target="_blank" title="源码：ui/control/control.tsx，第 58 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L58-61" target="_blank" title="源码：ui/control/control.tsx，第 58 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>uninit<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1528,7 +1586,7 @@ render(
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Form/update">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L68-80" target="_blank" title="源码：ui/control/control.tsx，第 68 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L68-80" target="_blank" title="源码：ui/control/control.tsx，第 68 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>update<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1551,7 +1609,7 @@ render(
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Form/invalidate">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L90-102" target="_blank" title="源码：ui/control/control.tsx，第 90 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L90-102" target="_blank" title="源码：ui/control/control.tsx，第 90 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>invalidate<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1574,7 +1632,7 @@ render(
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Form/layout">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L130-133" target="_blank" title="源码：ui/control/control.tsx，第 130 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L130-133" target="_blank" title="源码：ui/control/control.tsx，第 130 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>layout<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1597,7 +1655,7 @@ render(
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Form/renderTo">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L135-156" target="_blank" title="源码：ui/control/control.tsx，第 135 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L135-156" target="_blank" title="源码：ui/control/control.tsx，第 135 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>renderTo<i class="doc-tip doc-api-ellipsis">(parent, ...)</i><span class="doc-tip doc-api-more">(parent:<code><a href="../../../components/ui/control/index.html#api/Control">Control</a> | Node</code>, refChild?:<code><a href="../../../components/ui/control/index.html#api/Control">Control</a> | Node</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1657,7 +1715,7 @@ render(
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Form/find">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L158-170" target="_blank" title="源码：ui/control/control.tsx，第 158 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L158-170" target="_blank" title="源码：ui/control/control.tsx，第 158 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>find<i class="doc-tip doc-api-ellipsis">(selector)</i><span class="doc-tip doc-api-more">(selector:<code>string</code>):<code>any</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1703,7 +1761,7 @@ render(
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
                             </tr><tr id="api/Form/query">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ui/control/control.tsx#L172-183" target="_blank" title="源码：ui/control/control.tsx，第 172 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/control/control.tsx#L172-183" target="_blank" title="源码：ui/control/control.tsx，第 172 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>query<i class="doc-tip doc-api-ellipsis">(selector)</i><span class="doc-tip doc-api-more">(selector:<code>string</code>):<code>any[]</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1747,7 +1805,7 @@ render(
 
                                 </td>
                                 <td><code><a href="../../../components/ui/control/index.html#api/Control">Control</a></code></td>
-                            </tr></table></div><h3 id="api/FormValidityResult"><a href="#api/FormValidityResult" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L271-291" target="_blank" title="源码：ui/form/form.tsx，第 271 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>FormValidityResult 接口</h3><p class="doc">表示一个表单验证结果。</p>
+                            </tr></table></div><h3 id="api/FormValidityResult"><a href="#api/FormValidityResult" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L274-294" target="_blank" title="源码：ui/form/form.tsx，第 274 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>FormValidityResult 接口</h3><p class="doc">表示一个表单验证结果。</p>
 <div class="doc doc-scrollable"><table class="doc-api"><tr>
                                 <th class="doc-api-property">字段</th>
                                 <th class="doc-api-type">类型</th>
@@ -1755,7 +1813,7 @@ render(
                                 
                             </tr><tr id="api/FormValidityResult/valid">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L276-279" target="_blank" title="源码：ui/form/form.tsx，第 276 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L279-282" target="_blank" title="源码：ui/form/form.tsx，第 279 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>valid</code>
                                 <span class="doc-api-more">: <code>boolean</code></span>
@@ -1775,7 +1833,7 @@ render(
                             
                         </tr><tr id="api/FormValidityResult/inputs">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L281-284" target="_blank" title="源码：ui/form/form.tsx，第 281 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L284-287" target="_blank" title="源码：ui/form/form.tsx，第 284 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>inputs</code>
                                 <span class="doc-api-more">: <code><a href="../../../components/ui/input/index.html#api/Input">Input</a>[]</code></span>
@@ -1795,7 +1853,7 @@ render(
                             
                         </tr><tr id="api/FormValidityResult/results">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ui/form/form.tsx#L286-289" target="_blank" title="源码：ui/form/form.tsx，第 286 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ui/form/form.tsx#L289-292" target="_blank" title="源码：ui/form/form.tsx，第 289 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>results</code>
                                 <span class="doc-api-more">: <code><a href="../../../components/ui/input/index.html#api/ValidityResult">ValidityResult</a>[]</code></span>
@@ -1815,15 +1873,15 @@ render(
                             
                         </tr></table></div>
                         <nav id="doc_pager">
-                            <a href="../../../components/ui/accordion/" title="手风琴" id="doc_pager_prev"><i class="doc-icon">⮜</i> 手风琴</a>
-                            <a href="../../../components/ui/textBox/" title="文本框" id="doc_pager_next">文本框 <i class="doc-icon">⮞</i></a>
+                            <a href="../../../components/ui/multiListBox/" title="多选列表框" id="doc_pager_prev"><i class="doc-icon">⮜</i> 多选列表框</a>
+                            <a href="../../../components/ui/checkBox/" title="复选框" id="doc_pager_next">复选框 <i class="doc-icon">⮞</i></a>
                         </nav>
 </article>
     </div>
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>
@@ -1832,7 +1890,7 @@ render(
     </footer>
     <script src="../../../assets/doc/doc.js"></script>
     <script>
-        Doc.init({"root":"../../..","dir":"components","active":"ui/form/","imports":["typo/reset","typo/icon","typo/util","ui/tipBox","ui/textBox","ui/button","ui/form"]})
+        Doc.init({"root":"../../..","dir":"components","active":"ui/form/","imports":["typo/reset","typo/icon","typo/util","typo/tip","ui/tipBox","ui/textBox","ui/button","ui/form"]})
     </script>
     <script src="../../../components/index.js"></script>
     <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>

@@ -8,9 +8,9 @@ define(["require", "exports"], function (require, exports) {
      * @example add("1", "2") // "3"
      */
     function add(x, y) {
+        const result = [];
         const m = x.split("").reverse();
         const n = y.split("").reverse();
-        const result = [];
         let s = 0;
         for (let i = 0; i < x.length || i < y.length; i++) {
             const t = (+m[i] || 0) + (+n[i] || 0) + s;
@@ -29,10 +29,10 @@ define(["require", "exports"], function (require, exports) {
      * @example mul("1", "2") // "2"
      */
     function mul(x, y) {
+        let result = "0";
         const p = x.match(/\d{1,4}/g).reverse();
         const q = y.match(/\d{1,4}/g).reverse();
         let f1 = 0;
-        let result = "0";
         for (const pi of p) {
             let f2 = 0;
             for (const qi of q) {

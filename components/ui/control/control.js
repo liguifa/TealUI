@@ -14,13 +14,13 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
          * 关联的元素。
          */
         get elem() {
-            if (this.state !== 4 /* rendered */) {
+            if (this.readyState !== 4 /* rendered */) {
                 this.update();
             }
             return this._elem;
         }
         set elem(value) {
-            this.state = 4 /* rendered */;
+            this.readyState = 4 /* rendered */;
             const oldElem = this._elem;
             if (value != oldElem) {
                 if (oldElem) {
@@ -55,8 +55,8 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
          * 重新渲染当前控件。
          */
         update() {
-            if (this.state !== 3 /* rendering */) {
-                this.state = 3 /* rendering */;
+            if (this.readyState !== 3 /* rendering */) {
+                this.readyState = 3 /* rendering */;
                 const oldVNode = this.vNode;
                 const newVNode = this.vNode = this.render() || VNode.create(null, "");
                 VNode.sync(newVNode, oldVNode);
@@ -75,10 +75,10 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
          * 使当前控件无效并在下一帧重新渲染。
          */
         invalidate() {
-            if (this.state === 4 /* rendered */) {
-                this.state = 2 /* invalidated */;
+            if (this.readyState === 4 /* rendered */) {
+                this.readyState = 2 /* invalidated */;
                 nextTick_1.default(() => {
-                    if (this.state === 2 /* invalidated */) {
+                    if (this.readyState === 2 /* invalidated */) {
                         this.update();
                     }
                 });
@@ -267,8 +267,6 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
         bind("", "onLostPointerCapture")
     ], Control.prototype, "onLostPointerCapture", void 0);
     exports.default = Control;
-    Control.prototype.state = 1 /* initial */;
-    Control.prototype.duration = 200;
     /**
      * 表示控件的状态。
      */
@@ -291,6 +289,8 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
          */
         ControlState[ControlState["rendered"] = 4] = "rendered";
     })(ControlState = exports.ControlState || (exports.ControlState = {}));
+    Control.prototype.readyState = 1 /* initial */;
+    Control.prototype.duration = 200;
     const emptyArray = Object.freeze([]);
     /**
      * 表示一个虚拟节点。
@@ -329,12 +329,12 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
          * 创建一个虚拟节点。
          * @param type 节点类型。如果是 null 表示文本节点；如果是字符串表示 HTML 原生节点；如果是函数表示控件。
          * @param props 节点属性。
-         * @param childNodes 所有子内容。
+         * @param children 所有子内容。
          * @return 返回创建的虚拟节点。
          */
-        static create(type, props, ...childNodes) {
+        static create(type, props, ...children) {
             const result = new VNode(type, props, []);
-            result.append(childNodes);
+            result.append(children);
             return result;
         }
         /**
@@ -367,7 +367,7 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
                                 const propType = VNode.getPropType(type, prop);
                                 if (propType === 1 /* state */) {
                                     delete data(result)[prop];
-                                    result.state = forceSetSetters = 2 /* invalidated */;
+                                    result.readyState = forceSetSetters = 2 /* invalidated */;
                                 }
                                 else if (propType === 2 /* setter */) {
                                     setters = setters || [];
@@ -376,7 +376,6 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
                                 }
                                 else {
                                     delete result[prop];
-                                    result.state = forceSetSetters = 2 /* invalidated */;
                                 }
                             }
                         }
@@ -387,7 +386,7 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
                         if (propType === 1 /* state */) {
                             if (changed || !oldVNode.props || value !== oldVNode.props[prop]) {
                                 data(result)[prop] = value;
-                                result.state = forceSetSetters = 2 /* invalidated */;
+                                result.readyState = forceSetSetters = 2 /* invalidated */;
                             }
                         }
                         else if (propType === 2 /* setter */) {
@@ -397,7 +396,6 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
                         else {
                             if (changed || !oldVNode.props || value !== oldVNode.props[prop]) {
                                 result[prop] = value;
-                                result.state = forceSetSetters = 2 /* invalidated */;
                             }
                         }
                     }
@@ -407,10 +405,10 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
                     body = result.body;
                     if (!body && (newVNode.children.length || !changed && oldVNode.children.length)) {
                         data(result).children = newVNode.children;
-                        result.state = forceSetSetters = 2 /* invalidated */;
+                        result.readyState = forceSetSetters = 2 /* invalidated */;
                     }
                     // 如果之前修改了属性则重新渲染当前控件。
-                    if (result.state !== 4 /* rendered */) {
+                    if (result.readyState !== 4 /* rendered */) {
                         result.update();
                     }
                 }
@@ -543,16 +541,16 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
          * @param target 要获取的节点。
          * @param prop 要获取的属性名。
          * @param args 附加参数。部分属性需要附加参数。
-         * @param scope 事件作用域。
+         * @param root 事件作用域。
          * @return 返回属性值。
          */
-        static get(target, prop, args, scope) {
+        static get(target, prop, args, root) {
             const hook = VNode.props[prop];
             if (hook) {
                 return hook.get(target, args);
             }
             if (/^on[^a-z]/.test(prop)) {
-                return data(scope || target)[args ? prop + " " + args : prop];
+                return data(root || target)[args ? prop + " " + args : prop];
             }
             return dom.getAttr(target, prop);
         }
@@ -562,22 +560,22 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
          * @param prop 要设置的属性名。
          * @param value 要设置的属性值。
          * @param args 附加参数。部分属性需要附加参数。
-         * @param scope 事件作用域。
+         * @param root 事件作用域。
          */
-        static set(target, prop, value = null, args, scope) {
+        static set(target, prop, value = null, args, root) {
             const hook = VNode.props[prop];
             if (hook) {
                 hook.set(target, value, args);
             }
             else if (/^on[^a-z]/.test(prop)) {
                 const eventName = prop.slice(2).toLowerCase();
-                const datas = data(scope || target);
+                const datas = data(root || target);
                 const key = args ? prop + " " + args : prop;
                 if (datas[key]) {
-                    dom.off(target, eventName, args || "", datas[key], scope || target.__control__);
+                    dom.off(target, eventName, args || "", datas[key], root || target.__control__);
                 }
                 if ((datas[key] = value)) {
-                    dom.on(target, eventName, args || "", value, scope || target.__control__);
+                    dom.on(target, eventName, args || "", value, root || target.__control__);
                 }
             }
             else {
@@ -755,10 +753,10 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
                 });
     }
     exports.bind = bind;
-    function getBindProp(target, prop, args, scope) {
+    function getBindProp(target, prop, args, root) {
         if (target != null) {
             if (target instanceof Node) {
-                return VNode.get(target, prop, args, scope);
+                return VNode.get(target, prop, args, root);
             }
             let value = target[prop];
             if (value && /^on[^a-z]/.test(prop)) {
@@ -767,19 +765,19 @@ define(["require", "exports", "ux/dom", "ux/nextTick"], function (require, expor
             return value;
         }
     }
-    function setBindProp(target, prop, value, args, scope) {
+    function setBindProp(target, prop, value, args, root) {
         if (target != null) {
             if (target instanceof Node) {
-                VNode.set(target, prop, value, args, scope);
+                VNode.set(target, prop, value, args, root);
             }
             else {
                 if (value && /^on[^a-z]/.test(prop)) {
                     const original = value;
                     value = function () {
                         if (arguments[arguments.length - 1] === target) {
-                            arguments[arguments.length - 1] = scope;
+                            arguments[arguments.length - 1] = root;
                         }
-                        return original.apply(scope, arguments);
+                        return original.apply(root, arguments);
                     };
                     value.__original__ = original;
                 }

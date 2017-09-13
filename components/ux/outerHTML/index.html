@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
-    <meta name="version" content="0.0.1">
-    <title>外部 HTML - TealUI | 打造小而全、精而美的开源组件库</title>
+    <meta name="version" content="0.0.2">
+    <title>外部 HTML - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,21 +53,21 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ux/outerHTML/outerHTML.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ux/outerHTML" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ux/outerHTML/outerHTML.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/outerHTML/outerHTML.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=ux/outerHTML" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/ux/outerHTML/outerHTML.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="外部-html">
 <a href="#外部-html" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>外部 HTML<div class="doc-menubutton">
                         <small>ux/outerHTML</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import { getOuterHTML, setOuterHTML } from \&quot;ux/outerHTML\&quot;;\n&quot;)">复制 <code>import "ux/outerHTML"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/outerHTML\&quot;], function (outerHTML_1) {\n\tvar getOuterHTML = outerHTML_1.getOuterHTML;\n\tvar setOuterHTML = outerHTML_1.setOuterHTML;\n\n\n});\n&quot;)">复制 <code>require("ux/outerHTML")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/outerHTML\&quot;&quot;)">复制 <code>"ux/outerHTML"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import { getOuterHTML, setOuterHTML } from \&quot;ux/outerHTML\&quot;;\n&quot;); void 0">复制 <code>import "ux/outerHTML"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/outerHTML\&quot;], function (outerHTML_1) {\n\tvar getOuterHTML = outerHTML_1.getOuterHTML;\n\tvar setOuterHTML = outerHTML_1.setOuterHTML;\n\n\n});\n&quot;); void 0">复制 <code>require("ux/outerHTML")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/outerHTML\&quot;&quot;); void 0">复制 <code>"ux/outerHTML"</code></a></li>
                         </menu>
                     </div></h1>
-<p class="doc">实现 IE 特有的 <code>outerHTML</code> 接口。</p>
+<p class="doc">替换节点为指定的 HTML 片段。</p>
 
                         <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><div class="doc doc-scrollable"><table class="doc-api"><tr>
                             <th class="doc-api-method">函数</th>
@@ -75,11 +75,11 @@
                             
                         </tr><tr id="api/getOuterHTML">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/outerHTML/outerHTML.ts#L1-9" target="_blank" title="源码：ux/outerHTML/outerHTML.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/outerHTML/outerHTML.ts#L1-9" target="_blank" title="源码：ux/outerHTML/outerHTML.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>getOuterHTML<i class="doc-tip doc-api-ellipsis">(elem)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
-                                        <p class="doc">获取外部 HTML。</p>
+                                        <p class="doc">获取节点的外部 HTML。</p>
 
                 
                 
@@ -114,17 +114,17 @@
                                     </div>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">获取外部 HTML。</p>
+                                    <p class="doc">获取节点的外部 HTML。</p>
 
                                 </td>
                                 
                             </tr><tr id="api/setOuterHTML">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/outerHTML/outerHTML.ts#L11-25" target="_blank" title="源码：ux/outerHTML/outerHTML.ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/outerHTML/outerHTML.ts#L11-25" target="_blank" title="源码：ux/outerHTML/outerHTML.ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>setOuterHTML<i class="doc-tip doc-api-ellipsis">(elem, value)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, value:<code>string</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
-                                        <p class="doc">设置外部 HTML。</p>
+                                        <p class="doc">设置节点的外部 HTML。</p>
 
                 
                 
@@ -174,13 +174,13 @@
                                     </div>
                                 </td>
                                 <td class="doc">
-                                    <p class="doc">设置外部 HTML。</p>
+                                    <p class="doc">设置节点的外部 HTML。</p>
 
                                 </td>
                                 
                             </tr></table></div>
                         <nav id="doc_pager">
-                            <a href="../../../components/ux/status/" title="状态" id="doc_pager_prev"><i class="doc-icon">⮜</i> 状态</a>
+                            <a href="../../../components/ux/active/" title="激活样式" id="doc_pager_prev"><i class="doc-icon">⮜</i> 激活样式</a>
                             <a href="../../../components/ux/keyPress/" title="键盘按下事件" id="doc_pager_next">键盘按下事件 <i class="doc-icon">⮞</i></a>
                         </nav>
 </article>
@@ -188,7 +188,7 @@
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

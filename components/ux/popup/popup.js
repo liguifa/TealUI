@@ -8,96 +8,94 @@ define(["require", "exports", "ux/dom", "ux/pin"], function (require, exports, d
          * 启用弹层。
          */
         enable() {
-            const target = this.target;
-            let event = this.event;
-            switch (event) {
-                case "focusin":
-                    event = "focus";
-                // fall through
-                case "click":
-                case "auxclick":
-                case "pointerdown":
-                case "pointerup":
-                    dom.on(target, event, this._handle = () => {
-                        this.toggle();
-                    });
-                    break;
-                case "pointermove":
-                    dom.on(target, event, this._handle = (e) => {
+            if (!this._handle || this._handle1) {
+                const target = this.target;
+                let event = this.event;
+                switch (event) {
+                    case "click":
+                    case "dblclick":
+                    case "auxclick":
+                    case "pointerdown":
+                    case "pointerup":
+                        dom.on(target, event, this._handle = () => {
+                            this.toggle();
+                        });
+                        break;
+                    case "pointermove":
                         this.align = "rr-bb";
-                        this.pinTarget = {
-                            x: e.pageX,
-                            y: e.pageY,
-                            width: 16,
-                            height: 16
-                        };
-                        this.realign();
-                    });
-                // fall through
-                case "pointerenter":
-                case "hover":
-                    let showTimer;
-                    let hideTimer;
-                    const show = this._handle1 = (e) => {
-                        // 如果正在隐藏弹层，则放弃隐藏保持打开状态。
-                        if (hideTimer) {
-                            clearTimeout(hideTimer);
-                            hideTimer = 0;
-                        }
-                        else {
-                            // 否则倒计时显示。
-                            showTimer = showTimer || setTimeout(() => {
-                                showTimer = 0;
-                                this.target = target;
-                                this.show();
-                            }, this.delay);
-                        }
-                    };
-                    const hide = this._handle2 = (e) => {
-                        // 如果正在打开弹层，则放弃打开保持关闭状态。
-                        if (showTimer) {
-                            clearTimeout(showTimer);
-                            showTimer = 0;
-                        }
-                        else {
-                            // 否则倒计时开始关闭。
-                            hideTimer = hideTimer || setTimeout(() => {
-                                hideTimer = 0;
-                                this.hide();
-                            }, this.delay);
-                        }
-                    };
-                    dom.on(target, "pointerenter", show);
-                    dom.on(target, "pointerleave", hide);
-                    // pointerenter 事件在指针移到目标元素后不消失。
-                    if (event === "pointerenter") {
-                        dom.on(this.elem, "pointerenter", show);
-                        dom.on(this.elem, "pointerleave", hide);
-                    }
-                    break;
-                case "focus":
-                    dom.on(target, "focus", this.show, this);
-                    dom.on(target, "blur", this.hide, this);
-                    break;
-                case "active":
-                    dom.on(target, "pointerdown", this.show, this);
-                    dom.on(document, "pointerup", this.hide, this);
-                    break;
-                case "contextmenu":
-                    dom.on(target, event, this._handle = (e) => {
-                        if (e.which === 3) {
-                            e.preventDefault();
-                            this.align = "rr-bb";
+                        dom.on(target, event, this._handle = (e) => {
                             this.pinTarget = {
                                 x: e.pageX,
                                 y: e.pageY,
-                                width: 1,
-                                height: 1
+                                width: 16,
+                                height: 16
                             };
-                            this.show();
+                            this.realign();
+                        });
+                    // fall through
+                    case "pointerenter":
+                    case "hover":
+                        let showTimer;
+                        let hideTimer;
+                        const show = this._handle1 = (e) => {
+                            if (hideTimer) {
+                                clearTimeout(hideTimer);
+                                hideTimer = 0;
+                            }
+                            else if (!showTimer) {
+                                showTimer = setTimeout(() => {
+                                    showTimer = 0;
+                                    this.show();
+                                }, this.delay);
+                            }
+                        };
+                        const hide = this._handle2 = (e) => {
+                            if (showTimer) {
+                                clearTimeout(showTimer);
+                                showTimer = 0;
+                            }
+                            else if (!hideTimer) {
+                                hideTimer = setTimeout(() => {
+                                    hideTimer = 0;
+                                    this.hide();
+                                }, this.delay);
+                            }
+                        };
+                        dom.on(target, "pointerenter", show);
+                        dom.on(target, "pointerleave", hide);
+                        // pointerenter 事件在指针移到目标元素后不消失。
+                        if (event === "pointerenter") {
+                            dom.on(this.elem, "pointerenter", show);
+                            dom.on(this.elem, "pointerleave", hide);
                         }
-                    });
-                    break;
+                        break;
+                    case "focusin":
+                        dom.on(target, event, this._handle = this.show, this);
+                        break;
+                    case "focus":
+                        dom.on(target, "focus", this._handle1 = this.show, this);
+                        dom.on(target, "blur", this._handle2 = this.hide, this);
+                        break;
+                    case "active":
+                        dom.on(target, "pointerdown", this._handle1 = this.show, this);
+                        dom.on(document, "pointerup", this._handle2 = this.hide, this);
+                        break;
+                    case "contextmenu":
+                        this.align = "rr-bb";
+                        dom.on(target, event, this._handle = (e) => {
+                            if (e.which === 3) {
+                                e.preventDefault();
+                                this.pinTarget = {
+                                    x: e.pageX,
+                                    y: e.pageY,
+                                    width: 1,
+                                    height: 1
+                                };
+                                this.show();
+                            }
+                        });
+                        break;
+                }
             }
         }
         /**
@@ -107,10 +105,8 @@ define(["require", "exports", "ux/dom", "ux/pin"], function (require, exports, d
             const target = this.target;
             let event = this.event;
             switch (event) {
-                case "focusin":
-                    event = "focus";
-                // fall through
                 case "click":
+                case "dblclick":
                 case "auxclick":
                 case "pointerdown":
                 case "pointerup":
@@ -118,28 +114,36 @@ define(["require", "exports", "ux/dom", "ux/pin"], function (require, exports, d
                     dom.off(target, event, this._handle);
                     delete this._handle;
                     break;
-                case "pointerenter":
-                    dom.off(this.elem, "pointerenter", this._handle1);
-                    dom.off(this.elem, "pointerleave", this._handle2);
-                // fall through
-                case "hover":
                 case "pointermove":
+                    dom.off(target, event, this._handle);
+                    delete this._handle;
+                // fall through
+                case "pointerenter":
+                case "hover":
                     dom.off(target, "pointerenter", this._handle1);
                     dom.off(target, "pointerleave", this._handle2);
-                    if (event === "pointermove") {
-                        dom.off(target, event, this._handle);
+                    if (event === "pointerenter") {
+                        dom.off(this.elem, "pointerenter", this._handle1);
+                        dom.off(this.elem, "pointerleave", this._handle2);
                     }
                     delete this._handle1;
                     delete this._handle2;
+                    break;
+                case "focusin":
+                    dom.off(target, event, this._handle, this);
                     delete this._handle;
                     break;
                 case "focus":
-                    dom.off(target, "focus", this.show, this);
-                    dom.off(target, "blur", this.hide, this);
+                    dom.off(target, "focus", this._handle1, this);
+                    dom.off(target, "blur", this._handle2, this);
+                    delete this._handle1;
+                    delete this._handle2;
                     break;
                 case "active":
-                    dom.off(target, "pointerdown", this.show, this);
-                    dom.off(document, "pointerup", this.hide, this);
+                    dom.off(target, "pointerdown", this._handle1, this);
+                    dom.off(document, "pointerup", this._handle2, this);
+                    delete this._handle1;
+                    delete this._handle2;
                     break;
             }
         }
@@ -151,15 +155,21 @@ define(["require", "exports", "ux/dom", "ux/pin"], function (require, exports, d
          * 显示当前浮层。
          */
         show() {
-            if (this.hidden) {
-                dom.show(this.elem);
-                this.realign();
-                dom.show(this.elem, this.animation, undefined, this.duration, undefined, this.target);
+            const toggle = this._toggle !== undefined ? this._toggle : !this.hidden;
+            if (toggle !== true) {
+                this._toggle = true;
                 this.autoHide && dom.on(document, "pointerdown", this.handleDocumentPointerDown, this);
                 this.autoScroll && dom.on(document, "scroll", this.handleDocumentScroll, this);
                 this.onShow && this.onShow(this);
+                if (this._toggle === true) {
+                    dom.show(this.elem);
+                    this.realign();
+                    dom.show(this.elem, this.animation, () => {
+                        delete this._toggle;
+                    }, this.duration, this.timingFunction, this.target);
+                }
             }
-            else {
+            else if (this._toggle === undefined) {
                 this.realign();
             }
         }
@@ -167,12 +177,17 @@ define(["require", "exports", "ux/dom", "ux/pin"], function (require, exports, d
          * 隐藏当前浮层。
          */
         hide() {
-            if (!this.hidden) {
-                dom.hide(this.elem, this.animation, () => {
-                    this.onHide && this.onHide(this);
-                }, this.duration, undefined, this.target);
+            const toggle = this._toggle !== undefined ? this._toggle : !this.hidden;
+            if (toggle !== false) {
+                this._toggle = false;
                 dom.off(document, "pointerdown", this.handleDocumentPointerDown, this);
                 dom.off(document, "scroll", this.handleDocumentScroll, this);
+                this.onHide && this.onHide(this);
+                if (this._toggle === false) {
+                    dom.hide(this.elem, this.hideAnimation || this.animation, () => {
+                        delete this._toggle;
+                    }, this.hideDuration != undefined ? this.hideDuration : this.duration, this.hideTimingFunction || this.timingFunction, this.target);
+                }
             }
         }
         /**

@@ -3,10 +3,10 @@ define(["require", "exports"], function (require, exports) {
     /**
      * 设置哈希值改变事件的回调。
      * @param callback 哈希值改变的事件回调。
-     * @example hashChange(window, function(hash){ alert("哈希值改变为：" + hash); });
+     * @example hashChange(function(){ alert("哈希值改变为：" + hash()); });
      */
     function hashChange(callback) {
-        window.addEventListener("hashchange", callback, false);
+        window.addEventListener("hashchange", callback);
         callback.call(window);
         // 并不是所有浏览器都支持 hashchange 事件，
         // 当浏览器不支持的时候，使用自定义的监视器，每隔50ms监听当前hash是否被修改。
@@ -23,8 +23,8 @@ define(["require", "exports"], function (require, exports) {
     }
     exports.default = hashChange;
     /**
-     * 获取当前页面的哈希值。
-     * @return 返回当前页面的哈希值。
+     * 获取当前页面的哈希值（不含 # 号）。
+     * @return 返回当前页面的哈希值。如果不存在则返回 null。
      * @example hash()
      */
     function hash() {

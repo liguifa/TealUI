@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
     <meta name="version" content="0.0.1">
-    <title>字符串扩展 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>字符串扩展 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,18 +53,18 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/string" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/string/string.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=util/string" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/util/string/string.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="字符串扩展">
 <a href="#字符串扩展" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>字符串扩展<div class="doc-menubutton">
                         <small>util/string</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import { format, isString, ellipsis, ellipsisByWord, containsWord, removeLeadingWhiteSpaces, replaceAll, clean, byteLength, unique, capitalize, uncapitalize, toCamelCase, left, right } from \&quot;util/string\&quot;;\n&quot;)">复制 <code>import "util/string"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/string\&quot;], function (string_1) {\n\tvar format = string_1.format;\n\tvar isString = string_1.isString;\n\tvar ellipsis = string_1.ellipsis;\n\tvar ellipsisByWord = string_1.ellipsisByWord;\n\tvar containsWord = string_1.containsWord;\n\tvar removeLeadingWhiteSpaces = string_1.removeLeadingWhiteSpaces;\n\tvar replaceAll = string_1.replaceAll;\n\tvar clean = string_1.clean;\n\tvar byteLength = string_1.byteLength;\n\tvar unique = string_1.unique;\n\tvar capitalize = string_1.capitalize;\n\tvar uncapitalize = string_1.uncapitalize;\n\tvar toCamelCase = string_1.toCamelCase;\n\tvar left = string_1.left;\n\tvar right = string_1.right;\n\n\n});\n&quot;)">复制 <code>require("util/string")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/string\&quot;&quot;)">复制 <code>"util/string"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import { format, isString, ellipsis, ellipsisByWord, containsWord, removeLeadingWhiteSpaces, replaceAll, clean, byteLength, unique, capitalize, uncapitalize, toCamelCase, left, right } from \&quot;util/string\&quot;;\n&quot;); void 0">复制 <code>import "util/string"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/string\&quot;], function (string_1) {\n\tvar format = string_1.format;\n\tvar isString = string_1.isString;\n\tvar ellipsis = string_1.ellipsis;\n\tvar ellipsisByWord = string_1.ellipsisByWord;\n\tvar containsWord = string_1.containsWord;\n\tvar removeLeadingWhiteSpaces = string_1.removeLeadingWhiteSpaces;\n\tvar replaceAll = string_1.replaceAll;\n\tvar clean = string_1.clean;\n\tvar byteLength = string_1.byteLength;\n\tvar unique = string_1.unique;\n\tvar capitalize = string_1.capitalize;\n\tvar uncapitalize = string_1.uncapitalize;\n\tvar toCamelCase = string_1.toCamelCase;\n\tvar left = string_1.left;\n\tvar right = string_1.right;\n\n\n});\n&quot;); void 0">复制 <code>require("util/string")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/string\&quot;&quot;); void 0">复制 <code>"util/string"</code></a></li>
                         </menu>
                     </div></h1>
 <p class="doc">提供 JavaScript 内置对象 String 的扩展接口。</p>
@@ -75,7 +75,7 @@
                             
                         </tr><tr id="api/format">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L1-28" target="_blank" title="源码：util/string/string.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L1-28" target="_blank" title="源码：util/string/string.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>format<i class="doc-tip doc-api-ellipsis">(formatString, ...)</i><span class="doc-tip doc-api-more">(formatString:<code>string</code>, ...args:<code>any[]</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -170,7 +170,7 @@
                                 
                             </tr><tr id="api/isString">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L30-38" target="_blank" title="源码：util/string/string.ts，第 30 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L30-38" target="_blank" title="源码：util/string/string.ts，第 30 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>isString<i class="doc-tip doc-api-ellipsis">(obj)</i><span class="doc-tip doc-api-more">(obj:<code>any</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -216,7 +216,7 @@
                                 
                             </tr><tr id="api/ellipsis">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L40-50" target="_blank" title="源码：util/string/string.ts，第 40 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L40-50" target="_blank" title="源码：util/string/string.ts，第 40 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>ellipsis<i class="doc-tip doc-api-ellipsis">(str, length)</i><span class="doc-tip doc-api-more">(str:<code>string</code>, length:<code>number</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -278,7 +278,7 @@
                                 
                             </tr><tr id="api/ellipsisByWord">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L52-71" target="_blank" title="源码：util/string/string.ts，第 52 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L52-71" target="_blank" title="源码：util/string/string.ts，第 52 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>ellipsisByWord<i class="doc-tip doc-api-ellipsis">(str, length)</i><span class="doc-tip doc-api-more">(str:<code>string</code>, length:<code>number</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -339,7 +339,7 @@
                                 
                             </tr><tr id="api/containsWord">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L73-83" target="_blank" title="源码：util/string/string.ts，第 73 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L73-83" target="_blank" title="源码：util/string/string.ts，第 73 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>containsWord<i class="doc-tip doc-api-ellipsis">(str, value, ...)</i><span class="doc-tip doc-api-more">(str:<code>string</code>, value:<code>string</code>, separator?:<code>string</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -414,7 +414,7 @@
                                 
                             </tr><tr id="api/removeLeadingWhiteSpaces">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L85-103" target="_blank" title="源码：util/string/string.ts，第 85 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L85-103" target="_blank" title="源码：util/string/string.ts，第 85 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>removeLeadingWhiteSpaces<i class="doc-tip doc-api-ellipsis">(str)</i><span class="doc-tip doc-api-more">(str:<code>string</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -460,7 +460,7 @@
                                 
                             </tr><tr id="api/replaceAll">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L105-117" target="_blank" title="源码：util/string/string.ts，第 105 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L105-117" target="_blank" title="源码：util/string/string.ts，第 105 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>replaceAll<i class="doc-tip doc-api-ellipsis">(str, from, to)</i><span class="doc-tip doc-api-more">(str:<code>string</code>, from:<code>string</code>, to:<code>string</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -535,7 +535,7 @@
                                 
                             </tr><tr id="api/clean">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L119-126" target="_blank" title="源码：util/string/string.ts，第 119 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L119-126" target="_blank" title="源码：util/string/string.ts，第 119 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>clean<i class="doc-tip doc-api-ellipsis">(str)</i><span class="doc-tip doc-api-more">(str:<code>string</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -580,7 +580,7 @@
                                 
                             </tr><tr id="api/byteLength">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L128-136" target="_blank" title="源码：util/string/string.ts，第 128 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L128-136" target="_blank" title="源码：util/string/string.ts，第 128 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>byteLength<i class="doc-tip doc-api-ellipsis">(str)</i><span class="doc-tip doc-api-more">(str:<code>string</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -625,7 +625,7 @@
                                 
                             </tr><tr id="api/unique">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L138-151" target="_blank" title="源码：util/string/string.ts，第 138 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L138-151" target="_blank" title="源码：util/string/string.ts，第 138 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>unique<i class="doc-tip doc-api-ellipsis">(str)</i><span class="doc-tip doc-api-more">(str:<code>string</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -670,7 +670,7 @@
                                 
                             </tr><tr id="api/capitalize">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L153-160" target="_blank" title="源码：util/string/string.ts，第 153 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L153-160" target="_blank" title="源码：util/string/string.ts，第 153 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>capitalize<i class="doc-tip doc-api-ellipsis">(str)</i><span class="doc-tip doc-api-more">(str:<code>string</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -715,7 +715,7 @@
                                 
                             </tr><tr id="api/uncapitalize">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L162-169" target="_blank" title="源码：util/string/string.ts，第 162 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L162-169" target="_blank" title="源码：util/string/string.ts，第 162 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>uncapitalize<i class="doc-tip doc-api-ellipsis">(str)</i><span class="doc-tip doc-api-more">(str:<code>string</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -760,7 +760,7 @@
                                 
                             </tr><tr id="api/toCamelCase">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L171-178" target="_blank" title="源码：util/string/string.ts，第 171 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L171-178" target="_blank" title="源码：util/string/string.ts，第 171 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>toCamelCase<i class="doc-tip doc-api-ellipsis">(str)</i><span class="doc-tip doc-api-more">(str:<code>string</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -805,7 +805,7 @@
                                 
                             </tr><tr id="api/left">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L180-188" target="_blank" title="源码：util/string/string.ts，第 180 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L180-188" target="_blank" title="源码：util/string/string.ts，第 180 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>left<i class="doc-tip doc-api-ellipsis">(str, length)</i><span class="doc-tip doc-api-more">(str:<code>string</code>, length:<code>number</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -865,7 +865,7 @@
                                 
                             </tr><tr id="api/right">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/string/string.ts#L190-198" target="_blank" title="源码：util/string/string.ts，第 190 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/string/string.ts#L190-198" target="_blank" title="源码：util/string/string.ts，第 190 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>right<i class="doc-tip doc-api-ellipsis">(str, length)</i><span class="doc-tip doc-api-more">(str:<code>string</code>, length:<code>number</code>):<code>string</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -933,7 +933,7 @@
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

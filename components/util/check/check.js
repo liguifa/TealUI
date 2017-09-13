@@ -58,17 +58,6 @@ define(["require", "exports"], function (require, exports) {
     }
     exports.isNumber = isNumber;
     /**
-     * 判断指定字符串是否表示一个电子邮箱地址。
-     * @param value 要判断的字符串。
-     * @return 如果符合条件则返回 true，否则返回 false。
-     * @example isEmail("bug@tealui.com") // true
-     * @example isEmail("bug@@tealui.com") // false
-     */
-    function isEmail(value) {
-        return /^[\u4E00-\u9FA5\uFE30-\uFFA0\w\-+\.]+@[\u4E00-\u9FA5\uFE30-\uFFA0\w\-]+(?:\.[\u4E00-\u9FA5\uFE30-\uFFA0\w\-]+)*$/.test(value);
-    }
-    exports.isEmail = isEmail;
-    /**
      * 判断指定字符串是否表示一个日期。
      * @param value 要判断的字符串。
      * @return 如果符合条件则返回 true，否则返回 false。
@@ -81,6 +70,27 @@ define(["require", "exports"], function (require, exports) {
     }
     exports.isDate = isDate;
     /**
+     * 判断指定字符串是否表示一个时间。
+     * @param value 要判断的字符串。
+     * @return 如果符合条件则返回 true，否则返回 false。
+     * @example isTime("10:00:00") // true
+     */
+    function isTime(value) {
+        return /^([0-1]?\d|2[0-3]):(\d|[0-5]\d):(\d|[0-5]\d)$/.test(value);
+    }
+    exports.isTime = isTime;
+    /**
+     * 判断指定字符串是否表示一个电子邮箱地址。
+     * @param value 要判断的字符串。
+     * @return 如果符合条件则返回 true，否则返回 false。
+     * @example isEmail("bug@tealui.com") // true
+     * @example isEmail("bug@@tealui.com") // false
+     */
+    function isEmail(value) {
+        return /^[\u4E00-\u9FA5\uFE30-\uFFA0\w\-+\.]+@[\u4E00-\u9FA5\uFE30-\uFFA0\w\-]+(?:\.[\u4E00-\u9FA5\uFE30-\uFFA0\w\-]+)*$/.test(value);
+    }
+    exports.isEmail = isEmail;
+    /**
      * 判断指定字符串是否表示一个 IP 地址。
      * @param value 要判断的字符串。
      * @return 如果符合条件则返回 true，否则返回 false。
@@ -90,26 +100,6 @@ define(["require", "exports"], function (require, exports) {
         return /^(?:localhost|::1|(?:[01]?\d?\d|2[0-4]\d|25[0-5])(\.(?:[01]?\d?\d|2[0-4]\d|25[0-5])){3})$/.test(value);
     }
     exports.isIp = isIp;
-    /**
-     * 判断指定字符串是否表示一个手机号码。
-     * @param value 要判断的字符串。
-     * @return 如果符合条件则返回 true，否则返回 false。
-     * @example isPhone("+8613211111111") // true
-     */
-    function isPhone(value) {
-        return /^(?:\+\d\d)?1\d{10}$/.test(value);
-    }
-    exports.isPhone = isPhone;
-    /**
-     * 判断指定字符串是否表示一个电话号码（400 电话和国际电话除外）。
-     * @param value 要判断的字符串。
-     * @return 如果符合条件则返回 true，否则返回 false。
-     * @example isTelephone("010-86000000") // true
-     */
-    function isTelephone(value) {
-        return /^(?:\d{3,4}\-)?8?\d{7}$/.test(value);
-    }
-    exports.isTelephone = isTelephone;
     /**
      * 判断指定字符串是否表示一个网址。
      * @param value 要判断的字符串。
@@ -130,6 +120,36 @@ define(["require", "exports"], function (require, exports) {
         return /^[\u4E00-\u9FA5\uFE30-\uFFA0a-zA-Z_$][\u4E00-\u9FA5\uFE30-\uFFA0\w$]+$/.test(value);
     }
     exports.isIndentifier = isIndentifier;
+    /**
+     * 判断指定字符串是否表示一个金额（必须是正数）。
+     * @param value 要判断的字符串。
+     * @return 如果符合条件则返回 true，否则返回 false。
+     * @example isCurrency("1") // true
+     */
+    function isCurrency(value) {
+        return /^[1-9]\d*(\.\d\d?)?$/.test(value) || /^0?\.\d\d?$/.test(value);
+    }
+    exports.isCurrency = isCurrency;
+    /**
+     * 判断指定字符串是否表示一个手机号码。
+     * @param value 要判断的字符串。
+     * @return 如果符合条件则返回 true，否则返回 false。
+     * @example isPhone("+8613211111111") // true
+     */
+    function isPhone(value) {
+        return /^(?:\+\d\d)?1\d{10}$/.test(value);
+    }
+    exports.isPhone = isPhone;
+    /**
+     * 判断指定字符串是否表示一个电话号码（400 电话和国际电话除外）。
+     * @param value 要判断的字符串。
+     * @return 如果符合条件则返回 true，否则返回 false。
+     * @example isTelephone("010-86000000") // true
+     */
+    function isTelephone(value) {
+        return /^(?:\d{3,4}\-)?8?\d{7}$/.test(value);
+    }
+    exports.isTelephone = isTelephone;
     /**
      * 判断指定字符串是否只包含英文。
      * @param value 要判断的字符串。

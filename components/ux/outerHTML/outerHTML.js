@@ -1,7 +1,7 @@
 define(["require", "exports"], function (require, exports) {
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-     * 获取外部 HTML。
+     * 获取节点的外部 HTML。
      * @param elem 相关的元素。
      */
     function getOuterHTML(elem) {
@@ -11,7 +11,7 @@ define(["require", "exports"], function (require, exports) {
     }
     exports.getOuterHTML = getOuterHTML;
     /**
-     * 设置外部 HTML。
+     * 设置节点的外部 HTML。
      * @param elem 相关的元素。
      * @param value 要设置的值。
      */

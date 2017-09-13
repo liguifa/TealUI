@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
     <meta name="version" content="0.0.1">
-    <title>委托 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>委托 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,18 +53,18 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/delegate/delegate.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/delegate" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/delegate/delegate.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/delegate/delegate.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=util/delegate" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/util/delegate/delegate.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="委托">
 <a href="#委托" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>委托<div class="doc-menubutton">
                         <small>util/delegate</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import { Delegate } from \&quot;util/delegate\&quot;;\n&quot;)">复制 <code>import "util/delegate"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/delegate\&quot;], function (delegate_1) {\n\tvar Delegate = delegate_1.Delegate;\n\n\n});\n&quot;)">复制 <code>require("util/delegate")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/delegate\&quot;&quot;)">复制 <code>"util/delegate"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import { Delegate } from \&quot;util/delegate\&quot;;\n&quot;); void 0">复制 <code>import "util/delegate"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/delegate\&quot;], function (delegate_1) {\n\tvar Delegate = delegate_1.Delegate;\n\n\n});\n&quot;); void 0">复制 <code>require("util/delegate")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/delegate\&quot;&quot;); void 0">复制 <code>"util/delegate"</code></a></li>
                         </menu>
                     </div></h1>
 <p class="doc">允许合并、解除多个函数。</p>
@@ -72,7 +72,7 @@
 <pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-js"><span class="doc-code-built_in">document</span>.onclick = <span class="doc-code-keyword">new</span> Delegate();              <span class="doc-code-comment">// 创建新的委托。</span>
 <span class="doc-code-built_in">document</span>.onclick.add(<span class="doc-code-function"><span class="doc-code-keyword">function</span>(<span class="doc-code-params"></span>) </span>{ alert(<span class="doc-code-number">1</span>) });   <span class="doc-code-comment">// 添加委托函数。</span>
 <span class="doc-code-built_in">document</span>.onclick.add(<span class="doc-code-function"><span class="doc-code-keyword">function</span>(<span class="doc-code-params"></span>) </span>{ alert(<span class="doc-code-number">2</span>) });   <span class="doc-code-comment">// 添加委托函数。</span></code></pre>
-                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/Delegate"><a href="#api/Delegate" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/util/delegate/delegate.ts#L1-60" target="_blank" title="源码：util/delegate/delegate.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Delegate&lt;T&gt; 类</h3><p class="doc">表示一个委托。</p>
+                        <h2 id="api"><a href="#api" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>API</h2><h3 id="api/Delegate"><a href="#api/Delegate" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/delegate/delegate.ts#L1-60" target="_blank" title="源码：util/delegate/delegate.ts，第 1 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Delegate&lt;T&gt; 类</h3><p class="doc">表示一个委托。</p>
 <table>
                     <tr>
                         <th>泛型参数</th>
@@ -89,7 +89,7 @@
                                 
                             </tr><tr id="api/Delegate/funcs">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/delegate/delegate.ts#L6-9" target="_blank" title="源码：util/delegate/delegate.ts，第 6 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/delegate/delegate.ts#L6-9" target="_blank" title="源码：util/delegate/delegate.ts，第 6 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>funcs</code>
                                 <span class="doc-api-more">: <code>T[]</code></span>
@@ -113,7 +113,7 @@
                             
                         </tr><tr id="api/Delegate/undefined">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/delegate/delegate.ts#L11-26" target="_blank" title="源码：util/delegate/delegate.ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/delegate/delegate.ts#L11-26" target="_blank" title="源码：util/delegate/delegate.ts，第 11 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>new Delegate&lt;T&gt;<i class="doc-tip doc-api-ellipsis">(...)</i><span class="doc-tip doc-api-more">(...funcs:<code>T[]</code>):<code><a href="#api/Delegate">Delegate</a>&lt;T&gt;</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -167,7 +167,7 @@
                                 
                             </tr><tr id="api/Delegate/add">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/delegate/delegate.ts#L28-36" target="_blank" title="源码：util/delegate/delegate.ts，第 28 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/delegate/delegate.ts#L28-36" target="_blank" title="源码：util/delegate/delegate.ts，第 28 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>add<i class="doc-tip doc-api-ellipsis">(func)</i><span class="doc-tip doc-api-more">(func:<code>T</code>):<code>this</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -212,7 +212,7 @@
                                 
                             </tr><tr id="api/Delegate/remove">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/delegate/delegate.ts#L38-49" target="_blank" title="源码：util/delegate/delegate.ts，第 38 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/delegate/delegate.ts#L38-49" target="_blank" title="源码：util/delegate/delegate.ts，第 38 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>remove<i class="doc-tip doc-api-ellipsis">(func)</i><span class="doc-tip doc-api-more">(func:<code>T</code>):<code>this</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -257,7 +257,7 @@
                                 
                             </tr><tr id="api/Delegate/clear">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/util/delegate/delegate.ts#L51-58" target="_blank" title="源码：util/delegate/delegate.ts，第 51 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/delegate/delegate.ts#L51-58" target="_blank" title="源码：util/delegate/delegate.ts，第 51 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>clear<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>this</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -281,14 +281,14 @@
                             </tr></table></div>
                         <nav id="doc_pager">
                             <a href="../../../components/util/events/" title="事件" id="doc_pager_prev"><i class="doc-icon">⮜</i> 事件</a>
-                            <a href="../../../components/util/bigInteger/" title="大整数" id="doc_pager_next">大整数 <i class="doc-icon">⮞</i></a>
+                            <a href="../../../components/util/bigInteger/" title="大正整数" id="doc_pager_next">大正整数 <i class="doc-icon">⮞</i></a>
                         </nav>
 </article>
     </div>
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

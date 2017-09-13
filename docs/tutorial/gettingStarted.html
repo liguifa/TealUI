@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="doc">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开始使用 - Frag | 最上流的组件库</title>
+    <link rel="shortcut icon" href="../../assets/doc/images/favicon.ico">
+    <link rel="stylesheet" href="../../assets/doc/doc.css">
+    <script src="../../components/require.js"></script>
+</head>
+<body>
+    <header id="doc_header">
+        <div class="doc-container">
+            <h1 id="doc_logo">
+                <a href="../../" title="Teal" id="doc_logo_image"><img src="../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../" id="doc_logo_title">Frag</a>
+                <div id="doc_version" class="doc-menubutton">
+                    <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
+                    <menu>
+                        <li><a href="http://tealui.com/v3.x/" target="_blank">3.x</a></li>
+                        <li><a href="http://tealui.com/v2.x/" target="_blank">2.x</a></li>
+                    </menu>
+                </div>
+            </h1>
+            <nav id="doc_navbar">
+                <ul>
+                    <li class="doc-navbar-active"><a href="../../docs" title="文档和规范">文档</a></li>
+                    <li><a href="../../components" title="组件和演示">组件</a></li>
+                    <li><a href="../../tools" title="工具和资源">工具</a></li>
+                </ul>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
+            </nav>
+        </div>
+    </header>
+    <div id="doc_body" class="doc-container">
+        <aside id="doc_sidebar">
+            <div id="doc_sidebar_header">
+                <input type="search" placeholder="查找文档..." autocomplete="off" id="doc_sidebar_filter">
+            </div>
+            <ul id="doc_sidebar_menu">
+                <li class="doc-tip"><i class="doc-icon doc-spin">҉</i> 正在载入列表...</li>
+            </ul>
+        </aside>
+        <article id="doc_main" class="doc">
+<aside id="doc_mainmenu" class="doc-menubutton">
+                            <a href="javascript://打开工具" title="工具" class="doc-icon">🔧⏷</a>
+                            <menu>
+                                
+                                <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
+                                
+                                
+                                
+                                
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/edit/dev-v4/docs/tutorial/gettingStarted.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                            </menu>
+                        </aside>
+                        <h1 id="开始使用">
+<a href="#开始使用" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>开始使用</h1>
+<p class="doc">从零开始快速上手。</p>
+<dl id="doc_toc">
+	<dt><a href="#概述">概述</a></dt>
+	<dt><a href="#hello-world">Hello World</a></dt>
+	<dt><a href="#项目脚手架">项目脚手架</a></dt>
+	<dd><a href="#配置-webpack">配置 Webpack</a></dd>
+</dl>
+<h2 id="概述">
+<a href="#概述" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>概述</h2>
+<p class="doc">TealUI 的目的是打造一个完整的前端解决方案，它提供了前端项目所需要的大部分功能：</p>
+<ul>
+<li class="doc">UI 组件</li>
+<li class="doc">CSS 设计框架</li>
+<li class="doc">工具函数库</li>
+<li class="doc">开发规范和构建工具</li>
+</ul>
+<p class="doc">尽量功能众多，但每个功能都被拆成独立的小组件，项目里可单独引用。</p>
+<h2 id="hello-world">
+<a href="#hello-world" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>Hello World</h2>
+<p class="doc">相比社区内的组件，TealUI 的组件用法统一、体积更小、性能更优。
+只需掌握几个组件的用法，其它组件的用法都大同小异，学起来非常容易。</p>
+<p class="doc">现在以<a href="../../docs/../components/ux/drag/" title="../components/ux/drag">拖动</a>组件为例，演示如何快速使用一个组件。</p>
+<ol>
+<li class="doc">新建一个名为 hello.html 的文件，内容如下：</li>
+</ol>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-html"><span class="doc-code-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">html</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">head</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">title</span>&gt;</span>我的第一个页面<span class="doc-code-tag">&lt;/<span class="doc-code-name">title</span>&gt;</span>
+<span class="doc-code-highlight">    </span><span class="doc-code-tag"><span class="doc-code-highlight">&lt;</span><span class="doc-code-name"><span class="doc-code-highlight">script</span></span><span class="doc-code-highlight"> </span><span class="doc-code-attr"><span class="doc-code-highlight">src</span></span><span class="doc-code-highlight">=</span><span class="doc-code-string"><span class="doc-code-highlight">"http://tealui.com/components/require.js"</span></span><span class="doc-code-highlight">&gt;</span></span><span class="undefined"></span><span class="doc-code-tag"><span class="doc-code-highlight">&lt;/</span><span class="doc-code-name"><span class="doc-code-highlight">script</span></span><span class="doc-code-highlight">&gt;</span></span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">head</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">body</span>&gt;</span>
+    
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">body</span>&gt;</span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">html</span>&gt;</span></code></pre><p class="doc">这个页面引入了一个名为 require.js 的文件，这个文件定义了全局的 <code>require</code> 函数用来导入组件。</p>
+<p class="doc">假如您<a href="#%E4%B8%8B%E8%BD%BD">下载</a>了组件库，可以改成本地的 require.js 路径。</p>
+<ol start="2">
+<li class="doc">导入 <code>ux/drag</code> 组件实现拖动效果。</li>
+</ol>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-html"><span class="doc-code-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">html</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">head</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">title</span>&gt;</span>我的第一个页面<span class="doc-code-tag">&lt;/<span class="doc-code-name">title</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">script</span> <span class="doc-code-attr">src</span>=<span class="doc-code-string">"http://tealui.com/components/require.js"</span>&gt;</span><span class="undefined"></span><span class="doc-code-tag">&lt;/<span class="doc-code-name">script</span>&gt;</span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">head</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">body</span>&gt;</span>
+<span class="doc-code-highlight">    </span><span class="doc-code-tag"><span class="doc-code-highlight">&lt;</span><span class="doc-code-name"><span class="doc-code-highlight">span</span></span><span class="doc-code-highlight"> </span><span class="doc-code-attr"><span class="doc-code-highlight">id</span></span><span class="doc-code-highlight">=</span><span class="doc-code-string"><span class="doc-code-highlight">"box"</span></span><span class="doc-code-highlight">&gt;</span></span><span class="doc-code-highlight">Hello world!</span><span class="doc-code-tag"><span class="doc-code-highlight">&lt;/</span><span class="doc-code-name"><span class="doc-code-highlight">span</span></span><span class="doc-code-highlight">&gt;</span></span>
+<span class="doc-code-highlight">    </span><span class="doc-code-tag"><span class="doc-code-highlight">&lt;</span><span class="doc-code-name"><span class="doc-code-highlight">script</span></span><span class="doc-code-highlight">&gt;</span></span><span class="javascript">
+<span class="doc-code-highlight">        </span><span class="doc-code-built_in"><span class="doc-code-highlight">require</span></span><span class="doc-code-highlight">([</span><span class="doc-code-string"><span class="doc-code-highlight">"ux/drag"</span></span><span class="doc-code-highlight">], </span><span class="doc-code-function"><span class="doc-code-keyword"><span class="doc-code-highlight">function</span></span><span class="doc-code-highlight"> (</span><span class="doc-code-params"><span class="doc-code-highlight">drag</span></span><span class="doc-code-highlight">) </span></span><span class="doc-code-highlight">{</span>
+<span class="doc-code-highlight">            </span><span class="doc-code-keyword"><span class="doc-code-highlight">var</span></span><span class="doc-code-highlight"> draggable = drag.default;</span>
+
+<span class="doc-code-highlight">            draggable(</span><span class="doc-code-built_in"><span class="doc-code-highlight">document</span></span><span class="doc-code-highlight">.getElementById(</span><span class="doc-code-string"><span class="doc-code-highlight">"box"</span></span><span class="doc-code-highlight">));</span>
+<span class="doc-code-highlight">        });</span>
+<span class="doc-code-highlight">    </span></span><span class="doc-code-tag"><span class="doc-code-highlight">&lt;/</span><span class="doc-code-name"><span class="doc-code-highlight">script</span></span><span class="doc-code-highlight">&gt;</span></span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">body</span>&gt;</span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">html</span>&gt;</span></code></pre><p class="doc">在这个示例中，使用了 <code>require</code> 导入了 <code>ux/drag</code> 模块，通过这个模块导出的 <code>default</code> 函数接口实现了拖动效果。</p>
+<p class="doc">所有组件都可以通过相对于 <code>require.js</code> 的相对地址或者绝对地址导入，导入一个组件时组件会自动导入其内部的依赖组件。</p>
+<p class="doc">组件本质上就是一个符合 <a href="https://github.com/amdjs/amdjs-api/blob/master/AMD.md" target="_blank" class="doc-external">AMD</a> 模块规范的 JavaScript 文件或一个 CSS 文件。
+导入 JavaScript 组件后可直接使用其导出的 API 接口。
+导入 CSS 组件后可以直接使用其内部定义的所有 CSS 类。</p>
+<p class="doc">点击页面顶部的<a href="../../components">组件</a>可以查看 TealUI 提供的所有组件列表，每个组件文档顶部会显示该组件的引入路径，底部会列出该组件导出的所有 API 接口。</p>
+<ol start="3">
+<li class="doc">如果使用了预构建工具，则可以使用 <code>import</code> 语法简化组件导入。</li>
+</ol>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-html"><span class="doc-code-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">html</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">head</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">title</span>&gt;</span>我的第一个页面<span class="doc-code-tag">&lt;/<span class="doc-code-name">title</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">script</span> <span class="doc-code-attr">src</span>=<span class="doc-code-string">"http://tealui.com/components/require.js"</span>&gt;</span><span class="undefined"></span><span class="doc-code-tag">&lt;/<span class="doc-code-name">script</span>&gt;</span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">head</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">body</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">span</span> <span class="doc-code-attr">id</span>=<span class="doc-code-string">"box"</span>&gt;</span>Hello world!<span class="doc-code-tag">&lt;/<span class="doc-code-name">span</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">script</span>&gt;</span><span class="javascript">
+<span class="doc-code-highlight">        </span><span class="doc-code-keyword"><span class="doc-code-highlight">import</span></span><span class="doc-code-highlight"> draggable </span><span class="doc-code-keyword"><span class="doc-code-highlight">from</span></span><span class="doc-code-highlight"> </span><span class="doc-code-string"><span class="doc-code-highlight">"ux/drag"</span></span><span class="doc-code-highlight">;</span>
+        
+        draggable(<span class="doc-code-built_in">document</span>.getElementById(<span class="doc-code-string">"box"</span>));
+    </span><span class="doc-code-tag">&lt;/<span class="doc-code-name">script</span>&gt;</span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">body</span>&gt;</span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">html</span>&gt;</span></code></pre><p class="doc"><code>import</code> 语法并不是使用组件的必要条件，详细说明参考 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import" target="_blank" class="doc-external">MDN</a>。</p>
+<h2 id="项目脚手架">
+<a href="#项目脚手架" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>项目脚手架</h2>
+<p class="doc">现在你已经掌握了如何使用组件的基本方法。</p>
+<p class="doc">在实际项目中，一般是通过预构建的方式来导入组件的，相比通过 <code>require.js</code> 导入组件的方式，它有更多的优势：</p>
+<ol>
+<li class="doc">可以使用更简短的 <code>import</code> 语法。</li>
+<li class="doc">合并导入的组件，减少请求数，提升页面性能。</li>
+<li class="doc">支持在导入时压缩优化代码。</li>
+</ol>
+<p class="doc">TealUI 所有组件均使用 TypeScript + Sass 编写，并且遵循 <a href="http://www.commonjs.org/" target="_blank" class="doc-external">commonjs</a> 规范。
+因此可以使用任何一个支持 commonjs 规范的构建工具导入组件源码。</p>
+<p class="doc">TealUI 默认发布后的代码为标准 JavaScript 和 CSS 文件，其遵循 <a href="https://github.com/amdjs/amdjs-api/blob/master/AMD.md" target="_blank" class="doc-external">AMD</a> 规范。
+因此也可以使用任何一个支持 AMD 规范的构建工具直接导入发布后的组件。</p>
+<p class="doc">下文将介绍如何配置 <a href="http://webpack.github.io/" target="_blank" class="doc-external">Webpack</a> 和 <a href="http://digojs.github.io/" target="_blank" class="doc-external">Digo</a> 导入组件。</p>
+<h3 id="配置-webpack">
+<a href="#配置-webpack" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>配置 Webpack</h3>
+<ol>
+<li class="doc">新建 package.json，内容如下：</li>
+</ol>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-json">{
+    <span class="doc-code-string">"dependencies"</span>: {
+        <span class="doc-code-string">"tealui"</span>: <span class="doc-code-string">"latest"</span>
+    },
+    <span class="doc-code-string">"devDependencies"</span>: {
+        <span class="doc-code-string">"webpack"</span>: <span class="doc-code-string">"latest"</span>,
+        <span class="doc-code-string">"webpack-dev-server"</span>: <span class="doc-code-string">"latest"</span>
+    },
+    <span class="doc-code-string">"scripts"</span>: {
+        <span class="doc-code-string">"build"</span>: <span class="doc-code-string">"webpack"</span>
+    }
+}</code></pre><ol start="2">
+<li class="doc">安装依赖包</li>
+</ol>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-bash">npm install</code></pre><p class="doc">这个命令会安装 package.json 中指定的依赖包。</p>
+<ol start="2">
+<li class="doc">新建 webpack.config.js，内容如下：</li>
+</ol>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-js"><span class="doc-code-built_in">module</span>.exports = {
+    <span class="doc-code-attr">entry</span>: <span class="doc-code-string">'./src/index.js'</span>,
+    <span class="doc-code-attr">output</span>: {
+        <span class="doc-code-attr">filename</span>: <span class="doc-code-string">'bundle.js'</span>,
+        <span class="doc-code-attr">path</span>: __dirname + <span class="doc-code-string">'/dist'</span>
+    }
+};</code></pre><ol start="3">
+<li class="doc">新建 src/index.js，内容如下：</li>
+</ol>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-jsx"><span class="doc-code-keyword">import</span> MessageBox <span class="doc-code-keyword">from</span> <span class="doc-code-string">"tealui/ui/messageBox"</span>;
+
+MessageBox.alert(<span class="doc-code-string">"Hello World!"</span>);</code></pre><ol start="4">
+<li class="doc">新建 dist/index.html，内容如下：</li>
+</ol>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-html"><span class="doc-code-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">html</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">head</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">title</span>&gt;</span>我的第二个页面<span class="doc-code-tag">&lt;/<span class="doc-code-name">title</span>&gt;</span>
+    <span class="doc-code-tag">&lt;<span class="doc-code-name">script</span> <span class="doc-code-attr">src</span>=<span class="doc-code-string">"bundle.js"</span>&gt;</span><span class="undefined"></span><span class="doc-code-tag">&lt;/<span class="doc-code-name">script</span>&gt;</span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">head</span>&gt;</span>
+<span class="doc-code-tag">&lt;<span class="doc-code-name">body</span>&gt;</span>
+
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">body</span>&gt;</span>
+<span class="doc-code-tag">&lt;/<span class="doc-code-name">html</span>&gt;</span></code></pre><ol start="4">
+<li class="doc">执行以下命令构建：</li>
+</ol>
+<pre class="doc-code"><a href="javascript://复制源码" title="复制源码" aria-hidden="true" class="doc-icon" onclick="Doc.copyCode(this)">❐</a><code class="doc-code-bash">webpack</code></pre><p class="doc">执行后项目会编译 src/index.js 文件生成 dist/bundle.js。</p>
+<ol start="5">
+<li class="doc">在浏览器打开 dist/index.html。
+可以看到<a href="../../docs/../components/ui/messageBox/" title="../components/ui/messageBox">消息框</a>组件已成功加载并显示了一个弹窗。</li>
+</ol>
+<h4>1. 直接导入编译后的代码</h4>
+<ol start="2">
+<li class="doc">导入源码并使用对应的 webpack loader 即时编译。</li>
+</ol>
+
+                        
+                        <nav id="doc_pager">
+                            
+                            <a href="../../docs/hybrid/android/introduction.html" title="介绍" id="doc_pager_next">介绍 <i class="doc-icon">⮞</i></a>
+                        </nav>
+</article>
+    </div>
+    <footer id="doc_footer">
+        <div class="doc-container">
+            <div id="doc_footer_links">
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
+                <a href="../../docs/about/contributing.html">贡献指南</a> |
+                <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
+            </div>
+            &copy; 2011-2017 The Teal Team. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="../../assets/doc/doc.js"></script>
+    <script>
+        Doc.init({"root":"../..","dir":"docs","active":"tutorial/gettingStarted.html","imports":[]})
+    </script>
+    <script src="../../docs/index.js"></script>
+    <script>!location.port && /^http/.test(location.protocol) && (document.body.appendChild(document.createElement("script")).src = "//hm.baidu.com/hm.js?9a3cb18d91be19c36c5f9725822b64e8")</script>
+</body>
+</html>

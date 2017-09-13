@@ -24,15 +24,12 @@ define(["require", "exports", "ux/dom", "ux/popup", "ui/control", "typo/arrow", 
                 }
                 control_1.data(this).target = value;
                 if (value) {
-                    if (this.pinTarget !== null) {
-                        this.pinTarget = value;
-                    }
                     popup_1.Popup.prototype.enable.call(this);
                 }
             }
         }
         /**
-         * 禁用弹窗效果。
+         * 是否禁用弹窗效果。
          */
         get disabled() {
             return control_1.data(this).disabled;
@@ -97,7 +94,6 @@ define(["require", "exports", "ux/dom", "ux/popup", "ui/control", "typo/arrow", 
          */
         realign() {
             const arrow = dom.last(this.elem, ".x-arrow");
-            const arrowSize = arrow && arrow.offsetHeight;
             if (arrow && this.margin == undefined) {
                 this.margin = arrow.offsetHeight / 2 + 2;
             }
@@ -113,6 +109,7 @@ define(["require", "exports", "ux/dom", "ux/popup", "ui/control", "typo/arrow", 
                     case "rl-tt":
                     case "rl-bb":
                         if (!pinResult.transformY) {
+                            const arrowSize = arrow.offsetWidth / 2;
                             const arrowPos = pinResult.target.x + pinResult.target.width / 2 - pinResult.x;
                             if (arrowPos >= arrowSize && arrowPos <= pinResult.width - arrowSize) {
                                 arrow.className += ` x-arrow-${(pinResult.align.charAt(4) === "t") !== !!pinResult.rotateY ? "bottom" : "top"}`;
@@ -127,6 +124,7 @@ define(["require", "exports", "ux/dom", "ux/popup", "ui/control", "typo/arrow", 
                     case "rr-cc":
                     case "rr-bt":
                         if (!pinResult.transformX) {
+                            const arrowSize = arrow.offsetHeight / 2;
                             const arrowPos = pinResult.target.y + pinResult.target.height / 2 - pinResult.y;
                             if (arrowPos >= arrowSize && arrowPos <= pinResult.height - arrowSize) {
                                 arrow.className += ` x-arrow-${(pinResult.align.charAt(0) === "l") !== !!pinResult.rotateX ? "right" : "left"}`;

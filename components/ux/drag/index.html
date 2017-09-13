@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
-    <meta name="version" content="0.0.1">
-    <title>拖动 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <meta name="version" content="0.0.2">
+    <title>拖动 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,18 +53,18 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 <li><a href="javascript:Doc.toggleDemoCodes()" accesskey="c"><i class="doc-icon">⅏</i>折叠源码</a></li>
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=ux/drag" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/ux/drag/drag.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=ux/drag" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/ux/drag/drag.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="拖动">
 <a href="#拖动" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>拖动<div class="doc-menubutton">
                         <small>ux/drag</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import draggable, { Draggable } from \&quot;ux/drag\&quot;;\n&quot;)">复制 <code>import "ux/drag"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/drag\&quot;], function (drag_1) {\n\tvar draggable = drag_1.default;\n\tvar Draggable = drag_1.Draggable;\n\n\n});\n&quot;)">复制 <code>require("ux/drag")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/drag\&quot;&quot;)">复制 <code>"ux/drag"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import draggable, { Draggable } from \&quot;ux/drag\&quot;;\n&quot;); void 0">复制 <code>import "ux/drag"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;ux/drag\&quot;], function (drag_1) {\n\tvar draggable = drag_1.default;\n\tvar Draggable = drag_1.Draggable;\n\n\n});\n&quot;); void 0">复制 <code>require("ux/drag")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;ux/drag\&quot;&quot;); void 0">复制 <code>"ux/drag"</code></a></li>
                         </menu>
                     </div></h1>
 <p class="doc">允许元素跟随指针移动。</p>
@@ -516,7 +516,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/draggable">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L439-455" target="_blank" title="源码：ux/drag/drag.ts，第 439 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L439-455" target="_blank" title="源码：ux/drag/drag.ts，第 439 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>draggable<i class="doc-tip doc-api-ellipsis">(elem, ...)</i><span class="doc-tip doc-api-more">(elem:<code>HTMLElement</code>, options?:<code>Partial&lt;<a href="#api/Draggable">Draggable</a>&gt;</code>):<code><a href="#api/Draggable">Draggable</a></code></span></code>
                                     <div class="doc doc-api-detail">
@@ -575,7 +575,7 @@ var exports = require("doc_demo_12")
 
                                 </td>
                                 
-                            </tr></table></div><h3 id="api/Draggable"><a href="#api/Draggable" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L4-434" target="_blank" title="源码：ux/drag/drag.ts，第 4 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Draggable 类</h3><p class="doc">表示一个可拖动对象。</p>
+                            </tr></table></div><h3 id="api/Draggable"><a href="#api/Draggable" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L4-434" target="_blank" title="源码：ux/drag/drag.ts，第 4 行" aria-hidden="true" class="doc-icon doc-sourcelink">⅏</a>Draggable 类</h3><p class="doc">表示一个可拖动对象。</p>
 <div class="doc doc-scrollable"><table class="doc-api"><tr>
                                 <th class="doc-api-property">字段</th>
                                 <th class="doc-api-type">类型</th>
@@ -583,7 +583,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/handle">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L9-12" target="_blank" title="源码：ux/drag/drag.ts，第 9 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L9-12" target="_blank" title="源码：ux/drag/drag.ts，第 9 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>handle</code>
                                 <span class="doc-api-more">: <code>HTMLElement</code></span>
@@ -603,7 +603,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/delay">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L14-17" target="_blank" title="源码：ux/drag/drag.ts，第 14 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L14-17" target="_blank" title="源码：ux/drag/drag.ts，第 14 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>delay</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -623,7 +623,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/distance">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L19-22" target="_blank" title="源码：ux/drag/drag.ts，第 19 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L19-22" target="_blank" title="源码：ux/drag/drag.ts，第 19 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>distance</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -643,7 +643,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/onDragStart">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L24-30" target="_blank" title="源码：ux/drag/drag.ts，第 24 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L24-30" target="_blank" title="源码：ux/drag/drag.ts，第 24 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onDragStart</code>
                                 <span class="doc-api-more">: <code>((e: MouseEvent, sender: <a href="#api/Draggable">Draggable</a>) =&gt; boolean | void) | undefined</code></span>
@@ -663,7 +663,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/onDragMove">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L32-38" target="_blank" title="源码：ux/drag/drag.ts，第 32 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L32-38" target="_blank" title="源码：ux/drag/drag.ts，第 32 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onDragMove</code>
                                 <span class="doc-api-more">: <code>((e: MouseEvent, sender: <a href="#api/Draggable">Draggable</a>) =&gt; boolean | void) | undefined</code></span>
@@ -683,7 +683,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/onDragEnd">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L40-45" target="_blank" title="源码：ux/drag/drag.ts，第 40 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L40-45" target="_blank" title="源码：ux/drag/drag.ts，第 40 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onDragEnd</code>
                                 <span class="doc-api-more">: <code>((e: MouseEvent, sender: <a href="#api/Draggable">Draggable</a>) =&gt; void) | undefined</code></span>
@@ -703,7 +703,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/onDragCancel">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L47-52" target="_blank" title="源码：ux/drag/drag.ts，第 47 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L47-52" target="_blank" title="源码：ux/drag/drag.ts，第 47 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>onDragCancel</code>
                                 <span class="doc-api-more">: <code>((e: MouseEvent, sender: <a href="#api/Draggable">Draggable</a>) =&gt; void) | undefined</code></span>
@@ -723,7 +723,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/elem">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L54-57" target="_blank" title="源码：ux/drag/drag.ts，第 54 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L54-57" target="_blank" title="源码：ux/drag/drag.ts，第 54 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>elem</code>
                                 <span class="doc-api-more">: <code>HTMLElement</code></span>
@@ -743,7 +743,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/startX">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L69-72" target="_blank" title="源码：ux/drag/drag.ts，第 69 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L69-72" target="_blank" title="源码：ux/drag/drag.ts，第 69 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>startX</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -763,7 +763,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/startY">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L74-77" target="_blank" title="源码：ux/drag/drag.ts，第 74 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L74-77" target="_blank" title="源码：ux/drag/drag.ts，第 74 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>startY</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -783,7 +783,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/endX">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L79-82" target="_blank" title="源码：ux/drag/drag.ts，第 79 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L79-82" target="_blank" title="源码：ux/drag/drag.ts，第 79 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>endX</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -803,7 +803,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/endY">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L84-87" target="_blank" title="源码：ux/drag/drag.ts，第 84 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L84-87" target="_blank" title="源码：ux/drag/drag.ts，第 84 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>endY</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -823,7 +823,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/startClientX">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L260-263" target="_blank" title="源码：ux/drag/drag.ts，第 260 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L260-263" target="_blank" title="源码：ux/drag/drag.ts，第 260 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>startClientX</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -843,7 +843,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/startClientY">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L265-268" target="_blank" title="源码：ux/drag/drag.ts，第 265 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L265-268" target="_blank" title="源码：ux/drag/drag.ts，第 265 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>startClientY</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -863,7 +863,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/endClientX">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L270-273" target="_blank" title="源码：ux/drag/drag.ts，第 270 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L270-273" target="_blank" title="源码：ux/drag/drag.ts，第 270 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>endClientX</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -883,7 +883,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/endClientY">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L275-278" target="_blank" title="源码：ux/drag/drag.ts，第 275 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L275-278" target="_blank" title="源码：ux/drag/drag.ts，第 275 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>endClientY</code>
                                 <span class="doc-api-more">: <code>number</code></span>
@@ -903,7 +903,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/current">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L94-97" target="_blank" title="源码：ux/drag/drag.ts，第 94 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L94-97" target="_blank" title="源码：ux/drag/drag.ts，第 94 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>Draggable.current</code>
                                 <span class="doc-api-more">: <code><a href="#api/Draggable">Draggable</a> | undefined</code></span>
@@ -927,7 +927,7 @@ var exports = require("doc_demo_12")
                             
                         </tr><tr id="api/Draggable/enable">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L59-62" target="_blank" title="源码：ux/drag/drag.ts，第 59 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L59-62" target="_blank" title="源码：ux/drag/drag.ts，第 59 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>enable<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -950,7 +950,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/disable">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L64-67" target="_blank" title="源码：ux/drag/drag.ts，第 64 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L64-67" target="_blank" title="源码：ux/drag/drag.ts，第 64 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>disable<i class="doc-tip doc-api-ellipsis">()</i><span class="doc-tip doc-api-more">():<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -973,7 +973,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/cancel">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L104-110" target="_blank" title="源码：ux/drag/drag.ts，第 104 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L104-110" target="_blank" title="源码：ux/drag/drag.ts，第 104 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>cancel<i class="doc-tip doc-api-ellipsis">(e)</i><span class="doc-tip doc-api-more">(e:<code>MouseEvent</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1018,7 +1018,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/handlePointerDown">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L112-145" target="_blank" title="源码：ux/drag/drag.ts，第 112 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L112-145" target="_blank" title="源码：ux/drag/drag.ts，第 112 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>handlePointerDown<i class="doc-tip doc-api-ellipsis">(e)</i><span class="doc-tip doc-api-more">(e:<code>MouseEvent</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1063,7 +1063,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/handlePointerMove">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L147-162" target="_blank" title="源码：ux/drag/drag.ts，第 147 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L147-162" target="_blank" title="源码：ux/drag/drag.ts，第 147 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>handlePointerMove<i class="doc-tip doc-api-ellipsis">(e)</i><span class="doc-tip doc-api-more">(e:<code>MouseEvent</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1108,7 +1108,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/handlePointerUp">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L164-174" target="_blank" title="源码：ux/drag/drag.ts，第 164 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L164-174" target="_blank" title="源码：ux/drag/drag.ts，第 164 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>handlePointerUp<i class="doc-tip doc-api-ellipsis">(e)</i><span class="doc-tip doc-api-more">(e:<code>MouseEvent</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1153,7 +1153,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/dragStart">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L280-293" target="_blank" title="源码：ux/drag/drag.ts，第 280 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L280-293" target="_blank" title="源码：ux/drag/drag.ts，第 280 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>dragStart<i class="doc-tip doc-api-ellipsis">(e)</i><span class="doc-tip doc-api-more">(e:<code>MouseEvent</code>):<code>boolean</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1199,7 +1199,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/dragMove">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L295-306" target="_blank" title="源码：ux/drag/drag.ts，第 295 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L295-306" target="_blank" title="源码：ux/drag/drag.ts，第 295 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>dragMove<i class="doc-tip doc-api-ellipsis">(e)</i><span class="doc-tip doc-api-more">(e:<code>MouseEvent</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1244,7 +1244,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/dragEnd">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L308-314" target="_blank" title="源码：ux/drag/drag.ts，第 308 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L308-314" target="_blank" title="源码：ux/drag/drag.ts，第 308 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>dragEnd<i class="doc-tip doc-api-ellipsis">(e)</i><span class="doc-tip doc-api-more">(e:<code>MouseEvent</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1289,7 +1289,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/autoScroll">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L316-324" target="_blank" title="源码：ux/drag/drag.ts，第 316 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L316-324" target="_blank" title="源码：ux/drag/drag.ts，第 316 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>autoScroll<i class="doc-tip doc-api-ellipsis">(...)</i><span class="doc-tip doc-api-more">(scrollable?:<code>HTMLElement | Document</code>, padding?:<code>number</code>, offset?:<code>number</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1364,7 +1364,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/direction">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L326-332" target="_blank" title="源码：ux/drag/drag.ts，第 326 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L326-332" target="_blank" title="源码：ux/drag/drag.ts，第 326 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>direction<i class="doc-tip doc-api-ellipsis">(value)</i><span class="doc-tip doc-api-more">(value:<code>string</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1409,7 +1409,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/limit">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L334-351" target="_blank" title="源码：ux/drag/drag.ts，第 334 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L334-351" target="_blank" title="源码：ux/drag/drag.ts，第 334 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>limit<i class="doc-tip doc-api-ellipsis">(container, ...)</i><span class="doc-tip doc-api-more">(container:<code>HTMLElement | Document | <a href="../../../components/ux/dom/index.html#api/Rect">Rect</a></code>, padding?:<code>number</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1469,7 +1469,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/step">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L353-360" target="_blank" title="源码：ux/drag/drag.ts，第 353 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L353-360" target="_blank" title="源码：ux/drag/drag.ts，第 353 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>step<i class="doc-tip doc-api-ellipsis">(value)</i><span class="doc-tip doc-api-more">(value:<code>number</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1514,7 +1514,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/revert">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L362-374" target="_blank" title="源码：ux/drag/drag.ts，第 362 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L362-374" target="_blank" title="源码：ux/drag/drag.ts，第 362 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>revert<i class="doc-tip doc-api-ellipsis">(...)</i><span class="doc-tip doc-api-more">(duration?:<code>number</code>):<code>void</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1559,7 +1559,7 @@ var exports = require("doc_demo_12")
                                 
                             </tr><tr id="api/Draggable/snap">
                                 <td>
-                                    <a href="https://github.com/Teal/TealUI/tree/master/components/ux/drag/drag.ts#L376-432" target="_blank" title="源码：ux/drag/drag.ts，第 376 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                    <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/ux/drag/drag.ts#L376-432" target="_blank" title="源码：ux/drag/drag.ts，第 376 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                     <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                     <code>snap<i class="doc-tip doc-api-ellipsis">(target, ...)</i><span class="doc-tip doc-api-more">(target:<code>HTMLElement | Document | <a href="../../../components/ux/dom/index.html#api/Rect">Rect</a></code>, padding?:<code>number</code>, distance?:<code>number</code>, position?:<code>string</code>):<code>number</code></span></code>
                                     <div class="doc doc-api-detail">
@@ -1658,7 +1658,7 @@ var exports = require("doc_demo_12")
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>

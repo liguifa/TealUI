@@ -1,13 +1,13 @@
 define(["require", "exports"], function (require, exports) {
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-     * 对指定的字符串进行 Base64 编码(支持中文)。
-     * @param value 要转换的字符串。
-     * @return 返回转换后的字符串。
+     * 对指定的字符串进行 Base64 编码。
+     * @param value 要处理的字符串。
+     * @return 返回处理后的字符串。
      * @example encodeBase64("中文") // "5Lit5paH"
      */
     function encodeBase64(value) {
-        // 转换 Unicode 字符为 UTF8 字符序列，确保每个字符都是 ASCII 字符。
+        // 转换 Unicode 字符为 utf-8 字符序列，确保每个字符都是 ASCII 字符。
         const t = [];
         for (let i = 0; i < value.length; i++) {
             const c = value.charCodeAt(i);
@@ -45,9 +45,9 @@ define(["require", "exports"], function (require, exports) {
     }
     exports.encodeBase64 = encodeBase64;
     /**
-     * 对指定的字符串进行 Base64 解码(支持中文)。
-     * @param value 要转换的字符串。
-     * @return 返回转换后的字符串。
+     * 对指定的字符串进行 Base64 解码。
+     * @param value 要处理的字符串。
+     * @return 返回处理后的字符串。
      * @example decodeBase64("5Lit5paH") // "中文"
      */
     function decodeBase64(value) {

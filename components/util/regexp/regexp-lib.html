@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xuld &lt;xuld@vip.qq.com&gt;">
     <meta name="version" content="0.0.1">
-    <title>常用正则表达式库 - TealUI | 打造小而全、精而美的开源组件库</title>
+    <title>常用正则表达式库 - Frag | 最上流的组件库</title>
     <link rel="shortcut icon" href="../../../assets/doc/images/favicon.ico">
     <link rel="stylesheet" href="../../../assets/doc/doc.css">
     <script src="../../../components/require.js"></script>
@@ -15,8 +15,8 @@
     <header id="doc_header">
         <div class="doc-container">
             <h1 id="doc_logo">
-                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="TealUI"></a>
-                <a href="../../../" id="doc_logo_title">TealUI</a>
+                <a href="../../../" title="Teal" id="doc_logo_image"><img src="../../../assets/doc/images/logo.svg" alt="Frag"></a>
+                <a href="../../../" id="doc_logo_title">Frag</a>
                 <div id="doc_version" class="doc-menubutton">
                     <a href="javascript://切换版本">4.0.0 <i class="doc-icon">⏷</i></a>
                     <menu>
@@ -31,7 +31,7 @@
                     <li class="doc-navbar-active"><a href="../../../components" title="组件和演示">组件</a></li>
                     <li><a href="../../../tools" title="工具和资源">工具</a></li>
                 </ul>
-                <a href="https://github.com/Teal/TealUI" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
+                <a href="http://git.weidai.work/fed/frag" target="_blank" title="GitHub" id="doc_repository" class="doc-icon">😺</a>
                 <a href="javascript:Doc.toggleSidebar()" title="菜单" id="doc_togglesidebar" class="doc-icon">≡</a>
             </nav>
         </div>
@@ -53,18 +53,18 @@
                                 <li><a href="javascript:Doc.toggleFullScreen()" accesskey="f"><i class="doc-icon">✥</i>全屏显示</a></li>
                                 
                                 <li><a href="javascript:Doc.toggleApis()" accesskey="a"><i class="doc-icon">≡</i>展开 API</a></li>
-                                <li class="doc-menu-divider"><a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/issues/new?title=util/regexp/regexp-lib" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
-                                <li><a href="https://github.com/Teal/TealUI/edit/master/components/util/regexp/regexp-lib.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
+                                <li class="doc-menu-divider"><a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts" target="_blank"><i class="doc-icon">😺</i>查看源码</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/issues/new?title=util/regexp/regexp-lib" target="_blank"><i class="doc-icon">🐛</i>报告 BUG</a></li>
+                                <li><a href="http://git.weidai.work/fed/frag/edit/dev-v4/components/util/regexp/regexp-lib.md" target="_blank"><i class="doc-icon">✍</i>编辑此页</a></li>
                             </menu>
                         </aside>
                         <h1 id="常用正则表达式库">
 <a href="#常用正则表达式库" title="链接" aria-hidden="true" class="doc-icon doc-permalink">☍</a>常用正则表达式库<div class="doc-menubutton">
                         <small>util/regexp/regexp-lib</small>
                         <menu>
-                            <li><a href="javascript:Doc.copy(&quot;import { space, blankLine, wideChar, letter, letterLowerCase, letterUpperCase, letterOrDight, symbol, number, integer, digit, hex, octal, binary, identifier, currency, path, url, email, ip, domain, datetime, date, time, year, month, day, hour, minute, html, xmlDocument, userName, password, passwordSafe, chinese, chineseId, chinesePostCode, qq, phone, tel } from \&quot;util/regexp/regexp-lib\&quot;;\n&quot;)">复制 <code>import "util/regexp/regexp-lib"</code></a></li>
-                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/regexp/regexp-lib\&quot;], function (regexp-lib_1) {\n\tvar space = regexp-lib_1.space;\n\tvar blankLine = regexp-lib_1.blankLine;\n\tvar wideChar = regexp-lib_1.wideChar;\n\tvar letter = regexp-lib_1.letter;\n\tvar letterLowerCase = regexp-lib_1.letterLowerCase;\n\tvar letterUpperCase = regexp-lib_1.letterUpperCase;\n\tvar letterOrDight = regexp-lib_1.letterOrDight;\n\tvar symbol = regexp-lib_1.symbol;\n\tvar number = regexp-lib_1.number;\n\tvar integer = regexp-lib_1.integer;\n\tvar digit = regexp-lib_1.digit;\n\tvar hex = regexp-lib_1.hex;\n\tvar octal = regexp-lib_1.octal;\n\tvar binary = regexp-lib_1.binary;\n\tvar identifier = regexp-lib_1.identifier;\n\tvar currency = regexp-lib_1.currency;\n\tvar path = regexp-lib_1.path;\n\tvar url = regexp-lib_1.url;\n\tvar email = regexp-lib_1.email;\n\tvar ip = regexp-lib_1.ip;\n\tvar domain = regexp-lib_1.domain;\n\tvar datetime = regexp-lib_1.datetime;\n\tvar date = regexp-lib_1.date;\n\tvar time = regexp-lib_1.time;\n\tvar year = regexp-lib_1.year;\n\tvar month = regexp-lib_1.month;\n\tvar day = regexp-lib_1.day;\n\tvar hour = regexp-lib_1.hour;\n\tvar minute = regexp-lib_1.minute;\n\tvar html = regexp-lib_1.html;\n\tvar xmlDocument = regexp-lib_1.xmlDocument;\n\tvar userName = regexp-lib_1.userName;\n\tvar password = regexp-lib_1.password;\n\tvar passwordSafe = regexp-lib_1.passwordSafe;\n\tvar chinese = regexp-lib_1.chinese;\n\tvar chineseId = regexp-lib_1.chineseId;\n\tvar chinesePostCode = regexp-lib_1.chinesePostCode;\n\tvar qq = regexp-lib_1.qq;\n\tvar phone = regexp-lib_1.phone;\n\tvar tel = regexp-lib_1.tel;\n\n\n});\n&quot;)">复制 <code>require("util/regexp/regexp-lib")</code></a></li>
-                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/regexp/regexp-lib\&quot;&quot;)">复制 <code>"util/regexp/regexp-lib"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;import { space, blankLine, wideChar, letter, letterLowerCase, letterUpperCase, letterOrDight, symbol, number, integer, digit, hex, octal, binary, identifier, currency, path, url, email, ip, domain, datetime, date, time, year, month, day, hour, minute, html, xmlDocument, userName, password, passwordSafe, chinese, chineseId, chinesePostCode, qq, phone, tel } from \&quot;util/regexp/regexp-lib\&quot;;\n&quot;); void 0">复制 <code>import "util/regexp/regexp-lib"</code></a></li>
+                            <li><a href="javascript:Doc.copy(&quot;require([\&quot;util/regexp/regexp-lib\&quot;], function (regexp-lib_1) {\n\tvar space = regexp-lib_1.space;\n\tvar blankLine = regexp-lib_1.blankLine;\n\tvar wideChar = regexp-lib_1.wideChar;\n\tvar letter = regexp-lib_1.letter;\n\tvar letterLowerCase = regexp-lib_1.letterLowerCase;\n\tvar letterUpperCase = regexp-lib_1.letterUpperCase;\n\tvar letterOrDight = regexp-lib_1.letterOrDight;\n\tvar symbol = regexp-lib_1.symbol;\n\tvar number = regexp-lib_1.number;\n\tvar integer = regexp-lib_1.integer;\n\tvar digit = regexp-lib_1.digit;\n\tvar hex = regexp-lib_1.hex;\n\tvar octal = regexp-lib_1.octal;\n\tvar binary = regexp-lib_1.binary;\n\tvar identifier = regexp-lib_1.identifier;\n\tvar currency = regexp-lib_1.currency;\n\tvar path = regexp-lib_1.path;\n\tvar url = regexp-lib_1.url;\n\tvar email = regexp-lib_1.email;\n\tvar ip = regexp-lib_1.ip;\n\tvar domain = regexp-lib_1.domain;\n\tvar datetime = regexp-lib_1.datetime;\n\tvar date = regexp-lib_1.date;\n\tvar time = regexp-lib_1.time;\n\tvar year = regexp-lib_1.year;\n\tvar month = regexp-lib_1.month;\n\tvar day = regexp-lib_1.day;\n\tvar hour = regexp-lib_1.hour;\n\tvar minute = regexp-lib_1.minute;\n\tvar html = regexp-lib_1.html;\n\tvar xmlDocument = regexp-lib_1.xmlDocument;\n\tvar userName = regexp-lib_1.userName;\n\tvar password = regexp-lib_1.password;\n\tvar passwordSafe = regexp-lib_1.passwordSafe;\n\tvar chinese = regexp-lib_1.chinese;\n\tvar chineseId = regexp-lib_1.chineseId;\n\tvar chinesePostCode = regexp-lib_1.chinesePostCode;\n\tvar qq = regexp-lib_1.qq;\n\tvar phone = regexp-lib_1.phone;\n\tvar tel = regexp-lib_1.tel;\n\n\n});\n&quot;); void 0">复制 <code>require("util/regexp/regexp-lib")</code></a></li>
+                            <li class="doc-menu-divider"><a href="javascript:Doc.copy(&quot;\&quot;util/regexp/regexp-lib\&quot;&quot;); void 0">复制 <code>"util/regexp/regexp-lib"</code></a></li>
                         </menu>
                     </div></h1>
 
@@ -75,7 +75,7 @@
                                 
                             </tr><tr id="api/space">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L4-4" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 4 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L4-4" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 4 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>space</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^\s*|\s*$/g</code></span>
@@ -95,7 +95,7 @@
                             
                         </tr><tr id="api/blankLine">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L9-9" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 9 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L9-9" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 9 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>blankLine</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/\r?\n\s*\r?\n/</code></span>
@@ -115,7 +115,7 @@
                             
                         </tr><tr id="api/wideChar">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L14-14" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 14 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L14-14" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 14 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>wideChar</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/[\x00-\xff]/</code></span>
@@ -135,7 +135,7 @@
                             
                         </tr><tr id="api/letter">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L19-19" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 19 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L19-19" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 19 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>letter</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[A-Za-z]*$/</code></span>
@@ -155,7 +155,7 @@
                             
                         </tr><tr id="api/letterLowerCase">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L24-24" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 24 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L24-24" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 24 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>letterLowerCase</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[a-z]*$/</code></span>
@@ -175,7 +175,7 @@
                             
                         </tr><tr id="api/letterUpperCase">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L29-29" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 29 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L29-29" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 29 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>letterUpperCase</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[A-Z]*$/</code></span>
@@ -195,7 +195,7 @@
                             
                         </tr><tr id="api/letterOrDight">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L34-34" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 34 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L34-34" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 34 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>letterOrDight</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[A-Za-z\d]*$/</code></span>
@@ -215,7 +215,7 @@
                             
                         </tr><tr id="api/symbol">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L39-39" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 39 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L39-39" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 39 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>symbol</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/[%&amp;',;=?$\x22]/</code></span>
@@ -235,7 +235,7 @@
                             
                         </tr><tr id="api/number">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L44-44" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 44 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L44-44" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 44 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>number</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[+-]?\d+(\.\d+)?$/</code></span>
@@ -255,7 +255,7 @@
                             
                         </tr><tr id="api/integer">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L49-49" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 49 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L49-49" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 49 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>integer</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^(0|[1-9]\d*)$/</code></span>
@@ -275,7 +275,7 @@
                             
                         </tr><tr id="api/digit">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L54-54" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 54 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L54-54" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 54 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>digit</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^\d*$/</code></span>
@@ -295,7 +295,7 @@
                             
                         </tr><tr id="api/hex">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L59-59" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 59 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L59-59" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 59 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>hex</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[\da-fA-F]*$/</code></span>
@@ -315,7 +315,7 @@
                             
                         </tr><tr id="api/octal">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L64-64" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 64 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L64-64" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 64 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>octal</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[0-7]*$/</code></span>
@@ -335,7 +335,7 @@
                             
                         </tr><tr id="api/binary">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L69-69" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 69 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L69-69" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 69 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>binary</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[01]*$/</code></span>
@@ -355,7 +355,7 @@
                             
                         </tr><tr id="api/identifier">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L74-74" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 74 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L74-74" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 74 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>identifier</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[a-zA-Z_]\w*$/</code></span>
@@ -375,10 +375,10 @@
                             
                         </tr><tr id="api/currency">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L79-79" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 79 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L79-79" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 79 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>currency</code>
-                                <span class="doc-api-more">: <code>RegExp</code> = <code>/^(0|[1-9]\d*)+(.\d\d?)?$/</code></span>
+                                <span class="doc-api-more">: <code>RegExp</code> = <code>/^(0|[1-9]\d*)(\.\d\d?)?$/</code></span>
                                 <div class="doc doc-api-detail">
                                     <p class="doc">(常量)金额。</p>
 
@@ -395,7 +395,7 @@
                             
                         </tr><tr id="api/path">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L84-84" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 84 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L84-84" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 84 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>path</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[^&lt;&gt;;:/\\?*&quot;|]+$/</code></span>
@@ -415,7 +415,7 @@
                             
                         </tr><tr id="api/url">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L89-89" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 89 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L89-89" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 89 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>url</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[a-zA-z]+:\/\//</code></span>
@@ -435,7 +435,7 @@
                             
                         </tr><tr id="api/email">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L94-94" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 94 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L94-94" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 94 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>email</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/</code></span>
@@ -455,7 +455,7 @@
                             
                         </tr><tr id="api/ip">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L99-99" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 99 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L99-99" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 99 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>ip</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^((25[0-5]|2[0-4]\\d|[01]?\\d?\\d)(\\.25[0-5]|2[0-4]\\d|[01]?\\d?\\d)){3}$/</code></span>
@@ -475,7 +475,7 @@
                             
                         </tr><tr id="api/domain">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L104-104" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 104 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L104-104" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 104 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>domain</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/[a-zA-Z\d][-a-zA-Z\d]{0,62}(\/.[a-zA-Z\d][-a-zA-Z\d]{0,62})+/</code></span>
@@ -495,7 +495,7 @@
                             
                         </tr><tr id="api/datetime">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L109-109" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 109 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L109-109" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 109 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>datetime</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^\d{4}[-/]\d\d?[-/]\d\d?\s+\d\d?:\d\d?:\d\d?$/</code></span>
@@ -515,7 +515,7 @@
                             
                         </tr><tr id="api/date">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L114-114" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 114 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L114-114" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 114 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>date</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^\d{4}[-/]\d\d?[-/]\d\d?$/</code></span>
@@ -535,7 +535,7 @@
                             
                         </tr><tr id="api/time">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L119-119" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 119 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L119-119" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 119 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>time</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^\d\d?:\d\d?:\d\d?$/</code></span>
@@ -555,7 +555,7 @@
                             
                         </tr><tr id="api/year">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L124-124" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 124 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L124-124" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 124 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>year</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^\d{4}$/</code></span>
@@ -575,7 +575,7 @@
                             
                         </tr><tr id="api/month">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L129-129" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 129 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L129-129" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 129 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>month</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^(0?[1-9]|1[0-2])$/</code></span>
@@ -595,7 +595,7 @@
                             
                         </tr><tr id="api/day">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L134-134" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 134 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L134-134" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 134 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>day</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^((0?[1-9])|((1|2)[0-9])|30|31)$/</code></span>
@@ -615,7 +615,7 @@
                             
                         </tr><tr id="api/hour">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L139-139" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 139 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L139-139" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 139 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>hour</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^\d|1\d|2[0-3]$/</code></span>
@@ -635,7 +635,7 @@
                             
                         </tr><tr id="api/minute">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L144-144" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 144 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L144-144" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 144 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>minute</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^\d|[1-5]\d$/</code></span>
@@ -655,7 +655,7 @@
                             
                         </tr><tr id="api/html">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L149-149" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 149 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L149-149" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 149 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>html</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/&lt;(\S*?)[^&gt;]*&gt;/</code></span>
@@ -675,7 +675,7 @@
                             
                         </tr><tr id="api/xmlDocument">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L154-154" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 154 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L154-154" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 154 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>xmlDocument</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$/</code></span>
@@ -695,7 +695,7 @@
                             
                         </tr><tr id="api/userName">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L159-159" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 159 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L159-159" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 159 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>userName</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[a-zA-Z][a-zA-Z0-9_]{4,15}$/</code></span>
@@ -715,7 +715,7 @@
                             
                         </tr><tr id="api/password">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L164-164" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 164 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L164-164" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 164 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>password</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[a-zA-Z]\w{5,17}$/</code></span>
@@ -735,7 +735,7 @@
                             
                         </tr><tr id="api/passwordSafe">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L169-169" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 169 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L169-169" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 169 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>passwordSafe</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$/</code></span>
@@ -755,7 +755,7 @@
                             
                         </tr><tr id="api/chinese">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L174-174" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 174 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L174-174" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 174 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>chinese</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/[\u4e00-\u9fa5]/</code></span>
@@ -775,7 +775,7 @@
                             
                         </tr><tr id="api/chineseId">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L179-179" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 179 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L179-179" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 179 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>chineseId</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}(\d|x|X)$/</code></span>
@@ -795,7 +795,7 @@
                             
                         </tr><tr id="api/chinesePostCode">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L184-184" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 184 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L184-184" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 184 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>chinesePostCode</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[1-9]\d{5}(?!\d)$/</code></span>
@@ -815,7 +815,7 @@
                             
                         </tr><tr id="api/qq">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L189-189" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 189 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L189-189" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 189 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>qq</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^[1-9][0-9]{4,}$/</code></span>
@@ -835,7 +835,7 @@
                             
                         </tr><tr id="api/phone">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L194-194" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 194 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L194-194" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 194 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>phone</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^(13\d|14[5|7]|15\d|18\d)\d{8}$/</code></span>
@@ -855,7 +855,7 @@
                             
                         </tr><tr id="api/tel">
                             <td>
-                                <a href="https://github.com/Teal/TealUI/tree/master/components/util/regexp/regexp-lib.ts#L199-199" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 199 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
+                                <a href="http://git.weidai.work/fed/frag/tree/dev-v4/components/util/regexp/regexp-lib.ts#L199-199" target="_blank" title="源码：util/regexp/regexp-lib.ts，第 199 行" aria-hidden="true" class="doc-icon doc-sourcelink doc-api-more">⅏</a>
                                 <a href="javascript://详细信息" title="展开/折叠详细信息" class="doc-icon doc-api-toggle" onclick="Doc.toggleApi(this)">⮞</a>
                                 <code>tel</code>
                                 <span class="doc-api-more">: <code>RegExp</code> = <code>/^(\(\d{3,4}-)|\d{3.4}-)?\d{7,8}$/</code></span>
@@ -880,7 +880,7 @@
     <footer id="doc_footer">
         <div class="doc-container">
             <div id="doc_footer_links">
-                <a href="https://github.com/Teal/TealUI/issues" target="_blank">反馈建议</a> |
+                <a href="http://git.weidai.work/fed/frag/issues" target="_blank">反馈建议</a> |
                 <a href="../../../docs/about/contributing.html">贡献指南</a> |
                 <a href="https://gitter.im/Teal/TealUI" target="_blank">在线讨论</a>
             </div>
